@@ -77,15 +77,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Landor — Real Estate Development & Property Solutions" },
+      { title: "HomeCraft — Real Estate Development & Property Solutions" },
       {
         name: "description",
         content:
-          "Landor is a privately owned real estate company delivering development, investment and property management solutions worldwide.",
+          "Landor creates landmark real estate projects: development, investment, construction management and architecture with enduring value.",
       },
       { name: "author", content: "Landor" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "HomeCraft — Real Estate Development & Property Solutions" },
+      { name: "twitter:title", content: "HomeCraft — Real Estate Development & Property Solutions" },
+      { property: "og:description", content: "Landor creates landmark real estate projects: development, investment, construction management and architecture with enduring value." },
+      { name: "twitter:description", content: "Landor creates landmark real estate projects: development, investment, construction management and architecture with enduring value." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b5dc336a20bfc8b0fa2ea968b355f3a1/id-preview-c2a3e44c--2b7412f0-b305-4b64-83b1-9e710252bb7b.lovable.app-1786123801739.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b5dc336a20bfc8b0fa2ea968b355f3a1/id-preview-c2a3e44c--2b7412f0-b305-4b64-83b1-9e710252bb7b.lovable.app-1786123801739.png" },
     ],
     links: [
       {

@@ -20,17 +20,17 @@ import blog3 from "@/assets/blog-3.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Landor — Real Estate Development & Property Solutions" },
+      { title: "HomeCraft — Real Estate Development & Property Solutions" },
       {
         name: "description",
         content:
           "Landor creates landmark real estate projects: development, investment, construction management and architecture with enduring value.",
       },
-      { property: "og:title", content: "Landor — Real Estate Development" },
+      { property: "og:title", content: "HomeCraft — Real Estate Development & Property Solutions" },
       {
         property: "og:description",
         content:
-          "Defining the standards of real estate development. Landmark projects with enduring value for investors and communities.",
+          "Landor creates landmark real estate projects: development, investment, construction management and architecture with enduring value.",
       },
     ],
   }),
