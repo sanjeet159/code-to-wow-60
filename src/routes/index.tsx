@@ -502,7 +502,7 @@ function Index() {
                       <ArrowIcon />
                     </a>
                   </div>
-                </article>
+                </Reveal>
               ))}
             </div>
           </div>
