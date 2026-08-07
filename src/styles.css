@@ -220,3 +220,121 @@
   }
 }
 
+
+/* ---------- Scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  will-change: transform, opacity, clip-path;
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    clip-path 1.1s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.9s ease;
+}
+.reveal-up {
+  transform: translateY(34px);
+}
+.reveal-left {
+  transform: translateX(-40px);
+}
+.reveal-right {
+  transform: translateX(40px);
+}
+.reveal-scale {
+  transform: scale(0.94);
+}
+.reveal-fade {
+  filter: blur(6px);
+}
+.reveal-clip {
+  clip-path: inset(0 0 100% 0);
+  transform: scale(1.04);
+  opacity: 1;
+}
+.reveal[data-shown="true"] {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  clip-path: inset(0 0 0 0);
+}
+
+/* ---------- Entrance (above the fold) ---------- */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes image-unveil {
+  from {
+    clip-path: inset(0 0 100% 0);
+    transform: scale(1.08);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    transform: scale(1);
+  }
+}
+@utility rise-in {
+  opacity: 0;
+  animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@utility image-unveil {
+  animation: image-unveil 1.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ---------- Micro-interactions ---------- */
+@utility card-rise {
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.4s ease;
+}
+.card-rise:hover {
+  transform: translateY(-6px);
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@utility float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+@keyframes scroll-hint {
+  0% {
+    transform: translateY(-60%);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(60%);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .rise-in,
+  .image-unveil,
+  .marquee-track,
+  .float-slow {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    filter: none !important;
+  }
+}
