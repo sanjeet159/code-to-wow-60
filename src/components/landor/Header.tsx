@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const NAV = ["Home", "About", "Services", "Projects", "Team", "Blog"];
+const NAV = ["Home", "About", "Services", "Projects", "Reviews", "Team"];
 
 export function ArrowIcon({ className = "" }: { className?: string }) {
   return (
