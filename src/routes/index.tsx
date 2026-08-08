@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Header, ArrowIcon } from "@/components/landor/Header";
 import { Services } from "@/components/landor/Services";
 import { Reveal, CountUp } from "@/components/landor/Reveal";
+import { Parallax, TiltCard, RatingBars, Stars, CursorGlow } from "@/components/landor/Motion";
 
 import heroImg from "@/assets/hero.jpg";
 import aboutImg from "@/assets/about.jpg";
@@ -17,20 +18,42 @@ import blog1 from "@/assets/blog-1.jpg";
 import blog2 from "@/assets/blog-2.jpg";
 import blog3 from "@/assets/blog-3.jpg";
 
+const TITLE = "Home Craft — Real Estate & Interior Design in Pune";
+const DESCRIPTION =
+  "Home Craft is a Pune real estate consultant rated 4.3★ for buying agent services, commercial property sales & consulting, rentals, plots and interior design. Call 084849 47570.";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "HomeCraft — Real Estate Development & Property Solutions" },
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+    ],
+    scripts: [
       {
-        name: "description",
-        content:
-          "Landor creates landmark real estate projects: development, investment, construction management and architecture with enduring value.",
-      },
-      { property: "og:title", content: "HomeCraft — Real Estate Development & Property Solutions" },
-      {
-        property: "og:description",
-        content:
-          "Landor creates landmark real estate projects: development, investment, construction management and architecture with enduring value.",
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "RealEstateAgent",
+          name: "Home Craft Real Estate & Interior Design",
+          telephone: "+91 84849 47570",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "C1C 504, Brooklyn Pride World City, Charholi Budruk",
+            addressLocality: "Pune",
+            addressRegion: "Maharashtra",
+            postalCode: "412105",
+            addressCountry: "IN",
+          },
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "4.3",
+            reviewCount: "12",
+          },
+        }),
       },
     ],
   }),
@@ -40,97 +63,106 @@ export const Route = createFileRoute("/")({
 const HERO_CARDS = [
   {
     no: "01",
-    title: "High quality products",
-    text: "The customer service center is ready to serve 24/7, support the residents to provide information.",
+    title: "Buy · Sale · Rent",
+    text: "Flats, plots, shops and offices across Pune and Pimpri-Chinchwad — verified listings, honest pricing, no runaround.",
   },
   {
     no: "02",
-    title: "Professional service",
-    text: "Our service center operates around the clock, helping residents with guidance and support whenever needed.",
+    title: "Commercial consulting",
+    text: "Buying, selling and leasing advice for commercial property, backed by real location and rent-yield data.",
   },
   {
     no: "03",
-    title: "Real partnership",
-    text: "Residents can rely on our 24/7 support desk for information and assistance at any time.",
+    title: "Interior design",
+    text: "Turnkey interiors for homes and offices — layout, modular work, finishes and handover under one roof.",
   },
 ];
 
 const PROJECTS = [
-  { title: "Apartment building", place: "Main Street, Suite 200", year: "2019", img: project1 },
-  { title: "Office networks", place: "Main Street, Suite 200", year: "2020", img: project2 },
-  { title: "Hotel paradaise", place: "Main Street, Suite 200", year: "2019", img: project3 },
-  { title: "Hotel of hearts", place: "Main Street, Suite 200", year: "2020", img: project4 },
+  { title: "3BHK residence, Charholi", place: "Pride World City, Pune", year: "Interior", img: project1 },
+  { title: "Retail showroom fit-out", place: "Porwal Road, Lohegaon", year: "Commercial", img: project2 },
+  { title: "Investor apartment portfolio", place: "Pimpri-Chinchwad", year: "Resale", img: project3 },
+  { title: "Office interiors, 2400 sq ft", place: "Dream Elements, Lohegaon", year: "Turnkey", img: project4 },
 ];
 
-const TESTIMONIALS = [
+const REVIEWS = [
   {
-    quote:
-      "We were blown away by the clarity of their design process. We needed a commercial space that reflected our brand values—calm, clean, and conscious. Landor brought that vision to life without compromise.",
-    name: "Anna de la Vega",
-    role: "Owner of Tiga Cafe",
+    quote: "He is very helpful and understands your need and connects with right tenant.",
+    name: "Google review",
+    role: "Verified customer",
     img: team2,
   },
   {
-    quote:
-      "I am extremely satisfied with the quality of service I received; the agency's professionalism, reliability and seamless process made purchasing my property not only easy but genuinely enjoyable.",
-    name: "Marcus Feld",
-    role: "Private Investor",
+    quote: "Great service and understanding of the requirement.",
+    name: "Google review",
+    role: "Verified customer",
     img: team1,
   },
   {
-    quote:
-      "This real estate agency exceeded my expectations by providing attentive guidance, honest advice, and timely communication at every stage, ensuring that I always felt informed and confident.",
-    name: "Peter Grant",
-    role: "Managing Director",
+    quote: "I'm a totally satisfied customer.",
+    name: "Google review",
+    role: "Verified customer",
     img: team3,
   },
 ];
 
-const BRANDS = ["Vertex", "Northline", "Aurea", "Merik", "Solstice", "Kavan"];
+const RATING_SPLIT = [
+  { stars: 5, pct: 75 },
+  { stars: 4, pct: 8 },
+  { stars: 3, pct: 4 },
+  { stars: 2, pct: 4 },
+  { stars: 1, pct: 17 },
+];
+
+const MARQUEE = [
+  "Buying agent services",
+  "Commercial property sales",
+  "Commercial consulting",
+  "Rent & tenants",
+  "Plots",
+  "Interior design",
+];
 
 const CHOOSE = [
-  "Client approach",
-  "Client strategy",
-  "Professional client",
-  "Architecture design",
-  "Community living",
-  "Personalized client",
-  "Sustainable build",
-  "Dedicated client",
+  { t: "Requirement first", d: "We listen before we list. Every search starts from your budget, locality and timeline." },
+  { t: "Right tenant matching", d: "Owners get screened, reliable tenants — the thing our reviewers mention most." },
+  { t: "Verified paperwork", d: "Title, agreement, registration and society NOC checked before you commit." },
+  { t: "Local Pune expertise", d: "Charholi, Lohegaon, Wagholi, Moshi and Pimpri-Chinchwad covered street by street." },
+  { t: "Commercial know-how", d: "Footfall, frontage and rent benchmarking for shops, offices and showrooms." },
+  { t: "Interiors in-house", d: "Buy and furnish with one team — no coordination gaps between broker and designer." },
+  { t: "Transparent pricing", d: "Clear brokerage, clear scope, quotes in writing before any work begins." },
+  { t: "After-handover support", d: "We stay reachable for renewals, resale and repeat interior work." },
 ];
 
 const TEAM = [
-  { name: "Cristopher Miller", role: "Engineer of head", img: team1 },
-  { name: "Jonathan Parker", role: "Engineer of head", img: team3 },
-  { name: "Daniel Anderson", role: "Engineer of head", img: team2 },
-  { name: "Michael Thompson", role: "Engineer of head", img: team3 },
-  { name: "Alexander Scott", role: "Engineer of head", img: team1 },
-  { name: "Benjamin Carter", role: "Engineer of head", img: team2 },
+  { name: "Client advisory", role: "Buying & rental guidance", img: team1 },
+  { name: "Commercial desk", role: "Shops, offices, showrooms", img: team3 },
+  { name: "Interior studio", role: "Design & turnkey execution", img: team2 },
 ];
 
 const POSTS = [
   {
     img: blog1,
-    cat: "Real estate",
-    date: "15 March, 2025",
-    title: "Transforming urban spaces with sustainable design",
-    author: "Cristopher Miller",
+    cat: "Buying guide",
+    date: "Pune market",
+    title: "What to check before buying a flat in Charholi Budruk",
+    author: "Home Craft desk",
     avatar: team1,
   },
   {
     img: blog2,
-    cat: "Real estate",
-    date: "15 March, 2025",
-    title: "Naming your real estate company just got a whole lot easier",
-    author: "David Hussy",
+    cat: "Renting",
+    date: "For owners",
+    title: "How we screen tenants so your property stays trouble-free",
+    author: "Home Craft desk",
     avatar: team3,
   },
   {
     img: blog3,
-    cat: "Real estate",
-    date: "15 March, 2025",
-    title: "We design with intention creating spaces that reflect your style",
-    author: "Justin Case",
+    cat: "Interiors",
+    date: "Design notes",
+    title: "Turnkey interiors: what a realistic 2BHK budget looks like",
+    author: "Home Craft desk",
     avatar: team2,
   },
 ];
@@ -143,44 +175,69 @@ function Index() {
       <main>
         {/* Hero */}
         <section id="home" className="relative pt-32 pb-16 lg:pt-44">
-          <div className="mx-auto max-w-[1600px] px-6 lg:px-10">
-            <div className="grid items-end gap-10 lg:grid-cols-[1fr_320px]">
+          <CursorGlow />
+          <div className="relative mx-auto max-w-[1600px] px-6 lg:px-10">
+            <div className="grid items-end gap-10 lg:grid-cols-[1fr_340px]">
               <div>
-                <h1 className="display-xl max-w-4xl">
-                  <span className="rise-in block" style={{ animationDelay: "80ms" }}>
-                    Defining the standards
+                <span
+                  className="rise-in eyebrow"
+                  style={{ animationDelay: "40ms" }}
+                >
+                  Real estate consultant · Pune
+                </span>
+                <h1 className="display-xl mt-5 max-w-4xl">
+                  <span className="rise-in block" style={{ animationDelay: "120ms" }}>
+                    Homes, shops and
                   </span>
-                  <span className="rise-in block" style={{ animationDelay: "200ms" }}>
-                    of real estate <span className="text-accent">development</span>
+                  <span className="rise-in block" style={{ animationDelay: "240ms" }}>
+                    interiors, <span className="shimmer-text">crafted right</span>
                   </span>
                 </h1>
-                <a
-                  href="#services"
-                  className="rise-in group mt-10 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm text-primary-foreground transition-all duration-300 hover:opacity-85 hover:gap-4"
-                  style={{ animationDelay: "460ms" }}
-                >
-                  Discover More
-                  <ArrowIcon />
-                </a>
+                <div className="flex flex-wrap items-center gap-4">
+                  <a
+                    href="tel:+918484947570"
+                    className="rise-in group mt-10 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm text-primary-foreground transition-all duration-300 hover:gap-4 hover:opacity-85"
+                    style={{ animationDelay: "460ms" }}
+                  >
+                    Call 084849 47570
+                    <ArrowIcon />
+                  </a>
+                  <a
+                    href="#services"
+                    className="rise-in mt-10 inline-flex items-center gap-2 rounded-full border border-foreground/20 px-7 py-4 text-sm transition-all duration-300 hover:gap-4 hover:bg-secondary"
+                    style={{ animationDelay: "540ms" }}
+                  >
+                    Our services
+                    <ArrowIcon />
+                  </a>
+                </div>
               </div>
-              <p
-                className="rise-in text-muted-foreground lg:pb-4"
-                style={{ animationDelay: "360ms" }}
-              >
-                A privately owned real estate company delivering innovative property solutions
-                across the globe — from concept to community.
-              </p>
+              <div className="rise-in lg:pb-4" style={{ animationDelay: "360ms" }}>
+                <div className="flex items-center gap-3">
+                  <span className="font-display text-4xl">4.3</span>
+                  <div>
+                    <Stars value={4.3} />
+                    <p className="text-xs text-muted-foreground">12 Google reviews</p>
+                  </div>
+                </div>
+                <p className="mt-5 text-muted-foreground">
+                  Buy · Sale · Rent · Plot · Interior Design. A Pune-based consultancy helping
+                  families, owners and investors move with confidence.
+                </p>
+              </div>
             </div>
 
             <div className="mt-14 overflow-hidden rounded-sm">
-              <img
-                src={heroImg}
-                alt="Modern luxury residential tower at golden hour"
-                width={1920}
-                height={1080}
-                className="image-unveil h-[46vh] w-full object-cover lg:h-[72vh]"
-                style={{ animationDelay: "260ms" }}
-              />
+              <Parallax speed={0.07}>
+                <img
+                  src={heroImg}
+                  alt="Modern residential tower in Pune at golden hour"
+                  width={1920}
+                  height={1080}
+                  className="image-unveil h-[46vh] w-full scale-105 object-cover lg:h-[72vh]"
+                  style={{ animationDelay: "260ms" }}
+                />
+              </Parallax>
             </div>
           </div>
         </section>
@@ -189,14 +246,12 @@ function Index() {
         <section className="mx-auto max-w-[1600px] px-6 pb-24 lg:px-10">
           <div className="grid gap-px overflow-hidden rounded-sm bg-border md:grid-cols-3">
             {HERO_CARDS.map((c, i) => (
-              <Reveal
-                key={c.no}
-                delay={i * 120}
-                className="card-rise bg-background p-8 hover:bg-secondary lg:p-10"
-              >
-                <span className="text-xs tracking-[0.2em] text-accent">{c.no}</span>
-                <h3 className="mt-6 text-xl">{c.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{c.text}</p>
+              <Reveal key={c.no} delay={i * 120}>
+                <TiltCard className="h-full bg-background p-8 transition-colors hover:bg-secondary lg:p-10">
+                  <span className="text-xs tracking-[0.2em] text-accent">{c.no}</span>
+                  <h3 className="mt-6 text-xl">{c.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{c.text}</p>
+                </TiltCard>
               </Reveal>
             ))}
           </div>
@@ -205,25 +260,30 @@ function Index() {
         {/* About */}
         <section id="about" className="mx-auto max-w-[1600px] px-6 pb-24 lg:px-10 lg:pb-32">
           <Reveal as="span" className="eyebrow block">
-            About us
+            About Home Craft
           </Reveal>
           <div className="mt-6 grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:items-end">
             <Reveal delay={80}>
               <h2 className="display-lg max-w-3xl">
-                We create landmark real estate projects that bring enduring value to both investors
+                A Pune consultancy that handles the property and the{" "}
+                <span className="text-accent">interiors</span>
               </h2>
             </Reveal>
             <Reveal delay={200} className="flex gap-12">
               <div>
-                <p className="eyebrow">Since</p>
+                <p className="eyebrow">Rating</p>
+                <p className="font-display text-4xl lg:text-5xl">4.3</p>
+              </div>
+              <div>
+                <p className="eyebrow">Reviews</p>
                 <p className="font-display text-4xl lg:text-5xl">
-                  <CountUp to={1998} />
+                  <CountUp to={12} />
                 </p>
               </div>
               <div>
-                <p className="eyebrow">Projects</p>
+                <p className="eyebrow">Services</p>
                 <p className="font-display text-4xl lg:text-5xl">
-                  <CountUp to={2860} suffix="+" />
+                  <CountUp to={5} suffix="+" />
                 </p>
               </div>
             </Reveal>
@@ -233,39 +293,42 @@ function Index() {
             <Reveal variant="clip" className="overflow-hidden rounded-sm">
               <img
                 src={aboutImg}
-                alt="Minimalist modern villa exterior"
+                alt="Interior of a modern Pune apartment designed by Home Craft"
                 loading="lazy"
                 width={1024}
                 height={1280}
-                className="h-[420px] w-full object-cover transition-transform duration-[1200ms] hover:scale-105 lg:h-[560px]"
+                className="h-[420px] w-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-105 lg:h-[560px]"
               />
             </Reveal>
             <Reveal variant="right" delay={120} className="flex flex-col justify-center">
               <h3 className="display-lg">
-                We create <span className="text-accent">modernity</span>
+                Buy. Sale. Rent. <span className="text-accent">Design.</span>
               </h3>
               <p className="mt-6 max-w-lg text-muted-foreground">
-                We are a privately owned real estate company dedicated to delivering innovative
-                property solutions across the globe. Our team specializes in real estate
-                investment, property management, and development, with a clear focus on quality and
-                sustainability. By combining market expertise with a client-first approach, we shape
-                something remarkable.
+                Home Craft Real Estate &amp; Interior Design works with buyers, owners and
+                investors across Charholi Budruk, Lohegaon, Wagholi and Pimpri-Chinchwad. We
+                handle buying agent services, commercial property buying and sales, commercial
+                property consulting, rentals and plots — and then design and execute the interiors
+                once the keys are yours.
               </p>
               <div className="mt-10 flex flex-wrap items-center gap-8 border-t border-border pt-8">
                 <div>
                   <p className="text-sm text-muted-foreground">
-                    If you have any question? Feel free
-                    <br /> to contact with our team.
+                    Open 10:00 am – 8:00 pm
+                    <br /> Speak to a consultant today.
                   </p>
-                  <a href="tel:+99926542563" className="mt-2 block font-display text-2xl">
-                    +999 2654 2563
+                  <a
+                    href="tel:+918484947570"
+                    className="link-sweep mt-2 inline-block font-display text-2xl"
+                  >
+                    084849 47570
                   </a>
                 </div>
                 <a
-                  href="#services"
-                  className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-6 py-3 text-sm transition-colors hover:bg-secondary"
+                  href="#contact"
+                  className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-6 py-3 text-sm transition-all duration-300 hover:gap-4 hover:bg-secondary"
                 >
-                  Learn More
+                  Visit our office
                   <ArrowIcon />
                 </a>
               </div>
@@ -273,12 +336,12 @@ function Index() {
           </div>
         </section>
 
-        {/* Mission */}
+        {/* Mission strip */}
         <section className="border-y border-border bg-secondary py-24 lg:py-32">
           <div className="mx-auto max-w-[1600px] px-6 lg:px-10">
             <Reveal>
               <h2 className="display-lg max-w-3xl">
-                We strive to create opportunities that elevate the way people live
+                Property that fits the life you're actually planning
               </h2>
             </Reveal>
             <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-5">
@@ -287,13 +350,13 @@ function Index() {
                   key={i}
                   variant="clip"
                   delay={i * 110}
-                  className="overflow-hidden rounded-sm"
+                  className="group overflow-hidden rounded-sm"
                 >
                   <img
                     src={src}
-                    alt="Landor project"
+                    alt="Home Craft project in Pune"
                     loading="lazy"
-                    className="h-40 w-full object-cover transition-transform duration-700 hover:scale-110 lg:h-56"
+                    className="h-40 w-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110 lg:h-56"
                   />
                 </Reveal>
               ))}
@@ -308,17 +371,24 @@ function Index() {
           <Reveal as="span" className="eyebrow block">
             Selected work
           </Reveal>
-          <div className="mt-10 grid gap-10 md:grid-cols-2">
+          <Reveal delay={80}>
+            <h2 className="display-lg mt-5 max-w-2xl">Recent deals and fit-outs around Pune</h2>
+          </Reveal>
+          <div className="mt-12 grid gap-10 md:grid-cols-2">
             {PROJECTS.map((p, i) => (
               <Reveal key={p.title} delay={(i % 2) * 140} variant="up">
-                <a href="#projects" className="group block">
-                  <div className="overflow-hidden rounded-sm">
+                <a href="#contact" className="group block">
+                  <div className="relative overflow-hidden rounded-sm">
                     <img
                       src={p.img}
                       alt={p.title}
                       loading="lazy"
                       className="h-72 w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110 lg:h-[420px]"
                     />
+                    <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/50 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                    <span className="pointer-events-none absolute bottom-5 left-5 translate-y-3 rounded-full bg-accent px-4 py-2 text-xs uppercase tracking-widest text-accent-foreground opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                      {p.year}
+                    </span>
                   </div>
                   <div className="mt-5 flex items-start justify-between gap-6">
                     <div>
@@ -335,81 +405,93 @@ function Index() {
           </div>
         </section>
 
-        {/* Testimonials */}
-        <section className="border-y border-border bg-secondary py-24 lg:py-32">
-          <div className="mx-auto max-w-[1600px] px-6 lg:px-10">
+        {/* Reviews */}
+        <section id="reviews" className="relative border-y border-border bg-secondary py-24 lg:py-32">
+          <CursorGlow />
+          <div className="relative mx-auto max-w-[1600px] px-6 lg:px-10">
             <Reveal as="span" className="eyebrow block">
-              Testimonials
+              Google review summary
             </Reveal>
-            <Reveal delay={80}>
-              <h2 className="display-lg mt-5 max-w-3xl">
-                Hear the voices from the spaces we've built that inspire connection
-              </h2>
-            </Reveal>
+            <div className="mt-5 grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:items-end">
+              <Reveal>
+                <h2 className="display-lg max-w-xl">
+                  Rated <span className="text-accent">4.3</span> by the people we've worked with
+                </h2>
+              </Reveal>
+              <Reveal delay={120} className="flex items-center gap-8">
+                <div className="text-center">
+                  <p className="font-display text-6xl">4.3</p>
+                  <Stars value={4.3} className="mt-1" />
+                  <p className="mt-1 text-xs text-muted-foreground">(12)</p>
+                </div>
+                <RatingBars data={RATING_SPLIT} className="w-full max-w-sm" />
+              </Reveal>
+            </div>
+
             <div className="mt-14 grid gap-6 lg:grid-cols-3">
-              {TESTIMONIALS.map((t, i) => (
-                <Reveal
-                  key={t.name}
-                  variant="scale"
-                  delay={i * 140}
-                  className="card-rise flex flex-col justify-between rounded-sm bg-card p-8 lg:p-10"
-                >
-                  <blockquote className="text-lg leading-relaxed">"{t.quote}"</blockquote>
-                  <figcaption className="mt-8 flex items-center gap-4 border-t border-border pt-6">
-                    <img
-                      src={t.img}
-                      alt={t.name}
-                      loading="lazy"
-                      className="h-12 w-12 rounded-full object-cover"
-                    />
+              {REVIEWS.map((t, i) => (
+                <Reveal key={t.quote} variant="scale" delay={i * 140}>
+                  <TiltCard className="flex h-full flex-col justify-between rounded-sm bg-card p-8 lg:p-10">
                     <div>
-                      <p className="text-sm font-medium">{t.name}</p>
-                      <p className="text-sm text-muted-foreground">{t.role}</p>
+                      <Stars value={5} />
+                      <blockquote className="mt-5 text-lg leading-relaxed">"{t.quote}"</blockquote>
                     </div>
-                  </figcaption>
+                    <figcaption className="mt-8 flex items-center gap-4 border-t border-border pt-6">
+                      <img
+                        src={t.img}
+                        alt=""
+                        loading="lazy"
+                        className="h-12 w-12 rounded-full object-cover"
+                      />
+                      <div>
+                        <p className="text-sm font-medium">{t.name}</p>
+                        <p className="text-sm text-muted-foreground">{t.role}</p>
+                      </div>
+                    </figcaption>
+                  </TiltCard>
                 </Reveal>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Brands */}
-        <section className="overflow-hidden py-16">
-          <div className="marquee-track flex w-max items-center gap-20 px-10">
-            {[...BRANDS, ...BRANDS].map((b, i) => (
+        {/* Service marquee */}
+        <section className="overflow-hidden border-b border-border py-10">
+          <div className="marquee-track flex w-max items-center gap-16 px-10">
+            {[...MARQUEE, ...MARQUEE].map((b, i) => (
               <span
                 key={`${b}-${i}`}
-                className="font-display text-3xl tracking-tight text-muted-foreground/50"
+                className="flex items-center gap-16 font-display text-2xl tracking-tight text-muted-foreground/60 lg:text-3xl"
               >
                 {b}
+                <span className="h-1.5 w-1.5 rounded-full bg-accent" />
               </span>
             ))}
           </div>
         </section>
 
         {/* Why choose */}
-        <section className="bg-surface-dark py-24 text-surface-dark-foreground lg:py-32">
-          <div className="mx-auto max-w-[1600px] px-6 lg:px-10">
+        <section className="relative bg-surface-dark py-24 text-surface-dark-foreground lg:py-32">
+          <CursorGlow />
+          <div className="relative mx-auto max-w-[1600px] px-6 lg:px-10">
             <Reveal as="span" className="eyebrow-light block">
-              Why choose Landor
+              Why choose Home Craft
             </Reveal>
             <Reveal delay={80}>
               <h2 className="display-lg mt-5 max-w-2xl">
-                An exceptional quality that can't be beaten
+                Straight answers, verified paperwork, no pressure
               </h2>
             </Reveal>
             <div className="mt-14 grid gap-px bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
               {CHOOSE.map((c, i) => (
                 <Reveal
-                  key={c}
+                  key={c.t}
                   delay={(i % 4) * 100}
-                  className="card-rise bg-surface-dark p-8 hover:bg-white/5"
+                  className="card-rise group bg-surface-dark p-8 transition-colors hover:bg-white/5"
                 >
                   <span className="text-xs text-white/35">0{i + 1}</span>
-                  <h3 className="mt-6 text-xl">{c}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-white/60">
-                    Our goal is zero incidents and our lost time frequency rate is industry leading.
-                  </p>
+                  <h3 className="mt-6 text-xl transition-colors group-hover:text-accent">{c.t}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-white/60">{c.d}</p>
                 </Reveal>
               ))}
             </div>
@@ -420,24 +502,24 @@ function Index() {
         <section id="team" className="mx-auto max-w-[1600px] px-6 py-24 lg:px-10 lg:py-32">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <Reveal variant="left">
-              <span className="eyebrow">Our team members</span>
+              <span className="eyebrow">How we're organised</span>
               <h2 className="display-lg mt-5 max-w-3xl">
-                We blend creativity & innovation to future-proof your spaces and communities
+                One small team across advisory, commercial and interiors
               </h2>
             </Reveal>
             <Reveal variant="right" delay={120} className="w-fit">
               <a
-                href="#team"
+                href="tel:+918484947570"
                 className="inline-flex w-fit items-center gap-2 rounded-full border border-foreground/20 px-6 py-3 text-sm transition-all duration-300 hover:gap-4 hover:bg-secondary"
               >
-                See all Member
+                Talk to us
                 <ArrowIcon />
               </a>
             </Reveal>
           </div>
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {TEAM.map((m, i) => (
-              <Reveal key={`${m.name}-${i}`} delay={(i % 3) * 120} className="group">
+              <Reveal key={m.name} delay={(i % 3) * 120} className="group">
                 <div className="overflow-hidden rounded-sm bg-secondary">
                   <img
                     src={m.img}
@@ -455,14 +537,14 @@ function Index() {
           </div>
         </section>
 
-        {/* Blog */}
+        {/* Insights */}
         <section id="blog" className="border-t border-border py-24 lg:py-32">
           <div className="mx-auto max-w-[1600px] px-6 lg:px-10">
             <Reveal as="span" className="eyebrow block">
-              Our blog post
+              Insights
             </Reveal>
             <Reveal delay={80}>
-              <h2 className="display-lg mt-5">Discover inspiration and trends</h2>
+              <h2 className="display-lg mt-5">Practical notes on the Pune market</h2>
             </Reveal>
             <div className="mt-14 grid gap-8 lg:grid-cols-3">
               {POSTS.map((p, i) => (
@@ -480,27 +562,23 @@ function Index() {
                     <span>·</span>
                     <span>{p.date}</span>
                   </div>
-                  <h3 className="mt-3 text-xl leading-snug">{p.title}</h3>
+                  <h3 className="mt-3 text-xl leading-snug transition-colors group-hover:text-accent">
+                    {p.title}
+                  </h3>
                   <div className="mt-6 flex items-center justify-between border-t border-border pt-5">
                     <div className="flex items-center gap-3">
                       <img
                         src={p.avatar}
-                        alt={p.author}
+                        alt=""
                         loading="lazy"
                         className="h-9 w-9 rounded-full object-cover"
                       />
-                      <div>
-                        <p className="text-sm">{p.author}</p>
-                        <p className="text-xs text-muted-foreground">Engineer</p>
-                      </div>
+                      <p className="text-sm">{p.author}</p>
                     </div>
-                    <a
-                      href="#blog"
-                      className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-                    >
-                      Read More
+                    <span className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-all duration-300 group-hover:gap-4 group-hover:text-foreground">
+                      Read more
                       <ArrowIcon />
-                    </a>
+                    </span>
                   </div>
                 </Reveal>
               ))}
@@ -509,91 +587,81 @@ function Index() {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer id="contact" className="bg-surface-dark text-surface-dark-foreground">
-        <div className="mx-auto max-w-[1600px] px-6 py-24 lg:px-10 lg:py-32">
+      {/* Footer / contact */}
+      <footer id="contact" className="relative bg-surface-dark text-surface-dark-foreground">
+        <CursorGlow />
+        <div className="relative mx-auto max-w-[1600px] px-6 py-24 lg:px-10 lg:py-32">
           <div className="grid gap-10 border-b border-white/10 pb-16 lg:grid-cols-[1.2fr_1fr] lg:items-end">
-            <h2 className="display-xl">Let's work together</h2>
-            <div>
+            <Reveal>
+              <h2 className="display-xl">Let's find your place</h2>
+            </Reveal>
+            <Reveal delay={120}>
               <p className="max-w-md text-white/60">
-                We are a privately owned real estate company dedicated to delivering innovative
-                property solutions across the globe.
+                Buying, selling, renting or redesigning in Pune? Tell us the requirement and we'll
+                come back with options that actually fit.
               </p>
               <a
-                href="mailto:hello@landor.com"
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-7 py-4 text-sm text-accent-foreground transition-opacity hover:opacity-85"
+                href="tel:+918484947570"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-7 py-4 text-sm text-accent-foreground transition-all duration-300 hover:gap-4 hover:opacity-85"
               >
-                Get a Free Quote
+                Call 084849 47570
                 <ArrowIcon />
               </a>
-            </div>
+            </Reveal>
           </div>
 
           <div className="grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
             <div>
-              <p className="eyebrow-light">Information</p>
-              <a href="tel:+0993266523" className="mt-4 block font-display text-2xl">
-                +(099) 326-6523
-              </a>
-              <a href="mailto:hello@landor.com" className="mt-2 block text-white/60">
-                hello@landor.com
-              </a>
-            </div>
-            <div>
-              <p className="eyebrow-light">Company</p>
-              <ul className="mt-4 space-y-2 text-white/60">
-                {["About us", "Our team", "Solutions", "Why choose us", "Partners", "Core values"].map(
-                  (l) => (
-                    <li key={l}>
-                      <a href="#about" className="transition-colors hover:text-white">
-                        {l}
-                      </a>
-                    </li>
-                  ),
-                )}
-              </ul>
-            </div>
-            <div>
-              <p className="eyebrow-light">Explore</p>
-              <ul className="mt-4 space-y-2 text-white/60">
-                {["Our projects", "Terms & conditions", "Support center", "News & updates", "Contact"].map(
-                  (l) => (
-                    <li key={l}>
-                      <a href="#projects" className="transition-colors hover:text-white">
-                        {l}
-                      </a>
-                    </li>
-                  ),
-                )}
-              </ul>
-            </div>
-            <div>
-              <p className="eyebrow-light">Newsletter</p>
+              <p className="eyebrow-light">Office</p>
               <p className="mt-4 text-white/60">
-                Sign up for our newsletter to get latest insights and updates
+                C1C 504, Brooklyn, Pride World City, near Manhattan, Charholi Budruk, Pune,
+                Pimpri-Chinchwad, Maharashtra 412105
               </p>
-              <form
-                className="mt-5 flex items-center gap-2 border-b border-white/20 pb-3"
-                onSubmit={(e) => e.preventDefault()}
+            </div>
+            <div>
+              <p className="eyebrow-light">Branch</p>
+              <p className="mt-4 text-white/60">
+                Shop No. A2, Dream Elements Building, opp. Orchid Hospital, Porwal Road, Lohegaon,
+                Pune 411047
+              </p>
+            </div>
+            <div>
+              <p className="eyebrow-light">Contact</p>
+              <a
+                href="tel:+918484947570"
+                className="link-sweep mt-4 inline-block font-display text-2xl"
               >
-                <input
-                  type="email"
-                  required
-                  placeholder="Email address"
-                  aria-label="Email address"
-                  className="w-full bg-transparent text-sm outline-none placeholder:text-white/40"
-                />
-                <button type="submit" className="text-sm text-accent">
-                  Subscribe
-                </button>
-              </form>
+                084849 47570
+              </a>
+              <p className="mt-3 text-white/60">Open daily · 10:00 am – 8:00 pm</p>
+              <a
+                href="https://maps.google.com/?q=Home+Craft+Real+Estate+Interior+Design+Charholi+Budruk+Pune"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-3 inline-flex items-center gap-2 text-sm text-accent transition-all duration-300 hover:gap-4"
+              >
+                Get directions
+                <ArrowIcon />
+              </a>
+            </div>
+            <div>
+              <p className="eyebrow-light">Services</p>
+              <ul className="mt-4 space-y-2 text-white/60">
+                {MARQUEE.map((l) => (
+                  <li key={l}>
+                    <a href="#services" className="link-sweep transition-colors hover:text-white">
+                      {l}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
           <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-white/40 md:flex-row">
-            <p>© {new Date().getFullYear()} Landor. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Home Craft Real Estate &amp; Interior Design.</p>
             <p className="font-display text-4xl tracking-[-0.05em] text-white/10 lg:text-6xl">
-              landor
+              home craft
             </p>
           </div>
         </div>
