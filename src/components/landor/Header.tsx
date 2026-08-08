@@ -77,12 +77,13 @@ export function Header() {
 
         <div className="flex items-center gap-3">
           <a
-            href="#contact"
-            className="hidden items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm text-primary-foreground transition-opacity hover:opacity-85 sm:inline-flex"
+            href="tel:+918484947570"
+            className="group hidden items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm text-primary-foreground transition-all duration-300 hover:gap-4 hover:opacity-85 sm:inline-flex"
           >
-            Contact us
+            084849 47570
             <ArrowIcon />
           </a>
+
           <button
             type="button"
             aria-label="Toggle menu"
