@@ -8,14 +8,43 @@ import img4 from "@/assets/project-4.jpg";
 import img5 from "@/assets/about.jpg";
 
 const SERVICES = [
-  { no: "01", title: "Real estate development", img: img1 },
-  { no: "02", title: "Sales and marketing", img: img2 },
-  { no: "03", title: "Construction management", img: img3 },
-  { no: "04", title: "Investment and capital", img: img4 },
-  { no: "05", title: "Architecture and designing", img: img5 },
+  {
+    no: "01",
+    title: "Buying agent services",
+    img: img1,
+    text: "We shortlist, verify and negotiate on your behalf — flats, plots and villas across Pune and Pimpri-Chinchwad — so you buy with complete clarity on price, paperwork and possession.",
+    tags: ["Buy", "Site visits", "Documentation"],
+  },
+  {
+    no: "02",
+    title: "Commercial property buying & sales",
+    img: img2,
+    text: "Shops, offices and showrooms sourced with real footfall data and honest rental yields, from first shortlist to registration.",
+    tags: ["Commercial", "Investment", "Resale"],
+  },
+  {
+    no: "03",
+    title: "Commercial property consulting",
+    img: img3,
+    text: "Location studies, rent benchmarking and tenant matching for owners who want their commercial asset working harder.",
+    tags: ["Consulting", "Leasing", "Valuation"],
+  },
+  {
+    no: "04",
+    title: "Rent & tenant matching",
+    img: img4,
+    text: "We understand your requirement first, then connect you with the right tenant or the right home — a service our clients repeatedly call out in reviews.",
+    tags: ["Rent", "Tenants", "Owners"],
+  },
+  {
+    no: "05",
+    title: "Interior design & turnkey fit-out",
+    img: img5,
+    text: "Full interior design and execution for homes and offices: layouts, modular work, finishes and handover — designed around how you actually live.",
+    tags: ["Interior design", "Turnkey", "Modular"],
+  },
 ];
 
-const TAGS = ["Hospitality", "Real estate", "Marketing"];
 
 export function Services() {
   const [active, setActive] = useState(0);
