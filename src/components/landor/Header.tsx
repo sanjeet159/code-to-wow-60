@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const NAV = ["Home", "About", "Services", "Projects", "Team", "Blog"];
+const NAV = ["Home", "About", "Services", "Projects", "Reviews", "Team"];
 
 export function ArrowIcon({ className = "" }: { className?: string }) {
   return (
@@ -49,8 +49,17 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex h-20 max-w-[1600px] items-center justify-between px-6 lg:px-10">
-        <a href="#top" className="font-display text-xl tracking-[-0.05em] text-foreground">
-          landor<span className="text-accent">.</span>
+        <a href="#top" className="group flex items-center gap-3">
+          <span className="relative flex h-9 w-9 items-center justify-center rounded-sm bg-primary text-primary-foreground">
+            <span className="absolute inset-0 halo rounded-sm bg-accent/40 blur-md" aria-hidden />
+            <span className="relative font-display text-sm">HC</span>
+          </span>
+          <span className="font-display text-xl leading-none tracking-[-0.04em] text-foreground">
+            Home Craft<span className="text-accent">.</span>
+            <span className="mt-1 block text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
+              Real Estate &amp; Interiors
+            </span>
+          </span>
         </a>
 
         <nav className="hidden items-center gap-9 xl:flex">
@@ -58,21 +67,23 @@ export function Header() {
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="link-sweep text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               {item}
             </a>
           ))}
         </nav>
 
+
         <div className="flex items-center gap-3">
           <a
-            href="#contact"
-            className="hidden items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm text-primary-foreground transition-opacity hover:opacity-85 sm:inline-flex"
+            href="tel:+918484947570"
+            className="group hidden items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm text-primary-foreground transition-all duration-300 hover:gap-4 hover:opacity-85 sm:inline-flex"
           >
-            Contact us
+            084849 47570
             <ArrowIcon />
           </a>
+
           <button
             type="button"
             aria-label="Toggle menu"
