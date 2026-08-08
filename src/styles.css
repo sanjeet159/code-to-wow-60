@@ -445,3 +445,15 @@
     filter: none !important;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .shimmer-text,
+  .halo,
+  .marquee-rev {
+    animation: none !important;
+  }
+  .cursor-glow,
+  .sheen::after {
+    display: none !important;
+  }
+}
