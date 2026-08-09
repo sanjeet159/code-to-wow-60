@@ -18,9 +18,9 @@ import blog1 from "@/assets/blog-1.jpg";
 import blog2 from "@/assets/blog-2.jpg";
 import blog3 from "@/assets/blog-3.jpg";
 
-const TITLE = "Home Craft — Real Estate & Interior Design in Pune";
+const TITLE = "Home Craft — Real Estate Consultant in Pune";
 const DESCRIPTION =
-  "Home Craft is a Pune real estate consultant rated 4.3★ for buying agent services, commercial property sales & consulting, rentals, plots and interior design. Call 084849 47570.";
+  "Home Craft is a Pune real estate consultant rated 4.3★ for buying agent services, commercial property sales & consulting, rentals and plots. Call 084849 47570.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -38,7 +38,7 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "RealEstateAgent",
-          name: "Home Craft Real Estate & Interior Design",
+          name: "Home Craft Real Estate",
           telephone: "+91 84849 47570",
           address: {
             "@type": "PostalAddress",
@@ -73,16 +73,16 @@ const HERO_CARDS = [
   },
   {
     no: "03",
-    title: "Interior design",
-    text: "Turnkey interiors for homes and offices — layout, modular work, finishes and handover under one roof.",
+    title: "Plots & land",
+    text: "Clear-title plots and NA land across Pune's growth corridors, with paperwork checked before you commit.",
   },
 ];
 
 const PROJECTS = [
-  { title: "3BHK residence, Charholi", place: "Pride World City, Pune", year: "Interior", img: project1 },
-  { title: "Retail showroom fit-out", place: "Porwal Road, Lohegaon", year: "Commercial", img: project2 },
+  { title: "3BHK residence, Charholi", place: "Pride World City, Pune", year: "Resale", img: project1 },
+  { title: "Retail showroom deal", place: "Porwal Road, Lohegaon", year: "Commercial", img: project2 },
   { title: "Investor apartment portfolio", place: "Pimpri-Chinchwad", year: "Resale", img: project3 },
-  { title: "Office interiors, 2400 sq ft", place: "Dream Elements, Lohegaon", year: "Turnkey", img: project4 },
+  { title: "Office space, 2400 sq ft", place: "Dream Elements, Lohegaon", year: "Leasing", img: project4 },
 ];
 
 const REVIEWS = [
@@ -120,7 +120,7 @@ const MARQUEE = [
   "Commercial consulting",
   "Rent & tenants",
   "Plots",
-  "Interior design",
+  "Resale & investment",
 ];
 
 const CHOOSE = [
@@ -129,15 +129,15 @@ const CHOOSE = [
   { t: "Verified paperwork", d: "Title, agreement, registration and society NOC checked before you commit." },
   { t: "Local Pune expertise", d: "Charholi, Lohegaon, Wagholi, Moshi and Pimpri-Chinchwad covered street by street." },
   { t: "Commercial know-how", d: "Footfall, frontage and rent benchmarking for shops, offices and showrooms." },
-  { t: "Interiors in-house", d: "Buy and furnish with one team — no coordination gaps between broker and designer." },
+  { t: "Investment view", d: "Rental yield, resale demand and handover timelines factored into every shortlist." },
   { t: "Transparent pricing", d: "Clear brokerage, clear scope, quotes in writing before any work begins." },
-  { t: "After-handover support", d: "We stay reachable for renewals, resale and repeat interior work." },
+  { t: "After-handover support", d: "We stay reachable for renewals, resale and repeat requirements." },
 ];
 
 const TEAM = [
   { name: "Client advisory", role: "Buying & rental guidance", img: team1 },
   { name: "Commercial desk", role: "Shops, offices, showrooms", img: team3 },
-  { name: "Interior studio", role: "Design & turnkey execution", img: team2 },
+  { name: "Rentals desk", role: "Owners & tenant matching", img: team2 },
 ];
 
 const POSTS = [
@@ -159,9 +159,9 @@ const POSTS = [
   },
   {
     img: blog3,
-    cat: "Interiors",
-    date: "Design notes",
-    title: "Turnkey interiors: what a realistic 2BHK budget looks like",
+    cat: "Investment",
+    date: "Market notes",
+    title: "Plot or flat: which holds value better around Pune's PCMC belt",
     author: "Home Craft desk",
     avatar: team2,
   },
@@ -190,7 +190,7 @@ function Index() {
                     Homes, shops and
                   </span>
                   <span className="rise-in block" style={{ animationDelay: "240ms" }}>
-                    interiors, <span className="shimmer-text">crafted right</span>
+                    plots, <span className="shimmer-text">matched right</span>
                   </span>
                 </h1>
                 <div className="flex flex-wrap items-center gap-4">
@@ -221,7 +221,7 @@ function Index() {
                   </div>
                 </div>
                 <p className="mt-5 text-muted-foreground">
-                  Buy · Sale · Rent · Plot · Interior Design. A Pune-based consultancy helping
+                  Buy · Sale · Rent · Plot · Commercial. A Pune-based consultancy helping
                   families, owners and investors move with confidence.
                 </p>
               </div>
@@ -265,8 +265,8 @@ function Index() {
           <div className="mt-6 grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:items-end">
             <Reveal delay={80}>
               <h2 className="display-lg max-w-3xl">
-                A Pune consultancy that handles the property and the{" "}
-                <span className="text-accent">interiors</span>
+                A Pune consultancy that handles the whole{" "}
+                <span className="text-accent">property journey</span>
               </h2>
             </Reveal>
             <Reveal delay={200} className="flex gap-12">
@@ -293,7 +293,7 @@ function Index() {
             <Reveal variant="clip" className="overflow-hidden rounded-sm">
               <img
                 src={aboutImg}
-                alt="Interior of a modern Pune apartment designed by Home Craft"
+                alt="Modern apartment in Pune listed by Home Craft"
                 loading="lazy"
                 width={1024}
                 height={1280}
@@ -302,14 +302,13 @@ function Index() {
             </Reveal>
             <Reveal variant="right" delay={120} className="flex flex-col justify-center">
               <h3 className="display-lg">
-                Buy. Sale. Rent. <span className="text-accent">Design.</span>
+                Buy. Sale. Rent. <span className="text-accent">Invest.</span>
               </h3>
               <p className="mt-6 max-w-lg text-muted-foreground">
-                Home Craft Real Estate &amp; Interior Design works with buyers, owners and
-                investors across Charholi Budruk, Lohegaon, Wagholi and Pimpri-Chinchwad. We
-                handle buying agent services, commercial property buying and sales, commercial
-                property consulting, rentals and plots — and then design and execute the interiors
-                once the keys are yours.
+                Home Craft Real Estate works with buyers, owners and investors across Charholi
+                Budruk, Lohegaon, Wagholi and Pimpri-Chinchwad. We handle buying agent services,
+                commercial property buying and sales, commercial property consulting, rentals and
+                plots — start to registration, with the paperwork checked at every step.
               </p>
               <div className="mt-10 flex flex-wrap items-center gap-8 border-t border-border pt-8">
                 <div>
@@ -504,7 +503,7 @@ function Index() {
             <Reveal variant="left">
               <span className="eyebrow">How we're organised</span>
               <h2 className="display-lg mt-5 max-w-3xl">
-                One small team across advisory, commercial and interiors
+                One small team across advisory, commercial and rentals
               </h2>
             </Reveal>
             <Reveal variant="right" delay={120} className="w-fit">
@@ -597,7 +596,7 @@ function Index() {
             </Reveal>
             <Reveal delay={120}>
               <p className="max-w-md text-white/60">
-                Buying, selling, renting or redesigning in Pune? Tell us the requirement and we'll
+                Buying, selling, renting or investing in Pune? Tell us the requirement and we'll
                 come back with options that actually fit.
               </p>
               <a
@@ -635,7 +634,7 @@ function Index() {
               </a>
               <p className="mt-3 text-white/60">Open daily · 10:00 am – 8:00 pm</p>
               <a
-                href="https://maps.google.com/?q=Home+Craft+Real+Estate+Interior+Design+Charholi+Budruk+Pune"
+                href="https://maps.google.com/?q=Home+Craft+Real+Estate+Charholi+Budruk+Pune"
                 target="_blank"
                 rel="noreferrer"
                 className="mt-3 inline-flex items-center gap-2 text-sm text-accent transition-all duration-300 hover:gap-4"
@@ -659,7 +658,7 @@ function Index() {
           </div>
 
           <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-white/40 md:flex-row">
-            <p>© {new Date().getFullYear()} Home Craft Real Estate &amp; Interior Design.</p>
+            <p>© {new Date().getFullYear()} Home Craft Real Estate.</p>
             <p className="font-display text-4xl tracking-[-0.05em] text-white/10 lg:text-6xl">
               home craft
             </p>

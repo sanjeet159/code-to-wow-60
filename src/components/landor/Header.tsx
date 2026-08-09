@@ -57,7 +57,7 @@ export function Header() {
           <span className="font-display text-xl leading-none tracking-[-0.04em] text-foreground">
             Home Craft<span className="text-accent">.</span>
             <span className="mt-1 block text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
-              Real Estate &amp; Interiors
+              Real Estate Consultants
             </span>
           </span>
         </a>
