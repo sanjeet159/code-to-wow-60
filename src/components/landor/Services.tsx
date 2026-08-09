@@ -38,10 +38,10 @@ const SERVICES = [
   },
   {
     no: "05",
-    title: "Interior design & turnkey fit-out",
+    title: "Plots & land advisory",
     img: img5,
-    text: "Full interior design and execution for homes and offices: layouts, modular work, finishes and handover — designed around how you actually live.",
-    tags: ["Interior design", "Turnkey", "Modular"],
+    text: "Clear-title plots and NA land across Pune's growth corridors — zoning, approvals and resale potential checked before you invest.",
+    tags: ["Plots", "Land", "Investment"],
   },
 ];
 
@@ -56,7 +56,7 @@ export function Services() {
           <div>
             <span className="eyebrow-light">Our Services</span>
             <h2 className="display-lg mt-5 max-w-2xl">
-              Buy · Sale · Rent · Plot · <span className="text-accent">Interior Design</span>
+              Buy · Sale · Rent · Plot · <span className="text-accent">Commercial</span>
             </h2>
           </div>
           <a
