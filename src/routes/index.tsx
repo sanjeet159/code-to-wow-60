@@ -262,29 +262,60 @@ function Index() {
           <Reveal as="span" className="eyebrow block">
             About Home Craft
           </Reveal>
-          <div className="mt-6 grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:items-end">
+          <div className="mt-6 grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:items-start">
             <Reveal delay={80}>
               <h2 className="display-lg max-w-3xl">
                 A Pune consultancy that handles the whole{" "}
                 <span className="text-accent">property journey</span>
               </h2>
+              <p className="mt-6 max-w-xl text-muted-foreground">
+                From first search to final registration, we guide buyers, sellers and investors
+                through Pune's property market with clear advice and verified listings.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                {["Buy", "Sale", "Rent", "Plots", "Commercial"].map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-border bg-secondary px-4 py-1.5 text-sm transition-colors hover:bg-background"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </Reveal>
-            <Reveal delay={200} className="flex gap-12">
-              <div>
-                <p className="eyebrow">Rating</p>
-                <p className="font-display text-4xl lg:text-5xl">4.3</p>
+            <Reveal delay={200} className="flex flex-col gap-8">
+              <div className="flex gap-10">
+                <div>
+                  <p className="eyebrow">Rating</p>
+                  <p className="font-display text-4xl lg:text-5xl">4.3</p>
+                </div>
+                <div>
+                  <p className="eyebrow">Reviews</p>
+                  <p className="font-display text-4xl lg:text-5xl">
+                    <CountUp to={12} />
+                  </p>
+                </div>
+                <div>
+                  <p className="eyebrow">Services</p>
+                  <p className="font-display text-4xl lg:text-5xl">
+                    <CountUp to={5} suffix="+" />
+                  </p>
+                </div>
               </div>
-              <div>
-                <p className="eyebrow">Reviews</p>
-                <p className="font-display text-4xl lg:text-5xl">
-                  <CountUp to={12} />
-                </p>
-              </div>
-              <div>
-                <p className="eyebrow">Services</p>
-                <p className="font-display text-4xl lg:text-5xl">
-                  <CountUp to={5} suffix="+" />
-                </p>
+              <div className="rounded-sm border border-border bg-secondary p-6">
+                <p className="text-sm text-muted-foreground">Areas we cover</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {["Charholi Budruk", "Lohegaon", "Wagholi", "Pimpri-Chinchwad", "Moshi"].map(
+                    (area) => (
+                      <span
+                        key={area}
+                        className="rounded-full border border-border bg-background px-3 py-1 text-xs"
+                      >
+                        {area}
+                      </span>
+                    ),
+                  )}
+                </div>
               </div>
             </Reveal>
           </div>
@@ -338,12 +369,52 @@ function Index() {
         {/* Mission strip */}
         <section className="border-y border-border bg-secondary py-24 lg:py-32">
           <div className="mx-auto max-w-[1600px] px-6 lg:px-10">
-            <Reveal>
-              <h2 className="display-lg max-w-3xl">
-                Property that fits the life you're actually planning
-              </h2>
-            </Reveal>
-            <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-5">
+            <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr] lg:items-end">
+              <Reveal>
+                <h2 className="display-lg max-w-3xl">
+                  Property that fits the life you're actually planning
+                </h2>
+              </Reveal>
+              <Reveal delay={80}>
+                <p className="max-w-lg text-muted-foreground">
+                  We don't just show listings — we match properties to your budget, commute, family
+                  needs and investment goals, then handle the paperwork until you hold the keys.
+                </p>
+              </Reveal>
+            </div>
+
+            <div className="mt-12 grid gap-px overflow-hidden rounded-sm border border-border bg-border md:grid-cols-2 lg:grid-cols-4">
+              {[
+                {
+                  title: "Buyers",
+                  text: "Find the right flat, plot or commercial space from verified listings.",
+                },
+                {
+                  title: "Sellers",
+                  text: "Market-priced listings promoted to serious, screened buyers.",
+                },
+                {
+                  title: "Investors",
+                  text: "Yield-focused shortlists with resale demand and handover timelines.",
+                },
+                {
+                  title: "Owners",
+                  text: "Reliable tenant matching and rental management you can count on.",
+                },
+              ].map((item, i) => (
+                <Reveal
+                  key={item.title}
+                  delay={i * 100}
+                  className="card-rise bg-background p-7 transition-colors hover:bg-secondary lg:p-8"
+                >
+                  <span className="text-xs tracking-[0.2em] text-accent">0{i + 1}</span>
+                  <h3 className="mt-5 text-lg">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.text}</p>
+                </Reveal>
+              ))}
+            </div>
+
+            <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-5">
               {[project1, project2, project3, project4, aboutImg].map((src, i) => (
                 <Reveal
                   key={i}
