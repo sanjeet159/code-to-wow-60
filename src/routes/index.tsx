@@ -596,7 +596,7 @@ function Index() {
             </Reveal>
             <Reveal delay={120}>
               <p className="max-w-md text-white/60">
-                Buying, selling, renting or redesigning in Pune? Tell us the requirement and we'll
+                Buying, selling, renting or investing in Pune? Tell us the requirement and we'll
                 come back with options that actually fit.
               </p>
               <a
