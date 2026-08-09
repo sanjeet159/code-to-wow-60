@@ -369,12 +369,52 @@ function Index() {
         {/* Mission strip */}
         <section className="border-y border-border bg-secondary py-24 lg:py-32">
           <div className="mx-auto max-w-[1600px] px-6 lg:px-10">
-            <Reveal>
-              <h2 className="display-lg max-w-3xl">
-                Property that fits the life you're actually planning
-              </h2>
-            </Reveal>
-            <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-5">
+            <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr] lg:items-end">
+              <Reveal>
+                <h2 className="display-lg max-w-3xl">
+                  Property that fits the life you're actually planning
+                </h2>
+              </Reveal>
+              <Reveal delay={80}>
+                <p className="max-w-lg text-muted-foreground">
+                  We don't just show listings — we match properties to your budget, commute, family
+                  needs and investment goals, then handle the paperwork until you hold the keys.
+                </p>
+              </Reveal>
+            </div>
+
+            <div className="mt-12 grid gap-px overflow-hidden rounded-sm border border-border bg-border md:grid-cols-2 lg:grid-cols-4">
+              {[
+                {
+                  title: "Buyers",
+                  text: "Find the right flat, plot or commercial space from verified listings.",
+                },
+                {
+                  title: "Sellers",
+                  text: "Market-priced listings promoted to serious, screened buyers.",
+                },
+                {
+                  title: "Investors",
+                  text: "Yield-focused shortlists with resale demand and handover timelines.",
+                },
+                {
+                  title: "Owners",
+                  text: "Reliable tenant matching and rental management you can count on.",
+                },
+              ].map((item, i) => (
+                <Reveal
+                  key={item.title}
+                  delay={i * 100}
+                  className="card-rise bg-background p-7 transition-colors hover:bg-secondary lg:p-8"
+                >
+                  <span className="text-xs tracking-[0.2em] text-accent">0{i + 1}</span>
+                  <h3 className="mt-5 text-lg">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.text}</p>
+                </Reveal>
+              ))}
+            </div>
+
+            <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-5">
               {[project1, project2, project3, project4, aboutImg].map((src, i) => (
                 <Reveal
                   key={i}
