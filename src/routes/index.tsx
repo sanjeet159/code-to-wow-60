@@ -262,29 +262,60 @@ function Index() {
           <Reveal as="span" className="eyebrow block">
             About Home Craft
           </Reveal>
-          <div className="mt-6 grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:items-end">
+          <div className="mt-6 grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:items-start">
             <Reveal delay={80}>
               <h2 className="display-lg max-w-3xl">
                 A Pune consultancy that handles the whole{" "}
                 <span className="text-accent">property journey</span>
               </h2>
+              <p className="mt-6 max-w-xl text-muted-foreground">
+                From first search to final registration, we guide buyers, sellers and investors
+                through Pune's property market with clear advice and verified listings.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                {["Buy", "Sale", "Rent", "Plots", "Commercial"].map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-border bg-secondary px-4 py-1.5 text-sm transition-colors hover:bg-background"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </Reveal>
-            <Reveal delay={200} className="flex gap-12">
-              <div>
-                <p className="eyebrow">Rating</p>
-                <p className="font-display text-4xl lg:text-5xl">4.3</p>
+            <Reveal delay={200} className="flex flex-col gap-8">
+              <div className="flex gap-10">
+                <div>
+                  <p className="eyebrow">Rating</p>
+                  <p className="font-display text-4xl lg:text-5xl">4.3</p>
+                </div>
+                <div>
+                  <p className="eyebrow">Reviews</p>
+                  <p className="font-display text-4xl lg:text-5xl">
+                    <CountUp to={12} />
+                  </p>
+                </div>
+                <div>
+                  <p className="eyebrow">Services</p>
+                  <p className="font-display text-4xl lg:text-5xl">
+                    <CountUp to={5} suffix="+" />
+                  </p>
+                </div>
               </div>
-              <div>
-                <p className="eyebrow">Reviews</p>
-                <p className="font-display text-4xl lg:text-5xl">
-                  <CountUp to={12} />
-                </p>
-              </div>
-              <div>
-                <p className="eyebrow">Services</p>
-                <p className="font-display text-4xl lg:text-5xl">
-                  <CountUp to={5} suffix="+" />
-                </p>
+              <div className="rounded-sm border border-border bg-secondary p-6">
+                <p className="text-sm text-muted-foreground">Areas we cover</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {["Charholi Budruk", "Lohegaon", "Wagholi", "Pimpri-Chinchwad", "Moshi"].map(
+                    (area) => (
+                      <span
+                        key={area}
+                        className="rounded-full border border-border bg-background px-3 py-1 text-xs"
+                      >
+                        {area}
+                      </span>
+                    ),
+                  )}
+                </div>
               </div>
             </Reveal>
           </div>
