@@ -151,11 +151,11 @@ const LOGO_ICONS: Record<string, (props: { className?: string }) => JSX.Element>
 };
 
 const LOGOS = [
-  { name: "Logoipsum", icon: "towers" },
-  { name: "Logoipsum", icon: "house" },
-  { name: "Logoipsum", icon: "block" },
-  { name: "Logoipsum", icon: "spire" },
-  { name: "Logoipsum", icon: "towers" },
+  { name: "Charholi Budruk", icon: "towers" },
+  { name: "Lohegaon", icon: "house" },
+  { name: "Wagholi", icon: "block" },
+  { name: "Pimpri-Chinchwad", icon: "spire" },
+  { name: "Moshi", icon: "towers" },
 ] as const;
 
 const FEATURE_ICONS = {
@@ -379,7 +379,7 @@ function Index() {
         <section className="overflow-hidden bg-background pb-16 pt-28 lg:pb-20 lg:pt-40">
           <div className="mx-auto flex max-w-[1600px] flex-col gap-8 px-6 lg:flex-row lg:items-center lg:gap-16 lg:px-10">
             <p className="max-w-[220px] shrink-0 text-lg leading-snug text-foreground">
-              Trusted by the world's fastest growing company
+              Active across Pune's fastest-growing corridors
             </p>
             <div className="relative flex-1 overflow-hidden">
               <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-background to-transparent" />
