@@ -4,6 +4,8 @@ import { Header, ArrowIcon } from "@/components/landor/Header";
 import { Services } from "@/components/landor/Services";
 import { Reveal, CountUp } from "@/components/landor/Reveal";
 import { Parallax, TiltCard, RatingBars, Stars, CursorGlow } from "@/components/landor/Motion";
+import { HeroSearch } from "@/components/landor/HeroSearch";
+import heroVilla from "@/assets/hero-villa.jpg";
 
 import aboutImg from "@/assets/about.jpg";
 import project1 from "@/assets/project-1.jpg";
@@ -173,106 +175,44 @@ function Index() {
 
       <main>
         {/* Hero */}
-        <section id="home" className="hero-sky relative overflow-hidden pt-36 lg:pt-44">
-          <CursorGlow />
-          <div className="relative mx-auto max-w-[1600px] px-6 text-center lg:px-10">
-            <span className="rise-in eyebrow" style={{ animationDelay: "40ms" }}>
-              Real estate consultant · Pune
-            </span>
-            <h1 className="display-xl mx-auto mt-6 max-w-5xl">
-              <span className="rise-in block" style={{ animationDelay: "120ms" }}>
-                Find What <span className="shimmer-text">Moves You</span>
-              </span>
-            </h1>
-            <p
-              className="rise-in mx-auto mt-6 max-w-2xl text-lg text-foreground/80"
-              style={{ animationDelay: "240ms" }}
-            >
-              Expert consultants. Real guidance.{" "}
-              <span className="text-muted-foreground">
-                A clear path to your next home, shop or plot in Pune.
-              </span>
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <a
-                href="tel:+918484947570"
-                className="rise-in group mt-9 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm text-primary-foreground transition-all duration-300 hover:gap-4 hover:opacity-85"
-                style={{ animationDelay: "380ms" }}
-              >
-                Call 084849 47570
-                <ArrowIcon />
-              </a>
-              <a
-                href="#services"
-                className="rise-in mt-9 inline-flex items-center gap-2 rounded-full border border-foreground/20 px-7 py-4 text-sm transition-all duration-300 hover:gap-4 hover:bg-background/60"
-                style={{ animationDelay: "460ms" }}
-              >
-                Our services
-                <ArrowIcon />
-              </a>
-            </div>
+        <section id="home" className="relative overflow-hidden">
+          <div className="relative min-h-[92vh] w-full">
+            <img
+              src={heroVilla}
+              alt="Modern luxury home at sunset"
+              width={1920}
+              height={1088}
+              className="image-unveil absolute inset-0 h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-foreground/45 via-foreground/10 to-foreground/25" />
+            <CursorGlow />
 
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-              <span className="rise-in font-display text-3xl" style={{ animationDelay: "540ms" }}>
-                4.3
-              </span>
-              <div className="rise-in text-left" style={{ animationDelay: "560ms" }}>
-                <Stars value={4.3} />
-                <p className="text-xs text-muted-foreground">12 Google reviews</p>
-              </div>
-            </div>
-
-            {/* Interactive search panel */}
-            <div className="relative mx-auto mt-14 max-w-4xl">
-              <div
-                className="rise-in glass-panel relative z-10 mx-auto grid gap-px overflow-hidden rounded-2xl text-left sm:grid-cols-[1.1fr_1fr_1fr_auto]"
-                style={{ animationDelay: "620ms" }}
-              >
-                {[
-                  { label: "Looking for", value: "Flat · Shop · Plot" },
-                  { label: "Location", value: "Wagholi, Pune" },
-                  { label: "Budget", value: "₹40L – ₹1.2Cr" },
-                ].map((f) => (
-                  <div key={f.label} className="px-6 py-5 transition-colors hover:bg-background/40">
-                    <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-                      {f.label}
-                    </p>
-                    <p className="mt-1 text-sm text-foreground">{f.value}</p>
-                  </div>
-                ))}
-                <div className="flex items-center justify-center p-3">
-                  <a
-                    href="tel:+918484947570"
-                    className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 py-4 text-sm text-primary-foreground transition-all duration-300 hover:gap-4 hover:opacity-85"
-                  >
-                    Get matched
-                    <ArrowIcon />
-                  </a>
-                </div>
-              </div>
-
-              {/* Floating stat chips */}
-              <div className="pointer-events-none absolute inset-x-0 -top-6 hidden justify-between lg:flex">
+            <div className="relative flex min-h-[92vh] flex-col items-center justify-between px-6 pb-10 pt-36 lg:px-10 lg:pt-40">
+              <div className="text-center">
                 <span
-                  className="float-slow glass-panel rounded-full px-5 py-2.5 text-xs"
-                  style={{ animationDelay: "0.4s" }}
+                  className="rise-in inline-block rounded-full bg-background/15 px-4 py-2 text-xs uppercase tracking-[0.25em] text-background backdrop-blur-md"
+                  style={{ animationDelay: "40ms" }}
                 >
-                  2860+ site visits arranged
+                  Real estate consultants · Pune
                 </span>
-                <span
-                  className="float-slow glass-panel rounded-full px-5 py-2.5 text-xs"
-                  style={{ animationDelay: "1.6s" }}
+                <h1
+                  className="rise-in mt-6 font-display text-[clamp(3.5rem,13vw,12rem)] font-light leading-[0.9] tracking-tight text-background"
+                  style={{ animationDelay: "140ms" }}
                 >
-                  Verified listings only
-                </span>
+                  Dream Home
+                </h1>
+                <p
+                  className="rise-in mx-auto mt-6 max-w-xl text-base text-background/85"
+                  style={{ animationDelay: "260ms" }}
+                >
+                  Buy, sell, rent or invest across Pune with a team that actually
+                  listens — 4.3★ from 12 Google reviews.
+                </p>
               </div>
-            </div>
 
-            {/* Animated skyline */}
-            <div className="relative mt-16 h-[26vh] min-h-[190px] lg:h-[32vh]">
-              <div className="skyline-drift absolute inset-x-0 bottom-0 h-full opacity-30" />
-              <div className="skyline absolute inset-x-0 bottom-0 h-full" />
-              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent" />
+              <div className="rise-in mt-16 w-full" style={{ animationDelay: "380ms" }}>
+                <HeroSearch />
+              </div>
             </div>
           </div>
         </section>
