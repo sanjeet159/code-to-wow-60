@@ -474,3 +474,51 @@
     display: none !important;
   }
 }
+
+/* ---------- Hero glass panel ---------- */
+@utility glass-panel {
+  background: color-mix(in oklch, var(--background) 62%, transparent);
+  backdrop-filter: blur(14px);
+  border: 1px solid color-mix(in oklch, var(--foreground) 10%, transparent);
+  box-shadow: 0 24px 60px -30px color-mix(in oklch, var(--foreground) 45%, transparent);
+}
+
+/* ---------- Animated skyline ---------- */
+@utility skyline {
+  --skyline-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 300' preserveAspectRatio='none'%3E%3Cpath fill='%23000' d='M0 300 V180 H60 V140 H120 V210 H180 V120 H250 V170 H310 V90 H380 V150 H440 V200 H500 V110 H570 V60 H640 V130 H700 V190 H760 V100 H830 V160 H890 V80 H960 V150 H1030 V200 H1090 V130 H1150 V180 H1200 V300 Z'/%3E%3C/svg%3E");
+  -webkit-mask-image: var(--skyline-mask);
+  mask-image: var(--skyline-mask);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  background-image: linear-gradient(
+    180deg,
+    color-mix(in oklch, var(--accent) 55%, var(--foreground)) 0%,
+    var(--foreground) 100%
+  );
+  opacity: 0.9;
+}
+
+@keyframes skyline-drift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-4%);
+  }
+}
+
+@utility skyline-drift {
+  --skyline-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 300' preserveAspectRatio='none'%3E%3Cpath fill='%23000' d='M0 300 V210 H90 V160 H160 V230 H240 V150 H320 V200 H400 V120 H480 V190 H560 V150 H650 V100 H730 V170 H810 V210 H900 V140 H980 V190 H1070 V160 H1200 V300 Z'/%3E%3C/svg%3E");
+  -webkit-mask-image: var(--skyline-mask);
+  mask-image: var(--skyline-mask);
+  -webkit-mask-size: 110% 100%;
+  mask-size: 110% 100%;
+  background-color: color-mix(in oklch, var(--foreground) 55%, transparent);
+  animation: skyline-drift 18s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skyline-drift {
+    animation: none !important;
+  }
+}
