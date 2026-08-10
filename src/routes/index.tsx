@@ -223,20 +223,62 @@ function Index() {
               </div>
             </div>
 
-            <div className="relative mx-auto mt-14 max-w-5xl">
-              <Parallax speed={0.05}>
-                <img
-                  src={heroImg}
-                  alt="Modern residential tower in Pune at golden hour"
-                  width={1920}
-                  height={1080}
-                  className="image-unveil h-[38vh] w-full rounded-t-sm object-cover object-top lg:h-[58vh]"
-                  style={{ animationDelay: "300ms" }}
-                />
-              </Parallax>
+            {/* Interactive search panel */}
+            <div className="relative mx-auto mt-14 max-w-4xl">
+              <div
+                className="rise-in glass-panel relative z-10 mx-auto grid gap-px overflow-hidden rounded-2xl text-left sm:grid-cols-[1.1fr_1fr_1fr_auto]"
+                style={{ animationDelay: "620ms" }}
+              >
+                {[
+                  { label: "Looking for", value: "Flat · Shop · Plot" },
+                  { label: "Location", value: "Wagholi, Pune" },
+                  { label: "Budget", value: "₹40L – ₹1.2Cr" },
+                ].map((f) => (
+                  <div key={f.label} className="px-6 py-5 transition-colors hover:bg-background/40">
+                    <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                      {f.label}
+                    </p>
+                    <p className="mt-1 text-sm text-foreground">{f.value}</p>
+                  </div>
+                ))}
+                <div className="flex items-center justify-center p-3">
+                  <a
+                    href="tel:+918484947570"
+                    className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 py-4 text-sm text-primary-foreground transition-all duration-300 hover:gap-4 hover:opacity-85"
+                  >
+                    Get matched
+                    <ArrowIcon />
+                  </a>
+                </div>
+              </div>
+
+              {/* Floating stat chips */}
+              <div className="pointer-events-none absolute inset-x-0 -top-6 hidden justify-between lg:flex">
+                <span
+                  className="float-slow glass-panel rounded-full px-5 py-2.5 text-xs"
+                  style={{ animationDelay: "0.4s" }}
+                >
+                  2860+ site visits arranged
+                </span>
+                <span
+                  className="float-slow glass-panel rounded-full px-5 py-2.5 text-xs"
+                  style={{ animationDelay: "1.6s" }}
+                >
+                  Verified listings only
+                </span>
+              </div>
+            </div>
+
+            {/* Animated skyline */}
+            <div className="relative mt-16 h-[26vh] min-h-[190px] lg:h-[32vh]">
+              <div className="skyline-drift absolute inset-x-0 bottom-0 h-full opacity-30" />
+              <div className="skyline absolute inset-x-0 bottom-0 h-full" />
+              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent" />
             </div>
           </div>
         </section>
+
+
 
 
         {/* Hero cards */}
