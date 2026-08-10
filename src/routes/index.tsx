@@ -4,6 +4,8 @@ import { Header, ArrowIcon } from "@/components/landor/Header";
 import { Services } from "@/components/landor/Services";
 import { Reveal, CountUp } from "@/components/landor/Reveal";
 import { Parallax, TiltCard, RatingBars, Stars, CursorGlow } from "@/components/landor/Motion";
+import { HeroSearch } from "@/components/landor/HeroSearch";
+import heroVilla from "@/assets/hero-villa.jpg";
 
 import aboutImg from "@/assets/about.jpg";
 import project1 from "@/assets/project-1.jpg";
