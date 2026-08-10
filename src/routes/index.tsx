@@ -157,6 +157,28 @@ const LOGOS = [
   { name: "Logoipsum", icon: "towers" },
 ] as const;
 
+const FEATURE_ICONS = {
+  agents: ({ className }: { className?: string }) => (
+    <svg viewBox="0 0 32 32" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
+      <path d="M9 17l6-6 4 4 8-8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M21 7h6v6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M4 23c0-2.8 2.5-4.5 5.5-4.5S15 20.2 15 23" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="9.5" cy="13.5" r="0.2" stroke="currentColor" strokeWidth="1.6" />
+    </svg>
+  ),
+  legality: ({ className }: { className?: string }) => (
+    <svg viewBox="0 0 32 32" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 3l2 2.4 3-1 1 3 3 1-1 3 2.4 2-2.4 2 1 3-3 1-1 3-3-1-2 2.4-2-2.4-3 1-1-3-3-1 1-3-2.4-2 2.4-2-1-3 3-1 1-3 3 1 2-2.4z"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinejoin="round"
+      />
+      <path d="M12 16l3 3 5-6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+};
+
 const TEAM = [
   { name: "Client advisory", role: "Buying & rental guidance", img: team1 },
   { name: "Commercial desk", role: "Shops, offices, showrooms", img: team3 },
@@ -336,27 +358,64 @@ function Index() {
             </Reveal>
           </div>
 
-          <div className="mt-14 grid gap-12 lg:grid-cols-2">
-            <Reveal variant="clip" className="overflow-hidden rounded-sm">
-              <img
-                src={aboutImg}
-                alt="Modern apartment in Pune listed by Home Craft"
-                loading="lazy"
-                width={1024}
-                height={1280}
-                className="h-[420px] w-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-105 lg:h-[560px]"
-              />
+          <div className="mt-14 grid gap-16 lg:grid-cols-2 lg:items-center">
+            <Reveal variant="clip" className="relative mx-auto aspect-[4/5] w-full max-w-md lg:mx-0">
+              <div className="absolute inset-0 overflow-hidden rounded-sm">
+                <img
+                  src={aboutImg}
+                  alt="Modern apartment in Pune listed by Home Craft"
+                  loading="lazy"
+                  width={1024}
+                  height={1280}
+                  className="h-full w-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-105"
+                />
+              </div>
+              <div className="absolute -bottom-8 -left-6 w-3/5 overflow-hidden rounded-sm border-[6px] border-background shadow-xl sm:-bottom-10 sm:-left-10">
+                <img
+                  src={team1}
+                  alt="Home Craft consultant meeting a client"
+                  loading="lazy"
+                  className="h-48 w-full object-cover sm:h-56"
+                />
+              </div>
             </Reveal>
-            <Reveal variant="right" delay={120} className="flex flex-col justify-center">
-              <h3 className="display-lg">
+
+            <Reveal variant="right" delay={120} className="flex flex-col lg:pl-4">
+              <p className="eyebrow">Our mission</p>
+              <h3 className="display-lg mt-4 max-w-lg">
                 Buy. Sale. Rent. <span className="text-accent">Invest.</span>
               </h3>
               <p className="mt-6 max-w-lg text-muted-foreground">
                 Home Craft Real Estate works with buyers, owners and investors across Charholi
-                Budruk, Lohegaon, Wagholi and Pimpri-Chinchwad. We handle buying agent services,
-                commercial property buying and sales, commercial property consulting, rentals and
-                plots — start to registration, with the paperwork checked at every step.
+                Budruk, Lohegaon, Wagholi and Pimpri-Chinchwad — handling buying agent services,
+                commercial sales and consulting, rentals and plots, from first search to final
+                registration.
               </p>
+              <a
+                href="#contact"
+                className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm text-primary-foreground transition-all duration-300 hover:gap-4 hover:opacity-85"
+              >
+                Read more
+                <ArrowIcon />
+              </a>
+
+              <div className="mt-10 grid grid-cols-2 gap-8 border-t border-border pt-8">
+                <div>
+                  <FEATURE_ICONS.agents className="h-8 w-8 text-foreground" />
+                  <h4 className="mt-4 text-base font-medium">Experienced agents</h4>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    Discover the best properties to match your budget.
+                  </p>
+                </div>
+                <div>
+                  <FEATURE_ICONS.legality className="h-8 w-8 text-foreground" />
+                  <h4 className="mt-4 text-base font-medium">Clear legality</h4>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    Verified paperwork and transparent terms on every deal.
+                  </p>
+                </div>
+              </div>
+
               <div className="mt-10 flex flex-wrap items-center gap-8 border-t border-border pt-8">
                 <div>
                   <p className="text-sm text-muted-foreground">
