@@ -174,73 +174,70 @@ function Index() {
 
       <main>
         {/* Hero */}
-        <section id="home" className="relative pt-32 pb-16 lg:pt-44">
+        <section id="home" className="hero-sky relative overflow-hidden pt-36 lg:pt-44">
           <CursorGlow />
-          <div className="relative mx-auto max-w-[1600px] px-6 lg:px-10">
-            <div className="grid items-end gap-10 lg:grid-cols-[1fr_340px]">
-              <div>
-                <span
-                  className="rise-in eyebrow"
-                  style={{ animationDelay: "40ms" }}
-                >
-                  Real estate consultant · Pune
-                </span>
-                <h1 className="display-xl mt-5 max-w-4xl">
-                  <span className="rise-in block" style={{ animationDelay: "120ms" }}>
-                    Homes, shops and
-                  </span>
-                  <span className="rise-in block" style={{ animationDelay: "240ms" }}>
-                    plots, <span className="shimmer-text">matched right</span>
-                  </span>
-                </h1>
-                <div className="flex flex-wrap items-center gap-4">
-                  <a
-                    href="tel:+918484947570"
-                    className="rise-in group mt-10 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm text-primary-foreground transition-all duration-300 hover:gap-4 hover:opacity-85"
-                    style={{ animationDelay: "460ms" }}
-                  >
-                    Call 084849 47570
-                    <ArrowIcon />
-                  </a>
-                  <a
-                    href="#services"
-                    className="rise-in mt-10 inline-flex items-center gap-2 rounded-full border border-foreground/20 px-7 py-4 text-sm transition-all duration-300 hover:gap-4 hover:bg-secondary"
-                    style={{ animationDelay: "540ms" }}
-                  >
-                    Our services
-                    <ArrowIcon />
-                  </a>
-                </div>
-              </div>
-              <div className="rise-in lg:pb-4" style={{ animationDelay: "360ms" }}>
-                <div className="flex items-center gap-3">
-                  <span className="font-display text-4xl">4.3</span>
-                  <div>
-                    <Stars value={4.3} />
-                    <p className="text-xs text-muted-foreground">12 Google reviews</p>
-                  </div>
-                </div>
-                <p className="mt-5 text-muted-foreground">
-                  Buy · Sale · Rent · Plot · Commercial. A Pune-based consultancy helping
-                  families, owners and investors move with confidence.
-                </p>
+          <div className="relative mx-auto max-w-[1600px] px-6 text-center lg:px-10">
+            <span className="rise-in eyebrow" style={{ animationDelay: "40ms" }}>
+              Real estate consultant · Pune
+            </span>
+            <h1 className="display-xl mx-auto mt-6 max-w-5xl">
+              <span className="rise-in block" style={{ animationDelay: "120ms" }}>
+                Find What <span className="shimmer-text">Moves You</span>
+              </span>
+            </h1>
+            <p
+              className="rise-in mx-auto mt-6 max-w-2xl text-lg text-foreground/80"
+              style={{ animationDelay: "240ms" }}
+            >
+              Expert consultants. Real guidance.{" "}
+              <span className="text-muted-foreground">
+                A clear path to your next home, shop or plot in Pune.
+              </span>
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <a
+                href="tel:+918484947570"
+                className="rise-in group mt-9 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm text-primary-foreground transition-all duration-300 hover:gap-4 hover:opacity-85"
+                style={{ animationDelay: "380ms" }}
+              >
+                Call 084849 47570
+                <ArrowIcon />
+              </a>
+              <a
+                href="#services"
+                className="rise-in mt-9 inline-flex items-center gap-2 rounded-full border border-foreground/20 px-7 py-4 text-sm transition-all duration-300 hover:gap-4 hover:bg-background/60"
+                style={{ animationDelay: "460ms" }}
+              >
+                Our services
+                <ArrowIcon />
+              </a>
+            </div>
+
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+              <span className="rise-in font-display text-3xl" style={{ animationDelay: "540ms" }}>
+                4.3
+              </span>
+              <div className="rise-in text-left" style={{ animationDelay: "560ms" }}>
+                <Stars value={4.3} />
+                <p className="text-xs text-muted-foreground">12 Google reviews</p>
               </div>
             </div>
 
-            <div className="mt-14 overflow-hidden rounded-sm">
-              <Parallax speed={0.07}>
+            <div className="relative mx-auto mt-14 max-w-5xl">
+              <Parallax speed={0.05}>
                 <img
                   src={heroImg}
                   alt="Modern residential tower in Pune at golden hour"
                   width={1920}
                   height={1080}
-                  className="image-unveil h-[46vh] w-full scale-105 object-cover lg:h-[72vh]"
-                  style={{ animationDelay: "260ms" }}
+                  className="image-unveil h-[38vh] w-full rounded-t-sm object-cover object-top lg:h-[58vh]"
+                  style={{ animationDelay: "300ms" }}
                 />
               </Parallax>
             </div>
           </div>
         </section>
+
 
         {/* Hero cards */}
         <section className="mx-auto max-w-[1600px] px-6 pb-24 lg:px-10">
