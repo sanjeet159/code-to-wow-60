@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 
 import { Header, ArrowIcon } from "@/components/landor/Header";
@@ -211,6 +212,114 @@ const POSTS = [
     avatar: team2,
   },
 ];
+
+const AUDIENCES = [
+  {
+    no: "01",
+    title: "Buyers",
+    text: "Find the right flat, plot or commercial space from verified listings.",
+    img: project1,
+  },
+  {
+    no: "02",
+    title: "Sellers",
+    text: "Market-priced listings promoted to serious, screened buyers.",
+    img: project2,
+  },
+  {
+    no: "03",
+    title: "Investors",
+    text: "Yield-focused shortlists with resale demand and handover timelines.",
+    img: project3,
+  },
+  {
+    no: "04",
+    title: "Owners",
+    text: "Reliable tenant matching and rental management you can count on.",
+    img: project4,
+  },
+];
+
+function AudiencePanels() {
+  const [active, setActive] = useState(0);
+
+  return (
+    <>
+      {/* Mobile: simple static accordion-style cards */}
+      <div className="grid gap-px overflow-hidden rounded-sm border border-border bg-border sm:hidden">
+        {AUDIENCES.map((p) => (
+          <div key={p.title} className="bg-background p-7">
+            <span className="text-xs tracking-[0.2em] text-accent">{p.no}</span>
+            <h3 className="mt-5 text-lg">{p.title}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.text}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop: interactive expanding panels — hover/focus to expand */}
+      <div className="hidden h-[420px] overflow-hidden rounded-sm border border-border sm:flex">
+        {AUDIENCES.map((p, i) => {
+          const isActive = active === i;
+          return (
+            <button
+              key={p.title}
+              type="button"
+              onMouseEnter={() => setActive(i)}
+              onFocus={() => setActive(i)}
+              aria-pressed={isActive}
+              className={`group relative flex h-full flex-col justify-end overflow-hidden border-r border-border/60 p-8 text-left outline-none transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] last:border-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-inset ${
+                isActive ? "flex-[2.6]" : "flex-[1]"
+              }`}
+            >
+              <img
+                src={p.img}
+                alt=""
+                loading="lazy"
+                className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                  isActive ? "scale-100 opacity-100" : "scale-110 opacity-0"
+                }`}
+              />
+              <div
+                className={`absolute inset-0 transition-opacity duration-700 ${
+                  isActive
+                    ? "bg-gradient-to-t from-foreground/85 via-foreground/25 to-transparent opacity-100"
+                    : "bg-background opacity-100"
+                }`}
+              />
+              <div className="relative z-10">
+                <span className="text-xs tracking-[0.2em] text-accent">{p.no}</span>
+                <h3
+                  className={`mt-4 text-2xl transition-colors duration-500 ${
+                    isActive ? "text-background" : "text-foreground"
+                  }`}
+                >
+                  {p.title}
+                </h3>
+                <p
+                  className={`mt-3 max-w-[220px] overflow-hidden text-sm leading-relaxed transition-all duration-500 ${
+                    isActive
+                      ? "max-h-24 text-background/85 opacity-100"
+                      : "max-h-0 text-muted-foreground opacity-0"
+                  }`}
+                >
+                  {p.text}
+                </p>
+                <span
+                  className={`mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-background transition-all duration-500 ${
+                    isActive ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
+                  }`}
+                >
+                  Learn more
+                  <ArrowIcon />
+                </span>
+              </div>
+            </button>
+          );
+        })}
+      </div>
+    </>
+  );
+}
 
 function Index() {
   return (
@@ -458,54 +567,9 @@ function Index() {
               </Reveal>
             </div>
 
-            <div className="mt-12 grid gap-px overflow-hidden rounded-sm border border-border bg-border md:grid-cols-2 lg:grid-cols-4">
-              {[
-                {
-                  title: "Buyers",
-                  text: "Find the right flat, plot or commercial space from verified listings.",
-                },
-                {
-                  title: "Sellers",
-                  text: "Market-priced listings promoted to serious, screened buyers.",
-                },
-                {
-                  title: "Investors",
-                  text: "Yield-focused shortlists with resale demand and handover timelines.",
-                },
-                {
-                  title: "Owners",
-                  text: "Reliable tenant matching and rental management you can count on.",
-                },
-              ].map((item, i) => (
-                <Reveal
-                  key={item.title}
-                  delay={i * 100}
-                  className="card-rise bg-background p-7 transition-colors hover:bg-secondary lg:p-8"
-                >
-                  <span className="text-xs tracking-[0.2em] text-accent">0{i + 1}</span>
-                  <h3 className="mt-5 text-lg">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.text}</p>
-                </Reveal>
-              ))}
-            </div>
-
-            <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-5">
-              {[project1, project2, project3, project4, aboutImg].map((src, i) => (
-                <Reveal
-                  key={i}
-                  variant="clip"
-                  delay={i * 110}
-                  className="group overflow-hidden rounded-sm"
-                >
-                  <img
-                    src={src}
-                    alt="Home Craft project in Pune"
-                    loading="lazy"
-                    className="h-40 w-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110 lg:h-56"
-                  />
-                </Reveal>
-              ))}
-            </div>
+            <Reveal delay={140} className="mt-12">
+              <AudiencePanels />
+            </Reveal>
           </div>
         </section>
 
