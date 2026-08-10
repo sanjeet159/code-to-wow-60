@@ -187,7 +187,7 @@ function Index() {
             <div className="absolute inset-0 bg-gradient-to-b from-foreground/45 via-foreground/10 to-foreground/25" />
             <CursorGlow />
 
-            <div className="relative flex min-h-[92vh] flex-col items-center justify-between px-6 pb-10 pt-36 lg:px-10 lg:pt-40">
+            <div className="relative flex min-h-[96vh] flex-col items-center justify-between px-6 pb-0 pt-36 lg:px-10 lg:pt-40">
               <div className="text-center">
                 <span
                   className="rise-in inline-block rounded-full bg-background/15 px-4 py-2 text-xs uppercase tracking-[0.25em] text-background backdrop-blur-md"
