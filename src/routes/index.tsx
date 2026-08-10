@@ -135,6 +135,46 @@ const CHOOSE = [
   { t: "After-handover support", d: "We stay reachable for renewals, resale and repeat requirements." },
 ];
 
+const LOGO_ICONS: Record<string, (props: { className?: string }) => JSX.Element> = {
+  towers: ({ className }) => (
+    <svg viewBox="0 0 32 32" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 28V10l6-4 6 4v18" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+      <path d="M16 28V6l6-3 6 3v22" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+      <path d="M4 28h24" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M8 14h2M8 18h2M8 22h2M20 10h2M20 14h2M20 18h2M20 22h2" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+    </svg>
+  ),
+  house: ({ className }) => (
+    <svg viewBox="0 0 32 32" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 28V14l10-8 10 8v14" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+      <path d="M6 14L16 20l10-6" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" strokeLinecap="round" />
+      <path d="M6 28h20" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  ),
+  block: ({ className }) => (
+    <svg viewBox="0 0 32 32" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
+      <rect x="7" y="6" width="18" height="22" rx="1" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M11 11h3M18 11h3M11 16h3M18 16h3M11 21h3M18 21h3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+      <path d="M7 28h18" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  ),
+  spire: ({ className }) => (
+    <svg viewBox="0 0 32 32" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 28V16l6-12 6 12v12" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+      <path d="M4 28h24" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M13 20h6M14 24h4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+    </svg>
+  ),
+};
+
+const LOGOS = [
+  { name: "Logoipsum", icon: "towers" },
+  { name: "Logoipsum", icon: "house" },
+  { name: "Logoipsum", icon: "block" },
+  { name: "Logoipsum", icon: "spire" },
+  { name: "Logoipsum", icon: "towers" },
+] as const;
+
 const TEAM = [
   { name: "Client advisory", role: "Buying & rental guidance", img: team1 },
   { name: "Commercial desk", role: "Shops, offices, showrooms", img: team3 },
@@ -222,8 +262,37 @@ function Index() {
           </div>
         </section>
 
+        {/* Trusted by — auto-scrolling logo marquee */}
+        <section className="overflow-hidden bg-background pb-16 pt-28 lg:pb-20 lg:pt-40">
+          <div className="mx-auto flex max-w-[1600px] flex-col gap-8 px-6 lg:flex-row lg:items-center lg:gap-16 lg:px-10">
+            <p className="max-w-[220px] shrink-0 text-lg leading-snug text-foreground">
+              Trusted by the world's fastest growing company
+            </p>
+            <div className="relative flex-1 overflow-hidden">
+              <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-background to-transparent" />
+              <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-background to-transparent" />
+              <div className="marquee-track flex w-max items-center gap-16">
+                {[...LOGOS, ...LOGOS].map((l, i) => {
+                  const Icon = LOGO_ICONS[l.icon];
+                  return (
+                    <span
+                      key={`${l.name}-${i}`}
+                      className="flex items-center gap-3 text-muted-foreground/70 transition-colors hover:text-foreground"
+                    >
+                      <Icon className="h-7 w-7" />
+                      <span className="text-sm font-semibold uppercase tracking-widest">
+                        {l.name}
+                      </span>
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Hero cards */}
-        <section className="mx-auto max-w-[1600px] px-6 pb-24 pt-28 lg:px-10 lg:pt-40">
+        <section className="mx-auto max-w-[1600px] px-6 pb-24 pt-4 lg:px-10 lg:pt-4">
           <div className="grid gap-px overflow-hidden rounded-sm bg-border md:grid-cols-3">
             {HERO_CARDS.map((c, i) => (
               <Reveal key={c.no} delay={i * 120}>
