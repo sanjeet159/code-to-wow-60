@@ -321,6 +321,142 @@ function AudiencePanels() {
   );
 }
 
+const TAB_ICONS = {
+  buy: ({ className }: { className?: string }) => (
+    <svg viewBox="0 0 32 32" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 28V14l10-8 10 8v14" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+      <path d="M12 28v-9h8v9" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+    </svg>
+  ),
+  sale: ({ className }: { className?: string }) => (
+    <svg viewBox="0 0 32 32" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M17 5h7a2 2 0 0 1 2 2v7l-13 13a2 2 0 0 1-2.8 0l-6.2-6.2a2 2 0 0 1 0-2.8L17 5z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+      <circle cx="22" cy="10" r="1.6" stroke="currentColor" strokeWidth="1.6" />
+    </svg>
+  ),
+  rent: ({ className }: { className?: string }) => (
+    <svg viewBox="0 0 32 32" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M16.2 16.2L28 28M28 28v-6M28 28h-6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+  plots: ({ className }: { className?: string }) => (
+    <svg viewBox="0 0 32 32" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 4c5 5.5 8 9.6 8 13.2A8 8 0 1 1 8 17.2C8 13.6 11 9.5 16 4z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+      <circle cx="16" cy="17" r="2.4" stroke="currentColor" strokeWidth="1.6" />
+    </svg>
+  ),
+  commercial: ({ className }: { className?: string }) => (
+    <svg viewBox="0 0 32 32" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
+      <rect x="6" y="8" width="20" height="20" rx="1" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M6 14h20M12 8v20M12 20h6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+      <path d="M6 8l6-4h8l6 4" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+    </svg>
+  ),
+};
+
+const ABOUT_TABS = [
+  {
+    key: "Buy",
+    icon: "buy",
+    title: "Buying a home in Pune",
+    text: "Verified flats, villas and plots shortlisted around your budget, commute and family needs — we handle site visits, negotiation and paperwork.",
+    img: project1,
+  },
+  {
+    key: "Sale",
+    icon: "sale",
+    title: "Selling with Home Craft",
+    text: "Market-priced listings promoted to serious, screened buyers — from first enquiry through to registration, with no runaround.",
+    img: project2,
+  },
+  {
+    key: "Rent",
+    icon: "rent",
+    title: "Renting, without the runaround",
+    text: "Verified listings for tenants and reliable, screened tenants for owners — move-in ready in days, not months.",
+    img: project3,
+  },
+  {
+    key: "Plots",
+    icon: "plots",
+    title: "Plots & land advisory",
+    text: "Clear-title residential and NA plots across Pune's growth corridors, with ownership and zoning checked before you commit.",
+    img: project4,
+  },
+  {
+    key: "Commercial",
+    icon: "commercial",
+    title: "Commercial consulting",
+    text: "Shops, offices and warehouses — bought, sold or leased with real footfall, frontage and rent-yield data behind every call.",
+    img: aboutImg,
+  },
+] as const;
+
+function AboutTabs() {
+  const [active, setActive] = useState<(typeof ABOUT_TABS)[number]["key"]>("Buy");
+  const current = ABOUT_TABS.find((t) => t.key === active) ?? ABOUT_TABS[0];
+  const Icon = TAB_ICONS[current.icon];
+
+  return (
+    <div>
+      <div className="flex flex-wrap gap-3">
+        {ABOUT_TABS.map((tab) => {
+          const isActive = tab.key === active;
+          return (
+            <button
+              key={tab.key}
+              type="button"
+              onClick={() => setActive(tab.key)}
+              aria-pressed={isActive}
+              className={`rounded-full border px-4 py-1.5 text-sm transition-all duration-300 ${
+                isActive
+                  ? "border-foreground bg-foreground text-background"
+                  : "border-border bg-secondary text-foreground hover:bg-background"
+              }`}
+            >
+              {tab.key}
+            </button>
+          );
+        })}
+      </div>
+
+      <div
+        key={current.key}
+        className="rise-in mt-8 overflow-hidden rounded-sm border border-border bg-secondary/60"
+      >
+        <div className="grid gap-0 sm:grid-cols-[1fr_1.3fr]">
+          <div className="h-48 overflow-hidden sm:h-full">
+            <img
+              src={current.img}
+              alt={current.title}
+              loading="lazy"
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <div className="flex flex-col justify-center p-7 sm:p-8">
+            <Icon className="h-8 w-8 text-accent" />
+            <h3 className="mt-4 text-xl">{current.title}</h3>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{current.text}</p>
+            <a
+              href="#contact"
+              className="mt-6 inline-flex w-fit items-center gap-2 text-sm font-medium text-foreground transition-all duration-300 hover:gap-4"
+            >
+              Talk to us about {current.key.toLowerCase()}
+              <ArrowIcon />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Index() {
   return (
     <div id="top" className="overflow-x-hidden bg-background">
@@ -419,15 +555,8 @@ function Index() {
                 From first search to final registration, we guide buyers, sellers and investors
                 through Pune's property market with clear advice and verified listings.
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                {["Buy", "Sale", "Rent", "Plots", "Commercial"].map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full border border-border bg-secondary px-4 py-1.5 text-sm transition-colors hover:bg-background"
-                  >
-                    {tag}
-                  </span>
-                ))}
+              <div className="mt-10">
+                <AboutTabs />
               </div>
             </Reveal>
             <Reveal delay={200} className="flex flex-col gap-6">
