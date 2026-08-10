@@ -5,7 +5,6 @@ import { Services } from "@/components/landor/Services";
 import { Reveal, CountUp } from "@/components/landor/Reveal";
 import { Parallax, TiltCard, RatingBars, Stars, CursorGlow } from "@/components/landor/Motion";
 
-import heroImg from "@/assets/hero.jpg";
 import aboutImg from "@/assets/about.jpg";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
