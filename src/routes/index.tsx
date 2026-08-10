@@ -175,8 +175,8 @@ function Index() {
 
       <main>
         {/* Hero */}
-        <section id="home" className="relative overflow-hidden">
-          <div className="relative min-h-[92vh] w-full">
+        <section id="home" className="relative">
+          <div className="relative min-h-[92vh] w-full overflow-hidden">
             <img
               src={heroVilla}
               alt="Modern luxury home at sunset"
@@ -187,7 +187,7 @@ function Index() {
             <div className="absolute inset-0 bg-gradient-to-b from-foreground/45 via-foreground/10 to-foreground/25" />
             <CursorGlow />
 
-            <div className="relative flex min-h-[96vh] flex-col items-center justify-between px-6 pb-0 pt-36 lg:px-10 lg:pt-40">
+            <div className="relative flex min-h-[92vh] flex-col items-center justify-center px-6 pt-36 lg:px-10 lg:pt-40">
               <div className="text-center">
                 <span
                   className="rise-in inline-block rounded-full bg-background/15 px-4 py-2 text-xs uppercase tracking-[0.25em] text-background backdrop-blur-md"
@@ -209,19 +209,21 @@ function Index() {
                   listens — 4.3★ from 12 Google reviews.
                 </p>
               </div>
-
-              <div className="rise-in mt-16 w-full" style={{ animationDelay: "380ms" }}>
-                <HeroSearch />
-              </div>
             </div>
+          </div>
+
+          {/* Search widget — pinned to hero's bottom edge, dropped by half its
+              height so it overlaps onto the section below (like the reference). */}
+          <div
+            className="rise-in absolute inset-x-0 bottom-0 z-10 mx-auto w-full max-w-5xl translate-y-1/2 px-6 lg:px-10"
+            style={{ animationDelay: "380ms" }}
+          >
+            <HeroSearch />
           </div>
         </section>
 
-
-
-
         {/* Hero cards */}
-        <section className="mx-auto max-w-[1600px] px-6 pb-24 lg:px-10">
+        <section className="mx-auto max-w-[1600px] px-6 pb-24 pt-28 lg:px-10 lg:pt-40">
           <div className="grid gap-px overflow-hidden rounded-sm bg-border md:grid-cols-3">
             {HERO_CARDS.map((c, i) => (
               <Reveal key={c.no} delay={i * 120}>
