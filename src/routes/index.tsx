@@ -61,24 +61,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const HERO_CARDS = [
-  {
-    no: "01",
-    title: "Buy · Sale · Rent",
-    text: "Flats, plots, shops and offices across Pune and Pimpri-Chinchwad — verified listings, honest pricing, no runaround.",
-  },
-  {
-    no: "02",
-    title: "Commercial consulting",
-    text: "Buying, selling and leasing advice for commercial property, backed by real location and rent-yield data.",
-  },
-  {
-    no: "03",
-    title: "Plots & land",
-    text: "Clear-title plots and NA land across Pune's growth corridors, with paperwork checked before you commit.",
-  },
-];
-
 const PROJECTS = [
   { title: "3BHK residence, Charholi", place: "Pride World City, Pune", year: "Resale", img: project1 },
   { title: "Retail showroom deal", place: "Porwal Road, Lohegaon", year: "Commercial", img: project2 },
@@ -291,23 +273,8 @@ function Index() {
           </div>
         </section>
 
-        {/* Hero cards */}
-        <section className="mx-auto max-w-[1600px] px-6 pb-24 pt-4 lg:px-10 lg:pt-4">
-          <div className="grid gap-px overflow-hidden rounded-sm bg-border md:grid-cols-3">
-            {HERO_CARDS.map((c, i) => (
-              <Reveal key={c.no} delay={i * 120}>
-                <TiltCard className="h-full bg-background p-8 transition-colors hover:bg-secondary lg:p-10">
-                  <span className="text-xs tracking-[0.2em] text-accent">{c.no}</span>
-                  <h3 className="mt-6 text-xl">{c.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{c.text}</p>
-                </TiltCard>
-              </Reveal>
-            ))}
-          </div>
-        </section>
-
         {/* About */}
-        <section id="about" className="mx-auto max-w-[1600px] px-6 pb-24 lg:px-10 lg:pb-32">
+        <section id="about" className="mx-auto max-w-[1600px] px-6 pb-24 pt-4 lg:px-10 lg:pb-32 lg:pt-4">
           <Reveal as="span" className="eyebrow block">
             About Home Craft
           </Reveal>
@@ -332,33 +299,33 @@ function Index() {
                 ))}
               </div>
             </Reveal>
-            <Reveal delay={200} className="flex flex-col gap-8">
-              <div className="flex gap-10">
-                <div>
+            <Reveal delay={200} className="flex flex-col gap-6">
+              <div className="grid grid-cols-3 gap-px overflow-hidden rounded-sm border border-border bg-border">
+                <div className="bg-background px-5 py-6 text-center">
                   <p className="eyebrow">Rating</p>
-                  <p className="font-display text-4xl lg:text-5xl">4.3</p>
+                  <p className="mt-2 font-display text-4xl text-accent lg:text-5xl">4.3</p>
                 </div>
-                <div>
+                <div className="bg-background px-5 py-6 text-center">
                   <p className="eyebrow">Reviews</p>
-                  <p className="font-display text-4xl lg:text-5xl">
+                  <p className="mt-2 font-display text-4xl lg:text-5xl">
                     <CountUp to={12} />
                   </p>
                 </div>
-                <div>
+                <div className="bg-background px-5 py-6 text-center">
                   <p className="eyebrow">Services</p>
-                  <p className="font-display text-4xl lg:text-5xl">
+                  <p className="mt-2 font-display text-4xl lg:text-5xl">
                     <CountUp to={5} suffix="+" />
                   </p>
                 </div>
               </div>
-              <div className="rounded-sm border border-border bg-secondary p-6">
-                <p className="text-sm text-muted-foreground">Areas we cover</p>
-                <div className="mt-4 flex flex-wrap gap-2">
+              <div className="rounded-sm border border-border bg-secondary p-7">
+                <p className="eyebrow">Areas we cover</p>
+                <div className="mt-5 flex flex-wrap gap-2.5">
                   {["Charholi Budruk", "Lohegaon", "Wagholi", "Pimpri-Chinchwad", "Moshi"].map(
                     (area) => (
                       <span
                         key={area}
-                        className="rounded-full border border-border bg-background px-3 py-1 text-xs"
+                        className="rounded-full border border-border bg-background px-4 py-1.5 text-xs font-medium tracking-wide transition-colors hover:border-accent hover:text-accent"
                       >
                         {area}
                       </span>
