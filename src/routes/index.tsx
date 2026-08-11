@@ -470,11 +470,12 @@ const MISSION_SHOTS = [
   },
 ];
 
-function MissionShowcase() {
+function AboutShowcase() {
   const [active, setActive] = useState(1);
 
   return (
-    <div className="relative mt-24 rounded-[2rem] border border-border bg-secondary/40 p-6 sm:p-10 lg:p-14">
+    <div className="relative mt-20 rounded-[2rem] border border-border bg-secondary/40 p-6 sm:p-10 lg:p-14">
+
       <div className="pointer-events-none absolute -top-px left-10 right-10 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
 
       <div className="grid gap-14 lg:grid-cols-[1.05fr_1fr] lg:items-center">
@@ -543,16 +544,17 @@ function MissionShowcase() {
 
         <Reveal variant="right" delay={120} className="flex flex-col lg:pl-4">
           <span className="text-xs uppercase tracking-[0.28em] text-muted-foreground">
-            Our mission
+            Why families choose us
           </span>
           <h3 className="display-lg mt-4">
-            Making your dreams come true with{" "}
+            Making your move simple with{" "}
             <span className="text-accent">our advisors</span>
           </h3>
           <p className="mt-5 max-w-lg text-muted-foreground">
-            Our mission is to provide a seamless and user-friendly experience for individuals and
-            families searching for their dream home across Pune.
+            Every client gets one advisor from first shortlist to handover — honest pricing advice,
+            verified documents and site visits planned around your schedule.
           </p>
+
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <div className="group rounded-2xl border border-border bg-background p-5 transition-all duration-500 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg">
@@ -691,87 +693,72 @@ function Index() {
         </section>
 
         {/* About */}
-        <section id="about" className="mx-auto max-w-[1600px] px-6 pb-24 pt-4 lg:px-10 lg:pb-32 lg:pt-4">
-          <Reveal as="span" className="eyebrow block">
-            About Home Craft
-          </Reveal>
-          <div className="mt-6 grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:items-start">
-            <Reveal delay={80}>
-              <h2 className="display-lg max-w-3xl">
+        <section
+          id="about"
+          className="relative mx-auto max-w-[1600px] px-6 pb-28 pt-8 lg:px-10 lg:pb-36 lg:pt-12"
+        >
+          <div className="grid gap-12 lg:grid-cols-[1.35fr_1fr] lg:items-end">
+            <Reveal>
+              <span className="eyebrow block">About Home Craft</span>
+              <h2 className="display-lg mt-5 max-w-3xl">
                 A Pune consultancy that handles the whole{" "}
                 <span className="text-accent">property journey</span>
               </h2>
-              <p className="mt-6 max-w-xl text-muted-foreground">
-                From first search to final registration, we guide buyers, sellers and investors
-                through Pune's property market with clear advice and verified listings.
+            </Reveal>
+            <Reveal delay={100}>
+              <p className="max-w-xl text-muted-foreground">
+                From first search to final registration, we guide buyers, sellers, tenants and
+                investors through Pune's property market with clear advice, verified listings and
+                paperwork that actually checks out.
               </p>
-              <div className="mt-10">
-                <AboutTabs />
-              </div>
-            </Reveal>
-            <Reveal delay={200} className="flex flex-col gap-6">
-              <div className="grid grid-cols-3 gap-px overflow-hidden rounded-sm border border-border bg-border">
-                <div className="bg-background px-5 py-6 text-center">
-                  <p className="eyebrow">Rating</p>
-                  <p className="mt-2 font-display text-4xl text-accent lg:text-5xl">4.3</p>
-                </div>
-                <div className="bg-background px-5 py-6 text-center">
-                  <p className="eyebrow">Reviews</p>
-                  <p className="mt-2 font-display text-4xl lg:text-5xl">
-                    <CountUp to={12} />
-                  </p>
-                </div>
-                <div className="bg-background px-5 py-6 text-center">
-                  <p className="eyebrow">Services</p>
-                  <p className="mt-2 font-display text-4xl lg:text-5xl">
-                    <CountUp to={5} suffix="+" />
-                  </p>
-                </div>
-              </div>
-              <div className="rounded-sm border border-border bg-secondary p-7">
-                <p className="eyebrow">Areas we cover</p>
-                <div className="mt-5 flex flex-wrap gap-2.5">
-                  {["Charholi Budruk", "Lohegaon", "Wagholi", "Pimpri-Chinchwad", "Moshi"].map(
-                    (area) => (
-                      <span
-                        key={area}
-                        className="rounded-full border border-border bg-background px-4 py-1.5 text-xs font-medium tracking-wide transition-colors hover:border-accent hover:text-accent"
-                      >
-                        {area}
-                      </span>
-                    ),
-                  )}
-                </div>
+              <div className="mt-6 flex flex-wrap gap-2.5">
+                {["Charholi Budruk", "Lohegaon", "Wagholi", "Pimpri-Chinchwad", "Moshi"].map(
+                  (area) => (
+                    <span
+                      key={area}
+                      className="rounded-full border border-border bg-secondary px-4 py-1.5 text-xs font-medium tracking-wide transition-colors hover:border-accent hover:text-accent"
+                    >
+                      {area}
+                    </span>
+                  ),
+                )}
               </div>
             </Reveal>
           </div>
 
-          <MissionShowcase />
-
-        </section>
-
-        {/* Mission strip */}
-        <section className="border-y border-border bg-secondary py-24 lg:py-32">
-          <div className="mx-auto max-w-[1600px] px-6 lg:px-10">
-            <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr] lg:items-end">
-              <Reveal>
-                <h2 className="display-lg max-w-3xl">
-                  Property that fits the life you're actually planning
-                </h2>
-              </Reveal>
-              <Reveal delay={80}>
-                <p className="max-w-lg text-muted-foreground">
-                  We don't just show listings — we match properties to your budget, commute, family
-                  needs and investment goals, then handle the paperwork until you hold the keys.
-                </p>
-              </Reveal>
+          {/* Stat rail */}
+          <Reveal delay={140} className="mt-14 block">
+            <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-4">
+              {[
+                { label: "Google rating", value: <span className="text-accent">4.3</span> },
+                { label: "Reviews", value: <CountUp to={12} /> },
+                { label: "Services", value: <CountUp to={5} suffix="+" /> },
+                { label: "Corridors covered", value: <CountUp to={5} suffix="+" /> },
+              ].map((s, i) => (
+                <div
+                  key={s.label}
+                  className="group bg-background px-6 py-8 text-center transition-colors duration-500 hover:bg-secondary"
+                  style={{ transitionDelay: `${i * 30}ms` }}
+                >
+                  <p className="eyebrow">{s.label}</p>
+                  <p className="mt-3 font-display text-4xl lg:text-5xl">{s.value}</p>
+                </div>
+              ))}
             </div>
+          </Reveal>
 
-            <Reveal delay={140} className="mt-12">
-              <AudiencePanels />
-            </Reveal>
-          </div>
+          {/* Interactive service tabs */}
+          <Reveal delay={120} className="mt-16 block">
+            <AboutTabs />
+          </Reveal>
+
+          <AboutShowcase />
+
+          <Reveal delay={120} className="mt-20 block">
+            <AudiencePanels />
+          </Reveal>
         </section>
+
 
         <Services />
 
