@@ -118,8 +118,8 @@ const CHOOSE = [
   { t: "After-handover support", d: "We stay reachable for renewals, resale and repeat requirements." },
 ];
 
-const LOGO_ICONS: Record<string, (props: { className?: string }) => JSX.Element> = {
-  towers: ({ className }) => (
+const LOGO_ICONS = {
+  towers: ({ className }: { className?: string }) => (
     <svg viewBox="0 0 32 32" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
       <path d="M4 28V10l6-4 6 4v18" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
       <path d="M16 28V6l6-3 6 3v22" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
@@ -127,21 +127,21 @@ const LOGO_ICONS: Record<string, (props: { className?: string }) => JSX.Element>
       <path d="M8 14h2M8 18h2M8 22h2M20 10h2M20 14h2M20 18h2M20 22h2" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
     </svg>
   ),
-  house: ({ className }) => (
+  house: ({ className }: { className?: string }) => (
     <svg viewBox="0 0 32 32" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
       <path d="M6 28V14l10-8 10 8v14" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
       <path d="M6 14L16 20l10-6" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" strokeLinecap="round" />
       <path d="M6 28h20" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
     </svg>
   ),
-  block: ({ className }) => (
+  block: ({ className }: { className?: string }) => (
     <svg viewBox="0 0 32 32" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
       <rect x="7" y="6" width="18" height="22" rx="1" stroke="currentColor" strokeWidth="1.6" />
       <path d="M11 11h3M18 11h3M11 16h3M18 16h3M11 21h3M18 21h3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
       <path d="M7 28h18" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
     </svg>
   ),
-  spire: ({ className }) => (
+  spire: ({ className }: { className?: string }) => (
     <svg viewBox="0 0 32 32" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
       <path d="M10 28V16l6-12 6 12v12" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
       <path d="M4 28h24" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
@@ -457,6 +457,132 @@ function AboutTabs() {
   );
 }
 
+const MISSION_SHOTS = [
+  {
+    img: team1,
+    alt: "Home Craft advisor handing over keys to a client in Pune",
+    caption: "Advisor-led site visits",
+  },
+  {
+    img: aboutImg,
+    alt: "Modern apartment building listed by Home Craft in Pune",
+    caption: "Verified Pune inventory",
+  },
+];
+
+function MissionShowcase() {
+  const [active, setActive] = useState(1);
+
+  return (
+    <div className="mt-20">
+      <Reveal>
+        <h3 className="display-lg max-w-3xl">
+          Making your dreams come true with{" "}
+          <span className="text-accent">our advisors</span>
+        </h3>
+      </Reveal>
+
+      <div className="mt-12 grid gap-12 lg:grid-cols-[1.15fr_1fr] lg:items-center">
+        {/* Interactive image pair */}
+        <Reveal variant="clip" className="flex items-end gap-5 sm:gap-7">
+          {MISSION_SHOTS.map((shot, i) => {
+            const isActive = active === i;
+            return (
+              <button
+                key={shot.caption}
+                type="button"
+                onMouseEnter={() => setActive(i)}
+                onFocus={() => setActive(i)}
+                onClick={() => setActive(i)}
+                aria-pressed={isActive}
+                className={`group relative overflow-hidden rounded-md outline-none transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] focus-visible:ring-2 focus-visible:ring-accent ${
+                  i === 0 ? "aspect-[4/5]" : "aspect-[3/4]"
+                } ${isActive ? "flex-[1.25] -translate-y-2 shadow-xl" : "flex-[0.85] translate-y-0"}`}
+              >
+                <img
+                  src={shot.img}
+                  alt={shot.alt}
+                  loading="lazy"
+                  className={`h-full w-full object-cover transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                    isActive ? "scale-105 saturate-100" : "scale-100 saturate-50"
+                  }`}
+                />
+                <span
+                  className={`pointer-events-none absolute inset-0 transition-opacity duration-700 ${
+                    isActive
+                      ? "bg-gradient-to-t from-foreground/70 via-transparent to-transparent opacity-100"
+                      : "bg-foreground/25 opacity-100"
+                  }`}
+                />
+                <span
+                  className={`pointer-events-none absolute inset-x-4 bottom-4 text-left text-xs uppercase tracking-[0.18em] text-background transition-all duration-500 ${
+                    isActive ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
+                  }`}
+                >
+                  {shot.caption}
+                </span>
+              </button>
+            );
+          })}
+        </Reveal>
+
+        <Reveal variant="right" delay={120} className="flex flex-col lg:pl-4">
+          <p className="max-w-lg text-muted-foreground">
+            Our mission is to provide a seamless and user-friendly experience for individuals and
+            families searching for their dream home across Pune.
+          </p>
+          <a
+            href="#contact"
+            className="mt-7 inline-flex w-fit items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm text-primary-foreground transition-all duration-300 hover:gap-4 hover:opacity-85"
+          >
+            Read more
+            <ArrowIcon />
+          </a>
+
+          <div className="mt-10 grid gap-8 border-t border-border pt-10 sm:grid-cols-2">
+            <div className="group">
+              <FEATURE_ICONS.agents className="h-8 w-8 text-foreground transition-transform duration-500 group-hover:-translate-y-1 group-hover:text-accent" />
+              <h4 className="mt-4 text-base font-medium">Experienced agents</h4>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                Discover the best properties to match your budget.
+              </p>
+            </div>
+            <div className="group">
+              <FEATURE_ICONS.legality className="h-8 w-8 text-foreground transition-transform duration-500 group-hover:-translate-y-1 group-hover:text-accent" />
+              <h4 className="mt-4 text-base font-medium">Clear legality</h4>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                Verified paperwork and transparent terms on every deal.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-10 flex flex-wrap items-center gap-8 border-t border-border pt-8">
+            <div>
+              <p className="text-sm text-muted-foreground">
+                Open 10:00 am – 8:00 pm
+                <br /> Speak to a consultant today.
+              </p>
+              <a
+                href="tel:+918484947570"
+                className="link-sweep mt-2 inline-block font-display text-2xl"
+              >
+                084849 47570
+              </a>
+            </div>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-6 py-3 text-sm transition-all duration-300 hover:gap-4 hover:bg-secondary"
+            >
+              Visit our office
+              <ArrowIcon />
+            </a>
+          </div>
+        </Reveal>
+      </div>
+    </div>
+  );
+}
+
 function Index() {
   return (
     <div id="top" className="overflow-x-hidden bg-background">
@@ -596,87 +722,8 @@ function Index() {
             </Reveal>
           </div>
 
-          <div className="mt-14 grid gap-16 lg:grid-cols-2 lg:items-center">
-            <Reveal variant="clip" className="relative mx-auto aspect-[4/5] w-full max-w-md lg:mx-0">
-              <div className="absolute inset-0 overflow-hidden rounded-sm">
-                <img
-                  src={aboutImg}
-                  alt="Modern apartment in Pune listed by Home Craft"
-                  loading="lazy"
-                  width={1024}
-                  height={1280}
-                  className="h-full w-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-105"
-                />
-              </div>
-              <div className="absolute -bottom-8 -left-6 w-3/5 overflow-hidden rounded-sm border-[6px] border-background shadow-xl sm:-bottom-10 sm:-left-10">
-                <img
-                  src={team1}
-                  alt="Home Craft consultant meeting a client"
-                  loading="lazy"
-                  className="h-48 w-full object-cover sm:h-56"
-                />
-              </div>
-            </Reveal>
+          <MissionShowcase />
 
-            <Reveal variant="right" delay={120} className="flex flex-col lg:pl-4">
-              <p className="eyebrow">Our mission</p>
-              <h3 className="display-lg mt-4 max-w-lg">
-                Buy. Sale. Rent. <span className="text-accent">Invest.</span>
-              </h3>
-              <p className="mt-6 max-w-lg text-muted-foreground">
-                Home Craft Real Estate works with buyers, owners and investors across Charholi
-                Budruk, Lohegaon, Wagholi and Pimpri-Chinchwad — handling buying agent services,
-                commercial sales and consulting, rentals and plots, from first search to final
-                registration.
-              </p>
-              <a
-                href="#contact"
-                className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm text-primary-foreground transition-all duration-300 hover:gap-4 hover:opacity-85"
-              >
-                Read more
-                <ArrowIcon />
-              </a>
-
-              <div className="mt-10 grid grid-cols-2 gap-8 border-t border-border pt-8">
-                <div>
-                  <FEATURE_ICONS.agents className="h-8 w-8 text-foreground" />
-                  <h4 className="mt-4 text-base font-medium">Experienced agents</h4>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    Discover the best properties to match your budget.
-                  </p>
-                </div>
-                <div>
-                  <FEATURE_ICONS.legality className="h-8 w-8 text-foreground" />
-                  <h4 className="mt-4 text-base font-medium">Clear legality</h4>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    Verified paperwork and transparent terms on every deal.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-10 flex flex-wrap items-center gap-8 border-t border-border pt-8">
-                <div>
-                  <p className="text-sm text-muted-foreground">
-                    Open 10:00 am – 8:00 pm
-                    <br /> Speak to a consultant today.
-                  </p>
-                  <a
-                    href="tel:+918484947570"
-                    className="link-sweep mt-2 inline-block font-display text-2xl"
-                  >
-                    084849 47570
-                  </a>
-                </div>
-                <a
-                  href="#contact"
-                  className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-6 py-3 text-sm transition-all duration-300 hover:gap-4 hover:bg-secondary"
-                >
-                  Visit our office
-                  <ArrowIcon />
-                </a>
-              </div>
-            </Reveal>
-          </div>
         </section>
 
         {/* Mission strip */}
