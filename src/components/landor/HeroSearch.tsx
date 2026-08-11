@@ -61,7 +61,7 @@ export function HeroSearch() {
           type="submit"
           className="group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-sm text-primary-foreground transition-all duration-300 hover:gap-4 hover:opacity-85"
         >
-          Submit
+          Request
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
             <path d="M5 12h14M13 6l6 6-6 6" />
           </svg>
