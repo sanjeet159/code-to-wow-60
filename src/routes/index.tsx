@@ -544,16 +544,17 @@ function AboutShowcase() {
 
         <Reveal variant="right" delay={120} className="flex flex-col lg:pl-4">
           <span className="text-xs uppercase tracking-[0.28em] text-muted-foreground">
-            Our mission
+            Why families choose us
           </span>
           <h3 className="display-lg mt-4">
-            Making your dreams come true with{" "}
+            Making your move simple with{" "}
             <span className="text-accent">our advisors</span>
           </h3>
           <p className="mt-5 max-w-lg text-muted-foreground">
-            Our mission is to provide a seamless and user-friendly experience for individuals and
-            families searching for their dream home across Pune.
+            Every client gets one advisor from first shortlist to handover — honest pricing advice,
+            verified documents and site visits planned around your schedule.
           </p>
+
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <div className="group rounded-2xl border border-border bg-background p-5 transition-all duration-500 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg">
