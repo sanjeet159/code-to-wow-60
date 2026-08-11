@@ -470,11 +470,12 @@ const MISSION_SHOTS = [
   },
 ];
 
-function MissionShowcase() {
+function AboutShowcase() {
   const [active, setActive] = useState(1);
 
   return (
-    <div className="relative mt-24 rounded-[2rem] border border-border bg-secondary/40 p-6 sm:p-10 lg:p-14">
+    <div className="relative mt-20 rounded-[2rem] border border-border bg-secondary/40 p-6 sm:p-10 lg:p-14">
+
       <div className="pointer-events-none absolute -top-px left-10 right-10 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
 
       <div className="grid gap-14 lg:grid-cols-[1.05fr_1fr] lg:items-center">
