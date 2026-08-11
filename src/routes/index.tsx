@@ -119,7 +119,7 @@ const CHOOSE = [
 ];
 
 const LOGO_ICONS = {
-  towers: ({ className }) => (
+  towers: ({ className }: { className?: string }) => (
     <svg viewBox="0 0 32 32" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
       <path d="M4 28V10l6-4 6 4v18" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
       <path d="M16 28V6l6-3 6 3v22" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
@@ -127,21 +127,21 @@ const LOGO_ICONS = {
       <path d="M8 14h2M8 18h2M8 22h2M20 10h2M20 14h2M20 18h2M20 22h2" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
     </svg>
   ),
-  house: ({ className }) => (
+  house: ({ className }: { className?: string }) => (
     <svg viewBox="0 0 32 32" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
       <path d="M6 28V14l10-8 10 8v14" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
       <path d="M6 14L16 20l10-6" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" strokeLinecap="round" />
       <path d="M6 28h20" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
     </svg>
   ),
-  block: ({ className }) => (
+  block: ({ className }: { className?: string }) => (
     <svg viewBox="0 0 32 32" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
       <rect x="7" y="6" width="18" height="22" rx="1" stroke="currentColor" strokeWidth="1.6" />
       <path d="M11 11h3M18 11h3M11 16h3M18 16h3M11 21h3M18 21h3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
       <path d="M7 28h18" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
     </svg>
   ),
-  spire: ({ className }) => (
+  spire: ({ className }: { className?: string }) => (
     <svg viewBox="0 0 32 32" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
       <path d="M10 28V16l6-12 6 12v12" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
       <path d="M4 28h24" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
