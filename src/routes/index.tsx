@@ -118,7 +118,7 @@ const CHOOSE = [
   { t: "After-handover support", d: "We stay reachable for renewals, resale and repeat requirements." },
 ];
 
-const LOGO_ICONS: Record<string, (props: { className?: string }) => JSX.Element> = {
+const LOGO_ICONS = {
   towers: ({ className }) => (
     <svg viewBox="0 0 32 32" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
       <path d="M4 28V10l6-4 6 4v18" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
