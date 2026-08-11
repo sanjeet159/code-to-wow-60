@@ -596,87 +596,8 @@ function Index() {
             </Reveal>
           </div>
 
-          <div className="mt-14 grid gap-16 lg:grid-cols-2 lg:items-center">
-            <Reveal variant="clip" className="relative mx-auto aspect-[4/5] w-full max-w-md lg:mx-0">
-              <div className="absolute inset-0 overflow-hidden rounded-sm">
-                <img
-                  src={aboutImg}
-                  alt="Modern apartment in Pune listed by Home Craft"
-                  loading="lazy"
-                  width={1024}
-                  height={1280}
-                  className="h-full w-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-105"
-                />
-              </div>
-              <div className="absolute -bottom-8 -left-6 w-3/5 overflow-hidden rounded-sm border-[6px] border-background shadow-xl sm:-bottom-10 sm:-left-10">
-                <img
-                  src={team1}
-                  alt="Home Craft consultant meeting a client"
-                  loading="lazy"
-                  className="h-48 w-full object-cover sm:h-56"
-                />
-              </div>
-            </Reveal>
+          <MissionShowcase />
 
-            <Reveal variant="right" delay={120} className="flex flex-col lg:pl-4">
-              <p className="eyebrow">Our mission</p>
-              <h3 className="display-lg mt-4 max-w-lg">
-                Buy. Sale. Rent. <span className="text-accent">Invest.</span>
-              </h3>
-              <p className="mt-6 max-w-lg text-muted-foreground">
-                Home Craft Real Estate works with buyers, owners and investors across Charholi
-                Budruk, Lohegaon, Wagholi and Pimpri-Chinchwad — handling buying agent services,
-                commercial sales and consulting, rentals and plots, from first search to final
-                registration.
-              </p>
-              <a
-                href="#contact"
-                className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm text-primary-foreground transition-all duration-300 hover:gap-4 hover:opacity-85"
-              >
-                Read more
-                <ArrowIcon />
-              </a>
-
-              <div className="mt-10 grid grid-cols-2 gap-8 border-t border-border pt-8">
-                <div>
-                  <FEATURE_ICONS.agents className="h-8 w-8 text-foreground" />
-                  <h4 className="mt-4 text-base font-medium">Experienced agents</h4>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    Discover the best properties to match your budget.
-                  </p>
-                </div>
-                <div>
-                  <FEATURE_ICONS.legality className="h-8 w-8 text-foreground" />
-                  <h4 className="mt-4 text-base font-medium">Clear legality</h4>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    Verified paperwork and transparent terms on every deal.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-10 flex flex-wrap items-center gap-8 border-t border-border pt-8">
-                <div>
-                  <p className="text-sm text-muted-foreground">
-                    Open 10:00 am – 8:00 pm
-                    <br /> Speak to a consultant today.
-                  </p>
-                  <a
-                    href="tel:+918484947570"
-                    className="link-sweep mt-2 inline-block font-display text-2xl"
-                  >
-                    084849 47570
-                  </a>
-                </div>
-                <a
-                  href="#contact"
-                  className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-6 py-3 text-sm transition-all duration-300 hover:gap-4 hover:bg-secondary"
-                >
-                  Visit our office
-                  <ArrowIcon />
-                </a>
-              </div>
-            </Reveal>
-          </div>
         </section>
 
         {/* Mission strip */}
