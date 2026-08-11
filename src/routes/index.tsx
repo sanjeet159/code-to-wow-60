@@ -457,6 +457,132 @@ function AboutTabs() {
   );
 }
 
+const MISSION_SHOTS = [
+  {
+    img: team1,
+    alt: "Home Craft advisor handing over keys to a client in Pune",
+    caption: "Advisor-led site visits",
+  },
+  {
+    img: aboutImg,
+    alt: "Modern apartment building listed by Home Craft in Pune",
+    caption: "Verified Pune inventory",
+  },
+];
+
+function MissionShowcase() {
+  const [active, setActive] = useState(1);
+
+  return (
+    <div className="mt-20">
+      <Reveal>
+        <h3 className="display-lg max-w-3xl">
+          Making your dreams come true with{" "}
+          <span className="text-accent">our advisors</span>
+        </h3>
+      </Reveal>
+
+      <div className="mt-12 grid gap-12 lg:grid-cols-[1.15fr_1fr] lg:items-center">
+        {/* Interactive image pair */}
+        <Reveal variant="clip" className="flex items-end gap-5 sm:gap-7">
+          {MISSION_SHOTS.map((shot, i) => {
+            const isActive = active === i;
+            return (
+              <button
+                key={shot.caption}
+                type="button"
+                onMouseEnter={() => setActive(i)}
+                onFocus={() => setActive(i)}
+                onClick={() => setActive(i)}
+                aria-pressed={isActive}
+                className={`group relative overflow-hidden rounded-md outline-none transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] focus-visible:ring-2 focus-visible:ring-accent ${
+                  i === 0 ? "aspect-[4/5]" : "aspect-[3/4]"
+                } ${isActive ? "flex-[1.25] -translate-y-2 shadow-xl" : "flex-[0.85] translate-y-0"}`}
+              >
+                <img
+                  src={shot.img}
+                  alt={shot.alt}
+                  loading="lazy"
+                  className={`h-full w-full object-cover transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                    isActive ? "scale-105 saturate-100" : "scale-100 saturate-50"
+                  }`}
+                />
+                <span
+                  className={`pointer-events-none absolute inset-0 transition-opacity duration-700 ${
+                    isActive
+                      ? "bg-gradient-to-t from-foreground/70 via-transparent to-transparent opacity-100"
+                      : "bg-foreground/25 opacity-100"
+                  }`}
+                />
+                <span
+                  className={`pointer-events-none absolute inset-x-4 bottom-4 text-left text-xs uppercase tracking-[0.18em] text-background transition-all duration-500 ${
+                    isActive ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
+                  }`}
+                >
+                  {shot.caption}
+                </span>
+              </button>
+            );
+          })}
+        </Reveal>
+
+        <Reveal variant="right" delay={120} className="flex flex-col lg:pl-4">
+          <p className="max-w-lg text-muted-foreground">
+            Our mission is to provide a seamless and user-friendly experience for individuals and
+            families searching for their dream home across Pune.
+          </p>
+          <a
+            href="#contact"
+            className="mt-7 inline-flex w-fit items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm text-primary-foreground transition-all duration-300 hover:gap-4 hover:opacity-85"
+          >
+            Read more
+            <ArrowIcon />
+          </a>
+
+          <div className="mt-10 grid gap-8 border-t border-border pt-10 sm:grid-cols-2">
+            <div className="group">
+              <FEATURE_ICONS.agents className="h-8 w-8 text-foreground transition-transform duration-500 group-hover:-translate-y-1 group-hover:text-accent" />
+              <h4 className="mt-4 text-base font-medium">Experienced agents</h4>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                Discover the best properties to match your budget.
+              </p>
+            </div>
+            <div className="group">
+              <FEATURE_ICONS.legality className="h-8 w-8 text-foreground transition-transform duration-500 group-hover:-translate-y-1 group-hover:text-accent" />
+              <h4 className="mt-4 text-base font-medium">Clear legality</h4>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                Verified paperwork and transparent terms on every deal.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-10 flex flex-wrap items-center gap-8 border-t border-border pt-8">
+            <div>
+              <p className="text-sm text-muted-foreground">
+                Open 10:00 am – 8:00 pm
+                <br /> Speak to a consultant today.
+              </p>
+              <a
+                href="tel:+918484947570"
+                className="link-sweep mt-2 inline-block font-display text-2xl"
+              >
+                084849 47570
+              </a>
+            </div>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-6 py-3 text-sm transition-all duration-300 hover:gap-4 hover:bg-secondary"
+            >
+              Visit our office
+              <ArrowIcon />
+            </a>
+          </div>
+        </Reveal>
+      </div>
+    </div>
+  );
+}
+
 function Index() {
   return (
     <div id="top" className="overflow-x-hidden bg-background">
