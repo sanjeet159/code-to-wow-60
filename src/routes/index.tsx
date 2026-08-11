@@ -474,81 +474,96 @@ function MissionShowcase() {
   const [active, setActive] = useState(1);
 
   return (
-    <div className="mt-20">
-      <Reveal>
-        <h3 className="display-lg max-w-3xl">
-          Making your dreams come true with{" "}
-          <span className="text-accent">our advisors</span>
-        </h3>
-      </Reveal>
+    <div className="relative mt-24 rounded-[2rem] border border-border bg-secondary/40 p-6 sm:p-10 lg:p-14">
+      <div className="pointer-events-none absolute -top-px left-10 right-10 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
 
-      <div className="mt-12 grid gap-12 lg:grid-cols-[1.15fr_1fr] lg:items-center">
-        {/* Interactive image pair */}
-        <Reveal variant="clip" className="flex items-end gap-5 sm:gap-7">
-          {MISSION_SHOTS.map((shot, i) => {
-            const isActive = active === i;
-            return (
-              <button
-                key={shot.caption}
-                type="button"
-                onMouseEnter={() => setActive(i)}
-                onFocus={() => setActive(i)}
-                onClick={() => setActive(i)}
-                aria-pressed={isActive}
-                className={`group relative overflow-hidden rounded-md outline-none transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] focus-visible:ring-2 focus-visible:ring-accent ${
-                  i === 0 ? "aspect-[4/5]" : "aspect-[3/4]"
-                } ${isActive ? "flex-[1.25] -translate-y-2 shadow-xl" : "flex-[0.85] translate-y-0"}`}
-              >
-                <img
-                  src={shot.img}
-                  alt={shot.alt}
-                  loading="lazy"
-                  className={`h-full w-full object-cover transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
-                    isActive ? "scale-105 saturate-100" : "scale-100 saturate-50"
-                  }`}
-                />
-                <span
-                  className={`pointer-events-none absolute inset-0 transition-opacity duration-700 ${
-                    isActive
-                      ? "bg-gradient-to-t from-foreground/70 via-transparent to-transparent opacity-100"
-                      : "bg-foreground/25 opacity-100"
-                  }`}
-                />
-                <span
-                  className={`pointer-events-none absolute inset-x-4 bottom-4 text-left text-xs uppercase tracking-[0.18em] text-background transition-all duration-500 ${
-                    isActive ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
-                  }`}
-                >
-                  {shot.caption}
-                </span>
-              </button>
-            );
-          })}
+      <div className="grid gap-14 lg:grid-cols-[1.05fr_1fr] lg:items-center">
+        {/* Layered interactive imagery */}
+        <Reveal variant="clip">
+          <div className="relative">
+            <div className="flex items-end gap-4 sm:gap-6">
+              {MISSION_SHOTS.map((shot, i) => {
+                const isActive = active === i;
+                return (
+                  <button
+                    key={shot.caption}
+                    type="button"
+                    onMouseEnter={() => setActive(i)}
+                    onFocus={() => setActive(i)}
+                    onClick={() => setActive(i)}
+                    aria-pressed={isActive}
+                    className={`group relative overflow-hidden rounded-2xl outline-none transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] focus-visible:ring-2 focus-visible:ring-accent ${
+                      i === 0 ? "aspect-[4/5]" : "aspect-[3/4]"
+                    } ${isActive ? "flex-[1.35] -translate-y-3 shadow-2xl" : "flex-[0.8] shadow-md"}`}
+                  >
+                    <img
+                      src={shot.img}
+                      alt={shot.alt}
+                      loading="lazy"
+                      className={`h-full w-full object-cover transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                        isActive ? "scale-105 saturate-100" : "scale-100 saturate-[0.4]"
+                      }`}
+                    />
+                    <span
+                      className={`pointer-events-none absolute inset-0 transition-opacity duration-700 ${
+                        isActive
+                          ? "bg-gradient-to-t from-foreground/75 via-foreground/10 to-transparent"
+                          : "bg-foreground/35"
+                      }`}
+                    />
+                    <span
+                      className={`pointer-events-none absolute inset-x-4 bottom-4 text-left text-[0.7rem] uppercase tracking-[0.18em] text-background transition-all duration-500 ${
+                        isActive ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
+                      }`}
+                    >
+                      {shot.caption}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Floating stat card */}
+            <div className="absolute -bottom-6 left-4 flex items-center gap-4 rounded-2xl border border-border bg-background/90 px-5 py-4 shadow-xl backdrop-blur sm:left-8">
+              <div>
+                <p className="font-display text-2xl leading-none">4.3</p>
+                <div className="mt-1">
+                  <Stars value={4.3} />
+                </div>
+              </div>
+              <span className="h-9 w-px bg-border" />
+              <p className="text-xs leading-relaxed text-muted-foreground">
+                12 Google reviews
+                <br />
+                from Pune families
+              </p>
+            </div>
+          </div>
         </Reveal>
 
         <Reveal variant="right" delay={120} className="flex flex-col lg:pl-4">
-          <p className="max-w-lg text-muted-foreground">
+          <span className="text-xs uppercase tracking-[0.28em] text-muted-foreground">
+            Our mission
+          </span>
+          <h3 className="display-lg mt-4">
+            Making your dreams come true with{" "}
+            <span className="text-accent">our advisors</span>
+          </h3>
+          <p className="mt-5 max-w-lg text-muted-foreground">
             Our mission is to provide a seamless and user-friendly experience for individuals and
             families searching for their dream home across Pune.
           </p>
-          <a
-            href="#contact"
-            className="mt-7 inline-flex w-fit items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm text-primary-foreground transition-all duration-300 hover:gap-4 hover:opacity-85"
-          >
-            Read more
-            <ArrowIcon />
-          </a>
 
-          <div className="mt-10 grid gap-8 border-t border-border pt-10 sm:grid-cols-2">
-            <div className="group">
-              <FEATURE_ICONS.agents className="h-8 w-8 text-foreground transition-transform duration-500 group-hover:-translate-y-1 group-hover:text-accent" />
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <div className="group rounded-2xl border border-border bg-background p-5 transition-all duration-500 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg">
+              <FEATURE_ICONS.agents className="h-7 w-7 text-accent transition-transform duration-500 group-hover:-translate-y-1" />
               <h4 className="mt-4 text-base font-medium">Experienced agents</h4>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 Discover the best properties to match your budget.
               </p>
             </div>
-            <div className="group">
-              <FEATURE_ICONS.legality className="h-8 w-8 text-foreground transition-transform duration-500 group-hover:-translate-y-1 group-hover:text-accent" />
+            <div className="group rounded-2xl border border-border bg-background p-5 transition-all duration-500 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg">
+              <FEATURE_ICONS.legality className="h-7 w-7 text-accent transition-transform duration-500 group-hover:-translate-y-1" />
               <h4 className="mt-4 text-base font-medium">Clear legality</h4>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 Verified paperwork and transparent terms on every deal.
@@ -556,32 +571,41 @@ function MissionShowcase() {
             </div>
           </div>
 
-          <div className="mt-10 flex flex-wrap items-center gap-8 border-t border-border pt-8">
+          <div className="mt-10 flex flex-wrap items-center justify-between gap-6 rounded-2xl border border-border bg-background px-6 py-5">
             <div>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
                 Open 10:00 am – 8:00 pm
-                <br /> Speak to a consultant today.
               </p>
               <a
                 href="tel:+918484947570"
-                className="link-sweep mt-2 inline-block font-display text-2xl"
+                className="link-sweep mt-1 inline-block font-display text-2xl"
               >
                 084849 47570
               </a>
             </div>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-6 py-3 text-sm transition-all duration-300 hover:gap-4 hover:bg-secondary"
-            >
-              Visit our office
-              <ArrowIcon />
-            </a>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm text-primary-foreground transition-all duration-300 hover:gap-4 hover:opacity-85"
+              >
+                Read more
+                <ArrowIcon />
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-6 py-3 text-sm transition-all duration-300 hover:gap-4 hover:bg-secondary"
+              >
+                Visit our office
+                <ArrowIcon />
+              </a>
+            </div>
           </div>
         </Reveal>
       </div>
     </div>
   );
 }
+
 
 function Index() {
   return (
