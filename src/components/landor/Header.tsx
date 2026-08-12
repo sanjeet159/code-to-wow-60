@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 
 import wordmark from "@/assets/homecraft-wordmark.png.asset.json";
 
@@ -51,7 +52,7 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex h-20 max-w-[1600px] items-center justify-between px-6 lg:px-10">
-        <a href="#top" className="group flex items-center">
+        <a href="/" className="group flex items-center">
           <img
             src={wordmark.url}
             alt="Home Craft Real Estate"
@@ -63,19 +64,26 @@ export function Header() {
           {NAV.map((item) => (
             <a
               key={item}
-              href={`#${item.toLowerCase()}`}
+              href={`/#${item.toLowerCase()}`}
               className="link-sweep text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               {item}
             </a>
           ))}
+          <Link
+            to="/blog"
+            className="link-sweep text-sm text-muted-foreground transition-colors hover:text-accent"
+            activeProps={{ className: "text-accent" }}
+          >
+            Blog
+          </Link>
         </nav>
 
 
         <div className="flex items-center gap-3">
           <a
             href="tel:+918484947570"
-            className="group hidden items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm text-primary-foreground transition-all duration-300 hover:gap-4 hover:opacity-85 sm:inline-flex"
+            className="group hidden items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm text-accent-foreground transition-all duration-300 hover:gap-4 hover:opacity-85 sm:inline-flex"
           >
             084849 47570
             <ArrowIcon />
@@ -99,13 +107,16 @@ export function Header() {
             {NAV.concat("Contact").map((item) => (
               <a
                 key={item}
-                href={`#${item.toLowerCase()}`}
+                href={`/#${item.toLowerCase()}`}
                 onClick={() => setOpen(false)}
                 className="text-lg text-foreground"
               >
                 {item}
               </a>
             ))}
+            <Link to="/blog" onClick={() => setOpen(false)} className="text-lg text-foreground">
+              Blog
+            </Link>
           </nav>
         </div>
       )}
