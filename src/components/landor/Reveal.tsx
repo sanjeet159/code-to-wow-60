@@ -7,7 +7,7 @@ type RevealProps = {
   className?: string;
   /** delay in ms */
   delay?: number;
-  variant?: "up" | "fade" | "left" | "right" | "scale" | "clip";
+  variant?: "up" | "fade" | "left" | "right" | "scale" | "clip" | "blur" | "flip";
   as?: ElementType;
   id?: string;
 };
