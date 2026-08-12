@@ -13,7 +13,7 @@ import heroVilla from "@/assets/hero-villa.jpg";
 
 import aboutCoupleAsset from "@/assets/about-couple.jpg.asset.json";
 import aboutImg from "@/assets/about.jpg";
-import ctaSkyAsset from "@/assets/cta-sky.jpg.asset.json";
+import ctaHomeAsset from "@/assets/cta-home.jpg.asset.json";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
@@ -23,7 +23,7 @@ import team2 from "@/assets/team-2.jpg";
 import team3 from "@/assets/team-3.jpg";
 
 const aboutCouple = aboutCoupleAsset.url;
-const ctaSky = ctaSkyAsset.url;
+const ctaHome = ctaHomeAsset.url;
 
 const TITLE = "Home Craft — Real Estate Consultant in Pune";
 const DESCRIPTION =
