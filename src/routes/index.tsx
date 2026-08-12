@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { Header, ArrowIcon } from "@/components/landor/Header";
 import { Services } from "@/components/landor/Services";
 import { Reveal, CountUp } from "@/components/landor/Reveal";
 import { Parallax, TiltCard, RatingBars, Stars, CursorGlow } from "@/components/landor/Motion";
 import { HeroSearch } from "@/components/landor/HeroSearch";
+import { SiteFooter } from "@/components/landor/SiteFooter";
+import { POSTS } from "@/data/posts";
 import heroVilla from "@/assets/hero-villa.jpg";
 
 import aboutImg from "@/assets/about.jpg";
@@ -16,9 +18,6 @@ import project4 from "@/assets/project-4.jpg";
 import team1 from "@/assets/team-1.jpg";
 import team2 from "@/assets/team-2.jpg";
 import team3 from "@/assets/team-3.jpg";
-import blog1 from "@/assets/blog-1.jpg";
-import blog2 from "@/assets/blog-2.jpg";
-import blog3 from "@/assets/blog-3.jpg";
 
 const TITLE = "Home Craft — Real Estate Consultant in Pune";
 const DESCRIPTION =
@@ -184,33 +183,6 @@ const TEAM = [
   { name: "Client advisory", role: "Buying & rental guidance", img: team1 },
   { name: "Commercial desk", role: "Shops, offices, showrooms", img: team3 },
   { name: "Rentals desk", role: "Owners & tenant matching", img: team2 },
-];
-
-const POSTS = [
-  {
-    img: blog1,
-    cat: "Buying guide",
-    date: "Pune market",
-    title: "What to check before buying a flat in Charholi Budruk",
-    author: "Home Craft desk",
-    avatar: team1,
-  },
-  {
-    img: blog2,
-    cat: "Renting",
-    date: "For owners",
-    title: "How we screen tenants so your property stays trouble-free",
-    author: "Home Craft desk",
-    avatar: team3,
-  },
-  {
-    img: blog3,
-    cat: "Investment",
-    date: "Market notes",
-    title: "Plot or flat: which holds value better around Pune's PCMC belt",
-    author: "Home Craft desk",
-    avatar: team2,
-  },
 ];
 
 const AUDIENCES = [
@@ -416,7 +388,7 @@ function AboutTabs() {
               aria-pressed={isActive}
               className={`rounded-full border px-4 py-1.5 text-sm transition-all duration-300 ${
                 isActive
-                  ? "border-foreground bg-foreground text-background"
+                  ? "border-accent bg-accent text-accent-foreground"
                   : "border-border bg-secondary text-foreground hover:bg-background"
               }`}
             >
@@ -588,7 +560,7 @@ function AboutShowcase() {
             <div className="flex flex-wrap gap-3">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm text-primary-foreground transition-all duration-300 hover:gap-4 hover:opacity-85"
+                className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm text-accent-foreground transition-all duration-300 hover:gap-4 hover:opacity-85"
               >
                 Read more
                 <ArrowIcon />
@@ -936,132 +908,70 @@ function Index() {
         {/* Insights */}
         <section id="blog" className="border-t border-border py-24 lg:py-32">
           <div className="mx-auto max-w-[1600px] px-6 lg:px-10">
-            <Reveal as="span" className="eyebrow block">
-              Insights
-            </Reveal>
-            <Reveal delay={80}>
-              <h2 className="display-lg mt-5">Practical notes on the Pune market</h2>
-            </Reveal>
+            <div className="flex flex-wrap items-end justify-between gap-6">
+              <div>
+                <Reveal as="span" className="eyebrow block text-accent">
+                  Insights
+                </Reveal>
+                <Reveal delay={80}>
+                  <h2 className="display-lg mt-5">Practical notes on the Pune market</h2>
+                </Reveal>
+              </div>
+              <Reveal delay={160}>
+                <Link
+                  to="/blog"
+                  className="inline-flex items-center gap-2 rounded-full border border-accent px-6 py-3 text-sm text-accent transition-all duration-300 hover:gap-4 hover:bg-accent hover:text-accent-foreground"
+                >
+                  All insights
+                  <ArrowIcon />
+                </Link>
+              </Reveal>
+            </div>
             <div className="mt-14 grid gap-8 lg:grid-cols-3">
-              {POSTS.map((p, i) => (
+              {POSTS.slice(0, 3).map((p, i) => (
                 <Reveal key={p.title} delay={i * 140} className="group">
-                  <div className="overflow-hidden rounded-sm">
-                    <img
-                      src={p.img}
-                      alt={p.title}
-                      loading="lazy"
-                      className="h-60 w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
-                    />
-                  </div>
-                  <div className="mt-5 flex items-center gap-3 text-xs uppercase tracking-widest text-muted-foreground">
-                    <span className="text-accent">{p.cat}</span>
-                    <span>·</span>
-                    <span>{p.date}</span>
-                  </div>
-                  <h3 className="mt-3 text-xl leading-snug transition-colors group-hover:text-accent">
-                    {p.title}
-                  </h3>
-                  <div className="mt-6 flex items-center justify-between border-t border-border pt-5">
-                    <div className="flex items-center gap-3">
+                  <Link to="/blog/$slug" params={{ slug: p.slug }} className="block">
+                    <div className="overflow-hidden rounded-sm">
                       <img
-                        src={p.avatar}
-                        alt=""
+                        src={p.img}
+                        alt={p.title}
                         loading="lazy"
-                        className="h-9 w-9 rounded-full object-cover"
+                        className="h-60 w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
                       />
-                      <p className="text-sm">{p.author}</p>
                     </div>
-                    <span className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-all duration-300 group-hover:gap-4 group-hover:text-foreground">
-                      Read more
-                      <ArrowIcon />
-                    </span>
-                  </div>
+                    <div className="mt-5 flex items-center gap-3 text-xs uppercase tracking-widest text-muted-foreground">
+                      <span className="text-accent">{p.cat}</span>
+                      <span>·</span>
+                      <span>{p.readTime}</span>
+                    </div>
+                    <h3 className="mt-3 text-xl leading-snug transition-colors group-hover:text-accent">
+                      {p.title}
+                    </h3>
+                    <div className="mt-6 flex items-center justify-between border-t border-border pt-5">
+                      <div className="flex items-center gap-3">
+                        <img
+                          src={p.avatar}
+                          alt=""
+                          loading="lazy"
+                          className="h-9 w-9 rounded-full object-cover"
+                        />
+                        <p className="text-sm">{p.author}</p>
+                      </div>
+                      <span className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-all duration-300 group-hover:gap-4 group-hover:text-accent">
+                        Read more
+                        <ArrowIcon />
+                      </span>
+                    </div>
+                  </Link>
                 </Reveal>
               ))}
             </div>
           </div>
         </section>
+
       </main>
 
-      {/* Footer / contact */}
-      <footer id="contact" className="relative bg-surface-dark text-surface-dark-foreground">
-        <CursorGlow />
-        <div className="relative mx-auto max-w-[1600px] px-6 py-24 lg:px-10 lg:py-32">
-          <div className="grid gap-10 border-b border-white/10 pb-16 lg:grid-cols-[1.2fr_1fr] lg:items-end">
-            <Reveal>
-              <h2 className="display-xl">Let's find your place</h2>
-            </Reveal>
-            <Reveal delay={120}>
-              <p className="max-w-md text-white/60">
-                Buying, selling, renting or investing in Pune? Tell us the requirement and we'll
-                come back with options that actually fit.
-              </p>
-              <a
-                href="tel:+918484947570"
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-7 py-4 text-sm text-accent-foreground transition-all duration-300 hover:gap-4 hover:opacity-85"
-              >
-                Call 084849 47570
-                <ArrowIcon />
-              </a>
-            </Reveal>
-          </div>
-
-          <div className="grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
-            <div>
-              <p className="eyebrow-light">Office</p>
-              <p className="mt-4 text-white/60">
-                C1C 504, Brooklyn, Pride World City, near Manhattan, Charholi Budruk, Pune,
-                Pimpri-Chinchwad, Maharashtra 412105
-              </p>
-            </div>
-            <div>
-              <p className="eyebrow-light">Branch</p>
-              <p className="mt-4 text-white/60">
-                Shop No. A2, Dream Elements Building, opp. Orchid Hospital, Porwal Road, Lohegaon,
-                Pune 411047
-              </p>
-            </div>
-            <div>
-              <p className="eyebrow-light">Contact</p>
-              <a
-                href="tel:+918484947570"
-                className="link-sweep mt-4 inline-block font-display text-2xl"
-              >
-                084849 47570
-              </a>
-              <p className="mt-3 text-white/60">Open daily · 10:00 am – 8:00 pm</p>
-              <a
-                href="https://maps.google.com/?q=Home+Craft+Real+Estate+Charholi+Budruk+Pune"
-                target="_blank"
-                rel="noreferrer"
-                className="mt-3 inline-flex items-center gap-2 text-sm text-accent transition-all duration-300 hover:gap-4"
-              >
-                Get directions
-                <ArrowIcon />
-              </a>
-            </div>
-            <div>
-              <p className="eyebrow-light">Services</p>
-              <ul className="mt-4 space-y-2 text-white/60">
-                {MARQUEE.map((l) => (
-                  <li key={l}>
-                    <a href="#services" className="link-sweep transition-colors hover:text-white">
-                      {l}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-white/40 md:flex-row">
-            <p>© {new Date().getFullYear()} Home Craft Real Estate.</p>
-            <p className="font-display text-4xl tracking-[-0.05em] text-white/10 lg:text-6xl">
-              home craft
-            </p>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
