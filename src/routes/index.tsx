@@ -452,45 +452,43 @@ function AboutShowcase() {
 
       <div className="grid gap-14 lg:grid-cols-[1.05fr_1fr] lg:items-center">
         {/* Two vertically stacked rounded images */}
-        <Reveal variant="clip">
-          <div className="relative flex flex-col gap-5">
-            {MISSION_SHOTS.map((shot, i) => (
-              <div
-                key={shot.caption}
-                className="group relative overflow-hidden rounded-2xl bg-background shadow-sm"
-              >
-                <div className={`relative w-full overflow-hidden ${i === 0 ? "aspect-[4/3]" : "aspect-[16/10]"}`}>
-                  <img
-                    src={shot.img}
-                    alt={shot.alt}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
-                  />
-                  <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/60 via-foreground/10 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-60" />
-                  <span className="pointer-events-none absolute inset-x-5 bottom-5 text-left text-[0.7rem] uppercase tracking-[0.18em] text-background">
-                    {shot.caption}
-                  </span>
-                </div>
+        <div className="relative flex flex-col gap-5">
+          {MISSION_SHOTS.map((shot, i) => (
+            <div
+              key={shot.caption}
+              className="group relative overflow-hidden rounded-2xl bg-background shadow-sm"
+            >
+              <div className={`relative w-full overflow-hidden ${i === 0 ? "aspect-[4/3]" : "aspect-[16/10]"}`}>
+                <img
+                  src={shot.img}
+                  alt={shot.alt}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
+                />
+                <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/60 via-foreground/10 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-60" />
+                <span className="pointer-events-none absolute inset-x-5 bottom-5 text-left text-[0.7rem] uppercase tracking-[0.18em] text-background">
+                  {shot.caption}
+                </span>
               </div>
-            ))}
-
-            {/* Floating stat card */}
-            <div className="absolute -bottom-4 left-4 flex items-center gap-4 rounded-2xl border border-border bg-background/95 px-5 py-4 shadow-xl backdrop-blur sm:left-8">
-              <div>
-                <p className="font-display text-2xl leading-none">4.3</p>
-                <div className="mt-1">
-                  <Stars value={4.3} />
-                </div>
-              </div>
-              <span className="h-9 w-px bg-border" />
-              <p className="text-xs leading-relaxed text-muted-foreground">
-                12 Google reviews
-                <br />
-                from Pune families
-              </p>
             </div>
+          ))}
+
+          {/* Floating stat card */}
+          <div className="absolute -bottom-4 left-4 flex items-center gap-4 rounded-2xl border border-border bg-background/95 px-5 py-4 shadow-xl backdrop-blur sm:left-8">
+            <div>
+              <p className="font-display text-2xl leading-none">4.3</p>
+              <div className="mt-1">
+                <Stars value={4.3} />
+              </div>
+            </div>
+            <span className="h-9 w-px bg-border" />
+            <p className="text-xs leading-relaxed text-muted-foreground">
+              12 Google reviews
+              <br />
+              from Pune families
+            </p>
           </div>
-        </Reveal>
+        </div>
 
         <Reveal variant="right" delay={120} className="flex flex-col lg:pl-4">
           <span className="text-xs uppercase tracking-[0.28em] text-muted-foreground">
