@@ -8,6 +8,7 @@ import { Reveal, CountUp } from "@/components/landor/Reveal";
 import { Parallax, TiltCard, RatingBars, Stars, CursorGlow } from "@/components/landor/Motion";
 import { HeroSearch } from "@/components/landor/HeroSearch";
 import { SiteFooter } from "@/components/landor/SiteFooter";
+import { ContactButtons } from "@/components/landor/ContactButtons";
 import { ScrollProgress, BackToTop } from "@/components/landor/ScrollFx";
 import { POSTS } from "@/data/posts";
 import heroVilla from "@/assets/hero-villa.jpg";
@@ -326,12 +327,7 @@ function AboutShowcase() {
               <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
                 Open 10:00 am – 8:00 pm
               </p>
-              <a
-                href="tel:+918484947570"
-                className="link-sweep mt-1 inline-block font-display text-2xl"
-              >
-                084849 47570
-              </a>
+              <ContactButtons size="sm" className="mt-3" />
             </div>
             <div className="flex flex-wrap gap-3">
               <a
@@ -670,13 +666,7 @@ function Index() {
               </h2>
             </Reveal>
             <Reveal variant="right" delay={120} className="w-fit">
-              <a
-                href="tel:+918484947570"
-                className="inline-flex w-fit items-center gap-2 rounded-full border border-foreground/20 px-6 py-3 text-sm transition-all duration-300 hover:gap-4 hover:bg-secondary"
-              >
-                Talk to us
-                <ArrowIcon />
-              </a>
+              <ContactButtons size="md" />
             </Reveal>
           </div>
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -882,12 +872,10 @@ function Index() {
                   </button>
                 </div>
 
-                <p className="mt-6 text-center text-xs text-muted-foreground">
-                  Prefer a quick call?{" "}
-                  <a href="tel:+918484947570" className="underline underline-offset-4 hover:text-accent">
-                    084849 47570
-                  </a>
-                </p>
+                <div className="mt-6 flex flex-col items-center gap-3">
+                  <p className="text-xs text-muted-foreground">Prefer talking to someone?</p>
+                  <ContactButtons size="sm" />
+                </div>
               </form>
             </Reveal>
           </div>

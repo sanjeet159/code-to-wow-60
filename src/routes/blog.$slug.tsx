@@ -3,6 +3,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Header, ArrowIcon } from "@/components/landor/Header";
 import { Reveal } from "@/components/landor/Reveal";
 import { SiteFooter } from "@/components/landor/SiteFooter";
+import { ContactButtons } from "@/components/landor/ContactButtons";
 import { POSTS, getPost, type Post } from "@/data/posts";
 
 export const Route = createFileRoute("/blog/$slug")({
@@ -133,13 +134,7 @@ function PostPage() {
                 Share the details and our Pune desk will review the paperwork, pricing and locality
                 with you — no obligation.
               </p>
-              <a
-                href="tel:+918484947570"
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-7 py-4 text-sm text-accent-foreground transition-all duration-300 hover:gap-4 hover:opacity-85"
-              >
-                Call 084849 47570
-                <ArrowIcon />
-              </a>
+              <ContactButtons tone="dark" size="lg" className="mt-8" />
             </div>
           </div>
         </article>

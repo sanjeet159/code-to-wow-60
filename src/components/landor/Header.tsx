@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import wordmark from "@/assets/homecraft-logo.png";
+import { ContactButtons } from "@/components/landor/ContactButtons";
 const NAV = ["Home", "About", "Services", "Projects", "Reviews", "Team"];
 export function ArrowIcon({ className = "" }: { className?: string }) {
   return (
