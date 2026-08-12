@@ -72,13 +72,7 @@ export function Header() {
           </Link>
         </nav>
         <div className="flex items-center gap-3">
-          <a
-            href="tel:+918484947570"
-            className="group hidden items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm text-accent-foreground transition-all duration-300 hover:gap-4 hover:opacity-85 sm:inline-flex"
-          >
-            084849 47570
-            <ArrowIcon />
-          </a>
+          <ContactButtons size="sm" className="hidden sm:flex" />
           <button
             type="button"
             aria-label="Toggle menu"
@@ -106,6 +100,7 @@ export function Header() {
             <Link to="/blog" onClick={() => setOpen(false)} className="text-lg text-foreground">
               Blog
             </Link>
+            <ContactButtons size="sm" className="mt-2" onNavigate={() => setOpen(false)} />
           </nav>
         </div>
       )}
