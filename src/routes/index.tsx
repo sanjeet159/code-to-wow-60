@@ -758,8 +758,8 @@ function Index() {
         {/* Final CTA */}
         <section id="contact" className="relative overflow-hidden py-24 lg:py-32">
           <img
-            src={ctaSky}
-            alt="Modern home under a blue sky"
+            src={ctaHome}
+            alt="Modern luxury villa with pool and blue sky"
             width={1920}
             height={1080}
             loading="lazy"
