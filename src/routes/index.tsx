@@ -15,7 +15,7 @@ import heroVilla from "@/assets/hero-villa.jpg";
 
 import aboutCoupleAsset from "@/assets/about-couple.jpg.asset.json";
 import aboutImg from "@/assets/about.jpg";
-import ctaHomeAsset from "@/assets/cta-home.jpg.asset.json";
+import ctaHomeAsset from "@/assets/cta-home.jpg";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
