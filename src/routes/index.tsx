@@ -908,49 +908,66 @@ function Index() {
         {/* Insights */}
         <section id="blog" className="border-t border-border py-24 lg:py-32">
           <div className="mx-auto max-w-[1600px] px-6 lg:px-10">
-            <Reveal as="span" className="eyebrow block">
-              Insights
-            </Reveal>
-            <Reveal delay={80}>
-              <h2 className="display-lg mt-5">Practical notes on the Pune market</h2>
-            </Reveal>
+            <div className="flex flex-wrap items-end justify-between gap-6">
+              <div>
+                <Reveal as="span" className="eyebrow block text-accent">
+                  Insights
+                </Reveal>
+                <Reveal delay={80}>
+                  <h2 className="display-lg mt-5">Practical notes on the Pune market</h2>
+                </Reveal>
+              </div>
+              <Reveal delay={160}>
+                <Link
+                  to="/blog"
+                  className="inline-flex items-center gap-2 rounded-full border border-accent px-6 py-3 text-sm text-accent transition-all duration-300 hover:gap-4 hover:bg-accent hover:text-accent-foreground"
+                >
+                  All insights
+                  <ArrowIcon />
+                </Link>
+              </Reveal>
+            </div>
             <div className="mt-14 grid gap-8 lg:grid-cols-3">
-              {POSTS.map((p, i) => (
+              {POSTS.slice(0, 3).map((p, i) => (
                 <Reveal key={p.title} delay={i * 140} className="group">
-                  <div className="overflow-hidden rounded-sm">
-                    <img
-                      src={p.img}
-                      alt={p.title}
-                      loading="lazy"
-                      className="h-60 w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
-                    />
-                  </div>
-                  <div className="mt-5 flex items-center gap-3 text-xs uppercase tracking-widest text-muted-foreground">
-                    <span className="text-accent">{p.cat}</span>
-                    <span>·</span>
-                    <span>{p.date}</span>
-                  </div>
-                  <h3 className="mt-3 text-xl leading-snug transition-colors group-hover:text-accent">
-                    {p.title}
-                  </h3>
-                  <div className="mt-6 flex items-center justify-between border-t border-border pt-5">
-                    <div className="flex items-center gap-3">
+                  <Link to="/blog/$slug" params={{ slug: p.slug }} className="block">
+                    <div className="overflow-hidden rounded-sm">
                       <img
-                        src={p.avatar}
-                        alt=""
+                        src={p.img}
+                        alt={p.title}
                         loading="lazy"
-                        className="h-9 w-9 rounded-full object-cover"
+                        className="h-60 w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
                       />
-                      <p className="text-sm">{p.author}</p>
                     </div>
-                    <span className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-all duration-300 group-hover:gap-4 group-hover:text-foreground">
-                      Read more
-                      <ArrowIcon />
-                    </span>
-                  </div>
+                    <div className="mt-5 flex items-center gap-3 text-xs uppercase tracking-widest text-muted-foreground">
+                      <span className="text-accent">{p.cat}</span>
+                      <span>·</span>
+                      <span>{p.readTime}</span>
+                    </div>
+                    <h3 className="mt-3 text-xl leading-snug transition-colors group-hover:text-accent">
+                      {p.title}
+                    </h3>
+                    <div className="mt-6 flex items-center justify-between border-t border-border pt-5">
+                      <div className="flex items-center gap-3">
+                        <img
+                          src={p.avatar}
+                          alt=""
+                          loading="lazy"
+                          className="h-9 w-9 rounded-full object-cover"
+                        />
+                        <p className="text-sm">{p.author}</p>
+                      </div>
+                      <span className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-all duration-300 group-hover:gap-4 group-hover:text-accent">
+                        Read more
+                        <ArrowIcon />
+                      </span>
+                    </div>
+                  </Link>
                 </Reveal>
               ))}
             </div>
+          </div>
+
           </div>
         </section>
       </main>
