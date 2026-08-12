@@ -53,7 +53,7 @@ function BlogIndex() {
 
         {lead && (
           <section className="mx-auto max-w-[1600px] px-6 lg:px-10">
-            <Reveal variant="clip">
+            <div className="rise-in">
               <Link
                 to="/blog/$slug"
                 params={{ slug: lead.slug }}
@@ -81,7 +81,7 @@ function BlogIndex() {
                   </span>
                 </div>
               </Link>
-            </Reveal>
+            </div>
           </section>
         )}
 
