@@ -8,16 +8,11 @@ const CTA_LABEL: Record<(typeof TABS)[number], string> = {
   Sell: "Get a valuation",
 };
 
-const NAME_PLACEHOLDER: Record<(typeof TABS)[number], string> = {
-  Buy: "Jane Smith",
-  Rent: "Jane Smith",
-  Sell: "Jane Smith",
-};
-
-const PROPERTY_TYPE_LABEL: Record<(typeof TABS)[number], string> = {
-  Buy: "Property Type",
-  Rent: "Property Type",
-  Sell: "Property Type",
+// 👇 Change these hex codes to set each tab's button color.
+const TAB_COLORS: Record<(typeof TABS)[number], string> = {
+  Buy: "#7c1f1f",
+  Rent: "#1f6b45",
+  Sell: "#1f3f7c",
 };
 
 export function HeroSearch() {
@@ -31,9 +26,10 @@ export function HeroSearch() {
             key={t}
             type="button"
             onClick={() => setTab(t)}
+            style={tab === t ? { color: TAB_COLORS[t] } : undefined}
             className={`rounded-t-xl px-10 py-4 text-sm font-medium transition-colors duration-300 ${
               tab === t
-                ? "bg-background text-foreground"
+                ? "bg-background"
                 : "bg-background/70 text-muted-foreground hover:bg-background/85"
             }`}
           >
@@ -49,7 +45,7 @@ export function HeroSearch() {
           <span className="sr-only">Your name</span>
           <input
             type="text"
-            placeholder={NAME_PLACEHOLDER[tab]}
+            placeholder="Jane Smith"
             className="w-full border-b border-border bg-transparent pb-3 text-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-foreground"
           />
         </label>
@@ -67,7 +63,7 @@ export function HeroSearch() {
             defaultValue=""
             className="w-full appearance-none border-b border-border bg-transparent pb-3 text-sm text-muted-foreground outline-none transition-colors focus:border-foreground"
           >
-            <option value="">{PROPERTY_TYPE_LABEL[tab]}</option>
+            <option value="">Property Type</option>
             <option>Flat / Apartment</option>
             <option>Shop / Commercial</option>
             <option>Plot / Land</option>
@@ -77,7 +73,8 @@ export function HeroSearch() {
         <button
           key={tab}
           type="submit"
-          className="rise-in group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-sm text-primary-foreground transition-all duration-300 hover:gap-4 hover:opacity-85"
+          style={{ backgroundColor: TAB_COLORS[tab] }}
+          className="rise-in group inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm text-white transition-all duration-300 hover:gap-4 hover:opacity-85"
         >
           {CTA_LABEL[tab]}
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
