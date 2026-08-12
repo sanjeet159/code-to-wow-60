@@ -149,9 +149,9 @@ export function Services() {
               hover !== null && hover !== active ? "opacity-100" : "opacity-0"
             }`}
           >
-            {hover !== null && (
+            {hover !== null && SERVICES[hover] && (
               <img
-                src={SERVICES[hover].img}
+                src={SERVICES[hover]!.img}
                 alt=""
                 className="h-full w-full scale-105 object-cover"
               />
