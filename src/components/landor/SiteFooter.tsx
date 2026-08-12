@@ -13,7 +13,7 @@ export const SERVICE_LINKS = [
 
 export function SiteFooter() {
   return (
-    <footer id="contact" className="relative bg-surface-dark text-surface-dark-foreground">
+    <footer className="relative bg-surface-dark text-surface-dark-foreground">
       <CursorGlow />
       <div className="relative mx-auto max-w-[1600px] px-6 py-24 lg:px-10 lg:py-32">
         <div className="grid gap-10 border-b border-white/10 pb-16 lg:grid-cols-[1.2fr_1fr] lg:items-end">
