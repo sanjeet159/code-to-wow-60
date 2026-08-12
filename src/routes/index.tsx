@@ -447,14 +447,14 @@ function AboutShowcase() {
 
   return (
     <div className="relative mt-20 rounded-[2rem] border border-border bg-secondary/40 p-6 sm:p-10 lg:p-14">
-
       <div className="pointer-events-none absolute -top-px left-10 right-10 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
 
       <div className="grid gap-14 lg:grid-cols-[1.05fr_1fr] lg:items-center">
-        {/* Layered interactive imagery */}
+        {/* Layered interactive imagery — fixed-height row with width-percentage
+            transitions instead of flex-basis shorthand, so it always renders. */}
         <Reveal variant="clip">
-          <div className="relative">
-            <div className="flex items-end gap-4 sm:gap-6">
+          <div className="relative pb-8">
+            <div className="flex h-[280px] items-stretch gap-4 sm:h-[360px] sm:gap-6 lg:h-[420px]">
               {MISSION_SHOTS.map((shot, i) => {
                 const isActive = active === i;
                 return (
@@ -465,9 +465,8 @@ function AboutShowcase() {
                     onFocus={() => setActive(i)}
                     onClick={() => setActive(i)}
                     aria-pressed={isActive}
-                    className={`group relative overflow-hidden rounded-2xl outline-none transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] focus-visible:ring-2 focus-visible:ring-accent ${
-                      i === 0 ? "aspect-[4/5]" : "aspect-[3/4]"
-                    } ${isActive ? "flex-[1.35] -translate-y-3 shadow-2xl" : "flex-[0.8] shadow-md"}`}
+                    style={{ width: isActive ? "62%" : "38%" }}
+                    className="group relative h-full shrink-0 overflow-hidden rounded-2xl outline-none transition-[width] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] focus-visible:ring-2 focus-visible:ring-accent"
                   >
                     <img
                       src={shot.img}
@@ -497,7 +496,7 @@ function AboutShowcase() {
             </div>
 
             {/* Floating stat card */}
-            <div className="absolute -bottom-6 left-4 flex items-center gap-4 rounded-2xl border border-border bg-background/90 px-5 py-4 shadow-xl backdrop-blur sm:left-8">
+            <div className="absolute -bottom-2 left-4 flex items-center gap-4 rounded-2xl border border-border bg-background/90 px-5 py-4 shadow-xl backdrop-blur sm:left-8">
               <div>
                 <p className="font-display text-2xl leading-none">4.3</p>
                 <div className="mt-1">
@@ -526,7 +525,6 @@ function AboutShowcase() {
             Every client gets one advisor from first shortlist to handover — honest pricing advice,
             verified documents and site visits planned around your schedule.
           </p>
-
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <div className="group rounded-2xl border border-border bg-background p-5 transition-all duration-500 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg">
@@ -579,7 +577,6 @@ function AboutShowcase() {
     </div>
   );
 }
-
 
 function Index() {
   return (
@@ -730,7 +727,6 @@ function Index() {
             <AudiencePanels />
           </Reveal>
         </section>
-
 
         <Services />
 
@@ -968,7 +964,6 @@ function Index() {
             </div>
           </div>
         </section>
-
       </main>
 
       <SiteFooter />
