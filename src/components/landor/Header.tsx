@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-
 import wordmark from "@/assets/homecraft-logo.png";
-
 const NAV = ["Home", "About", "Services", "Projects", "Reviews", "Team"];
-
 export function ArrowIcon({ className = "" }: { className?: string }) {
   return (
     <svg
@@ -33,18 +30,15 @@ export function ArrowIcon({ className = "" }: { className?: string }) {
     </svg>
   );
 }
-
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ${
@@ -54,12 +48,11 @@ export function Header() {
       <div className="mx-auto flex h-20 max-w-[1600px] items-center justify-between px-6 lg:px-10">
         <a href="/" className="group flex items-center">
           <img
-            src={wordmark.url}
+            src={wordmark}
             alt="Home Craft Real Estate"
             className="h-10 w-auto transition-opacity duration-300 group-hover:opacity-80 lg:h-12"
           />
         </a>
-
         <nav className="hidden items-center gap-9 xl:flex">
           {NAV.map((item) => (
             <a
@@ -78,8 +71,6 @@ export function Header() {
             Blog
           </Link>
         </nav>
-
-
         <div className="flex items-center gap-3">
           <a
             href="tel:+918484947570"
@@ -88,7 +79,6 @@ export function Header() {
             084849 47570
             <ArrowIcon />
           </a>
-
           <button
             type="button"
             aria-label="Toggle menu"
@@ -100,7 +90,6 @@ export function Header() {
           </button>
         </div>
       </div>
-
       {open && (
         <div className="border-t border-border bg-background px-6 py-6 xl:hidden">
           <nav className="flex flex-col gap-4">
