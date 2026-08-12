@@ -388,7 +388,7 @@ function AboutTabs() {
               aria-pressed={isActive}
               className={`rounded-full border px-4 py-1.5 text-sm transition-all duration-300 ${
                 isActive
-                  ? "border-foreground bg-foreground text-background"
+                  ? "border-accent bg-accent text-accent-foreground"
                   : "border-border bg-secondary text-foreground hover:bg-background"
               }`}
             >
@@ -560,7 +560,7 @@ function AboutShowcase() {
             <div className="flex flex-wrap gap-3">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm text-primary-foreground transition-all duration-300 hover:gap-4 hover:opacity-85"
+                className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm text-accent-foreground transition-all duration-300 hover:gap-4 hover:opacity-85"
               >
                 Read more
                 <ArrowIcon />
