@@ -13,9 +13,9 @@ import { ScrollProgress, BackToTop } from "@/components/landor/ScrollFx";
 import { POSTS } from "@/data/posts";
 import heroVilla from "@/assets/hero-villa.jpg";
 
-import aboutCoupleAsset from "@/assets/about-couple.jpg";
+import aboutCouple from "@/assets/about-couple.jpg";
 import aboutImg from "@/assets/about.jpg";
-import ctaHomeAsset from "@/assets/cta-home.jpg";
+import ctaHome from "@/assets/cta-home.jpg";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
@@ -23,9 +23,6 @@ import project4 from "@/assets/project-4.jpg";
 import team1 from "@/assets/team-1.jpg";
 import team2 from "@/assets/team-2.jpg";
 import team3 from "@/assets/team-3.jpg";
-
-const aboutCouple = aboutCoupleAsset.url;
-const ctaHome = ctaHomeAsset.url;
 
 const TITLE = "Home Craft — Real Estate Consultant in Pune";
 const DESCRIPTION =
