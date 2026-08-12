@@ -91,13 +91,13 @@ function PostPage() {
             </div>
           </header>
 
-          <Reveal variant="clip" className="mx-auto mt-12 max-w-[1200px] px-6">
+          <div className="rise-in mx-auto mt-12 max-w-[1200px] px-6">
             <img
               src={post.img}
               alt={post.title}
               className="h-[280px] w-full rounded-3xl object-cover lg:h-[520px]"
             />
-          </Reveal>
+          </div>
 
           <div className="mx-auto max-w-3xl px-6 py-16 lg:py-24">
             {post.sections.map((s, i) => (
