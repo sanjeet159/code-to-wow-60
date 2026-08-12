@@ -434,9 +434,9 @@ function AboutTabs() {
 
 const MISSION_SHOTS = [
   {
-    img: team1,
-    alt: "Home Craft advisor handing over keys to a client in Pune",
-    caption: "Advisor-led site visits",
+    img: aboutCouple,
+    alt: "Home Craft advisor helping a Pune family choose their dream home",
+    caption: "Advisor-led home search",
   },
   {
     img: aboutImg,
@@ -446,60 +446,36 @@ const MISSION_SHOTS = [
 ];
 
 function AboutShowcase() {
-  const [active, setActive] = useState(1);
-
   return (
     <div className="relative mt-20 rounded-[2rem] border border-border bg-secondary/40 p-6 sm:p-10 lg:p-14">
       <div className="pointer-events-none absolute -top-px left-10 right-10 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
 
       <div className="grid gap-14 lg:grid-cols-[1.05fr_1fr] lg:items-center">
-        {/* Layered interactive imagery — fixed-height row with width-percentage
-            transitions instead of flex-basis shorthand, so it always renders. */}
+        {/* Two vertically stacked rounded images */}
         <Reveal variant="clip">
-          <div className="relative pb-8">
-            <div className="flex h-[280px] items-stretch gap-4 sm:h-[360px] sm:gap-6 lg:h-[420px]">
-              {MISSION_SHOTS.map((shot, i) => {
-                const isActive = active === i;
-                return (
-                  <button
-                    key={shot.caption}
-                    type="button"
-                    onMouseEnter={() => setActive(i)}
-                    onFocus={() => setActive(i)}
-                    onClick={() => setActive(i)}
-                    aria-pressed={isActive}
-                    style={{ width: isActive ? "62%" : "38%" }}
-                    className="group relative h-full shrink-0 overflow-hidden rounded-2xl outline-none transition-[width] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] focus-visible:ring-2 focus-visible:ring-accent"
-                  >
-                    <img
-                      src={shot.img}
-                      alt={shot.alt}
-                      loading="lazy"
-                      className={`h-full w-full object-cover transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
-                        isActive ? "scale-105 saturate-100" : "scale-100 saturate-[0.4]"
-                      }`}
-                    />
-                    <span
-                      className={`pointer-events-none absolute inset-0 transition-opacity duration-700 ${
-                        isActive
-                          ? "bg-gradient-to-t from-foreground/75 via-foreground/10 to-transparent"
-                          : "bg-foreground/35"
-                      }`}
-                    />
-                    <span
-                      className={`pointer-events-none absolute inset-x-4 bottom-4 text-left text-[0.7rem] uppercase tracking-[0.18em] text-background transition-all duration-500 ${
-                        isActive ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
-                      }`}
-                    >
-                      {shot.caption}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
+          <div className="relative flex flex-col gap-5">
+            {MISSION_SHOTS.map((shot, i) => (
+              <div
+                key={shot.caption}
+                className="group relative overflow-hidden rounded-2xl bg-background shadow-sm"
+              >
+                <div className={`relative w-full overflow-hidden ${i === 0 ? "aspect-[4/3]" : "aspect-[16/10]"}`}>
+                  <img
+                    src={shot.img}
+                    alt={shot.alt}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
+                  />
+                  <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/60 via-foreground/10 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-60" />
+                  <span className="pointer-events-none absolute inset-x-5 bottom-5 text-left text-[0.7rem] uppercase tracking-[0.18em] text-background">
+                    {shot.caption}
+                  </span>
+                </div>
+              </div>
+            ))}
 
             {/* Floating stat card */}
-            <div className="absolute -bottom-2 left-4 flex items-center gap-4 rounded-2xl border border-border bg-background/90 px-5 py-4 shadow-xl backdrop-blur sm:left-8">
+            <div className="absolute -bottom-4 left-4 flex items-center gap-4 rounded-2xl border border-border bg-background/95 px-5 py-4 shadow-xl backdrop-blur sm:left-8">
               <div>
                 <p className="font-display text-2xl leading-none">4.3</p>
                 <div className="mt-1">
