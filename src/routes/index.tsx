@@ -610,31 +610,32 @@ function Index() {
         </section>
 
         {/* Trusted by — auto-scrolling logo marquee */}
-        <section className="overflow-hidden bg-background pb-16 pt-28 lg:pb-20 lg:pt-40">
-          <div className="mx-auto flex max-w-[1600px] flex-col gap-8 px-6 lg:flex-row lg:items-center lg:gap-16 lg:px-10">
-            <p className="max-w-[220px] shrink-0 text-lg leading-snug text-foreground">
-              Active across Pune's fastest-growing corridors
-            </p>
-            <div className="relative flex-1 overflow-hidden">
-              <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-background to-transparent" />
-              <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-background to-transparent" />
-              <div className="marquee-track flex w-max items-center gap-16">
-                {[...LOGOS, ...LOGOS].map((l, i) => {
-                  const Icon = LOGO_ICONS[l.icon];
-                  return (
-                    <span
-                      key={`${l.name}-${i}`}
-                      className="flex items-center gap-3 text-muted-foreground/70 transition-colors hover:text-foreground"
-                    >
-                      <Icon className="h-7 w-7" />
-                      <span className="text-sm font-semibold uppercase tracking-widest">
-                        {l.name}
-                      </span>
-                    </span>
-                  );
-                })}
+        {/* Proof strip */}
+        <section className="bg-background pb-20 pt-28 lg:pb-24 lg:pt-40">
+          <div className="mx-auto max-w-[1600px] px-6 lg:px-10">
+            <Reveal>
+              <p className="mx-auto max-w-3xl text-center font-display text-2xl leading-snug tracking-tight text-foreground lg:text-4xl">
+                Pune families come to us with one question — <span className="text-accent">where should we live next?</span> Everything below is how we answer it.
+              </p>
+            </Reveal>
+            <Reveal delay={140} className="mt-14 block">
+              <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-4">
+                {[
+                  { label: "Google rating", value: <span className="text-accent">4.3</span> },
+                  { label: "Reviews", value: <CountUp to={12} /> },
+                  { label: "Services", value: <CountUp to={5} suffix="+" /> },
+                  { label: "Corridors covered", value: <CountUp to={5} suffix="+" /> },
+                ].map((s) => (
+                  <div
+                    key={s.label}
+                    className="group bg-background px-6 py-8 text-center transition-colors duration-500 hover:bg-secondary"
+                  >
+                    <p className="eyebrow">{s.label}</p>
+                    <p className="mt-3 font-display text-4xl lg:text-5xl">{s.value}</p>
+                  </div>
+                ))}
               </div>
-            </div>
+            </Reveal>
           </div>
         </section>
 
@@ -672,40 +673,55 @@ function Index() {
             </Reveal>
           </div>
 
-          {/* Stat rail */}
-          <Reveal delay={140} className="mt-14 block">
-            <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-4">
-              {[
-                { label: "Google rating", value: <span className="text-accent">4.3</span> },
-                { label: "Reviews", value: <CountUp to={12} /> },
-                { label: "Services", value: <CountUp to={5} suffix="+" /> },
-                { label: "Corridors covered", value: <CountUp to={5} suffix="+" /> },
-              ].map((s, i) => (
-                <div
-                  key={s.label}
-                  className="group bg-background px-6 py-8 text-center transition-colors duration-500 hover:bg-secondary"
-                  style={{ transitionDelay: `${i * 30}ms` }}
-                >
-                  <p className="eyebrow">{s.label}</p>
-                  <p className="mt-3 font-display text-4xl lg:text-5xl">{s.value}</p>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-
-          {/* Interactive service tabs */}
-          <Reveal delay={120} className="mt-16 block">
-            <AboutTabs />
-          </Reveal>
-
           <AboutShowcase />
+        </section>
 
-          <Reveal delay={120} className="mt-20 block">
+        <Services />
+
+        {/* Who we help */}
+        <section className="mx-auto max-w-[1600px] px-6 py-24 lg:px-10 lg:py-28">
+          <Reveal as="span" className="eyebrow block">
+            Who we help
+          </Reveal>
+          <Reveal delay={80}>
+            <h2 className="display-lg mt-5 max-w-2xl">Different goals, one process built around you</h2>
+          </Reveal>
+          <Reveal delay={120} className="mt-12 block">
             <AudiencePanels />
           </Reveal>
         </section>
 
-        <Services />
+        {/* Process */}
+        <section className="border-y border-border bg-secondary py-24 lg:py-32">
+          <div className="mx-auto max-w-[1600px] px-6 lg:px-10">
+            <Reveal as="span" className="eyebrow block">
+              How it works
+            </Reveal>
+            <Reveal delay={80}>
+              <h2 className="display-lg mt-5 max-w-2xl">Four steps from first call to keys in hand</h2>
+            </Reveal>
+            <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2 lg:grid-cols-4">
+              {[
+                { t: "Tell us the brief", d: "Budget, locality, timeline and what the home has to do for your family." },
+                { t: "Curated shortlist", d: "Only verified options that match — no time wasted on listings that don't fit." },
+                { t: "Visits & negotiation", d: "We walk the site with you and negotiate price, terms and possession dates." },
+                { t: "Paperwork & handover", d: "Title, agreement, registration and society NOC checked before you sign." },
+              ].map((s, i) => (
+                <Reveal
+                  key={s.t}
+                  delay={i * 100}
+                  className="card-rise group bg-background p-8 transition-colors hover:bg-card"
+                >
+                  <span className="font-display text-4xl text-accent/25 transition-colors group-hover:text-accent">
+                    0{i + 1}
+                  </span>
+                  <h3 className="mt-6 text-xl">{s.t}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.d}</p>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* Portfolio */}
         <section id="projects" className="mx-auto max-w-[1600px] px-6 py-24 lg:px-10 lg:py-32">
@@ -793,21 +809,6 @@ function Index() {
                 </Reveal>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Service marquee */}
-        <section className="overflow-hidden border-b border-border py-10">
-          <div className="marquee-track flex w-max items-center gap-16 px-10">
-            {[...MARQUEE, ...MARQUEE].map((b, i) => (
-              <span
-                key={`${b}-${i}`}
-                className="flex items-center gap-16 font-display text-2xl tracking-tight text-muted-foreground/60 lg:text-3xl"
-              >
-                {b}
-                <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-              </span>
-            ))}
           </div>
         </section>
 
