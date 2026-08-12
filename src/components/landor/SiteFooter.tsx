@@ -1,6 +1,7 @@
 import { ArrowIcon } from "@/components/landor/Header";
 import { Reveal } from "@/components/landor/Reveal";
 import { CursorGlow } from "@/components/landor/Motion";
+import { ContactButtons } from "@/components/landor/ContactButtons";
 
 export const SERVICE_LINKS = [
   "Buying agent services",
@@ -25,13 +26,7 @@ export function SiteFooter() {
               Buying, selling, renting or investing in Pune? Tell us the requirement and we'll come
               back with options that actually fit.
             </p>
-            <a
-              href="tel:+918484947570"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-7 py-4 text-sm text-accent-foreground transition-all duration-300 hover:gap-4 hover:opacity-85"
-            >
-              Call 084849 47570
-              <ArrowIcon />
-            </a>
+            <ContactButtons tone="dark" size="lg" className="mt-8" />
           </Reveal>
         </div>
 
@@ -52,12 +47,7 @@ export function SiteFooter() {
           </div>
           <div>
             <p className="eyebrow-light">Contact</p>
-            <a
-              href="tel:+918484947570"
-              className="link-sweep mt-4 inline-block font-display text-2xl"
-            >
-              084849 47570
-            </a>
+            <ContactButtons tone="dark" size="sm" className="mt-4" />
             <p className="mt-3 text-white/60">Open daily · 10:00 am – 8:00 pm</p>
             <a
               href="https://maps.google.com/?q=Home+Craft+Real+Estate+Charholi+Budruk+Pune"
