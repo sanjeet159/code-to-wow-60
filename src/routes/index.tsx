@@ -8,6 +8,7 @@ import { Reveal, CountUp } from "@/components/landor/Reveal";
 import { Parallax, TiltCard, RatingBars, Stars, CursorGlow } from "@/components/landor/Motion";
 import { HeroSearch } from "@/components/landor/HeroSearch";
 import { SiteFooter } from "@/components/landor/SiteFooter";
+import { ScrollProgress, BackToTop } from "@/components/landor/ScrollFx";
 import { POSTS } from "@/data/posts";
 import heroVilla from "@/assets/hero-villa.jpg";
 
@@ -371,6 +372,8 @@ function Index() {
 
   return (
     <div id="top" className="overflow-x-hidden bg-background">
+      <ScrollProgress />
+      <BackToTop />
       <Header />
 
       <main>
@@ -438,10 +441,11 @@ function Index() {
                   { label: "Reviews", value: <CountUp to={12} /> },
                   { label: "Services", value: <CountUp to={5} suffix="+" /> },
                   { label: "Corridors covered", value: <CountUp to={5} suffix="+" /> },
-                ].map((s) => (
+                ].map((s, i) => (
                   <div
                     key={s.label}
-                    className="group bg-background px-6 py-8 text-center transition-colors duration-500 hover:bg-secondary"
+                    style={{ animationDelay: `${i * 110}ms` }}
+                    className="rise-in group bg-background px-6 py-8 text-center transition-all duration-500 hover:-translate-y-1 hover:bg-secondary"
                   >
                     <p className="eyebrow">{s.label}</p>
                     <p className="mt-3 font-display text-4xl lg:text-5xl">{s.value}</p>
@@ -473,10 +477,11 @@ function Index() {
               </p>
               <div className="mt-6 flex flex-wrap gap-2.5">
                 {["Charholi Budruk", "Lohegaon", "Wagholi", "Pimpri-Chinchwad", "Moshi"].map(
-                  (area) => (
+                  (area, idx) => (
                     <span
                       key={area}
-                      className="rounded-full border border-border bg-secondary px-4 py-1.5 text-xs font-medium tracking-wide transition-colors hover:border-accent hover:text-accent"
+                      style={{ animationDelay: `${300 + idx * 70}ms` }}
+                      className="rise-in rounded-full border border-border bg-secondary px-4 py-1.5 text-xs font-medium tracking-wide transition-all duration-300 hover:-translate-y-0.5 hover:border-accent hover:text-accent"
                     >
                       {area}
                     </span>
@@ -523,6 +528,7 @@ function Index() {
                 <Reveal
                   key={s.t}
                   delay={i * 100}
+                  variant="flip"
                   className="card-rise group bg-background p-8 transition-colors hover:bg-card"
                 >
                   <span className="font-display text-4xl text-accent/25 transition-colors group-hover:text-accent">
@@ -546,7 +552,7 @@ function Index() {
           </Reveal>
           <div className="mt-12 grid gap-10 md:grid-cols-2">
             {PROJECTS.map((p, i) => (
-              <Reveal key={p.title} delay={(i % 2) * 140} variant="up">
+              <Reveal key={p.title} delay={(i % 2) * 140} variant="blur">
                 <a href="#contact" className="group block">
                   <div className="relative overflow-hidden rounded-sm">
                     <img
@@ -642,6 +648,7 @@ function Index() {
                 <Reveal
                   key={c.t}
                   delay={(i % 4) * 100}
+                  variant="blur"
                   className="card-rise group bg-surface-dark p-8 transition-colors hover:bg-white/5"
                 >
                   <span className="text-xs text-white/35">0{i + 1}</span>

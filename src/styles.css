@@ -258,6 +258,15 @@
   transform: scale(1.04);
   opacity: 1;
 }
+.reveal-blur {
+  transform: translateY(24px) scale(0.985);
+  filter: blur(10px);
+}
+.reveal-flip {
+  transform: perspective(1000px) rotateX(12deg) translateY(28px);
+  transform-origin: top center;
+}
+
 .reveal[data-shown="true"] {
   opacity: 1;
   transform: none;
