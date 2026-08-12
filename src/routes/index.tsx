@@ -13,7 +13,7 @@ import { ScrollProgress, BackToTop } from "@/components/landor/ScrollFx";
 import { POSTS } from "@/data/posts";
 import heroVilla from "@/assets/hero-villa.jpg";
 
-import aboutCoupleAsset from "@/assets/about-couple.jpg.asset.json";
+import aboutCoupleAsset from "@/assets/about-couple.jpg";
 import aboutImg from "@/assets/about.jpg";
 import ctaHomeAsset from "@/assets/cta-home.jpg";
 import project1 from "@/assets/project-1.jpg";
