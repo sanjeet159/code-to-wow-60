@@ -3,7 +3,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Header, ArrowIcon } from "@/components/landor/Header";
 import { Reveal } from "@/components/landor/Reveal";
 import { SiteFooter } from "@/components/landor/SiteFooter";
-import { POSTS, getPost } from "@/data/posts";
+import { POSTS, getPost, type Post } from "@/data/posts";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
@@ -55,7 +55,7 @@ function PostNotFound() {
 }
 
 function PostPage() {
-  const { post } = Route.useLoaderData();
+  const { post } = Route.useLoaderData() as { post: Post };
   const related = POSTS.filter((p) => p.slug !== post.slug).slice(0, 3);
 
   return (
