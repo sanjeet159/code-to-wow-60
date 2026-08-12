@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import wordmark from "@/assets/homecraft-wordmark.png.asset.json";
+
 const NAV = ["Home", "About", "Services", "Projects", "Reviews", "Team"];
 
 export function ArrowIcon({ className = "" }: { className?: string }) {
@@ -49,17 +51,12 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex h-20 max-w-[1600px] items-center justify-between px-6 lg:px-10">
-        <a href="#top" className="group flex items-center gap-3">
-          <span className="relative flex h-9 w-9 items-center justify-center rounded-sm bg-primary text-primary-foreground">
-            <span className="absolute inset-0 halo rounded-sm bg-accent/40 blur-md" aria-hidden />
-            <span className="relative font-display text-sm">HC</span>
-          </span>
-          <span className="font-display text-xl leading-none tracking-[-0.04em] text-foreground">
-            Home Craft<span className="text-accent">.</span>
-            <span className="mt-1 block text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
-              Real Estate Consultants
-            </span>
-          </span>
+        <a href="#top" className="group flex items-center">
+          <img
+            src={wordmark.url}
+            alt="Home Craft Real Estate"
+            className="h-10 w-auto transition-opacity duration-300 group-hover:opacity-80 lg:h-12"
+          />
         </a>
 
         <nav className="hidden items-center gap-9 xl:flex">
