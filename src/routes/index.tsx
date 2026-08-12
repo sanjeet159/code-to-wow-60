@@ -13,6 +13,7 @@ import heroVilla from "@/assets/hero-villa.jpg";
 
 import aboutCoupleAsset from "@/assets/about-couple.jpg.asset.json";
 import aboutImg from "@/assets/about.jpg";
+import ctaSkyAsset from "@/assets/cta-sky.jpg.asset.json";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
@@ -22,6 +23,7 @@ import team2 from "@/assets/team-2.jpg";
 import team3 from "@/assets/team-3.jpg";
 
 const aboutCouple = aboutCoupleAsset.url;
+const ctaSky = ctaSkyAsset.url;
 
 const TITLE = "Home Craft — Real Estate Consultant in Pune";
 const DESCRIPTION =
@@ -354,6 +356,19 @@ function AboutShowcase() {
 }
 
 function Index() {
+  const [form, setForm] = useState({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+  const [sent, setSent] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSent(true);
+    setTimeout(() => setSent(false), 4000);
+  };
+
   return (
     <div id="top" className="overflow-x-hidden bg-background">
       <Header />
@@ -741,34 +756,132 @@ function Index() {
           </div>
         </section>
         {/* Final CTA */}
-        <section id="contact" className="relative overflow-hidden bg-surface-dark py-24 text-surface-dark-foreground lg:py-32">
+        <section id="contact" className="relative overflow-hidden py-24 lg:py-32">
+          <img
+            src={ctaSky}
+            alt="Modern home under a blue sky"
+            width={1920}
+            height={1080}
+            loading="lazy"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-foreground/55 via-foreground/35 to-foreground/55" />
           <CursorGlow />
+
           <div className="relative mx-auto max-w-[1600px] px-6 text-center lg:px-10">
             <Reveal>
-              <span className="eyebrow-light">Ready when you are</span>
-              <h2 className="display-lg mx-auto mt-5 max-w-3xl">
-                Let's find the address that <span className="text-accent">actually fits</span>
+              <span className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2 text-xs font-medium uppercase tracking-widest text-accent-foreground">
+                Get in Touch
+              </span>
+              <h2 className="display-lg mx-auto mt-6 max-w-3xl uppercase leading-[1.05] text-background">
+                Let's make your property journey effortless
               </h2>
-              <p className="mx-auto mt-6 max-w-xl text-white/65">
-                One call, honest advice and a shortlist worth your weekend. Serving Charholi Budruk,
-                Lohegaon, Wagholi, Moshi and Pimpri-Chinchwad.
+              <p className="mx-auto mt-6 max-w-2xl text-background/85">
+                Have questions or ready to take the next step? Whether you're looking to buy, rent, or
+                invest, our team is here to guide you every step of the way. Let's turn your property
+                goals into reality.
               </p>
             </Reveal>
-            <Reveal delay={120} className="mt-10 flex flex-wrap items-center justify-center gap-4">
-              <a
-                href="tel:+918484947570"
-                className="inline-flex items-center gap-2 rounded-full bg-accent px-8 py-4 text-sm text-accent-foreground transition-all duration-300 hover:gap-4"
+
+            <Reveal delay={120} className="mx-auto mt-12 block max-w-4xl">
+              <form
+                onSubmit={handleSubmit}
+                className="rounded-[2rem] bg-background p-6 text-left shadow-2xl sm:p-10 lg:p-12"
               >
-                Call 084849 47570
-                <ArrowIcon />
-              </a>
-              <a
-                href="#home"
-                className="inline-flex items-center gap-2 rounded-full border border-white/25 px-8 py-4 text-sm transition-all duration-300 hover:gap-4 hover:bg-white/10"
-              >
-                Send a request
-                <ArrowIcon />
-              </a>
+                <div className="grid gap-6 sm:grid-cols-2">
+                  <div className="group">
+                    <label htmlFor="firstName" className="sr-only">
+                      First Name
+                    </label>
+                    <input
+                      id="firstName"
+                      name="firstName"
+                      type="text"
+                      required
+                      value={form.firstName}
+                      onChange={handleChange}
+                      placeholder="First Name"
+                      className="w-full border-b border-border bg-transparent px-0 py-3 text-foreground placeholder:text-muted-foreground/60 focus:border-accent focus:outline-none"
+                    />
+                  </div>
+                  <div className="group">
+                    <label htmlFor="lastName" className="sr-only">
+                      Last Name
+                    </label>
+                    <input
+                      id="lastName"
+                      name="lastName"
+                      type="text"
+                      required
+                      value={form.lastName}
+                      onChange={handleChange}
+                      placeholder="Last Name"
+                      className="w-full border-b border-border bg-transparent px-0 py-3 text-foreground placeholder:text-muted-foreground/60 focus:border-accent focus:outline-none"
+                    />
+                  </div>
+                  <div className="group">
+                    <label htmlFor="email" className="sr-only">
+                      Email
+                    </label>
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      value={form.email}
+                      onChange={handleChange}
+                      placeholder="Email"
+                      className="w-full border-b border-border bg-transparent px-0 py-3 text-foreground placeholder:text-muted-foreground/60 focus:border-accent focus:outline-none"
+                    />
+                  </div>
+                  <div className="group">
+                    <label htmlFor="phone" className="sr-only">
+                      Phone
+                    </label>
+                    <input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      required
+                      value={form.phone}
+                      onChange={handleChange}
+                      placeholder="Phone"
+                      className="w-full border-b border-border bg-transparent px-0 py-3 text-foreground placeholder:text-muted-foreground/60 focus:border-accent focus:outline-none"
+                    />
+                  </div>
+                  <div className="group sm:col-span-2">
+                    <label htmlFor="message" className="sr-only">
+                      What can we help you with?
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={3}
+                      value={form.message}
+                      onChange={handleChange}
+                      placeholder="What Can We Help You ?"
+                      className="w-full resize-none border-b border-border bg-transparent px-0 py-3 text-foreground placeholder:text-muted-foreground/60 focus:border-accent focus:outline-none"
+                    />
+                  </div>
+                </div>
+
+                <div className="mt-10">
+                  <button
+                    type="submit"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-foreground px-8 py-4 text-sm font-medium text-background transition-all duration-300 hover:gap-4 hover:bg-foreground/90"
+                  >
+                    {sent ? "Request received — we'll call you back" : "Book a Call"}
+                    <ArrowIcon />
+                  </button>
+                </div>
+
+                <p className="mt-6 text-center text-xs text-muted-foreground">
+                  Prefer a quick call?{" "}
+                  <a href="tel:+918484947570" className="underline underline-offset-4 hover:text-accent">
+                    084849 47570
+                  </a>
+                </p>
+              </form>
             </Reveal>
           </div>
         </section>
