@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ShieldCheck, UserRoundCheck } from "lucide-react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { Header, ArrowIcon } from "@/components/landor/Header";
@@ -110,28 +111,6 @@ const CHOOSE = [
   { t: "Transparent pricing", d: "Clear brokerage, clear scope, quotes in writing before any work begins." },
   { t: "After-handover support", d: "We stay reachable for renewals, resale and repeat requirements." },
 ];
-
-const FEATURE_ICONS = {
-  agents: ({ className }: { className?: string }) => (
-    <svg viewBox="0 0 32 32" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
-      <path d="M9 17l6-6 4 4 8-8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M21 7h6v6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M4 23c0-2.8 2.5-4.5 5.5-4.5S15 20.2 15 23" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="9.5" cy="13.5" r="0.2" stroke="currentColor" strokeWidth="1.6" />
-    </svg>
-  ),
-  legality: ({ className }: { className?: string }) => (
-    <svg viewBox="0 0 32 32" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M16 3l2 2.4 3-1 1 3 3 1-1 3 2.4 2-2.4 2 1 3-3 1-1 3-3-1-2 2.4-2-2.4-3 1-1-3-3-1 1-3-2.4-2 2.4-2-1-3 3-1 1-3 3 1 2-2.4z"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinejoin="round"
-      />
-      <path d="M12 16l3 3 5-6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  ),
-};
 
 const TEAM = [
   { name: "Client advisory", role: "Buying & rental guidance", img: team1 },
@@ -320,14 +299,18 @@ function AboutShowcase() {
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <div className="group rounded-2xl border border-border bg-background p-5 transition-all duration-500 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg">
-              <FEATURE_ICONS.agents className="h-7 w-7 text-accent transition-transform duration-500 group-hover:-translate-y-1" />
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent transition-all duration-500 group-hover:bg-accent group-hover:text-accent-foreground">
+                <UserRoundCheck className="h-6 w-6" strokeWidth={1.6} />
+              </span>
               <h4 className="mt-4 text-base font-medium">Experienced agents</h4>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 Discover the best properties to match your budget.
               </p>
             </div>
             <div className="group rounded-2xl border border-border bg-background p-5 transition-all duration-500 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg">
-              <FEATURE_ICONS.legality className="h-7 w-7 text-accent transition-transform duration-500 group-hover:-translate-y-1" />
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent transition-all duration-500 group-hover:bg-accent group-hover:text-accent-foreground">
+                <ShieldCheck className="h-6 w-6" strokeWidth={1.6} />
+              </span>
               <h4 className="mt-4 text-base font-medium">Clear legality</h4>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 Verified paperwork and transparent terms on every deal.
