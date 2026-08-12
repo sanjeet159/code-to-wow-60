@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 
-import wordmark from "@/assets/homecraft-wordmark.png.asset.json";
+import wordmark from "@/assets/homecraft-logo.png";
 
 const NAV = ["Home", "About", "Services", "Projects", "Reviews", "Team"];
 
