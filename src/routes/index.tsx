@@ -967,9 +967,8 @@ function Index() {
               ))}
             </div>
           </div>
-
-          </div>
         </section>
+
       </main>
 
       <SiteFooter />
