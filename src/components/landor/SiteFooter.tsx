@@ -16,19 +16,26 @@ export function SiteFooter() {
   return (
     <footer className="relative bg-surface-dark text-surface-dark-foreground">
       <CursorGlow />
-      <div className="relative mx-auto max-w-[1600px] px-6 py-24 lg:px-10 lg:py-32">
-        <div className="grid gap-10 border-b border-white/10 pb-16 lg:grid-cols-[1.2fr_1fr] lg:items-end">
+      <div className="relative mx-auto max-w-[1600px] px-6 pt-24 lg:px-10 lg:pt-32">
+        <div className="grid gap-16 lg:grid-cols-[1.5fr_1fr] lg:items-start">
           <Reveal>
-            <h2 className="display-xl">Let's find your place</h2>
+            <h2 className="display-2xl max-w-2xl leading-[0.9] tracking-tight">
+              Let's find <br />
+              <span className="text-accent">your place</span>
+            </h2>
           </Reveal>
-          <Reveal delay={120}>
-            <p className="max-w-md text-white/60">
-              Buying, selling, renting or investing in Pune? Tell us the requirement and we'll come
-              back with options that actually fit.
-            </p>
-            <ContactButtons tone="dark" size="lg" className="mt-8" showInstagram />
+          <Reveal delay={120} className="lg:pt-4">
+            <div className="flex flex-col gap-8">
+              <p className="max-w-md text-lg leading-relaxed text-white/60">
+                Buying, selling, renting or investing in Pune? Tell us the requirement and we'll
+                come back with options that actually fit.
+              </p>
+              <ContactButtons tone="dark" size="lg" className="flex-row flex-wrap" showInstagram />
+            </div>
           </Reveal>
         </div>
+
+        <div className="mt-24 h-px w-full bg-gradient-to-r from-white/20 via-white/5 to-transparent" />
 
         <div className="grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.5fr_1.5fr_1fr_1fr]">
           <div>
