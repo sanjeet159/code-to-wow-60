@@ -59,14 +59,14 @@ export function Header() {
             <a
               key={item}
               href={`/#${item.toLowerCase()}`}
-              className="link-sweep text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="link-sweep text-sm text-white transition-colors hover:text-white/80"
             >
               {item}
             </a>
           ))}
           <Link
             to="/blog"
-            className="link-sweep text-sm text-muted-foreground transition-colors hover:text-accent"
+            className="link-sweep text-sm text-white transition-colors hover:text-white/80"
             activeProps={{ className: "text-accent" }}
           >
             Blog
