@@ -82,10 +82,12 @@ export function Header() {
             type="button"
             aria-label="Toggle menu"
             onClick={() => setOpen((v) => !v)}
-            className="flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full border border-border xl:hidden"
+            className={`flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full border transition-colors xl:hidden ${
+              scrolled ? "border-black/20" : "border-white/30"
+            }`}
           >
-            <span className="h-px w-4 bg-foreground" />
-            <span className="h-px w-4 bg-foreground" />
+            <span className={`h-px w-4 transition-colors ${scrolled ? "bg-black" : "bg-white"}`} />
+            <span className={`h-px w-4 transition-colors ${scrolled ? "bg-black" : "bg-white"}`} />
           </button>
         </div>
       </div>
