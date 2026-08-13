@@ -328,15 +328,10 @@ function AboutShowcase() {
             </div>
             <div className="flex flex-wrap gap-3">
               <a
-                href="#contact"
+                href="https://maps.google.com/?q=Home+Craft+Real+Estate+Charholi+Budruk+Pune"
+                target="_blank"
+                rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm text-accent-foreground transition-all duration-300 hover:gap-4 hover:opacity-85"
-              >
-                Read more
-                <ArrowIcon />
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-6 py-3 text-sm transition-all duration-300 hover:gap-4 hover:bg-secondary"
               >
                 Visit our office
                 <ArrowIcon />
