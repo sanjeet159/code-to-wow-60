@@ -59,14 +59,18 @@ export function Header() {
             <a
               key={item}
               href={`/#${item.toLowerCase()}`}
-              className="link-sweep text-sm text-white transition-colors hover:text-white/80"
+              className={`link-sweep text-sm transition-colors ${
+                scrolled ? "text-black hover:text-black/70" : "text-white hover:text-white/80"
+              }`}
             >
               {item}
             </a>
           ))}
           <Link
             to="/blog"
-            className="link-sweep text-sm text-white transition-colors hover:text-white/80"
+            className={`link-sweep text-sm transition-colors ${
+              scrolled ? "text-black hover:text-black/70" : "text-white hover:text-white/80"
+            }`}
             activeProps={{ className: "text-accent" }}
           >
             Blog
@@ -78,10 +82,12 @@ export function Header() {
             type="button"
             aria-label="Toggle menu"
             onClick={() => setOpen((v) => !v)}
-            className="flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full border border-border xl:hidden"
+            className={`flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full border transition-colors xl:hidden ${
+              scrolled ? "border-black/20" : "border-white/30"
+            }`}
           >
-            <span className="h-px w-4 bg-foreground" />
-            <span className="h-px w-4 bg-foreground" />
+            <span className={`h-px w-4 transition-colors ${scrolled ? "bg-black" : "bg-white"}`} />
+            <span className={`h-px w-4 transition-colors ${scrolled ? "bg-black" : "bg-white"}`} />
           </button>
         </div>
       </div>
