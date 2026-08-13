@@ -38,32 +38,46 @@ export function HeroSearch() {
         ))}
       </div>
       <form
-        onSubmit={(e) => e.preventDefault()}
+        onSubmit={(e) => {
+          e.preventDefault();
+          const formData = new FormData(e.currentTarget);
+          const name = formData.get("name");
+          const phone = formData.get("phone");
+          const type = formData.get("propertyType");
+          const message = `Hi Home Craft, I'd like to ${tab.toLowerCase()} a property.\nName: ${name}\nPhone: ${phone}\nProperty Type: ${type}`;
+          window.open(`https://wa.me/918484947570?text=${encodeURIComponent(message)}`, "_blank");
+        }}
         className="grid gap-6 rounded-b-xl rounded-tr-xl bg-background p-6 shadow-2xl sm:p-8 lg:grid-cols-[1fr_1fr_1fr_auto] lg:items-end"
       >
         <label className="block">
           <span className="sr-only">Your name</span>
           <input
+            name="name"
             type="text"
+            required
             placeholder="Jane Smith"
             className="w-full border-b border-border bg-transparent pb-3 text-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-foreground"
           />
         </label>
         <label className="block">
-          <span className="sr-only">Email</span>
+          <span className="sr-only">Phone number</span>
           <input
-            type="email"
-            placeholder="you@email.com"
+            name="phone"
+            type="tel"
+            required
+            placeholder="Phone Number"
             className="w-full border-b border-border bg-transparent pb-3 text-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-foreground"
           />
         </label>
         <label className="block">
           <span className="sr-only">Property type</span>
           <select
+            name="propertyType"
+            required
             defaultValue=""
             className="w-full appearance-none border-b border-border bg-transparent pb-3 text-sm text-muted-foreground outline-none transition-colors focus:border-foreground"
           >
-            <option value="">Property Type</option>
+            <option value="" disabled>Property Type</option>
             <option>Flat / Apartment</option>
             <option>Shop / Commercial</option>
             <option>Plot / Land</option>

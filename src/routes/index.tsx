@@ -350,7 +350,7 @@ function AboutShowcase() {
 }
 
 function Index() {
-  const [form, setForm] = useState({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+  const [form, setForm] = useState({ firstName: "", lastName: "", phone: "", message: "" });
   const [sent, setSent] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -359,6 +359,8 @@ function Index() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const message = `Hi Home Craft, I'm reaching out from the website.\nName: ${form.firstName} ${form.lastName}\nPhone: ${form.phone}\nRequirement: ${form.message}`;
+    window.open(`https://wa.me/918484947570?text=${encodeURIComponent(message)}`, "_blank");
     setSent(true);
     setTimeout(() => setSent(false), 4000);
   };
@@ -810,21 +812,6 @@ function Index() {
                       value={form.lastName}
                       onChange={handleChange}
                       placeholder="Last Name"
-                      className="w-full border-b border-border bg-transparent px-0 py-3 text-foreground placeholder:text-muted-foreground/60 focus:border-accent focus:outline-none"
-                    />
-                  </div>
-                  <div className="group">
-                    <label htmlFor="email" className="sr-only">
-                      Email
-                    </label>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      value={form.email}
-                      onChange={handleChange}
-                      placeholder="Email"
                       className="w-full border-b border-border bg-transparent px-0 py-3 text-foreground placeholder:text-muted-foreground/60 focus:border-accent focus:outline-none"
                     />
                   </div>
