@@ -56,13 +56,14 @@ export function Header() {
         </a>
         <nav className="hidden items-center gap-9 xl:flex">
           {NAV.map((item) => (
-            <a
+            <Link
               key={item}
-              href={`/#${item.toLowerCase()}`}
+              to={item === "Projects" ? "/projects" : `/#${item.toLowerCase()}`}
               className="link-sweep text-sm text-muted-foreground transition-colors hover:text-foreground"
+              activeProps={item === "Projects" ? { className: "text-accent" } : undefined}
             >
               {item}
-            </a>
+            </Link>
           ))}
           <Link
             to="/blog"
@@ -89,14 +90,14 @@ export function Header() {
         <div className="border-t border-border bg-background px-6 py-6 xl:hidden">
           <nav className="flex flex-col gap-4">
             {NAV.concat("Contact").map((item) => (
-              <a
+              <Link
                 key={item}
-                href={`/#${item.toLowerCase()}`}
+                to={item === "Projects" ? "/projects" : `/#${item.toLowerCase()}`}
                 onClick={() => setOpen(false)}
                 className="text-lg text-foreground"
               >
                 {item}
-              </a>
+              </Link>
             ))}
             <Link to="/blog" onClick={() => setOpen(false)} className="text-lg text-foreground">
               Blog
