@@ -106,7 +106,7 @@ const CHOOSE = [
   { t: "Requirement first", d: "We listen before we list. Every search starts from your budget, locality and timeline." },
   { t: "Right tenant matching", d: "Owners get screened, reliable tenants — the thing our reviewers mention most." },
   { t: "Verified paperwork", d: "Title, agreement, registration and society NOC checked before you commit." },
-  { t: "Local Pune expertise", d: "Charholi, Lohegaon, Wagholi, Moshi and Pimpri-Chinchwad covered street by street." },
+  { t: "Local Pune expertise", d: "Charholi, Lohegaon, Dhanori, Tingre Nagar and Viman Nagar covered street by street." },
   { t: "Commercial know-how", d: "Footfall, frontage and rent benchmarking for shops, offices and showrooms." },
   { t: "Investment view", d: "Rental yield, resale demand and handover timelines factored into every shortlist." },
   { t: "Transparent pricing", d: "Clear brokerage, clear scope, quotes in writing before any work begins." },
@@ -471,7 +471,7 @@ function Index() {
                 paperwork that actually checks out.
               </p>
               <div className="mt-6 flex flex-wrap gap-2.5">
-                {["Charholi Budruk", "Lohegaon", "Wagholi", "Pimpri-Chinchwad", "Moshi"].map(
+                {["Charholi Budruk", "Lohegaon", "Dhanori", "Tingre Nagar", "Viman Nagar"].map(
                   (area, idx) => (
                     <span
                       key={area}
