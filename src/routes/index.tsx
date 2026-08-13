@@ -416,10 +416,10 @@ function Index() {
 
         {/* Trusted by — auto-scrolling logo marquee */}
         {/* Proof strip */}
-        <section className="bg-background pb-20 pt-28 lg:pb-24 lg:pt-40">
+        <section className="bg-background pb-20 pt-48 lg:pb-24 lg:pt-64">
           <div className="mx-auto max-w-[1600px] px-6 lg:px-10">
             <Reveal>
-              <p className="relative z-10 mx-auto max-w-3xl pt-12 text-center font-display text-2xl leading-snug tracking-tight text-foreground sm:pt-0 lg:text-4xl">
+              <p className="relative z-10 mx-auto max-w-3xl pt-16 text-center font-display text-2xl leading-snug tracking-tight text-foreground sm:pt-0 lg:text-4xl">
                 Pune families come to us with one question — <span className="text-accent">where should we live next?</span> Everything below is how we answer it.
               </p>
             </Reveal>
