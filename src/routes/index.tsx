@@ -532,7 +532,7 @@ function Index() {
           <div className="mt-12 grid gap-10 md:grid-cols-2">
             {PROJECTS.map((p, i) => (
               <Reveal key={p.title} delay={(i % 2) * 140} variant="blur">
-                <a href="#contact" className="group block">
+                <Link to="/projects" className="group block">
                   <div className="relative overflow-hidden rounded-sm">
                     <img
                       src={p.img}
@@ -554,7 +554,7 @@ function Index() {
                     </div>
                     <span className="text-sm text-muted-foreground">{p.year}</span>
                   </div>
-                </a>
+                </Link>
               </Reveal>
             ))}
           </div>
