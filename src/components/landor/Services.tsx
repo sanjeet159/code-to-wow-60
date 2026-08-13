@@ -4,7 +4,7 @@ import { ArrowIcon } from "@/components/landor/Header";
 import { Reveal } from "@/components/landor/Reveal";
 import { ContactButtons } from "@/components/landor/ContactButtons";
 
-import flatsImgAsset from "@/assets/luxury-apartment.jpg.asset.json";
+import flatsImgAsset from "@/assets/flat-society-view.jpg.asset.json";
 import villasImgAsset from "@/assets/services-villas.jpg.asset.json";
 import plotsImgAsset from "@/assets/services-plots.jpg.asset.json";
 import warehouseImgAsset from "@/assets/services-warehouse.jpg.asset.json";
