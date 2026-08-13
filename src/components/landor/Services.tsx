@@ -19,7 +19,7 @@ const SERVICES = [
     text: "Buy or sell 1BHK to 4BHK homes across Pune's growth corridors — resale, fresh possession or under-construction, all listings verified before they reach you.",
     tags: ["Buy", "Sell", "Resale"],
     stats: [
-      { k: "Corridors", v: "Charholi · Lohegaon · Wagholi" },
+      { k: "Corridors", v: "Charholi · Lohegaon · Dhanori" },
       { k: "Typical range", v: "₹35L – ₹1.4Cr" },
     ],
     img: flatsImg,

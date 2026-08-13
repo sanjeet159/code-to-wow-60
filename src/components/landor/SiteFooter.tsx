@@ -35,7 +35,7 @@ export function SiteFooter() {
             <p className="eyebrow-light">Office</p>
             <p className="mt-4 text-white/60">
               C1C 504, Brooklyn, Pride World City, near Manhattan, Charholi Budruk, Pune,
-              Pimpri-Chinchwad, Maharashtra 412105
+              Maharashtra 412105
             </p>
           </div>
           <div>
