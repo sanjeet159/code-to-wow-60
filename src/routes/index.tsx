@@ -210,14 +210,16 @@ function AudiencePanels() {
                 >
                   {p.text}
                 </p>
-                <span
-                  className={`mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-background transition-all duration-500 ${
+                <Link
+                  to="/property/$id"
+                  params={{ id: p.title.toLowerCase().replace(/[^a-z0-9]/g, "-").replace(/-+/g, "-") }}
+                  className={`mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-background transition-all duration-500 hover:text-accent ${
                     isActive ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
                   }`}
                 >
                   Learn more
                   <ArrowIcon />
-                </span>
+                </Link>
               </div>
             </button>
           );
