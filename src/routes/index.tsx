@@ -67,10 +67,10 @@ export const Route = createFileRoute("/")({
 });
 
 const PROJECTS = [
-  { title: "3BHK residence, Charholi", place: "Pride World City, Pune", year: "Resale", img: project1 },
-  { title: "Retail showroom deal", place: "Porwal Road, Lohegaon", year: "Commercial", img: project2 },
-  { title: "Investor apartment portfolio", place: "Pimpri-Chinchwad", year: "Resale", img: project3 },
-  { title: "Office space, 2400 sq ft", place: "Dream Elements, Lohegaon", year: "Leasing", img: project4 },
+  { title: "3BHK residence, Charholi", place: "Pride World City, Pune", year: "Resale", slug: "3bhk-residence-charholi", img: project1 },
+  { title: "Retail showroom deal", place: "Porwal Road, Lohegaon", year: "Commercial", slug: "retail-showroom-deal-lohegaon", img: project2 },
+  { title: "Investor apartment portfolio", place: "Pimpri-Chinchwad", year: "Resale", slug: "investor-apartment-portfolio-pimpri", img: project3 },
+  { title: "Office space, 2400 sq ft", place: "Dream Elements, Lohegaon", year: "Leasing", slug: "office-space-leasing-lohegaon", img: project4 },
 ];
 
 const REVIEWS = [
