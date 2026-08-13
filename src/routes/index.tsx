@@ -360,7 +360,7 @@ function Index() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const message = `Hi Home Craft, I'm reaching out from the website.\nName: ${form.firstName} ${form.lastName}\nPhone: ${form.phone}\nRequirement: ${form.message}`;
-    window.open(`https://wa.me/918484947570?text=${encodeURIComponent(message)}`, "_blank");
+    window.open(`https://api.whatsapp.com/send?phone=918484947570&text=${encodeURIComponent(message)}`, "_blank");
     setSent(true);
     setTimeout(() => setSent(false), 4000);
   };
