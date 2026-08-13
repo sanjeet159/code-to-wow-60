@@ -321,21 +321,10 @@ function AboutShowcase() {
 
           <div className="mt-10 flex flex-wrap items-center justify-between gap-6 rounded-2xl border border-border bg-background px-6 py-5">
             <div>
-              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+              <p className="mb-4 text-xs uppercase tracking-[0.2em] text-muted-foreground">
                 Open 10:00 am – 8:00 pm
               </p>
-              <ContactButtons size="sm" className="mt-3" />
-            </div>
-            <div className="flex flex-wrap gap-3">
-              <a
-                href="https://maps.google.com/?q=Home+Craft+Real+Estate+Charholi+Budruk+Pune"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm text-accent-foreground transition-all duration-300 hover:gap-4 hover:opacity-85"
-              >
-                Visit our office
-                <ArrowIcon />
-              </a>
+              <ContactButtons size="sm" showOffice={true} />
             </div>
           </div>
         </Reveal>

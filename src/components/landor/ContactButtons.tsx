@@ -37,11 +37,13 @@ export function ContactButtons({
   size = "md",
   className,
   onNavigate,
+  showOffice = false,
 }: {
   tone?: Tone;
   size?: "sm" | "md" | "lg";
   className?: string;
   onNavigate?: () => void;
+  showOffice?: boolean;
 }) {
   const pad =
     size === "sm" ? "px-5 py-2.5 text-sm" : size === "lg" ? "px-7 py-4 text-sm" : "px-6 py-3 text-sm";
@@ -49,21 +51,39 @@ export function ContactButtons({
     "inline-flex items-center gap-2 rounded-full transition-all duration-300 hover:gap-3";
 
   return (
-    <div className={cn("flex flex-wrap items-center gap-3", className)}>
-      <a href={`tel:${PHONE}`} onClick={onNavigate} className={cn(base, pad, toneClasses[tone].call)}>
-        <Phone className="h-4 w-4" />
-        Call now
-      </a>
-      <a
-        href={WHATSAPP_URL}
-        target="_blank"
-        rel="noreferrer"
-        onClick={onNavigate}
-        className={cn(base, pad, toneClasses[tone].wa)}
-      >
-        <WhatsAppIcon />
-        WhatsApp
-      </a>
+    <div className={cn("flex flex-col gap-3", className)}>
+      <div className="flex flex-wrap items-center gap-3">
+        <a href={`tel:${PHONE}`} onClick={onNavigate} className={cn(base, pad, toneClasses[tone].call)}>
+          <Phone className="h-4 w-4" />
+          Call now
+        </a>
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noreferrer"
+          onClick={onNavigate}
+          className={cn(base, pad, toneClasses[tone].wa)}
+        >
+          <WhatsAppIcon />
+          WhatsApp
+        </a>
+      </div>
+      {showOffice && (
+        <a
+          href="https://maps.google.com/?q=Home+Craft+Real+Estate+Charholi+Budruk+Pune"
+          target="_blank"
+          rel="noreferrer"
+          onClick={onNavigate}
+          className={cn(
+            base,
+            pad,
+            "justify-center border border-foreground/10 bg-secondary/50 text-foreground hover:bg-secondary",
+            size === "sm" ? "w-fit" : "w-full sm:w-fit"
+          )}
+        >
+          Visit our office
+        </a>
+      )}
     </div>
   );
 }
