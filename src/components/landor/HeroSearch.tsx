@@ -19,7 +19,7 @@ export function HeroSearch() {
   const [tab, setTab] = useState<(typeof TABS)[number]>("Buy");
 
   return (
-    <div className="mx-auto w-full max-w-5xl">
+    <div className="mx-auto w-full max-w-5xl px-4 sm:px-0">
       <div className="flex">
         {TABS.map((t) => (
           <button
@@ -27,7 +27,7 @@ export function HeroSearch() {
             type="button"
             onClick={() => setTab(t)}
             style={tab === t ? { color: TAB_COLORS[t] } : undefined}
-            className={`rounded-t-xl px-10 py-4 text-sm font-medium transition-colors duration-300 ${
+            className={`flex-1 rounded-t-xl px-4 py-4 text-xs font-medium transition-colors duration-300 sm:flex-none sm:px-10 sm:text-sm ${
               tab === t
                 ? "bg-background"
                 : "bg-background/70 text-muted-foreground hover:bg-background/85"
