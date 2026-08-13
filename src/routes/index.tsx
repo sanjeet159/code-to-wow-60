@@ -530,33 +530,42 @@ function Index() {
             <h2 className="display-lg mt-5 max-w-2xl">Recent deals and fit-outs around Pune</h2>
           </Reveal>
           <div className="mt-12 grid gap-10 md:grid-cols-2">
-            {PROJECTS.map((p, i) => (
-              <Reveal key={p.title} delay={(i % 2) * 140} variant="blur">
-                <a href="#contact" className="group block">
-                  <div className="relative overflow-hidden rounded-sm">
-                    <img
-                      src={p.img}
-                      alt={p.title}
-                      loading="lazy"
-                      className="h-72 w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110 lg:h-[420px]"
-                    />
-                    <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/50 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                    <span className="pointer-events-none absolute bottom-5 left-5 translate-y-3 rounded-full bg-accent px-4 py-2 text-xs uppercase tracking-widest text-accent-foreground opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                      {p.year}
-                    </span>
-                  </div>
-                  <div className="mt-5 flex items-start justify-between gap-6">
-                    <div>
-                      <h3 className="text-2xl transition-colors duration-300 group-hover:text-accent">
-                        {p.title}
-                      </h3>
-                      <p className="mt-1 text-sm text-muted-foreground">{p.place}</p>
+            {PROJECTS.map((p, i) => {
+              // Map the project title to the ID in our properties data
+              const propertyId = p.title.toLowerCase().replace(/[^a-z0-9]/g, "-").replace(/-+/g, "-");
+              
+              return (
+                <Reveal key={p.title} delay={(i % 2) * 140} variant="blur">
+                  <Link 
+                    to="/property/$id" 
+                    params={{ id: propertyId }}
+                    className="group block"
+                  >
+                    <div className="relative overflow-hidden rounded-sm">
+                      <img
+                        src={p.img}
+                        alt={p.title}
+                        loading="lazy"
+                        className="h-72 w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110 lg:h-[420px]"
+                      />
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/50 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                      <div className="pointer-events-none absolute bottom-5 left-5 translate-y-3 rounded-full bg-accent px-4 py-2 text-xs uppercase tracking-widest text-accent-foreground opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                        {p.year}
+                      </div>
                     </div>
-                    <span className="text-sm text-muted-foreground">{p.year}</span>
-                  </div>
-                </a>
-              </Reveal>
-            ))}
+                    <div className="mt-5 flex items-start justify-between gap-6">
+                      <div>
+                        <h3 className="text-2xl transition-colors duration-300 group-hover:text-accent">
+                          {p.title}
+                        </h3>
+                        <p className="mt-1 text-sm text-muted-foreground">{p.place}</p>
+                      </div>
+                      <span className="text-sm text-muted-foreground">{p.year}</span>
+                    </div>
+                  </Link>
+                </Reveal>
+              );
+            })}
           </div>
         </section>
 
