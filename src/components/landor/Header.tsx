@@ -68,6 +68,7 @@ export function Header() {
             to="/blog"
             className="link-sweep text-sm text-white transition-colors hover:text-white/80"
             activeProps={{ className: "text-accent" }}
+          >
             Blog
           </Link>
         </nav>
