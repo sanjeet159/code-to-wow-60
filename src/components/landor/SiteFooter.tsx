@@ -74,7 +74,14 @@ export function SiteFooter() {
         </div>
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-white/40 md:flex-row">
-          <p>© {new Date().getFullYear()} Home Craft Real Estate.</p>
+          <a
+            href="https://google.com"
+            target="_blank"
+            rel="noreferrer"
+            className="link-sweep transition-colors hover:text-white"
+          >
+            made by sanjeet kumar
+          </a>
           <p className="font-display text-4xl tracking-[-0.05em] text-white/10 transition-colors hover:text-white/20 lg:text-8xl">
             home craft
           </p>
