@@ -26,11 +26,11 @@ export function SiteFooter() {
               Buying, selling, renting or investing in Pune? Tell us the requirement and we'll come
               back with options that actually fit.
             </p>
-            <ContactButtons tone="dark" size="lg" className="mt-8" />
+            <ContactButtons tone="dark" size="lg" className="mt-8" showInstagram />
           </Reveal>
         </div>
 
-        <div className="grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.5fr_1.5fr_1fr_1fr]">
           <div>
             <p className="eyebrow-light">Office</p>
             <p className="mt-4 text-white/60">
@@ -47,7 +47,7 @@ export function SiteFooter() {
           </div>
           <div>
             <p className="eyebrow-light">Contact</p>
-            <ContactButtons tone="dark" size="sm" className="mt-4" />
+            <ContactButtons tone="dark" size="sm" className="mt-4" showInstagram />
             <p className="mt-3 text-white/60">Open daily · 10:00 am – 8:00 pm</p>
             <a
               href="https://maps.google.com/?q=Home+Craft+Real+Estate+Charholi+Budruk+Pune"
@@ -75,7 +75,7 @@ export function SiteFooter() {
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-white/40 md:flex-row">
           <p>© {new Date().getFullYear()} Home Craft Real Estate.</p>
-          <p className="font-display text-4xl tracking-[-0.05em] text-white/10 lg:text-6xl">
+          <p className="font-display text-4xl tracking-[-0.05em] text-white/10 transition-colors hover:text-white/20 lg:text-8xl">
             home craft
           </p>
         </div>

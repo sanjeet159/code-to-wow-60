@@ -1,4 +1,4 @@
-import { Phone } from "lucide-react";
+import { Phone, Instagram } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -17,22 +17,26 @@ export function WhatsAppIcon({ className }: { className?: string }) {
 
 type Tone = "accent" | "dark" | "outline" | "minimal";
 
-const toneClasses: Record<Tone, { call: string; wa: string }> = {
+const toneClasses: Record<Tone, { call: string; wa: string; ig: string }> = {
   accent: {
     call: "bg-accent text-accent-foreground hover:opacity-85",
     wa: "border border-accent/30 text-accent hover:bg-accent/10",
+    ig: "border border-accent/30 text-accent hover:bg-accent/10",
   },
   dark: {
     call: "bg-accent text-accent-foreground hover:opacity-85",
     wa: "border border-white/25 text-white hover:bg-white/10",
+    ig: "border border-white/25 text-white hover:bg-white/10",
   },
   outline: {
     call: "border border-foreground/20 text-foreground hover:bg-secondary",
     wa: "border border-foreground/20 text-foreground hover:bg-secondary",
+    ig: "border border-foreground/20 text-foreground hover:bg-secondary",
   },
   minimal: {
     call: "bg-accent text-accent-foreground hover:opacity-90",
     wa: "border border-accent/20 text-accent hover:bg-accent/5",
+    ig: "border border-accent/20 text-accent hover:bg-accent/5",
   },
 };
 
@@ -42,12 +46,14 @@ export function ContactButtons({
   className,
   onNavigate,
   showOffice = false,
+  showInstagram = false,
 }: {
   tone?: Tone;
   size?: "sm" | "md" | "lg";
   className?: string;
   onNavigate?: () => void;
   showOffice?: boolean;
+  showInstagram?: boolean;
 }) {
   const pad =
     size === "sm" ? "px-5 py-2.5 text-sm" : size === "lg" ? "px-7 py-4 text-sm" : "px-6 py-3 text-sm";
@@ -71,6 +77,18 @@ export function ContactButtons({
           <WhatsAppIcon />
           WhatsApp
         </a>
+        {showInstagram && (
+          <a
+            href="https://instagram.com/homecraftrealestate"
+            target="_blank"
+            rel="noreferrer"
+            onClick={onNavigate}
+            className={cn(base, pad, toneClasses[tone].ig)}
+          >
+            <Instagram className="h-4 w-4" />
+            Instagram
+          </a>
+        )}
       </div>
       {showOffice && (
         <a
