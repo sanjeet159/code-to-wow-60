@@ -4,12 +4,18 @@ import { ArrowIcon } from "@/components/landor/Header";
 import { Reveal } from "@/components/landor/Reveal";
 import { ContactButtons } from "@/components/landor/ContactButtons";
 
-import flatsImg from "@/assets/project-1.jpg";
-import villasImg from "@/assets/about.jpg";
-import plotsImg from "@/assets/project-3.jpg";
-import warehouseImg from "@/assets/project-4.jpg";
-import commercialImg from "@/assets/project-2.jpg";
+import flatsImgAsset from "@/assets/services-flats.png.asset.json";
+import villasImgAsset from "@/assets/services-villas.jpg.asset.json";
+import plotsImgAsset from "@/assets/services-plots.jpg.asset.json";
+import warehouseImgAsset from "@/assets/services-warehouse.jpg.asset.json";
+import commercialImgAsset from "@/assets/services-commercial.jpg.asset.json";
 import rentalsImg from "@/assets/hero-villa.jpg";
+
+const flatsImg = flatsImgAsset.url;
+const villasImg = villasImgAsset.url;
+const plotsImg = plotsImgAsset.url;
+const warehouseImg = warehouseImgAsset.url;
+const commercialImg = commercialImgAsset.url;
 
 const SERVICES = [
   {
