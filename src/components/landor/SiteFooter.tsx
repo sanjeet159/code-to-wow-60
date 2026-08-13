@@ -30,7 +30,7 @@ export function SiteFooter() {
           </Reveal>
         </div>
 
-        <div className="grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.5fr_1.5fr_1fr_1fr]">
           <div>
             <p className="eyebrow-light">Office</p>
             <p className="mt-4 text-white/60">
