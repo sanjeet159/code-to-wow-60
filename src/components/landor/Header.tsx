@@ -109,7 +109,7 @@ export function Header() {
       </div>
       <div 
         className={`fixed inset-0 z-50 bg-[#FDFCFB] transition-all duration-500 ease-in-out xl:hidden ${
-          open ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"
+          open ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none invisible"
         }`}
       >
         <div className="flex h-full flex-col px-8 pt-28 pb-10">
