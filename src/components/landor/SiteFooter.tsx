@@ -86,9 +86,9 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-white/40 md:flex-row">
-          <p>© {new Date().getFullYear()} Home Craft Real Estate.</p>
-          <p className="font-display text-4xl tracking-[-0.05em] text-white/10 transition-colors hover:text-white/20 lg:text-8xl">
+        <div className="flex flex-col items-center justify-between gap-12 border-t border-white/10 py-12 text-sm text-white/40 md:flex-row">
+          <p className="order-2 md:order-1">© {new Date().getFullYear()} Home Craft Real Estate.</p>
+          <p className="order-1 font-display text-6xl tracking-[-0.05em] text-white/10 transition-all duration-700 hover:scale-105 hover:text-white/20 md:order-2 lg:text-[10rem]">
             home craft
           </p>
         </div>
