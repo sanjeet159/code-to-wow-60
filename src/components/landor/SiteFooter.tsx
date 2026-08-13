@@ -26,7 +26,7 @@ export function SiteFooter() {
               Buying, selling, renting or investing in Pune? Tell us the requirement and we'll come
               back with options that actually fit.
             </p>
-            <ContactButtons tone="dark" size="lg" className="mt-8" />
+            <ContactButtons tone="dark" size="lg" className="mt-8" showInstagram />
           </Reveal>
         </div>
 
