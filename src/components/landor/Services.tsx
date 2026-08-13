@@ -11,11 +11,11 @@ import warehouseImgAsset from "@/assets/services-warehouse.jpg";
 import commercialImgAsset from "@/assets/services-commercial.jpg";
 import rentalsImg from "@/assets/hero-villa.jpg";
 
-const flatsImg = flatsImgAsset.url;
-const villasImg = villasImgAsset.url;
-const plotsImg = plotsImgAsset.url;
-const warehouseImg = warehouseImgAsset.url;
-const commercialImg = commercialImgAsset.url;
+const flatsImg = flatsImgAsset;
+const villasImg = villasImgAsset;
+const plotsImg = plotsImgAsset;
+const warehouseImg = warehouseImgAsset;
+const commercialImg = commercialImgAsset;
 
 const SERVICES = [
   {
