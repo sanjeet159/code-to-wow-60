@@ -38,6 +38,9 @@ export const Route = createFileRoute("/")({
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
     ],
+    links: [
+      { rel: "preload", as: "image", href: heroVilla, fetchpriority: "high" },
+    ],
     scripts: [
       {
         type: "application/ld+json",
@@ -181,6 +184,7 @@ function AudiencePanels() {
                 src={p.img}
                 alt=""
                 loading="lazy"
+                decoding="async"
                 className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                   isActive ? "scale-100 opacity-100" : "scale-110 opacity-0"
                 }`}
@@ -260,6 +264,7 @@ function AboutShowcase() {
                   src={shot.img}
                   alt={shot.alt}
                   loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
                 />
                 <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/60 via-foreground/10 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-60" />
@@ -364,8 +369,10 @@ function Index() {
             <img
               src={heroVilla}
               alt="Modern luxury home at sunset"
-              width={1920}
-              height={1088}
+              width={1600}
+              height={907}
+              fetchPriority="high"
+              decoding="async"
               className="image-unveil absolute inset-0 h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-foreground/45 via-foreground/10 to-foreground/25" />
@@ -548,6 +555,7 @@ function Index() {
                         src={p.img}
                         alt={p.title}
                         loading="lazy"
+                        decoding="async"
                         className="h-72 w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110 lg:h-[420px]"
                       />
                       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/50 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -607,6 +615,7 @@ function Index() {
                         src={t.img}
                         alt=""
                         loading="lazy"
+                        decoding="async"
                         className="h-12 w-12 rounded-full object-cover"
                       />
                       <div>
@@ -671,6 +680,7 @@ function Index() {
                     src={m.img}
                     alt={m.name}
                     loading="lazy"
+                    decoding="async"
                     className="h-80 w-full object-cover grayscale transition-all duration-[1000ms] group-hover:scale-105 group-hover:grayscale-0 lg:h-96"
                   />
                 </div>
@@ -714,6 +724,7 @@ function Index() {
                         src={p.img}
                         alt={p.title}
                         loading="lazy"
+                        decoding="async"
                         className="h-60 w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
                       />
                     </div>
@@ -731,6 +742,7 @@ function Index() {
                           src={p.avatar}
                           alt=""
                           loading="lazy"
+                          decoding="async"
                           className="h-9 w-9 rounded-full object-cover"
                         />
                         <p className="text-sm">{p.author}</p>
@@ -754,6 +766,7 @@ function Index() {
             width={1920}
             height={1080}
             loading="lazy"
+            decoding="async"
             className="absolute inset-0 h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-foreground/55 via-foreground/35 to-foreground/55" />
