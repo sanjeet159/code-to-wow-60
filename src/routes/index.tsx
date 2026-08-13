@@ -120,6 +120,7 @@ const TEAM = [
   { name: "Client advisory", role: "Buying & rental guidance", img: team1 },
   { name: "Commercial desk", role: "Shops, offices, showrooms", img: team3 },
   { name: "Rentals desk", role: "Owners & tenant matching", img: team2 },
+  { name: "Investment desk", role: "Portfolios & high yield", img: project3 },
 ];
 
 const AUDIENCES = [
@@ -672,9 +673,9 @@ function Index() {
               <ContactButtons size="md" />
             </Reveal>
           </div>
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {TEAM.map((m, i) => (
-              <Reveal key={m.name} delay={(i % 3) * 120} className="group">
+              <Reveal key={m.name} delay={(i % 4) * 120} className="group">
                 <div className="overflow-hidden rounded-sm bg-secondary">
                   <img
                     src={m.img}
@@ -684,10 +685,10 @@ function Index() {
                     className="h-80 w-full object-cover grayscale transition-all duration-[1000ms] group-hover:scale-105 group-hover:grayscale-0 lg:h-96"
                   />
                 </div>
-                <h3 className="mt-5 text-xl transition-colors duration-300 group-hover:text-accent">
+                <h3 className="mt-5 text-xl font-medium transition-colors duration-300 group-hover:text-accent">
                   {m.name}
                 </h3>
-                <p className="text-sm text-muted-foreground">{m.role}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{m.role}</p>
               </Reveal>
             ))}
           </div>

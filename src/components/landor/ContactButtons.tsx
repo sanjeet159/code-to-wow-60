@@ -30,6 +30,10 @@ const toneClasses: Record<Tone, { call: string; wa: string }> = {
     call: "border border-foreground/20 text-foreground hover:bg-secondary",
     wa: "border border-foreground/20 text-foreground hover:bg-secondary",
   },
+  minimal: {
+    call: "bg-accent text-accent-foreground hover:opacity-90",
+    wa: "border border-accent/20 text-accent hover:bg-accent/5",
+  },
 };
 
 export function ContactButtons({
