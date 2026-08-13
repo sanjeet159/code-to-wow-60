@@ -47,7 +47,7 @@ export function SiteFooter() {
           </div>
           <div>
             <p className="eyebrow-light">Contact</p>
-            <ContactButtons tone="dark" size="sm" className="mt-4" showInstagram />
+            
             <p className="mt-3 text-white/60">Open daily · 10:00 am – 8:00 pm</p>
             <a
               href="https://maps.google.com/?q=Home+Craft+Real+Estate+Charholi+Budruk+Pune"
