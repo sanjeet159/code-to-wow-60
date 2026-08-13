@@ -82,7 +82,7 @@ export function Header() {
             type="button"
             aria-label="Toggle menu"
             onClick={() => setOpen((v) => !v)}
-            className={`flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full border transition-colors xl:hidden ${
+            className={`relative flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full border transition-colors xl:hidden ${
               scrolled ? "border-black/20" : "border-white/30"
             }`}
           >

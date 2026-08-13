@@ -366,7 +366,7 @@ function Index() {
       <main>
         {/* Hero */}
         <section id="home" className="relative">
-          <div className="relative min-h-[92vh] w-full overflow-hidden">
+          <div className="relative min-h-[92vh] w-full overflow-hidden sm:min-h-[85vh]">
             <img
               src={heroVilla}
               alt="Modern luxury home at sunset"
@@ -379,7 +379,7 @@ function Index() {
             <div className="absolute inset-0 bg-gradient-to-b from-foreground/45 via-foreground/10 to-foreground/25" />
             <CursorGlow />
 
-            <div className="relative flex min-h-[92vh] flex-col items-center justify-center px-6 pt-36 lg:px-10 lg:pt-40">
+            <div className="relative flex min-h-[92vh] flex-col items-center justify-center px-6 pt-36 sm:min-h-[85vh] lg:px-10 lg:pt-40">
               <div className="text-center">
                 <span
                   className="rise-in inline-block rounded-full bg-background/15 px-4 py-2 text-xs uppercase tracking-[0.25em] text-background backdrop-blur-md"
@@ -388,13 +388,13 @@ function Index() {
                   Real estate consultants · Pune
                 </span>
                 <h1
-                  className="rise-in mt-6 font-display text-[clamp(3.5rem,13vw,12rem)] font-light leading-[0.9] tracking-tight text-background"
+                  className="rise-in mt-6 font-display text-[clamp(2.5rem,10vw,8rem)] font-light leading-[0.9] tracking-tight text-background sm:text-[clamp(3.5rem,13vw,12rem)]"
                   style={{ animationDelay: "140ms" }}
                 >
                   Dream Home
                 </h1>
                 <p
-                  className="rise-in mx-auto mt-6 max-w-xl text-base text-background/85"
+                  className="rise-in mx-auto mt-6 max-w-xl px-4 text-sm text-background/85 sm:px-0 sm:text-base"
                   style={{ animationDelay: "260ms" }}
                 >
                   Buy, sell, rent or invest across Pune with a team that actually
@@ -407,7 +407,7 @@ function Index() {
           {/* Search widget — pinned to hero's bottom edge, dropped by half its
               height so it overlaps onto the section below (like the reference). */}
           <div
-            className="rise-in absolute inset-x-0 bottom-0 z-10 mx-auto w-full max-w-5xl translate-y-1/2 px-6 lg:px-10"
+            className="rise-in absolute inset-x-0 bottom-0 z-10 mx-auto w-full max-w-5xl translate-y-1/2 px-0 lg:px-10"
             style={{ animationDelay: "380ms" }}
           >
             <HeroSearch />
