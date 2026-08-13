@@ -67,10 +67,10 @@ export const Route = createFileRoute("/")({
 });
 
 const PROJECTS = [
-  { title: "3BHK residence, Charholi", place: "Pride World City, Pune", year: "Resale", img: project1 },
-  { title: "Retail showroom deal", place: "Porwal Road, Lohegaon", year: "Commercial", img: project2 },
-  { title: "Investor apartment portfolio", place: "Pimpri-Chinchwad", year: "Resale", img: project3 },
-  { title: "Office space, 2400 sq ft", place: "Dream Elements, Lohegaon", year: "Leasing", img: project4 },
+  { title: "3BHK residence, Charholi", place: "Pride World City, Pune", year: "Resale", slug: "3bhk-residence-charholi", img: project1 },
+  { title: "Retail showroom deal", place: "Porwal Road, Lohegaon", year: "Commercial", slug: "retail-showroom-deal-lohegaon", img: project2 },
+  { title: "Investor apartment portfolio", place: "Pimpri-Chinchwad", year: "Resale", slug: "investor-apartment-portfolio-pimpri", img: project3 },
+  { title: "Office space, 2400 sq ft", place: "Dream Elements, Lohegaon", year: "Leasing", slug: "office-space-leasing-lohegaon", img: project4 },
 ];
 
 const REVIEWS = [
@@ -532,7 +532,11 @@ function Index() {
           <div className="mt-12 grid gap-10 md:grid-cols-2">
             {PROJECTS.map((p, i) => (
               <Reveal key={p.title} delay={(i % 2) * 140} variant="blur">
-                <Link to="/projects" className="group block">
+                <Link
+                  to="/projects/$slug"
+                  params={{ slug: p.slug }}
+                  className="group block"
+                >
                   <div className="relative overflow-hidden rounded-sm">
                     <img
                       src={p.img}
@@ -542,7 +546,7 @@ function Index() {
                     />
                     <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/50 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                     <span className="pointer-events-none absolute bottom-5 left-5 translate-y-3 rounded-full bg-accent px-4 py-2 text-xs uppercase tracking-widest text-accent-foreground opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                      {p.year}
+                      View Case Study
                     </span>
                   </div>
                   <div className="mt-5 flex items-start justify-between gap-6">
@@ -552,7 +556,10 @@ function Index() {
                       </h3>
                       <p className="mt-1 text-sm text-muted-foreground">{p.place}</p>
                     </div>
-                    <span className="text-sm text-muted-foreground">{p.year}</span>
+                    <div className="flex flex-col items-end gap-2">
+                      <span className="text-sm font-medium text-accent">{p.year}</span>
+                      <ArrowIcon className="transition-transform duration-300 group-hover:translate-x-1" />
+                    </div>
                   </div>
                 </Link>
               </Reveal>

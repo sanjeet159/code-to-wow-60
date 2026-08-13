@@ -3,20 +3,10 @@ import { Header, ArrowIcon } from "@/components/landor/Header";
 import { Reveal } from "@/components/landor/Reveal";
 import { SiteFooter } from "@/components/landor/SiteFooter";
 import { ContactButtons } from "@/components/landor/ContactButtons";
-import project1 from "@/assets/project-1.jpg";
-import project2 from "@/assets/project-2.jpg";
-import project3 from "@/assets/project-3.jpg";
-import project4 from "@/assets/project-4.jpg";
+import { PROJECTS } from "@/data/projects";
 
 const TITLE = "Selected Works — Home Craft Real Estate Pune";
 const DESCRIPTION = "Explore our recent successful real estate deals, commercial leasing, and property consultations across Pune.";
-
-const PROJECTS = [
-  { title: "3BHK residence, Charholi", place: "Pride World City, Pune", year: "Resale", img: project1, category: "Residential" },
-  { title: "Retail showroom deal", place: "Porwal Road, Lohegaon", year: "Commercial", img: project2, category: "Commercial" },
-  { title: "Investor apartment portfolio", place: "Pimpri-Chinchwad", year: "Resale", img: project3, category: "Investment" },
-  { title: "Office space, 2400 sq ft", place: "Dream Elements, Lohegaon", year: "Leasing", img: project4, category: "Leasing" },
-];
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
@@ -50,7 +40,7 @@ function ProjectsPage() {
           <div className="mt-16 grid gap-10 md:grid-cols-2">
             {PROJECTS.map((p, i) => (
               <Reveal key={p.title} delay={i * 100} variant="blur">
-                <div className="group block">
+                <Link to="/projects/$slug" params={{ slug: p.slug }} className="group block">
                   <div className="relative overflow-hidden rounded-sm">
                     <img
                       src={p.img}
@@ -69,9 +59,14 @@ function ProjectsPage() {
                       </h3>
                       <p className="mt-1 text-sm text-muted-foreground">{p.place}</p>
                     </div>
-                    <span className="text-sm font-medium text-accent">{p.year}</span>
+                    <div className="flex flex-col items-end gap-2">
+                      <span className="text-sm font-medium text-accent">{p.year}</span>
+                      <span className="inline-flex items-center gap-1 text-[10px] uppercase tracking-widest text-muted-foreground transition-all duration-300 group-hover:gap-2 group-hover:text-accent">
+                        Case Study <ArrowIcon />
+                      </span>
+                    </div>
                   </div>
-                </div>
+                </Link>
               </Reveal>
             ))}
           </div>
@@ -92,3 +87,4 @@ function ProjectsPage() {
     </div>
   );
 }
+
