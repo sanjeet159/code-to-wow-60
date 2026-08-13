@@ -15,7 +15,7 @@ export function WhatsAppIcon({ className }: { className?: string }) {
   );
 }
 
-type Tone = "accent" | "dark" | "outline";
+type Tone = "accent" | "dark" | "outline" | "minimal";
 
 const toneClasses: Record<Tone, { call: string; wa: string }> = {
   accent: {

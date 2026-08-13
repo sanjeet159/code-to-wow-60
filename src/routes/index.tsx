@@ -670,7 +670,7 @@ function Index() {
               </h2>
             </Reveal>
             <Reveal variant="right" delay={120} className="w-fit">
-              <ContactButtons size="md" />
+              <ContactButtons size="md" tone="minimal" />
             </Reveal>
           </div>
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
