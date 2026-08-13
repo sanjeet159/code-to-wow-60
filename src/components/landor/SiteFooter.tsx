@@ -37,41 +37,47 @@ export function SiteFooter() {
 
         <div className="mt-24 h-px w-full bg-gradient-to-r from-white/20 via-white/5 to-transparent" />
 
-        <div className="grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.5fr_1.5fr_1fr_1fr]">
-          <div>
-            <p className="eyebrow-light">Office</p>
-            <p className="mt-4 text-white/60">
-              C1C 504, Brooklyn, Pride World City, near Manhattan, Charholi Budruk, Pune,
-              Maharashtra 412105
+        <div className="grid gap-16 py-20 md:grid-cols-2 lg:grid-cols-[1.2fr_1.2fr_0.8fr_1fr]">
+          <div className="group">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Office</p>
+            <p className="mt-6 text-base leading-relaxed text-white/60 transition-colors group-hover:text-white/90">
+              C1C 504, Brooklyn, <br />
+              Pride World City, Charholi Budruk, <br />
+              Pune, Maharashtra 412105
+            </p>
+          </div>
+          <div className="group">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Branch</p>
+            <p className="mt-6 text-base leading-relaxed text-white/60 transition-colors group-hover:text-white/90">
+              Shop No. A2, Dream Elements, <br />
+              opp. Orchid Hospital, Porwal Road, <br />
+              Lohegaon, Pune 411047
             </p>
           </div>
           <div>
-            <p className="eyebrow-light">Branch</p>
-            <p className="mt-4 text-white/60">
-              Shop No. A2, Dream Elements Building, opp. Orchid Hospital, Porwal Road, Lohegaon,
-              Pune 411047
-            </p>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Contact</p>
+            <div className="mt-6 space-y-4">
+              <p className="text-base text-white/60">Open daily · 10am – 8pm</p>
+              <a
+                href="https://maps.google.com/?q=Home+Craft+Real+Estate+Charholi+Budruk+Pune"
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex items-center gap-2 text-sm font-medium text-white transition-all hover:text-accent"
+              >
+                Get directions
+                <ArrowIcon className="transition-transform group-hover:translate-x-1" />
+              </a>
+            </div>
           </div>
           <div>
-            <p className="eyebrow-light">Contact</p>
-            
-            <p className="mt-3 text-white/60">Open daily · 10:00 am – 8:00 pm</p>
-            <a
-              href="https://maps.google.com/?q=Home+Craft+Real+Estate+Charholi+Budruk+Pune"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-3 inline-flex items-center gap-2 text-sm text-accent transition-all duration-300 hover:gap-4"
-            >
-              Get directions
-              <ArrowIcon />
-            </a>
-          </div>
-          <div>
-            <p className="eyebrow-light">Services</p>
-            <ul className="mt-4 space-y-2 text-white/60">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Services</p>
+            <ul className="mt-6 grid grid-cols-1 gap-y-3 sm:grid-cols-2 lg:grid-cols-1">
               {SERVICE_LINKS.map((l) => (
                 <li key={l}>
-                  <a href="/#services" className="link-sweep transition-colors hover:text-white">
+                  <a
+                    href="/#services"
+                    className="text-sm text-white/50 transition-colors hover:text-accent"
+                  >
                     {l}
                   </a>
                 </li>
