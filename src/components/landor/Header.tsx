@@ -55,16 +55,27 @@ export function Header() {
           />
         </a>
         <nav className="hidden items-center gap-9 xl:flex">
-          {NAV.map((item) => (
-            <Link
-              key={item}
-              to={item === "Projects" ? "/projects" : `/#${item.toLowerCase()}`}
-              className="link-sweep text-sm text-muted-foreground transition-colors hover:text-foreground"
-              activeProps={item === "Projects" ? { className: "text-accent" } : undefined}
-            >
-              {item}
-            </Link>
-          ))}
+          {NAV.map((item) => {
+            const isProjects = item === "Projects";
+            return isProjects ? (
+              <Link
+                key={item}
+                to="/projects"
+                className="link-sweep text-sm text-muted-foreground transition-colors hover:text-foreground"
+                activeProps={{ className: "text-accent" }}
+              >
+                {item}
+              </Link>
+            ) : (
+              <a
+                key={item}
+                href={`/#${item.toLowerCase()}`}
+                className="link-sweep text-sm text-muted-foreground transition-colors hover:text-foreground"
+              >
+                {item}
+              </a>
+            );
+          })}
           <Link
             to="/blog"
             className="link-sweep text-sm text-muted-foreground transition-colors hover:text-accent"
@@ -89,16 +100,28 @@ export function Header() {
       {open && (
         <div className="border-t border-border bg-background px-6 py-6 xl:hidden">
           <nav className="flex flex-col gap-4">
-            {NAV.concat("Contact").map((item) => (
-              <Link
-                key={item}
-                to={item === "Projects" ? "/projects" : `/#${item.toLowerCase()}`}
-                onClick={() => setOpen(false)}
-                className="text-lg text-foreground"
-              >
-                {item}
-              </Link>
-            ))}
+            {NAV.concat("Contact").map((item) => {
+              const isProjects = item === "Projects";
+              return isProjects ? (
+                <Link
+                  key={item}
+                  to="/projects"
+                  onClick={() => setOpen(false)}
+                  className="text-lg text-foreground"
+                >
+                  {item}
+                </Link>
+              ) : (
+                <a
+                  key={item}
+                  href={`/#${item.toLowerCase()}`}
+                  onClick={() => setOpen(false)}
+                  className="text-lg text-foreground"
+                >
+                  {item}
+                </a>
+              );
+            })}
             <Link to="/blog" onClick={() => setOpen(false)} className="text-lg text-foreground">
               Blog
             </Link>
