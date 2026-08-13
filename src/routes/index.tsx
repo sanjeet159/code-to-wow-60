@@ -363,7 +363,7 @@ function Index() {
       <BackToTop />
       <Header />
 
-      <main>
+      <main className="transition-all duration-500 ease-in-out">
         {/* Hero */}
         <section id="home" className="relative">
           <div className="relative min-h-[92vh] w-full overflow-hidden sm:min-h-[85vh]">
