@@ -16,7 +16,7 @@ import heroVilla from "@/assets/hero-villa.jpg";
 import aboutCouple from "@/assets/about-couple.jpg";
 import aboutImg from "@/assets/about.jpg";
 import ctaHome from "@/assets/cta-home.jpg";
-import project1 from "@/assets/project-1.jpg";
+import project1 from "@/assets/pride-world-city-atlantis.png.asset.json";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
 import project4 from "@/assets/project-4.jpg";
@@ -70,7 +70,7 @@ export const Route = createFileRoute("/")({
 });
 
 const PROJECTS = [
-  { title: "3BHK residence, Charholi", place: "Pride World City, Pune", year: "Resale", img: project1 },
+  { title: "Pride World City Atlantis", place: "Charholi, Pune", year: "New Launch", img: project1.url },
   { title: "Retail showroom deal", place: "Porwal Road, Lohegaon", year: "Commercial", img: project2 },
   { title: "Investor apartment portfolio", place: "Pimpri-Chinchwad", year: "Resale", img: project3 },
   { title: "Office space, 2400 sq ft", place: "Dream Elements, Lohegaon", year: "Leasing", img: project4 },
@@ -128,7 +128,7 @@ const AUDIENCES = [
     no: "01",
     title: "Buyers",
     text: "Find the right flat, plot or commercial space from verified listings.",
-    img: project1,
+    img: project1.url,
   },
   {
     no: "02",
