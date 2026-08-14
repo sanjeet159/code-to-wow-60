@@ -11,6 +11,7 @@ import { SiteFooter } from "@/components/landor/SiteFooter";
 import { ContactButtons } from "@/components/landor/ContactButtons";
 import { ScrollProgress, BackToTop } from "@/components/landor/ScrollFx";
 import { POSTS } from "@/data/posts";
+import { PROPERTIES } from "@/data/properties";
 import heroVilla from "@/assets/hero-villa.jpg";
 
 import aboutCouple from "@/assets/about-couple.jpg";
@@ -39,7 +40,7 @@ export const Route = createFileRoute("/")({
       { name: "twitter:description", content: DESCRIPTION },
     ],
     links: [
-      { rel: "preload", as: "image", href: heroVilla, fetchpriority: "high" },
+      { rel: "preload", as: "image", href: heroVilla, fetchPriority: "high" },
     ],
     scripts: [
       {
@@ -69,12 +70,13 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const PROJECTS = [
-  { title: "Pride World City Atlantis", place: "Charholi, Pune", year: "New Launch", img: project1 },
-  { title: "Retail showroom deal", place: "Porwal Road, Lohegaon", year: "Commercial", img: project2 },
-  { title: "Investor apartment portfolio", place: "Pimpri-Chinchwad", year: "Resale", img: project3 },
-  { title: "Office space, 2400 sq ft", place: "Dream Elements, Lohegaon", year: "Leasing", img: project4 },
-];
+const PROJECTS = PROPERTIES.map((property) => ({
+  id: property.id,
+  title: property.title,
+  place: property.location,
+  year: property.type,
+  img: property.image,
+}));
 
 const REVIEWS = [
   {
@@ -541,14 +543,11 @@ function Index() {
           </Reveal>
           <div className="mt-12 grid gap-10 md:grid-cols-2">
             {PROJECTS.map((p, i) => {
-              // Map the project title to the ID in our properties data
-              const propertyId = p.title.toLowerCase().replace(/[^a-z0-9]/g, "-").replace(/-+/g, "-");
-              
               return (
                 <Reveal key={p.title} delay={(i % 2) * 140} variant="blur">
                   <Link 
                     to="/property/$id" 
-                    params={{ id: propertyId }}
+                     params={{ id: p.id }}
                     className="group block"
                   >
                     <div className="relative overflow-hidden rounded-sm">
