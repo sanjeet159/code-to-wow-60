@@ -17,7 +17,7 @@ import aboutCouple from "@/assets/about-couple.jpg";
 import aboutImg from "@/assets/about.jpg";
 import ctaHome from "@/assets/cta-home.jpg";
 import project1 from "@/assets/atlantis.jpg";
-import project2 from "@/assets/project-2.jpg";
+import project2 from "@/assets/BRROKLYN.png";
 import project3 from "@/assets/project-3.jpg";
 import project4 from "@/assets/project-4.jpg";
 import team1 from "@/assets/team-1.jpg";
