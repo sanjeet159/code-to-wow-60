@@ -16,7 +16,7 @@ import heroVilla from "@/assets/hero-villa.jpg";
 import aboutCouple from "@/assets/about-couple.jpg";
 import aboutImg from "@/assets/about.jpg";
 import ctaHome from "@/assets/cta-home.jpg";
-import project1 from "@/assets/atlantis.jpg";
+import project1 from "@/assets/project-1-atlantis.jpg";
 import project2 from "@/assets/BRROKLYN.png";
 import project3 from "@/assets/notting.jpg";
 import project4 from "@/assets/shubh.jpg";
