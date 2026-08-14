@@ -128,7 +128,7 @@ const AUDIENCES = [
     no: "01",
     title: "Buyers",
     text: "Find the right flat, plot or commercial space from verified listings.",
-    img: project1,
+    img: project1.url,
   },
   {
     no: "02",
