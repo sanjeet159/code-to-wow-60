@@ -70,7 +70,7 @@ export const Route = createFileRoute("/")({
 });
 
 const PROJECTS = [
-  { title: "Pride World City Atlantis", place: "Charholi, Pune", year: "New Launch", img: project1.url },
+  { title: "Pride World City Atlantis", place: "Charholi, Pune", year: "New Launch", img: project1 },
   { title: "Retail showroom deal", place: "Porwal Road, Lohegaon", year: "Commercial", img: project2 },
   { title: "Investor apartment portfolio", place: "Pimpri-Chinchwad", year: "Resale", img: project3 },
   { title: "Office space, 2400 sq ft", place: "Dream Elements, Lohegaon", year: "Leasing", img: project4 },
@@ -128,7 +128,7 @@ const AUDIENCES = [
     no: "01",
     title: "Buyers",
     text: "Find the right flat, plot or commercial space from verified listings.",
-    img: project1.url,
+    img: project1,
   },
   {
     no: "02",
