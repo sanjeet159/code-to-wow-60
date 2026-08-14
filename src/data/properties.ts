@@ -1,4 +1,4 @@
-import project1 from "@/assets/project-1.jpg";
+import project1 from "@/assets/pride-world-city-atlantis.png.asset.json";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
 import project4 from "@/assets/project-4.jpg";
@@ -18,16 +18,16 @@ export type Property = {
 
 export const PROPERTIES: Property[] = [
   {
-    id: "3bhk-residence-charholi",
-    title: "3BHK residence, Charholi",
-    location: "Pride World City, Pune",
-    type: "Resale",
+    id: "pride-world-city-atlantis",
+    title: "Pride World City Atlantis",
+    location: "Charholi, Pune",
+    type: "New Launch",
     price: "₹85L - ₹1.2Cr",
-    image: project1,
-    description: "A premium 3BHK residential unit located in the highly sought-after Brooklyn Pride World City. This property offers modern living with excellent connectivity to Pune's major hubs.",
-    amenities: ["Clubhouse", "Swimming Pool", "24/7 Security", "Jogging Track", "Power Backup"],
+    image: project1.url,
+    description: "A landmark high-rise residence in Pride World City, Charholi. Atlantis offers premium apartments with modern architecture, rooftop amenities and excellent connectivity to Pune's IT and industrial corridors.",
+    amenities: ["Sky Lounge", "Swimming Pool", "24/7 Security", "Fitness Centre", "Power Backup", "Landscaped Gardens"],
     area: "1450 sq ft",
-    status: "Ready to move"
+    status: "Under Construction"
   },
   {
     id: "retail-showroom-deal",
