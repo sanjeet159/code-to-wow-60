@@ -40,7 +40,7 @@ export const Route = createFileRoute("/")({
       { name: "twitter:description", content: DESCRIPTION },
     ],
     links: [
-      { rel: "preload", as: "image", href: heroVilla, fetchpriority: "high" },
+      { rel: "preload", as: "image", href: heroVilla, fetchPriority: "high" },
     ],
     scripts: [
       {
