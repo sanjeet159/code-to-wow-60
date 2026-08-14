@@ -50,20 +50,20 @@ export const PROPERTIES: Property[] = [
     image: project3,
     description: "Pride World City Notting Hill stands out as Charoli’s elite, low-density enclave of ready-to-move-in European-style row houses and private villas built for maximum privacy. ",
     amenities: ["Swimming pool", "Covered Parking", "aerobics/yoga room", "jogging/strolling tracks"],
-    area: "980 sq ft",
-    status: "Tenanted"
+    area: "2365 sq ft",
+    status: "Resale"
   },
   {
     id: "office-space-2400-sq-ft",
-    title: "Office space, 2400 sq ft",
-    location: "Dream Elements, Lohegaon",
-    type: "Leasing",
-    price: "₹1.2L / month",
+    title: "Shubh Gateways",
+    location: "Viman Nagar",
+    type: "New Launch",
+    price: "₹3.5Cr - ₹4.2Cr",
     image: project4,
-    description: "Expansive office floor in Dream Elements, Lohegaon. Designed for modern corporate teams with flexible layout options and premium building management.",
-    amenities: ["High-speed Elevators", "Meeting Rooms", "Cafeteria", "Reception Desk", "Fiber Internet"],
-    area: "2400 sq ft",
-    status: "Available for Lease"
+    description: "Shubh Gateways shifts away from the township model, offering an under-construction, highly secure standalone development in Viman Nagar tailored for frequent travelers due to its premium proximity to Pune Airport and major commercial hubs.",
+    amenities: ["Multipurpose Court", "Swimming Pool", "Amphitheatre", "Party Lawn", "3-Tier Security"],
+    area: "1345 sq ft",
+    status: "New Launch"
   }
 ];
 
