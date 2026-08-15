@@ -565,9 +565,10 @@ function Index() {
             {PROJECTS.map((p, i) => {
               return (
                 <Reveal key={p.title} delay={(i % 2) * 140} variant="blur">
-                  <Link 
-                    to="/property/$id" 
-                     params={{ id: p.id }}
+                  <Link
+                    to="/property/$id"
+                    params={{ id: p.id }}
+                    data-cursor="View"
                     className="group block"
                   >
                     <div className="relative overflow-hidden rounded-sm">
