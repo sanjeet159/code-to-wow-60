@@ -10,6 +10,7 @@ import { HeroSearch } from "@/components/landor/HeroSearch";
 import { SiteFooter } from "@/components/landor/SiteFooter";
 import { ContactButtons } from "@/components/landor/ContactButtons";
 import { ScrollProgress, BackToTop } from "@/components/landor/ScrollFx";
+import { SignatureCursor, GrainOverlay, Magnetic, SplitWords, Ticker } from "@/components/landor/Fx";
 import { POSTS } from "@/data/posts";
 import { PROPERTIES } from "@/data/properties";
 import heroVilla from "@/assets/hero-villa.jpg";
@@ -362,6 +363,8 @@ function Index() {
   return (
     <div id="top" className="overflow-x-hidden bg-background">
       <ScrollProgress />
+      <SignatureCursor />
+      <GrainOverlay />
       <BackToTop />
       <Header />
 
@@ -389,12 +392,13 @@ function Index() {
                 >
                   Real estate consultants · Pune
                 </span>
-                <h1
-                  className="rise-in mt-6 font-display text-[clamp(2.5rem,10vw,8rem)] font-light leading-[0.9] tracking-tight text-background sm:text-[clamp(3.5rem,13vw,12rem)]"
-                  style={{ animationDelay: "140ms" }}
-                >
-                  Dream Home
-                </h1>
+                <SplitWords
+                  as="h1"
+                  text="Dream Home"
+                  delay={220}
+                  stagger={140}
+                  className="mt-6 font-display text-[clamp(2.5rem,10vw,8rem)] font-light leading-[0.9] tracking-tight text-background sm:text-[clamp(3.5rem,13vw,12rem)]"
+                />
                 <p
                   className="rise-in mx-auto mt-6 max-w-xl px-4 text-sm text-background/85 sm:px-0 sm:text-base"
                   style={{ animationDelay: "260ms" }}
@@ -446,6 +450,22 @@ function Index() {
             </Reveal>
           </div>
         </section>
+
+        {/* Marquee band */}
+        <div className="border-y border-border bg-surface-dark text-surface-dark-foreground">
+          <Ticker
+            items={[
+              "Flats & apartments",
+              "Plots & land",
+              "Commercial spaces",
+              "Warehousing",
+              "Rentals & tenant matching",
+              "Investment advisory",
+            ]}
+          />
+        </div>
+
+
 
         {/* About */}
         <section
@@ -539,15 +559,20 @@ function Index() {
             Selected work
           </Reveal>
           <Reveal delay={80}>
-            <h2 className="display-lg mt-5 max-w-2xl">Recent deals and fit-outs around Pune</h2>
+            <SplitWords
+              as="h2"
+              text="Recent deals and fit-outs around Pune"
+              className="display-lg mt-5 max-w-2xl block"
+            />
           </Reveal>
           <div className="mt-12 grid gap-10 md:grid-cols-2">
             {PROJECTS.map((p, i) => {
               return (
                 <Reveal key={p.title} delay={(i % 2) * 140} variant="blur">
-                  <Link 
-                    to="/property/$id" 
-                     params={{ id: p.id }}
+                  <Link
+                    to="/property/$id"
+                    params={{ id: p.id }}
+                    data-cursor="View"
                     className="group block"
                   >
                     <div className="relative overflow-hidden rounded-sm">
@@ -706,13 +731,15 @@ function Index() {
                 </Reveal>
               </div>
               <Reveal delay={160}>
-                <Link
-                  to="/blog"
-                  className="inline-flex items-center gap-2 rounded-full border border-accent px-6 py-3 text-sm text-accent transition-all duration-300 hover:gap-4 hover:bg-accent hover:text-accent-foreground"
-                >
-                  All insights
-                  <ArrowIcon />
-                </Link>
+                <Magnetic strength={0.28}>
+                  <Link
+                    to="/blog"
+                    className="inline-flex items-center gap-2 rounded-full border border-accent px-6 py-3 text-sm text-accent transition-all duration-300 hover:gap-4 hover:bg-accent hover:text-accent-foreground"
+                  >
+                    All insights
+                    <ArrowIcon />
+                  </Link>
+                </Magnetic>
               </Reveal>
             </div>
             <div className="mt-14 grid gap-8 lg:grid-cols-3">
@@ -777,9 +804,11 @@ function Index() {
               <span className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2 text-xs font-medium uppercase tracking-widest text-accent-foreground">
                 Get in Touch
               </span>
-              <h2 className="display-lg mx-auto mt-6 max-w-3xl uppercase leading-[1.05] text-background">
-                Let's make your property journey effortless
-              </h2>
+              <SplitWords
+                as="h2"
+                text="Let's make your property journey effortless"
+                className="display-lg mx-auto mt-6 block max-w-3xl uppercase leading-[1.05] text-background"
+              />
               <p className="mx-auto mt-6 max-w-2xl text-background/85">
                 Have questions or ready to take the next step? Whether you're looking to buy, rent, or
                 invest, our team is here to guide you every step of the way. Let's turn your property
@@ -855,13 +884,15 @@ function Index() {
                 </div>
 
                 <div className="mt-10">
-                  <button
-                    type="submit"
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-foreground px-8 py-4 text-sm font-medium text-background transition-all duration-300 hover:gap-4 hover:bg-foreground/90"
-                  >
-                    {sent ? "Request received — we'll call you back" : "Book a Call"}
-                    <ArrowIcon />
-                  </button>
+                  <Magnetic strength={0.18} className="w-full">
+                    <button
+                      type="submit"
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-foreground px-8 py-4 text-sm font-medium text-background transition-all duration-300 hover:gap-4 hover:bg-foreground/90"
+                    >
+                      {sent ? "Request received — we'll call you back" : "Book a Call"}
+                      <ArrowIcon />
+                    </button>
+                  </Magnetic>
                 </div>
 
                 <div className="mt-6 flex flex-col items-center gap-3">
