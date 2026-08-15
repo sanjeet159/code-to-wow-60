@@ -804,9 +804,11 @@ function Index() {
               <span className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2 text-xs font-medium uppercase tracking-widest text-accent-foreground">
                 Get in Touch
               </span>
-              <h2 className="display-lg mx-auto mt-6 max-w-3xl uppercase leading-[1.05] text-background">
-                Let's make your property journey effortless
-              </h2>
+              <SplitWords
+                as="h2"
+                text="Let's make your property journey effortless"
+                className="display-lg mx-auto mt-6 block max-w-3xl uppercase leading-[1.05] text-background"
+              />
               <p className="mx-auto mt-6 max-w-2xl text-background/85">
                 Have questions or ready to take the next step? Whether you're looking to buy, rent, or
                 invest, our team is here to guide you every step of the way. Let's turn your property
