@@ -451,6 +451,22 @@ function Index() {
           </div>
         </section>
 
+        {/* Marquee band */}
+        <div className="border-y border-border bg-surface-dark text-surface-dark-foreground">
+          <Ticker
+            items={[
+              "Flats & apartments",
+              "Plots & land",
+              "Commercial spaces",
+              "Warehousing",
+              "Rentals & tenant matching",
+              "Investment advisory",
+            ]}
+          />
+        </div>
+
+
+
         {/* About */}
         <section
           id="about"
