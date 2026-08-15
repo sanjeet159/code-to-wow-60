@@ -559,7 +559,11 @@ function Index() {
             Selected work
           </Reveal>
           <Reveal delay={80}>
-            <h2 className="display-lg mt-5 max-w-2xl">Recent deals and fit-outs around Pune</h2>
+            <SplitWords
+              as="h2"
+              text="Recent deals and fit-outs around Pune"
+              className="display-lg mt-5 max-w-2xl block"
+            />
           </Reveal>
           <div className="mt-12 grid gap-10 md:grid-cols-2">
             {PROJECTS.map((p, i) => {
