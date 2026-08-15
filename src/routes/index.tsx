@@ -363,6 +363,8 @@ function Index() {
   return (
     <div id="top" className="overflow-x-hidden bg-background">
       <ScrollProgress />
+      <SignatureCursor />
+      <GrainOverlay />
       <BackToTop />
       <Header />
 
