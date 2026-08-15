@@ -392,12 +392,13 @@ function Index() {
                 >
                   Real estate consultants · Pune
                 </span>
-                <h1
-                  className="rise-in mt-6 font-display text-[clamp(2.5rem,10vw,8rem)] font-light leading-[0.9] tracking-tight text-background sm:text-[clamp(3.5rem,13vw,12rem)]"
-                  style={{ animationDelay: "140ms" }}
-                >
-                  Dream Home
-                </h1>
+                <SplitWords
+                  as="h1"
+                  text="Dream Home"
+                  delay={220}
+                  stagger={140}
+                  className="mt-6 font-display text-[clamp(2.5rem,10vw,8rem)] font-light leading-[0.9] tracking-tight text-background sm:text-[clamp(3.5rem,13vw,12rem)]"
+                />
                 <p
                   className="rise-in mx-auto mt-6 max-w-xl px-4 text-sm text-background/85 sm:px-0 sm:text-base"
                   style={{ animationDelay: "260ms" }}
