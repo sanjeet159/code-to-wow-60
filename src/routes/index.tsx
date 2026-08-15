@@ -727,13 +727,15 @@ function Index() {
                 </Reveal>
               </div>
               <Reveal delay={160}>
-                <Link
-                  to="/blog"
-                  className="inline-flex items-center gap-2 rounded-full border border-accent px-6 py-3 text-sm text-accent transition-all duration-300 hover:gap-4 hover:bg-accent hover:text-accent-foreground"
-                >
-                  All insights
-                  <ArrowIcon />
-                </Link>
+                <Magnetic strength={0.28}>
+                  <Link
+                    to="/blog"
+                    className="inline-flex items-center gap-2 rounded-full border border-accent px-6 py-3 text-sm text-accent transition-all duration-300 hover:gap-4 hover:bg-accent hover:text-accent-foreground"
+                  >
+                    All insights
+                    <ArrowIcon />
+                  </Link>
+                </Magnetic>
               </Reveal>
             </div>
             <div className="mt-14 grid gap-8 lg:grid-cols-3">
