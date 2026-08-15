@@ -10,6 +10,7 @@ import { HeroSearch } from "@/components/landor/HeroSearch";
 import { SiteFooter } from "@/components/landor/SiteFooter";
 import { ContactButtons } from "@/components/landor/ContactButtons";
 import { ScrollProgress, BackToTop } from "@/components/landor/ScrollFx";
+import { SignatureCursor, GrainOverlay, Magnetic, SplitWords, Ticker } from "@/components/landor/Fx";
 import { POSTS } from "@/data/posts";
 import { PROPERTIES } from "@/data/properties";
 import heroVilla from "@/assets/hero-villa.jpg";
