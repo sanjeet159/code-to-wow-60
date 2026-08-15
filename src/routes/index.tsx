@@ -878,13 +878,15 @@ function Index() {
                 </div>
 
                 <div className="mt-10">
-                  <button
-                    type="submit"
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-foreground px-8 py-4 text-sm font-medium text-background transition-all duration-300 hover:gap-4 hover:bg-foreground/90"
-                  >
-                    {sent ? "Request received — we'll call you back" : "Book a Call"}
-                    <ArrowIcon />
-                  </button>
+                  <Magnetic strength={0.18} className="w-full">
+                    <button
+                      type="submit"
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-foreground px-8 py-4 text-sm font-medium text-background transition-all duration-300 hover:gap-4 hover:bg-foreground/90"
+                    >
+                      {sent ? "Request received — we'll call you back" : "Book a Call"}
+                      <ArrowIcon />
+                    </button>
+                  </Magnetic>
                 </div>
 
                 <div className="mt-6 flex flex-col items-center gap-3">
