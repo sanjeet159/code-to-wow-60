@@ -557,3 +557,110 @@
 @utility brand-rule {
   background-image: linear-gradient(90deg, var(--brand), transparent);
 }
+
+/* ---------- Signature cursor ---------- */
+.has-sig-cursor,
+.has-sig-cursor a,
+.has-sig-cursor button {
+  cursor: none;
+}
+.sig-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.sig-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in oklch, var(--accent) 70%, transparent);
+  color: transparent;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition:
+    width 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.4s ease,
+    color 0.3s ease,
+    opacity 0.3s ease;
+}
+.sig-ring[data-active="true"] {
+  width: 58px;
+  height: 58px;
+  background: color-mix(in oklch, var(--accent) 16%, transparent);
+}
+.sig-ring[data-label]:not([data-label=""]) {
+  width: 84px;
+  height: 84px;
+  color: var(--accent);
+  background: color-mix(in oklch, var(--accent) 12%, transparent);
+}
+
+/* ---------- Film grain ---------- */
+.grain-overlay {
+  position: fixed;
+  inset: -50%;
+  z-index: 90;
+  pointer-events: none;
+  opacity: 0.038;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 1.1s steps(4) infinite;
+}
+@keyframes grain {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-4%, 3%); }
+  50% { transform: translate(3%, -3%); }
+  75% { transform: translate(-2%, -4%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* ---------- Split word reveal ---------- */
+.split-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+.split-word-inner {
+  display: inline-block;
+  transform: translateY(110%) rotate(4deg);
+  opacity: 0;
+  transition:
+    transform 0.95s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.7s ease;
+}
+.split-words[data-shown="true"] .split-word-inner {
+  transform: none;
+  opacity: 1;
+}
+
+/* ---------- Ticker ---------- */
+.ticker-track {
+  animation: marquee 34s linear infinite;
+}
+.ticker:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grain-overlay,
+  .ticker-track {
+    animation: none;
+  }
+  .split-word-inner {
+    transform: none;
+    opacity: 1;
+  }
+}
