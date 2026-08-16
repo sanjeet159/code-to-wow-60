@@ -12,25 +12,59 @@ export const Route = createFileRoute("/blog/$slug")({
     if (!post) throw notFound();
     return { post };
   },
-  head: ({ loaderData }) => {
+  head: ({ params, loaderData }) => {
     if (!loaderData) {
       return { meta: [{ title: "Article not found — Home Craft" }, { name: "robots", content: "noindex" }] };
     }
     const { post } = loaderData;
-    const title = `${post.title} — Home Craft Pune`;
+    const title = post.metaTitle;
+    const description = post.metaDescription;
+    const url = `https://code-to-wow-60.lovable.app/blog/${params.slug}`;
     return {
       meta: [
         { title },
-        { name: "description", content: post.excerpt },
+        { name: "description", content: description },
+        { name: "keywords", content: post.keyword },
         { property: "og:title", content: title },
-        { property: "og:description", content: post.excerpt },
+        { property: "og:description", content: description },
         { property: "og:type", content: "article" },
+        { property: "og:url", content: url },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: title },
-        { name: "twitter:description", content: post.excerpt },
+        { name: "twitter:description", content: description },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                headline: post.title,
+                description: post.metaDescription,
+                articleSection: post.cat,
+                author: { "@type": "Organization", name: "Home Craft Real Estate" },
+                publisher: { "@type": "Organization", name: "Home Craft Real Estate" },
+                mainEntityOfPage: url,
+                about: post.keyword,
+              },
+              {
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  { "@type": "ListItem", position: 1, name: "Home", item: "https://code-to-wow-60.lovable.app/" },
+                  { "@type": "ListItem", position: 2, name: "Insights", item: "https://code-to-wow-60.lovable.app/blog" },
+                  { "@type": "ListItem", position: 3, name: post.title, item: url },
+                ],
+              },
+            ],
+          }),
+        },
       ],
     };
   },
+
   notFoundComponent: PostNotFound,
   component: PostPage,
 });
