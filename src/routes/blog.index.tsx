@@ -59,15 +59,17 @@ function BlogIndex() {
           </Reveal>
           <Reveal delay={80}>
             <h1 className="display-lg mt-5 max-w-4xl">
-              Practical notes on the <span className="text-accent">Pune property market</span>
+              Area guides for <span className="text-accent">East Pune homebuyers</span>
             </h1>
           </Reveal>
           <Reveal delay={160}>
             <p className="mt-6 max-w-2xl text-muted-foreground">
-              Everything we tell our own clients before they buy, sell, rent or invest — written
-              down, without the brochure language.
+              Porwal Road, Lohegaon, Charholi Budruk, Dhanori, Tingre Nagar and Viman Nagar —
+              connectivity, schools, price bands and rental demand, exactly as we explain them to
+              our own clients.
             </p>
           </Reveal>
+
           <div className="brand-rule mt-10 h-px w-full" />
         </section>
 
