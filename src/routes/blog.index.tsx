@@ -5,9 +5,10 @@ import { Reveal } from "@/components/landor/Reveal";
 import { SiteFooter } from "@/components/landor/SiteFooter";
 import { POSTS } from "@/data/posts";
 
-const TITLE = "Property Insights & Guides — Home Craft Pune";
+const TITLE = "Pune Area Guides & Property Insights | Home Craft";
 const DESCRIPTION =
-  "Buying, selling, renting and investment guides for the Pune property market from Home Craft Real Estate, rated 4.3★ by local clients.";
+  "Local area guides for Lohegaon, Porwal Road, Charholi Budruk, Dhanori, Tingre Nagar and Viman Nagar — prices, connectivity, schools and rental demand in East Pune.";
+const URL = "https://code-to-wow-60.lovable.app/blog";
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({
@@ -17,13 +18,32 @@ export const Route = createFileRoute("/blog/")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: URL },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
     ],
+    links: [{ rel: "canonical", href: URL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "Pune area guides",
+          itemListElement: POSTS.map((p, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            name: p.title,
+            url: `https://code-to-wow-60.lovable.app/blog/${p.slug}`,
+          })),
+        }),
+      },
+    ],
   }),
   component: BlogIndex,
 });
+
 
 function BlogIndex() {
   const [lead, ...rest] = POSTS;
