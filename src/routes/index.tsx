@@ -25,6 +25,11 @@ import project4 from "@/assets/shubh.jpg";
 import team1 from "@/assets/team-1.jpg";
 import team2 from "@/assets/team-2.jpg";
 import team3 from "@/assets/team-3.jpg";
+import shree from "@/assets/shree.png";
+import sheetal from "@/assets/sheetal.jpeg";
+import Pratik from "@/assets/Pratik.jpeg";
+import Prabhat from "@/assets/Prabhat.jpeg";
+import Ashutosh from "@/assets/Ashutosh.jpeg";
 
 const TITLE = "Home Craft — Real Estate Consultant in Pune";
 const DESCRIPTION =
