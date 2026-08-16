@@ -129,6 +129,7 @@ const TEAM = [
   { name: "Commercial desk", role: "Shops, offices, showrooms", img: Pratik },
   { name: "Rentals desk", role: "Owners & tenant matching", img: Ashutosh },
   { name: "Investment desk", role: "Portfolios & high yield", img: sheetal },
+  { name: "Investment desk", role: "Portfolios & high yield", img: shree },
 ];
 
 const AUDIENCES = [
