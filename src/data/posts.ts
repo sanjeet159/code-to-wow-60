@@ -1,4 +1,4 @@
-import 1 from "@/assets/1.png";
+import dhanori from "@/assets/dhanori.png";
 import blog2 from "@/assets/blog-2.jpg";
 import blog3 from "@/assets/blog-3.jpg";
 import project1 from "@/assets/project-1.jpg";
@@ -31,25 +31,25 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
-    slug: "porwal-road-lohegaon-property-guide",
-    img: blog1,
+    slug: "Dhanori-road-lohegaon-property-guide",
+    img: dhanori,
     cat: "Area guide",
     date: "Lohegaon, Pune",
     readTime: "8 min read",
-    title: "Living on Porwal Road, Lohegaon: a complete guide for homebuyers",
-    keyword: "Porwal Road Lohegaon property",
-    metaTitle: "Porwal Road Lohegaon Property Guide (2026)",
+    title: "Living on Dhanori Road, Lohegaon: a complete guide for homebuyers",
+    keyword: "Dhanori Road Lohegaon property",
+    metaTitle: "Dhanori Road Lohegaon Property Guide (2026)",
     metaDescription:
-      "Porwal Road, Lohegaon property guide: connectivity to the airport and IT parks, schools, hospitals, price trends and what to check before you buy.",
+      "Dhanori Road, Lohegaon property guide: connectivity to the airport and IT parks, schools, hospitals, price trends and what to check before you buy.",
     excerpt:
-      "Porwal Road has gone from a link road to one of north-east Pune's busiest residential corridors. Here is how connectivity, schools, hospitals and price trends actually stack up before you buy.",
+      "Dhanori Road has gone from a link road to one of north-east Pune's busiest residential corridors. Here is how connectivity, schools, hospitals and price trends actually stack up before you buy.",
     author: "Home Craft desk",
     avatar: team1,
     sections: [
       {
-        heading: "Where Porwal Road sits, and why that matters",
+        heading: "Where Dhanori Road sits, and why that matters",
         body: [
-          "Porwal Road connects Lohegaon and Dhanori towards Charholi Budruk and the Alandi side. That single stretch is the reason the corridor developed the way it did: it puts you within a short drive of Pune airport, within reach of Viman Nagar and Kharadi for work, and still on the cheaper side of the price map compared with those two.",
+          "Dhanori Road connects Lohegaon and Dhanori towards Charholi Budruk and the Alandi side. That single stretch is the reason the corridor developed the way it did: it puts you within a short drive of Pune airport, within reach of Viman Nagar and Kharadi for work, and still on the cheaper side of the price map compared with those two.",
           "For most buyers we advise here, the decision comes down to one trade-off — you accept a road that gets congested at peak hours in exchange for a per-square-foot rate that is meaningfully below Viman Nagar and Kharadi for a comparable, newer building.",
         ],
       },
@@ -71,13 +71,13 @@ export const POSTS: Post[] = [
         heading: "Schools and hospitals within reach",
         body: [
           "Families are the dominant buyer profile here, so day-to-day infrastructure decides resale as much as the building does. Established schools in Lohegaon, Dhanori and Viman Nagar cover the CBSE, ICSE and state boards, and Viman Nagar adds the international-board options.",
-          "For healthcare, the corridor leans on multi-speciality hospitals in Viman Nagar, Vishrantwadi and Kharadi, with clinics and diagnostic centres on Porwal Road itself. If someone in the household needs regular specialist care, time that drive yourself before committing.",
+          "For healthcare, the corridor leans on multi-speciality hospitals in Viman Nagar, Vishrantwadi and Kharadi, with clinics and diagnostic centres on Dhanori Road itself. If someone in the household needs regular specialist care, time that drive yourself before committing.",
         ],
       },
       {
         heading: "Price trends and what your budget buys",
         body: [
-          "Rates on Porwal Road have moved up steadily since the post-2021 cycle, driven by supply of mid-segment towers rather than luxury projects. Expect a clear premium for anything with a completion certificate in hand over an early-launch unit.",
+          "Rates on Dhanori Road have moved up steadily since the post-2021 cycle, driven by supply of mid-segment towers rather than luxury projects. Expect a clear premium for anything with a completion certificate in hand over an early-launch unit.",
           "Treat any per-square-foot number you read online as an asking price, not a transacted one. We price every deal against registered agreements in the same society — that is usually a few percent below the portal figure, and occasionally far below it.",
         ],
         list: [
@@ -101,7 +101,7 @@ export const POSTS: Post[] = [
         ],
       },
       {
-        heading: "Who Porwal Road suits",
+        heading: "Who Dhanori Road suits",
         body: [
           "It works well for families who want a newer 2BHK or 3BHK near the airport side without Viman Nagar pricing, and for investors who want rental demand from airline crew, airport staff and Kharadi commuters.",
           "It works less well if you need a daily commute to Hinjawadi or the Baner side — that drive across the city will define your week.",
@@ -147,7 +147,7 @@ export const POSTS: Post[] = [
       {
         heading: "Connectivity head to head",
         body: [
-          "Lohegaon wins on airport access and on reaching Viman Nagar or Kalyani Nagar. Charholi is better placed for Alandi, Moshi and the northern PCMC side, and connects to Lohegaon through Porwal Road.",
+          "Lohegaon wins on airport access and on reaching Viman Nagar or Kalyani Nagar. Charholi is better placed for Alandi, Moshi and the northern PCMC side, and connects to Lohegaon through Dhanori Road.",
           "For a Kharadi or EON IT Park commute, Lohegaon has the edge by roughly 10-15 minutes. For anything toward Hinjawadi, neither is convenient and you should factor that in seriously.",
         ],
       },
