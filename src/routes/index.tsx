@@ -10,19 +10,26 @@ import { HeroSearch } from "@/components/landor/HeroSearch";
 import { SiteFooter } from "@/components/landor/SiteFooter";
 import { ContactButtons } from "@/components/landor/ContactButtons";
 import { ScrollProgress, BackToTop } from "@/components/landor/ScrollFx";
+import { SignatureCursor, GrainOverlay, Magnetic, SplitWords, Ticker } from "@/components/landor/Fx";
 import { POSTS } from "@/data/posts";
+import { PROPERTIES } from "@/data/properties";
 import heroVilla from "@/assets/hero-villa.jpg";
 
 import aboutCouple from "@/assets/about-couple.jpg";
 import aboutImg from "@/assets/about.jpg";
 import ctaHome from "@/assets/cta-home.jpg";
-import project1 from "@/assets/project-1.jpg";
-import project2 from "@/assets/project-2.jpg";
-import project3 from "@/assets/project-3.jpg";
-import project4 from "@/assets/project-4.jpg";
+import project1 from "@/assets/project-1-atlantis.jpg";
+import project2 from "@/assets/BRROKLYN.png";
+import project3 from "@/assets/notting.jpg";
+import project4 from "@/assets/shubh.jpg";
 import team1 from "@/assets/team-1.jpg";
 import team2 from "@/assets/team-2.jpg";
 import team3 from "@/assets/team-3.jpg";
+import shree from "@/assets/shree.png";
+import sheetal from "@/assets/sheetal.jpeg";
+import Pratik from "@/assets/Pratik.jpeg";
+import Prabhat from "@/assets/Prabhat.jpeg";
+import Ashutosh from "@/assets/Ashutosh.jpeg";
 
 const TITLE = "Home Craft — Real Estate Consultant in Pune";
 const DESCRIPTION =
@@ -37,6 +44,9 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: DESCRIPTION },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
+    ],
+    links: [
+      { rel: "preload", as: "image", href: heroVilla, fetchPriority: "high" },
     ],
     scripts: [
       {
@@ -66,12 +76,13 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const PROJECTS = [
-  { title: "3BHK residence, Charholi", place: "Pride World City, Pune", year: "Resale", img: project1 },
-  { title: "Retail showroom deal", place: "Porwal Road, Lohegaon", year: "Commercial", img: project2 },
-  { title: "Investor apartment portfolio", place: "Pimpri-Chinchwad", year: "Resale", img: project3 },
-  { title: "Office space, 2400 sq ft", place: "Dream Elements, Lohegaon", year: "Leasing", img: project4 },
-];
+const PROJECTS = PROPERTIES.map((property) => ({
+  id: property.id,
+  title: property.title,
+  place: property.location,
+  year: property.type,
+  img: property.image,
+}));
 
 const REVIEWS = [
   {
@@ -106,7 +117,7 @@ const CHOOSE = [
   { t: "Requirement first", d: "We listen before we list. Every search starts from your budget, locality and timeline." },
   { t: "Right tenant matching", d: "Owners get screened, reliable tenants — the thing our reviewers mention most." },
   { t: "Verified paperwork", d: "Title, agreement, registration and society NOC checked before you commit." },
-  { t: "Local Pune expertise", d: "Charholi, Lohegaon, Wagholi, Moshi and Pimpri-Chinchwad covered street by street." },
+  { t: "Local Pune expertise", d: "Charholi, Lohegaon, Dhanori, Tingre Nagar and Viman Nagar covered street by street." },
   { t: "Commercial know-how", d: "Footfall, frontage and rent benchmarking for shops, offices and showrooms." },
   { t: "Investment view", d: "Rental yield, resale demand and handover timelines factored into every shortlist." },
   { t: "Transparent pricing", d: "Clear brokerage, clear scope, quotes in writing before any work begins." },
@@ -114,9 +125,11 @@ const CHOOSE = [
 ];
 
 const TEAM = [
-  { name: "Client advisory", role: "Buying & rental guidance", img: team1 },
-  { name: "Commercial desk", role: "Shops, offices, showrooms", img: team3 },
-  { name: "Rentals desk", role: "Owners & tenant matching", img: team2 },
+  { name: "Client advisory", role: "Buying & rental guidance", img: Prabhat },
+  { name: "Commercial desk", role: "Shops, offices, showrooms", img: Pratik },
+  { name: "Rentals desk", role: "Owners & tenant matching", img: Ashutosh },
+  { name: "Investment desk", role: "Portfolios & high yield", img: sheetal },
+  { name: "Investment desk", role: "Portfolios & high yield", img: shree },
 ];
 
 const AUDIENCES = [
@@ -181,6 +194,7 @@ function AudiencePanels() {
                 src={p.img}
                 alt=""
                 loading="lazy"
+                decoding="async"
                 className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                   isActive ? "scale-100 opacity-100" : "scale-110 opacity-0"
                 }`}
@@ -210,14 +224,16 @@ function AudiencePanels() {
                 >
                   {p.text}
                 </p>
-                <span
-                  className={`mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-background transition-all duration-500 ${
+                <Link
+                  to="/property/$id"
+                  params={{ id: p.title.toLowerCase().replace(/[^a-z0-9]/g, "-").replace(/-+/g, "-") }}
+                  className={`mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-background transition-all duration-500 hover:text-accent ${
                     isActive ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
                   }`}
                 >
                   Learn more
                   <ArrowIcon />
-                </span>
+                </Link>
               </div>
             </button>
           );
@@ -258,6 +274,7 @@ function AboutShowcase() {
                   src={shot.img}
                   alt={shot.alt}
                   loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
                 />
                 <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/60 via-foreground/10 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-60" />
@@ -321,26 +338,10 @@ function AboutShowcase() {
 
           <div className="mt-10 flex flex-wrap items-center justify-between gap-6 rounded-2xl border border-border bg-background px-6 py-5">
             <div>
-              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+              <p className="mb-4 text-xs uppercase tracking-[0.2em] text-muted-foreground">
                 Open 10:00 am – 8:00 pm
               </p>
-              <ContactButtons size="sm" className="mt-3" />
-            </div>
-            <div className="flex flex-wrap gap-3">
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm text-accent-foreground transition-all duration-300 hover:gap-4 hover:opacity-85"
-              >
-                Read more
-                <ArrowIcon />
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-6 py-3 text-sm transition-all duration-300 hover:gap-4 hover:bg-secondary"
-              >
-                Visit our office
-                <ArrowIcon />
-              </a>
+              <ContactButtons size="sm" showOffice={true} />
             </div>
           </div>
         </Reveal>
@@ -350,7 +351,7 @@ function AboutShowcase() {
 }
 
 function Index() {
-  const [form, setForm] = useState({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+  const [form, setForm] = useState({ firstName: "", lastName: "", phone: "", message: "" });
   const [sent, setSent] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -359,6 +360,8 @@ function Index() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const message = `Hi Home Craft, I'm reaching out from the website.\nName: ${form.firstName} ${form.lastName}\nPhone: ${form.phone}\nRequirement: ${form.message}`;
+    window.open(`https://wa.me/918484947570?text=${encodeURIComponent(message)}`, "_blank");
     setSent(true);
     setTimeout(() => setSent(false), 4000);
   };
@@ -366,24 +369,28 @@ function Index() {
   return (
     <div id="top" className="overflow-x-hidden bg-background">
       <ScrollProgress />
+      <SignatureCursor />
+      <GrainOverlay />
       <BackToTop />
       <Header />
 
-      <main>
+      <main className="transition-all duration-500 ease-in-out">
         {/* Hero */}
         <section id="home" className="relative">
-          <div className="relative min-h-[92vh] w-full overflow-hidden">
+          <div className="relative min-h-[92vh] w-full overflow-hidden sm:min-h-[85vh]">
             <img
               src={heroVilla}
               alt="Modern luxury home at sunset"
-              width={1920}
-              height={1088}
+              width={1600}
+              height={907}
+              fetchPriority="high"
+              decoding="async"
               className="image-unveil absolute inset-0 h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-foreground/45 via-foreground/10 to-foreground/25" />
             <CursorGlow />
 
-            <div className="relative flex min-h-[92vh] flex-col items-center justify-center px-6 pt-36 lg:px-10 lg:pt-40">
+            <div className="relative flex min-h-[92vh] flex-col items-center justify-center px-6 pt-36 sm:min-h-[85vh] lg:px-10 lg:pt-40">
               <div className="text-center">
                 <span
                   className="rise-in inline-block rounded-full bg-background/15 px-4 py-2 text-xs uppercase tracking-[0.25em] text-background backdrop-blur-md"
@@ -391,14 +398,15 @@ function Index() {
                 >
                   Real estate consultants · Pune
                 </span>
-                <h1
-                  className="rise-in mt-6 font-display text-[clamp(3.5rem,13vw,12rem)] font-light leading-[0.9] tracking-tight text-background"
-                  style={{ animationDelay: "140ms" }}
-                >
-                  Dream Home
-                </h1>
+                <SplitWords
+                  as="h1"
+                  text="Dream Home"
+                  delay={220}
+                  stagger={140}
+                  className="mt-6 font-display text-[clamp(2.5rem,10vw,8rem)] font-light leading-[0.9] tracking-tight text-background sm:text-[clamp(3.5rem,13vw,12rem)]"
+                />
                 <p
-                  className="rise-in mx-auto mt-6 max-w-xl text-base text-background/85"
+                  className="rise-in mx-auto mt-6 max-w-xl px-4 text-sm text-background/85 sm:px-0 sm:text-base"
                   style={{ animationDelay: "260ms" }}
                 >
                   Buy, sell, rent or invest across Pune with a team that actually
@@ -411,7 +419,7 @@ function Index() {
           {/* Search widget — pinned to hero's bottom edge, dropped by half its
               height so it overlaps onto the section below (like the reference). */}
           <div
-            className="rise-in absolute inset-x-0 bottom-0 z-10 mx-auto w-full max-w-5xl translate-y-1/2 px-6 lg:px-10"
+            className="rise-in absolute inset-x-0 bottom-0 z-10 mx-auto w-full max-w-5xl translate-y-1/2 px-0 lg:px-10"
             style={{ animationDelay: "380ms" }}
           >
             <HeroSearch />
@@ -420,10 +428,10 @@ function Index() {
 
         {/* Trusted by — auto-scrolling logo marquee */}
         {/* Proof strip */}
-        <section className="bg-background pb-20 pt-28 lg:pb-24 lg:pt-40">
+        <section className="bg-background pb-20 pt-48 lg:pb-24 lg:pt-64">
           <div className="mx-auto max-w-[1600px] px-6 lg:px-10">
             <Reveal>
-              <p className="mx-auto max-w-3xl text-center font-display text-2xl leading-snug tracking-tight text-foreground lg:text-4xl">
+              <p className="relative z-10 mx-auto max-w-3xl pt-16 text-center font-display text-2xl leading-snug tracking-tight text-foreground sm:pt-0 lg:text-4xl">
                 Pune families come to us with one question — <span className="text-accent">where should we live next?</span> Everything below is how we answer it.
               </p>
             </Reveal>
@@ -449,6 +457,22 @@ function Index() {
           </div>
         </section>
 
+        {/* Marquee band */}
+        <div className="border-y border-border bg-surface-dark text-surface-dark-foreground">
+          <Ticker
+            items={[
+              "Flats & apartments",
+              "Plots & land",
+              "Commercial spaces",
+              "Warehousing",
+              "Rentals & tenant matching",
+              "Investment advisory",
+            ]}
+          />
+        </div>
+
+
+
         {/* About */}
         <section
           id="about"
@@ -469,7 +493,7 @@ function Index() {
                 paperwork that actually checks out.
               </p>
               <div className="mt-6 flex flex-wrap gap-2.5">
-                {["Charholi Budruk", "Lohegaon", "Wagholi", "Pimpri-Chinchwad", "Moshi"].map(
+                {["Charholi Budruk", "Lohegaon", "Dhanori", "Tingre Nagar", "Viman Nagar"].map(
                   (area, idx) => (
                     <span
                       key={area}
@@ -541,36 +565,48 @@ function Index() {
             Selected work
           </Reveal>
           <Reveal delay={80}>
-            <h2 className="display-lg mt-5 max-w-2xl">Recent deals and fit-outs around Pune</h2>
+            <SplitWords
+              as="h2"
+              text="Recent deals and fit-outs around Pune"
+              className="display-lg mt-5 max-w-2xl block"
+            />
           </Reveal>
           <div className="mt-12 grid gap-10 md:grid-cols-2">
-            {PROJECTS.map((p, i) => (
-              <Reveal key={p.title} delay={(i % 2) * 140} variant="blur">
-                <a href="#contact" className="group block">
-                  <div className="relative overflow-hidden rounded-sm">
-                    <img
-                      src={p.img}
-                      alt={p.title}
-                      loading="lazy"
-                      className="h-72 w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110 lg:h-[420px]"
-                    />
-                    <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/50 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                    <span className="pointer-events-none absolute bottom-5 left-5 translate-y-3 rounded-full bg-accent px-4 py-2 text-xs uppercase tracking-widest text-accent-foreground opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                      {p.year}
-                    </span>
-                  </div>
-                  <div className="mt-5 flex items-start justify-between gap-6">
-                    <div>
-                      <h3 className="text-2xl transition-colors duration-300 group-hover:text-accent">
-                        {p.title}
-                      </h3>
-                      <p className="mt-1 text-sm text-muted-foreground">{p.place}</p>
+            {PROJECTS.map((p, i) => {
+              return (
+                <Reveal key={p.title} delay={(i % 2) * 140} variant="blur">
+                  <Link
+                    to="/property/$id"
+                    params={{ id: p.id }}
+                    data-cursor="View"
+                    className="group block"
+                  >
+                    <div className="relative overflow-hidden rounded-sm">
+                      <img
+                        src={p.img}
+                        alt={p.title}
+                        loading="lazy"
+                        decoding="async"
+                        className="h-72 w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110 lg:h-[420px]"
+                      />
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/50 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                      <div className="pointer-events-none absolute bottom-5 left-5 translate-y-3 rounded-full bg-accent px-4 py-2 text-xs uppercase tracking-widest text-accent-foreground opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                        {p.year}
+                      </div>
                     </div>
-                    <span className="text-sm text-muted-foreground">{p.year}</span>
-                  </div>
-                </a>
-              </Reveal>
-            ))}
+                    <div className="mt-5 flex items-start justify-between gap-6">
+                      <div>
+                        <h3 className="text-2xl transition-colors duration-300 group-hover:text-accent">
+                          {p.title}
+                        </h3>
+                        <p className="mt-1 text-sm text-muted-foreground">{p.place}</p>
+                      </div>
+                      <span className="text-sm text-muted-foreground">{p.year}</span>
+                    </div>
+                  </Link>
+                </Reveal>
+              );
+            })}
           </div>
         </section>
 
@@ -610,6 +646,7 @@ function Index() {
                         src={t.img}
                         alt=""
                         loading="lazy"
+                        decoding="async"
                         className="h-12 w-12 rounded-full object-cover"
                       />
                       <div>
@@ -663,24 +700,25 @@ function Index() {
               </h2>
             </Reveal>
             <Reveal variant="right" delay={120} className="w-fit">
-              <ContactButtons size="md" />
+              <ContactButtons size="md" tone="minimal" />
             </Reveal>
           </div>
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {TEAM.map((m, i) => (
-              <Reveal key={m.name} delay={(i % 3) * 120} className="group">
+              <Reveal key={m.name} delay={(i % 4) * 120} className="group">
                 <div className="overflow-hidden rounded-sm bg-secondary">
                   <img
                     src={m.img}
                     alt={m.name}
                     loading="lazy"
+                    decoding="async"
                     className="h-80 w-full object-cover grayscale transition-all duration-[1000ms] group-hover:scale-105 group-hover:grayscale-0 lg:h-96"
                   />
                 </div>
-                <h3 className="mt-5 text-xl transition-colors duration-300 group-hover:text-accent">
+                <h3 className="mt-5 text-xl font-medium transition-colors duration-300 group-hover:text-accent">
                   {m.name}
                 </h3>
-                <p className="text-sm text-muted-foreground">{m.role}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{m.role}</p>
               </Reveal>
             ))}
           </div>
@@ -699,13 +737,15 @@ function Index() {
                 </Reveal>
               </div>
               <Reveal delay={160}>
-                <Link
-                  to="/blog"
-                  className="inline-flex items-center gap-2 rounded-full border border-accent px-6 py-3 text-sm text-accent transition-all duration-300 hover:gap-4 hover:bg-accent hover:text-accent-foreground"
-                >
-                  All insights
-                  <ArrowIcon />
-                </Link>
+                <Magnetic strength={0.28}>
+                  <Link
+                    to="/blog"
+                    className="inline-flex items-center gap-2 rounded-full border border-accent px-6 py-3 text-sm text-accent transition-all duration-300 hover:gap-4 hover:bg-accent hover:text-accent-foreground"
+                  >
+                    All insights
+                    <ArrowIcon />
+                  </Link>
+                </Magnetic>
               </Reveal>
             </div>
             <div className="mt-14 grid gap-8 lg:grid-cols-3">
@@ -717,6 +757,7 @@ function Index() {
                         src={p.img}
                         alt={p.title}
                         loading="lazy"
+                        decoding="async"
                         className="h-60 w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
                       />
                     </div>
@@ -734,6 +775,7 @@ function Index() {
                           src={p.avatar}
                           alt=""
                           loading="lazy"
+                          decoding="async"
                           className="h-9 w-9 rounded-full object-cover"
                         />
                         <p className="text-sm">{p.author}</p>
@@ -757,6 +799,7 @@ function Index() {
             width={1920}
             height={1080}
             loading="lazy"
+            decoding="async"
             className="absolute inset-0 h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-foreground/55 via-foreground/35 to-foreground/55" />
@@ -767,9 +810,11 @@ function Index() {
               <span className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2 text-xs font-medium uppercase tracking-widest text-accent-foreground">
                 Get in Touch
               </span>
-              <h2 className="display-lg mx-auto mt-6 max-w-3xl uppercase leading-[1.05] text-background">
-                Let's make your property journey effortless
-              </h2>
+              <SplitWords
+                as="h2"
+                text="Let's make your property journey effortless"
+                className="display-lg mx-auto mt-6 block max-w-3xl uppercase leading-[1.05] text-background"
+              />
               <p className="mx-auto mt-6 max-w-2xl text-background/85">
                 Have questions or ready to take the next step? Whether you're looking to buy, rent, or
                 invest, our team is here to guide you every step of the way. Let's turn your property
@@ -814,21 +859,6 @@ function Index() {
                     />
                   </div>
                   <div className="group">
-                    <label htmlFor="email" className="sr-only">
-                      Email
-                    </label>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      value={form.email}
-                      onChange={handleChange}
-                      placeholder="Email"
-                      className="w-full border-b border-border bg-transparent px-0 py-3 text-foreground placeholder:text-muted-foreground/60 focus:border-accent focus:outline-none"
-                    />
-                  </div>
-                  <div className="group">
                     <label htmlFor="phone" className="sr-only">
                       Phone
                     </label>
@@ -860,13 +890,15 @@ function Index() {
                 </div>
 
                 <div className="mt-10">
-                  <button
-                    type="submit"
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-foreground px-8 py-4 text-sm font-medium text-background transition-all duration-300 hover:gap-4 hover:bg-foreground/90"
-                  >
-                    {sent ? "Request received — we'll call you back" : "Book a Call"}
-                    <ArrowIcon />
-                  </button>
+                  <Magnetic strength={0.18} className="w-full">
+                    <button
+                      type="submit"
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-foreground px-8 py-4 text-sm font-medium text-background transition-all duration-300 hover:gap-4 hover:bg-foreground/90"
+                    >
+                      {sent ? "Request received — we'll call you back" : "Book a Call"}
+                      <ArrowIcon />
+                    </button>
+                  </Magnetic>
                 </div>
 
                 <div className="mt-6 flex flex-col items-center gap-3">
