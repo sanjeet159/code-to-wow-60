@@ -131,11 +131,11 @@ const CHOOSE = [
 ];
 
 const TEAM = [
-  { name: "Client advisory", role: "Buying & rental guidance", img: Prabhat },
-  { name: "Commercial desk", role: "Shops, offices, showrooms", img: Pratik },
-  { name: "Rentals desk", role: "Owners & tenant matching", img: Ashutosh },
-  { name: "Investment desk", role: "Portfolios & high yield", img: sheetal },
-  { name: "Investment desk", role: "Portfolios & high yield", img: shree },
+  { name: "Prabhat", role: "Buying & rental guidance", img: Prabhat },
+  { name: "Pratik", role: "Shops, offices, showrooms", img: Pratik },
+  { name: "Ashutosh", role: "Owners & tenant matching", img: Ashutosh },
+  { name: "Sheetal", role: "Portfolios & high yield", img: sheetal },
+  { name: "Shree", role: "Portfolios & high yield", img: shree },
 ];
 
 const AUDIENCES = [
