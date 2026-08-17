@@ -23,6 +23,10 @@ import project1 from "@/assets/project-1-atlantis.jpg";
 import project2 from "@/assets/BRROKLYN.png";
 import project3 from "@/assets/notting.jpg";
 import project4 from "@/assets/shubh.jpg";
+import audBuyers from "@/assets/aud-buyers.jpg";
+import audSellers from "@/assets/aud-sellers.jpg";
+import audInvestors from "@/assets/aud-investors.jpg";
+import audOwners from "@/assets/aud-owners.jpg";
 import team1 from "@/assets/team-1.jpg";
 import team2 from "@/assets/team-2.jpg";
 import team3 from "@/assets/team-3.jpg";
@@ -138,25 +142,25 @@ const AUDIENCES = [
     no: "01",
     title: "Buyers",
     text: "Find the right flat, plot or commercial space from verified listings.",
-    img: project1,
+    img: audBuyers,
   },
   {
     no: "02",
     title: "Sellers",
     text: "Market-priced listings promoted to serious, screened buyers.",
-    img: project2,
+    img: audSellers,
   },
   {
     no: "03",
     title: "Investors",
     text: "Yield-focused shortlists with resale demand and handover timelines.",
-    img: project3,
+    img: audInvestors,
   },
   {
     no: "04",
     title: "Owners",
     text: "Reliable tenant matching and rental management you can count on.",
-    img: project4,
+    img: audOwners,
   },
 ];
 
