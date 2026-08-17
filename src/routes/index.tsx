@@ -142,25 +142,25 @@ const AUDIENCES = [
     no: "01",
     title: "Buyers",
     text: "Find the right flat, plot or commercial space from verified listings.",
-    img: project1,
+    img: audBuyers,
   },
   {
     no: "02",
     title: "Sellers",
     text: "Market-priced listings promoted to serious, screened buyers.",
-    img: project2,
+    img: audSellers,
   },
   {
     no: "03",
     title: "Investors",
     text: "Yield-focused shortlists with resale demand and handover timelines.",
-    img: project3,
+    img: audInvestors,
   },
   {
     no: "04",
     title: "Owners",
     text: "Reliable tenant matching and rental management you can count on.",
-    img: project4,
+    img: audOwners,
   },
 ];
 
