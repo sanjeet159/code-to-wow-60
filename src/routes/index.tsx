@@ -692,37 +692,23 @@ function Index() {
         </section>
 
         {/* Team */}
-        <section id="team" className="mx-auto max-w-[1600px] px-6 py-24 lg:px-10 lg:py-32">
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-            <Reveal variant="left">
-              <span className="eyebrow">How we're organised</span>
-              <h2 className="display-lg mt-5 max-w-3xl">
-                One small team across advisory, commercial and rentals
-              </h2>
-            </Reveal>
-            <Reveal variant="right" delay={120} className="w-fit">
-              <ContactButtons size="md" tone="minimal" />
-            </Reveal>
-          </div>
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {TEAM.map((m, i) => (
-              <Reveal key={m.name} delay={(i % 4) * 120} className="group">
-                <div className="overflow-hidden rounded-sm bg-secondary">
-                  <img
-                    src={m.img}
-                    alt={m.name}
-                    loading="lazy"
-                    decoding="async"
-                    className="h-80 w-full object-cover grayscale transition-all duration-[1000ms] group-hover:scale-105 group-hover:grayscale-0 lg:h-96"
-                  />
-                </div>
-                <h3 className="mt-5 text-xl font-medium transition-colors duration-300 group-hover:text-accent">
-                  {m.name}
-                </h3>
-                <p className="mt-1 text-sm text-muted-foreground">{m.role}</p>
+        <section id="team" className="py-24 lg:py-32">
+          <div className="mx-auto max-w-[1600px] px-6 lg:px-10">
+            <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+              <Reveal variant="left">
+                <span className="eyebrow">How we're organised</span>
+                <h2 className="display-lg mt-5 max-w-3xl">
+                  One small team across advisory, commercial and rentals
+                </h2>
               </Reveal>
-            ))}
+              <Reveal variant="right" delay={120} className="w-fit">
+                <ContactButtons size="md" tone="minimal" />
+              </Reveal>
+            </div>
           </div>
+          <Reveal delay={160} className="mt-14 block">
+            <TeamMarquee team={TEAM as TeamMember[]} />
+          </Reveal>
         </section>
 
         {/* Insights */}
