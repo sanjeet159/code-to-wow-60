@@ -651,18 +651,15 @@ function Index() {
                       <blockquote className="mt-5 text-lg leading-relaxed">"{t.quote}"</blockquote>
                     </div>
                     <figcaption className="mt-8 flex items-center gap-4 border-t border-border pt-6">
-                      <img
-                        src={t.img}
-                        alt=""
-                        loading="lazy"
-                        decoding="async"
-                        className="h-12 w-12 rounded-full object-cover"
-                      />
+                      <span className="flex h-12 w-12 items-center justify-center rounded-full bg-accent font-display text-lg text-accent-foreground">
+                        {t.initial}
+                      </span>
                       <div>
                         <p className="text-sm font-medium">{t.name}</p>
                         <p className="text-sm text-muted-foreground">{t.role}</p>
                       </div>
                     </figcaption>
+
                   </TiltCard>
                 </Reveal>
               ))}
