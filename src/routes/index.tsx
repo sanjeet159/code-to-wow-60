@@ -27,9 +27,6 @@ import audBuyers from "@/assets/aud-buyers.jpg";
 import audSellers from "@/assets/aud-sellers.jpg";
 import audInvestors from "@/assets/aud-investors.jpg";
 import audOwners from "@/assets/aud-owners.jpg";
-import team1 from "@/assets/team-1.jpg";
-import team2 from "@/assets/team-2.jpg";
-import team3 from "@/assets/team-3.jpg";
 import shree from "@/assets/shree.png";
 import sheetal from "@/assets/sheetal.jpeg";
 import Pratik from "@/assets/Pratik.jpeg";
@@ -91,24 +88,28 @@ const PROJECTS = PROPERTIES.map((property) => ({
 
 const REVIEWS = [
   {
-    quote: "He is very helpful and understands your need and connects with right tenant.",
-    name: "Google review",
-    role: "Verified customer",
-    img: team2,
+    quote:
+      "A complete solution of your property related concern. Very prompt and professional people with great understanding of clients need and property related knowledge.",
+    name: "Anand Singh",
+    role: "Local Guide · 13 reviews · 6 months ago",
+    initial: "A",
   },
   {
-    quote: "Great service and understanding of the requirement.",
-    name: "Google review",
-    role: "Verified customer",
-    img: team1,
+    quote:
+      "They are very professional, looks after every minute details of the sale process. Also Prabhat Mishra is very keen on keeping all the things transparent. I would recommend anyone to go with Home Craft Property while dealing in sale, rent or buying any property. Best Property Consultant in Dhanori.",
+    name: "Sandeep Bodke",
+    role: "Local Guide · 3 reviews · a year ago",
+    initial: "S",
   },
   {
-    quote: "I'm a totally satisfied customer.",
-    name: "Google review",
-    role: "Verified customer",
-    img: team3,
+    quote:
+      "I am pleased to write this review for Home Craft team. I met with this agent named Prabhat, who assisted me in finding the perfect property. From the very beginning, he demonstrated exceptional professionalism.",
+    name: "Priyanka Dubey",
+    role: "Google review · 2 years ago",
+    initial: "P",
   },
 ];
+
 
 const RATING_SPLIT = [
   { stars: 5, pct: 75 },
@@ -647,18 +648,15 @@ function Index() {
                       <blockquote className="mt-5 text-lg leading-relaxed">"{t.quote}"</blockquote>
                     </div>
                     <figcaption className="mt-8 flex items-center gap-4 border-t border-border pt-6">
-                      <img
-                        src={t.img}
-                        alt=""
-                        loading="lazy"
-                        decoding="async"
-                        className="h-12 w-12 rounded-full object-cover"
-                      />
+                      <span className="flex h-12 w-12 items-center justify-center rounded-full bg-accent font-display text-lg text-accent-foreground">
+                        {t.initial}
+                      </span>
                       <div>
                         <p className="text-sm font-medium">{t.name}</p>
                         <p className="text-sm text-muted-foreground">{t.role}</p>
                       </div>
                     </figcaption>
+
                   </TiltCard>
                 </Reveal>
               ))}
