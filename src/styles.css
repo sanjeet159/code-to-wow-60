@@ -654,9 +654,35 @@
   animation-play-state: paused;
 }
 
+/* ---------- Team marquee ---------- */
+.team-marquee-track {
+  animation: team-marquee 45s linear infinite;
+}
+.team-marquee-track:hover {
+  animation-play-state: paused;
+}
+@keyframes team-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.333%);
+  }
+}
+
+/* Hide scrollbar for mobile snap carousels */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .grain-overlay,
-  .ticker-track {
+  .ticker-track,
+  .team-marquee-track {
     animation: none;
   }
   .split-word-inner {
