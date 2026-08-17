@@ -50,10 +50,6 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
           </div>
         </div>
 
-        {/* Index marker */}
-        <span className="absolute left-3 top-3 rounded-full bg-background/90 px-2.5 py-1 text-[10px] font-medium uppercase tracking-widest text-foreground backdrop-blur-sm">
-          0{index + 1}
-        </span>
       </div>
 
       <div className="mt-5">
