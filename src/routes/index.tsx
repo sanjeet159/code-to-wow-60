@@ -499,7 +499,7 @@ function Index() {
                 paperwork that actually checks out.
               </p>
               <div className="mt-6 flex flex-wrap gap-2.5">
-                {["Charholi Budruk", "Lohegaon", "Dhanori", "Tingre Nagar", "Viman Nagar"].map(
+                {["Charholi Budruk", "Lohegaon", "Dhanori", "Tingre Nagar", "Viman Nagar", "Kharadi"].map(
                   (area, idx) => (
                     <span
                       key={area}
