@@ -113,6 +113,19 @@ export const PROPERTIES: Property[] = [
     area: "725 sq ft (Carpet)",
     status: "Available",
     category: 'rent'
+  },
+  {
+    id: "rent-goodwill-breeza-dhanori",
+    title: "Goodwill Breeza (2BHK)",
+    location: "Dhanori, Pune",
+    type: "2BHK Rental",
+    price: "₹27,000 / month",
+    image: goodwillBreeza.url,
+    description: "Modern 2BHK rental in Goodwill Breeza, Dhanori. This well-maintained apartment features a 750 sqft carpet area and excellent community amenities.",
+    amenities: ["Security", "Clubhouse", "Gym", "Power Backup", "Water Supply", "Parking"],
+    area: "750 sq ft (Carpet)",
+    status: "Available",
+    category: 'rent'
   }
 ];
 
