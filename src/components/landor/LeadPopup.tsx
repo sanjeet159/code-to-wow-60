@@ -100,7 +100,7 @@ Phone: ${form.phone}`;
                     type="tel"
                     required
                     placeholder="Mobile Number"
-                    className="w-full rounded-2xl border border-border bg-secondary/30 px-5 py-3.5 text-sm transition-all focus:border-accent/40 focus:bg-background focus:outline-none"
+                    className="w-full rounded-2xl border border-border bg-secondary/30 px-5 py-3.5 text-sm transition-all focus:border-accent/40 focus:bg-background focus:outline-none cursor-auto"
                     value={form.phone}
                     onChange={(e) => setForm({ ...form, phone: e.target.value })}
                   />
