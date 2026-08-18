@@ -374,32 +374,34 @@ function AboutShowcase() {
           </p>
 
           <div className="mt-8 grid gap-4 xs:grid-cols-2">
-            <div className="group rounded-2xl border border-border bg-background p-5 transition-all duration-500 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg">
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent transition-all duration-500 group-hover:bg-accent group-hover:text-accent-foreground">
-                <UserRoundCheck className="h-6 w-6" strokeWidth={1.6} />
+            <div className="group rounded-2xl border border-border bg-background p-5 transition-all duration-500 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg sm:p-6">
+              <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent transition-all duration-500 group-hover:bg-accent group-hover:text-accent-foreground sm:h-12 sm:w-12">
+                <UserRoundCheck className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={1.6} />
               </span>
-              <h4 className="mt-4 text-base font-medium">Experienced agents</h4>
-              <p className="mt-2 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+              <h4 className="mt-4 text-sm font-medium sm:text-base">Experienced agents</h4>
+              <p className="mt-2 text-[10px] leading-relaxed text-muted-foreground sm:text-sm">
                 Discover the best properties to match your budget.
               </p>
             </div>
-            <div className="group rounded-2xl border border-border bg-background p-5 transition-all duration-500 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg">
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent transition-all duration-500 group-hover:bg-accent group-hover:text-accent-foreground">
-                <ShieldCheck className="h-6 w-6" strokeWidth={1.6} />
+            <div className="group rounded-2xl border border-border bg-background p-5 transition-all duration-500 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg sm:p-6">
+              <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent transition-all duration-500 group-hover:bg-accent group-hover:text-accent-foreground sm:h-12 sm:w-12">
+                <ShieldCheck className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={1.6} />
               </span>
-              <h4 className="mt-4 text-base font-medium">Clear legality</h4>
-              <p className="mt-2 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+              <h4 className="mt-4 text-sm font-medium sm:text-base">Clear legality</h4>
+              <p className="mt-2 text-[10px] leading-relaxed text-muted-foreground sm:text-sm">
                 Verified paperwork and transparent terms on every deal.
               </p>
             </div>
           </div>
 
-          <div className="mt-6 flex flex-wrap items-center justify-between gap-6 rounded-2xl border border-border bg-background px-6 py-5 sm:mt-10">
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-6 rounded-2xl border border-border bg-background px-5 py-4 sm:mt-10 sm:px-6 sm:py-5">
             <div>
-              <p className="mb-4 text-[10px] uppercase tracking-[0.2em] text-muted-foreground sm:text-xs">
+              <p className="mb-3 text-[9px] uppercase tracking-[0.2em] text-muted-foreground sm:mb-4 sm:text-xs">
                 Open 10:00 am – 8:00 pm
               </p>
-              <ContactButtons size="sm" showOffice={true} />
+              <div className="scale-90 origin-left sm:scale-100">
+                <ContactButtons size="sm" showOffice={true} />
+              </div>
             </div>
           </div>
         </Reveal>
@@ -913,25 +915,24 @@ function Index() {
 
           <div className="relative mx-auto max-w-[1600px] px-6 text-center lg:px-10">
             <Reveal>
-              <span className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2 text-xs font-medium uppercase tracking-widest text-accent-foreground">
+              <span className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-1.5 text-[10px] font-medium uppercase tracking-widest text-accent-foreground sm:px-5 sm:py-2 sm:text-xs">
                 Get in Touch
               </span>
               <SplitWords
                 as="h2"
                 text="Let's make your property journey effortless"
-                className="display-lg mx-auto mt-6 block max-w-3xl uppercase leading-[1.05] text-background"
+                className="display-lg mx-auto mt-5 block max-w-3xl uppercase leading-[1.05] text-background sm:mt-6"
               />
-              <p className="mx-auto mt-6 max-w-2xl text-background/85">
+              <p className="mx-auto mt-4 line-clamp-3 text-sm text-background/85 sm:mt-6 sm:max-w-2xl sm:line-clamp-none">
                 Have questions or ready to take the next step? Whether you're looking to buy, rent, or
-                invest, our team is here to guide you every step of the way. Let's turn your property
-                goals into reality.
+                invest, our team is here to guide you every step of the way.
               </p>
             </Reveal>
 
             <Reveal delay={120} className="mx-auto mt-8 block max-w-4xl sm:mt-12">
               <form
                 onSubmit={handleSubmit}
-                className="rounded-[2rem] bg-background p-6 text-left shadow-2xl sm:p-10 lg:p-12"
+                className="rounded-3xl bg-background p-6 text-left shadow-2xl sm:rounded-[2rem] sm:p-10 lg:p-12"
               >
                 <div className="grid gap-6 sm:grid-cols-2">
                   <div className="group">
