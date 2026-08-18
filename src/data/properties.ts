@@ -74,7 +74,7 @@ export const PROPERTIES: Property[] = [
   },
   {
     id: "rent-nyati-era-dhanori",
-    title: "Nyati Era",
+    title: "Nyati Era (2BHK & 3BHK)",
     location: "Dhanori, Pune",
     type: "2BHK & 3BHK Rental",
     price: "₹28K - ₹34K / month",
