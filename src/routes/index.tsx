@@ -375,7 +375,7 @@ function AboutShowcase() {
             verified documents and site visits planned around your schedule.
           </p>
 
-          <div className="mt-8 grid gap-4 xs:grid-cols-2">
+          <div className="mt-6 grid gap-3 xs:grid-cols-2 sm:mt-8 sm:gap-4">
             <div className="group rounded-2xl border border-border bg-background p-5 transition-all duration-500 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg sm:p-6">
               <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent transition-all duration-500 group-hover:bg-accent group-hover:text-accent-foreground sm:h-12 sm:w-12">
                 <UserRoundCheck className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={1.6} />

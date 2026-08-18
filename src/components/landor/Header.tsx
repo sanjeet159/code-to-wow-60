@@ -100,7 +100,7 @@ export function Header() {
             type="button"
             aria-label="Toggle menu"
             onClick={() => setOpen((v) => !v)}
-            className={`relative z-[110] flex h-11 w-11 flex-col items-center justify-center gap-1.5 transition-all duration-300 xl:hidden ${
+            className={`relative z-[110] flex h-12 w-12 flex-col items-center justify-center gap-1.5 transition-all duration-300 xl:hidden ${
               open 
                 ? "border-black/10 bg-black/5" 
                 : scrolled 
@@ -108,10 +108,11 @@ export function Header() {
                   : "border-white/30"
             }`}
           >
-            <span className={`h-px w-5 transition-all duration-300 ${open ? "bg-black translate-y-[7px] rotate-45" : scrolled ? "bg-black" : "bg-white"}`} />
-            <span className={`h-px w-5 transition-all duration-300 ${open ? "opacity-0" : scrolled ? "bg-black" : "bg-white"}`} />
-            <span className={`h-px w-5 transition-all duration-300 ${open ? "bg-black -translate-y-[7px] -rotate-45" : scrolled ? "bg-black" : "bg-white"}`} />
+            <span className={`h-[1.5px] w-5 transition-all duration-300 ${open ? "bg-black translate-y-[7.5px] rotate-45" : scrolled ? "bg-black" : "bg-white"}`} />
+            <span className={`h-[1.5px] w-5 transition-all duration-300 ${open ? "opacity-0" : scrolled ? "bg-black" : "bg-white"}`} />
+            <span className={`h-[1.5px] w-5 transition-all duration-300 ${open ? "bg-black -translate-y-[7.5px] -rotate-45" : scrolled ? "bg-black" : "bg-white"}`} />
           </button>
+
         </div>
       </div>
       {mounted &&

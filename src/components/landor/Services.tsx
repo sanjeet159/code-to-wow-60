@@ -218,7 +218,7 @@ export function Services() {
                 </button>
 
                 <div
-                  className={`relative z-10 grid overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                  className={`relative z-10 grid overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                     isActive ? "grid-rows-[1fr] pb-10 opacity-100" : "grid-rows-[0fr] opacity-0"
                   }`}
                 >

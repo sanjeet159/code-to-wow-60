@@ -100,7 +100,7 @@ export function BlogSlider({ posts }: BlogSliderProps) {
             }}
             className="absolute inset-0 flex items-center justify-center cursor-grab active:cursor-grabbing"
           >
-            <div className="w-full rounded-2xl border border-border bg-card overflow-hidden shadow-sm">
+            <div className="w-full rounded-2xl border border-border bg-card overflow-hidden shadow-sm active:scale-[0.98] transition-transform">
               <Link to="/blog/$slug" params={{ slug: currentPost.slug }} className="block">
                 <div className="relative aspect-[16/9] w-full overflow-hidden">
                   <img

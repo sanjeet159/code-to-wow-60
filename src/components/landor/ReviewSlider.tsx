@@ -107,7 +107,7 @@ export function ReviewSlider({ reviews }: ReviewSliderProps) {
             }}
             className="absolute inset-0 flex items-center justify-center cursor-grab active:cursor-grabbing"
           >
-            <div className="relative w-full h-fit rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-10 md:p-12">
+            <div className="relative w-full h-fit rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-10 md:p-12">
               <Quote className="absolute right-8 top-8 h-12 w-12 text-accent/10 sm:h-16 sm:w-16" />
               
               <div className="relative z-10 flex flex-col h-full">
