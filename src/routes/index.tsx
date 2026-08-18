@@ -12,6 +12,7 @@ import { ContactButtons } from "@/components/landor/ContactButtons";
 import { ScrollProgress, BackToTop } from "@/components/landor/ScrollFx";
 import { SignatureCursor, GrainOverlay, Magnetic, SplitWords, Ticker } from "@/components/landor/Fx";
 import { TeamMarquee, type TeamMember } from "@/components/landor/TeamMarquee";
+import { ReviewSlider } from "@/components/landor/ReviewSlider";
 import { POSTS } from "@/data/posts";
 import { PROPERTIES } from "@/data/properties";
 import heroVilla from "@/assets/hero-villa.jpg";
