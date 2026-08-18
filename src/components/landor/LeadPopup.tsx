@@ -111,7 +111,7 @@ Phone: ${form.phone}`;
                       key={type}
                       type="button"
                       onClick={() => setForm({ ...form, interest: type })}
-                      className={`rounded-xl border py-2 text-xs font-medium uppercase tracking-wider transition-all ${
+                      className={`rounded-xl border py-2 text-xs font-medium uppercase tracking-wider transition-all cursor-auto ${
                         form.interest === type
                           ? "border-accent bg-accent text-accent-foreground"
                           : "border-border bg-secondary/20 text-muted-foreground hover:bg-secondary/40"
