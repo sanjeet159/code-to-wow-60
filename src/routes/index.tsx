@@ -301,12 +301,12 @@ function AboutShowcase() {
           <div className="block sm:hidden">
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-background shadow-sm">
               <img
-                src={MISSION_SHOTS[activeTab].img}
-                alt={MISSION_SHOTS[activeTab].alt}
+                src={MISSION_SHOTS[activeTab]?.img}
+                alt={MISSION_SHOTS[activeTab]?.alt}
                 className="h-full w-full object-cover transition-all duration-700"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-foreground/60 p-4">
-                <p className="text-[10px] uppercase tracking-widest text-white">{MISSION_SHOTS[activeTab].caption}</p>
+                <p className="text-[10px] uppercase tracking-widest text-white">{MISSION_SHOTS[activeTab]?.caption}</p>
               </div>
             </div>
             <div className="mt-4 flex justify-center gap-2">
