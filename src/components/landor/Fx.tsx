@@ -165,7 +165,7 @@ export function SplitWords({
           <span className="split-word-inner" style={{ transitionDelay: `${delay + i * stagger}ms` }}>
             {w}
           </span>
-          {i < words.length - 1 ? " " : null}
+          {i < words.length - 1 && <span>&nbsp;</span>}
         </span>
       ))}
     </Tag>
