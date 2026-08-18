@@ -65,7 +65,7 @@ Phone: ${form.phone}`;
           >
             <button
               onClick={closePopup}
-              className="absolute right-5 top-5 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-secondary/80 text-foreground transition-colors hover:bg-secondary focus:outline-none"
+              className="absolute right-5 top-5 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-secondary/80 text-foreground transition-colors hover:bg-secondary focus:outline-none cursor-auto"
               aria-label="Close"
             >
               <X className="h-4 w-4" />
