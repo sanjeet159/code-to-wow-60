@@ -63,14 +63,15 @@ export function Header() {
         scrolled ? "bg-background/90 backdrop-blur-md border-b border-border" : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex h-20 max-w-[1600px] items-center justify-between px-6 lg:px-10">
-        <a href="/" className="group flex items-center">
+      <div className="mx-auto flex h-20 max-w-[1600px] items-center justify-between px-5 lg:px-10">
+        <a href="/" className="group flex items-center py-2">
           <img
             src={wordmark}
             alt="Home Craft Real Estate"
-            className="h-10 w-auto transition-opacity duration-300 group-hover:opacity-80 lg:h-12"
+            className="h-9 w-auto transition-opacity duration-300 group-hover:opacity-80 lg:h-12"
           />
         </a>
+
         <nav className="hidden items-center gap-9 xl:flex">
           {NAV.map((item) => (
             <a

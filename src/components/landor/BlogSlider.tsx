@@ -83,7 +83,7 @@ export function BlogSlider({ posts }: BlogSliderProps) {
             animate="center"
             exit="exit"
             transition={{
-              x: { type: "spring", stiffness: 300, damping: 30 },
+              x: { type: "spring", stiffness: 400, damping: 40 },
               opacity: { duration: 0.4 },
               scale: { duration: 0.4 },
               filter: { duration: 0.4 },
