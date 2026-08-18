@@ -80,12 +80,13 @@ export function SiteFooter() {
             </p>
             <a
               href="https://google.com"
-            target="_blank"
-            rel="noreferrer"
-            className="link-sweep transition-colors hover:text-white"
-          >
-            made by sanjeet kumar
-          </a>
+              target="_blank"
+              rel="noreferrer"
+              className="link-sweep transition-colors hover:text-white"
+            >
+              made by sanjeet kumar
+            </a>
+          </div>
           <p className="font-display text-4xl tracking-[-0.05em] text-white/10 transition-colors hover:text-white/20 lg:text-8xl">
             home craft
           </p>
