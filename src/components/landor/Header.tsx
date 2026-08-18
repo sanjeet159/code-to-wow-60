@@ -35,6 +35,11 @@ export function ArrowIcon({ className = "" }: { className?: string }) {
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
+
 
   useEffect(() => {
     if (open) {
