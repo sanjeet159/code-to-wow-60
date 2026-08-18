@@ -5,6 +5,8 @@ import project4 from "@/assets/shubh.jpg";
 import metropolisRent from "@/assets/metropolis-rent.jpg.asset.json";
 import nyatiEra from "@/assets/nyati-era.jpg.asset.json";
 import manhattanPride from "@/assets/manhattan-pride.jpg.asset.json";
+import goodwillBreeza from "@/assets/goodwill-breeza.jpg.asset.json";
+
 
 export type Property = {
   id: string;
