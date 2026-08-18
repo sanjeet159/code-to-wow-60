@@ -3,9 +3,9 @@ import project2 from "@/assets/BRROKLYN.png";
 import project3 from "@/assets/notting.jpg";
 import project4 from "@/assets/shubh.jpg";
 import Metropolis from "@/assets/Metropolis.jpeg";
-import nyatiEra from "@/assets/nyati-era.jpg.asset.json";
-import Manhattan from "@/assets/Manhattan.jpg";
-import goodwillBreeza from "@/assets/WhatsApp Image 2026-08-18 at 4.20.00 PM.jpeg";
+import nyatiEra from "@/assets/nyati.jpeg";
+import Manhattan from "@/assets/pride.jpeg";
+import goodwillBreeza from "@/assets/goodwill.jpeg";
 
 
 export type Property = {
@@ -81,7 +81,7 @@ export const PROPERTIES: Property[] = [
     location: "Dhanori, Pune",
     type: "2BHK & 3BHK Rental",
     price: "₹28K - ₹34K / month",
-    image: nyatiEra.url,
+    image: nyatiEra,
     description: "Premium rental options in Nyati Era, Dhanori. Choose between 2BHK (780 sqft) for ₹28K or 3BHK (1150 sqft) for ₹34K. Experience modern living with top-tier amenities.",
     amenities: ["Gated Community", "Clubhouse", "Swimming Pool", "Gym", "Landscaped Gardens", "24/7 Security"],
     area: "780 - 1150 sq ft",
@@ -107,7 +107,7 @@ export const PROPERTIES: Property[] = [
     location: "Charoli, Pune",
     type: "2BHK Rental",
     price: "₹27,000 / month",
-    image: manhattanPride.,
+    image: Manhattan,
     description: "Premium 2BHK rental in Manhattan, Pride World City. This modern apartment features a 725 sqft carpet area and offers access to the full suite of Pride World City amenities.",
     amenities: ["Gated Community", "Clubhouse", "Swimming Pool", "Gym", "24/7 Security", "Jogging Track"],
     area: "725 sq ft (Carpet)",
