@@ -94,7 +94,7 @@ export const PROPERTIES: Property[] = [
     location: "Porwal Road, Lohegaon, Pune",
     type: "2BHK Rental",
     price: "₹26,000 / month",
-    image: metropolis,
+    image: Metropolis,
     description: "Beautiful 2BHK apartment in Metropolis, located on Porwal Road, Lohegaon. This property offers a perfect blend of comfort and convenience with a spacious carpet area of 780 Sqft.",
     amenities: ["24/7 Security", "Reserved Parking", "Elevator", "Power Backup", "Water Supply"],
     area: "780 sq ft (Carpet)",
