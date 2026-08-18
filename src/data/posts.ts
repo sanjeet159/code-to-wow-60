@@ -44,7 +44,7 @@ export const POSTS: Post[] = [
     excerpt:
       "Dhanori Road has gone from a link road to one of north-east Pune's busiest residential corridors. Here is how connectivity, schools, hospitals and price trends actually stack up before you buy.",
     author: "Home Craft desk",
-    avatar: team1,
+    avatar: "/favicon.png",
     sections: [
       {
         heading: "Where Dhanori Road sits, and why that matters",
