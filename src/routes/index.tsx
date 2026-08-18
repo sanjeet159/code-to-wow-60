@@ -661,8 +661,7 @@ function Index() {
                 {PROJECTS.filter(p => p.category === 'buy').map((p, i) => (
                   <Reveal key={p.id} delay={(i % 2) * 140} variant="blur">
                     <Link
-                      to="/property/$id"
-                      params={{ id: p.id }}
+                      to="/#contact"
                       data-cursor="View"
                       className="group block"
                     >
@@ -697,8 +696,7 @@ function Index() {
                 {PROJECTS.filter(p => p.category === 'rent').map((p, i) => (
                   <Reveal key={p.id} delay={i * 100} variant="scale">
                     <Link
-                      to="/property/$id"
-                      params={{ id: p.id }}
+                      to="/#contact"
                       className="group block rounded-xl border border-border bg-card p-4 transition-all duration-500 hover:-translate-y-2 hover:border-accent hover:shadow-xl"
                     >
                       <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
