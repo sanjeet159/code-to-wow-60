@@ -566,27 +566,26 @@ function Index() {
               </div>
             </Reveal>
           </div>
-
           <AboutShowcase />
         </section>
 
         <Services />
 
         {/* Who we help */}
-        <section className="mx-auto max-w-[1600px] px-6 py-24 lg:px-10 lg:py-28">
+        <section className="mx-auto max-w-[1600px] px-6 py-16 sm:py-24 lg:px-10 lg:py-28">
           <Reveal as="span" className="eyebrow block">
             Who we help
           </Reveal>
           <Reveal delay={80}>
             <h2 className="display-lg mt-5 max-w-2xl">Different goals, one process built around you</h2>
           </Reveal>
-          <Reveal delay={120} className="mt-12 block">
+          <Reveal delay={120} className="mt-8 sm:mt-12 block">
             <AudiencePanels />
           </Reveal>
         </section>
 
         {/* Process */}
-        <section className="border-y border-border bg-secondary py-24 lg:py-32">
+        <section className="border-y border-border bg-secondary py-16 sm:py-24 lg:py-32">
           <div className="mx-auto max-w-[1600px] px-6 lg:px-10">
             <Reveal as="span" className="eyebrow block">
               How it works
@@ -594,7 +593,7 @@ function Index() {
             <Reveal delay={80}>
               <h2 className="display-lg mt-5 max-w-2xl">Four steps from first call to keys in hand</h2>
             </Reveal>
-            <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2 lg:grid-cols-4 sm:mt-14">
               {[
                 { t: "Tell us the brief", d: "Budget, locality, timeline and what the home has to do for your family." },
                 { t: "Curated shortlist", d: "Only verified options that match — no time wasted on listings that don't fit." },
@@ -899,7 +898,7 @@ function Index() {
           </div>
         </section>
         {/* Final CTA */}
-        <section id="contact" className="relative overflow-hidden py-24 lg:py-32">
+        <section id="contact" className="relative overflow-hidden py-16 sm:py-24 lg:py-32">
           <img
             src={ctaHome}
             alt="Modern luxury villa with pool and blue sky"
@@ -929,7 +928,7 @@ function Index() {
               </p>
             </Reveal>
 
-            <Reveal delay={120} className="mx-auto mt-12 block max-w-4xl">
+            <Reveal delay={120} className="mx-auto mt-8 block max-w-4xl sm:mt-12">
               <form
                 onSubmit={handleSubmit}
                 className="rounded-[2rem] bg-background p-6 text-left shadow-2xl sm:p-10 lg:p-12"
