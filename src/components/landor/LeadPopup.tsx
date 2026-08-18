@@ -61,11 +61,11 @@ Phone: ${form.phone}`;
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="relative w-full max-w-[440px] overflow-hidden rounded-[2rem] border border-white/10 bg-background shadow-2xl"
+            className="relative w-full max-w-[440px] overflow-hidden rounded-[2rem] border border-white/10 bg-background shadow-2xl cursor-auto"
           >
             <button
               onClick={closePopup}
-              className="absolute right-5 top-5 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-secondary/80 text-foreground transition-colors hover:bg-secondary focus:outline-none"
+              className="absolute right-5 top-5 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-secondary/80 text-foreground transition-colors hover:bg-secondary focus:outline-none cursor-auto"
               aria-label="Close"
             >
               <X className="h-4 w-4" />
@@ -90,7 +90,7 @@ Phone: ${form.phone}`;
                     type="text"
                     required
                     placeholder="Full Name"
-                    className="w-full rounded-2xl border border-border bg-secondary/30 px-5 py-3.5 text-sm transition-all focus:border-accent/40 focus:bg-background focus:outline-none"
+                    className="w-full rounded-2xl border border-border bg-secondary/30 px-5 py-3.5 text-sm transition-all focus:border-accent/40 focus:bg-background focus:outline-none cursor-auto"
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
                   />
@@ -100,7 +100,7 @@ Phone: ${form.phone}`;
                     type="tel"
                     required
                     placeholder="Mobile Number"
-                    className="w-full rounded-2xl border border-border bg-secondary/30 px-5 py-3.5 text-sm transition-all focus:border-accent/40 focus:bg-background focus:outline-none"
+                    className="w-full rounded-2xl border border-border bg-secondary/30 px-5 py-3.5 text-sm transition-all focus:border-accent/40 focus:bg-background focus:outline-none cursor-auto"
                     value={form.phone}
                     onChange={(e) => setForm({ ...form, phone: e.target.value })}
                   />
@@ -111,7 +111,7 @@ Phone: ${form.phone}`;
                       key={type}
                       type="button"
                       onClick={() => setForm({ ...form, interest: type })}
-                      className={`rounded-xl border py-2 text-xs font-medium uppercase tracking-wider transition-all ${
+                      className={`rounded-xl border py-2 text-xs font-medium uppercase tracking-wider transition-all cursor-auto ${
                         form.interest === type
                           ? "border-accent bg-accent text-accent-foreground"
                           : "border-border bg-secondary/20 text-muted-foreground hover:bg-secondary/40"
@@ -125,7 +125,7 @@ Phone: ${form.phone}`;
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="mt-4 w-full rounded-2xl bg-accent px-6 py-4 text-sm font-medium text-accent-foreground transition-all hover:opacity-90 active:scale-[0.98] disabled:opacity-50"
+                  className="mt-4 w-full rounded-2xl bg-accent px-6 py-4 text-sm font-medium text-accent-foreground transition-all hover:opacity-90 active:scale-[0.98] disabled:opacity-50 cursor-auto"
                 >
                   {isSubmitting ? "Connecting..." : "Connect with Advisor"}
                 </button>
