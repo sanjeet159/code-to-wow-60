@@ -292,7 +292,7 @@ function AboutShowcase() {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <div className="relative mt-20 rounded-[2rem] border border-border bg-secondary/40 p-6 sm:p-10 lg:p-14">
+    <div className="relative mt-12 rounded-3xl border border-border bg-secondary/40 p-5 sm:mt-20 sm:rounded-[2rem] sm:p-10 lg:p-14">
       <div className="pointer-events-none absolute -top-px left-10 right-10 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
 
       <div className="grid gap-14 lg:grid-cols-[1.05fr_1fr] lg:items-center">
@@ -368,7 +368,7 @@ function AboutShowcase() {
             Making your move simple with{" "}
             <span className="text-accent">our advisors</span>
           </h3>
-          <p className="mt-5 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
+          <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-muted-foreground sm:mt-5 sm:max-w-lg sm:text-base md:line-clamp-none">
             Every client gets one advisor from first shortlist to handover — honest pricing advice,
             verified documents and site visits planned around your schedule.
           </p>
@@ -394,7 +394,7 @@ function AboutShowcase() {
             </div>
           </div>
 
-          <div className="mt-10 flex flex-wrap items-center justify-between gap-6 rounded-2xl border border-border bg-background px-6 py-5">
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-6 rounded-2xl border border-border bg-background px-6 py-5 sm:mt-10">
             <div>
               <p className="mb-4 text-[10px] uppercase tracking-[0.2em] text-muted-foreground sm:text-xs">
                 Open 10:00 am – 8:00 pm
@@ -566,27 +566,26 @@ function Index() {
               </div>
             </Reveal>
           </div>
-
           <AboutShowcase />
         </section>
 
         <Services />
 
         {/* Who we help */}
-        <section className="mx-auto max-w-[1600px] px-6 py-24 lg:px-10 lg:py-28">
+        <section className="mx-auto max-w-[1600px] px-6 py-16 sm:py-24 lg:px-10 lg:py-28">
           <Reveal as="span" className="eyebrow block">
             Who we help
           </Reveal>
           <Reveal delay={80}>
             <h2 className="display-lg mt-5 max-w-2xl">Different goals, one process built around you</h2>
           </Reveal>
-          <Reveal delay={120} className="mt-12 block">
+          <Reveal delay={120} className="mt-8 sm:mt-12 block">
             <AudiencePanels />
           </Reveal>
         </section>
 
         {/* Process */}
-        <section className="border-y border-border bg-secondary py-24 lg:py-32">
+        <section className="border-y border-border bg-secondary py-16 sm:py-24 lg:py-32">
           <div className="mx-auto max-w-[1600px] px-6 lg:px-10">
             <Reveal as="span" className="eyebrow block">
               How it works
@@ -594,7 +593,7 @@ function Index() {
             <Reveal delay={80}>
               <h2 className="display-lg mt-5 max-w-2xl">Four steps from first call to keys in hand</h2>
             </Reveal>
-            <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2 lg:grid-cols-4 sm:mt-14">
               {[
                 { t: "Tell us the brief", d: "Budget, locality, timeline and what the home has to do for your family." },
                 { t: "Curated shortlist", d: "Only verified options that match — no time wasted on listings that don't fit." },
@@ -619,7 +618,7 @@ function Index() {
         </section>
 
         {/* Portfolio */}
-        <section id="projects" className="mx-auto max-w-[1600px] px-6 py-24 lg:px-10 lg:py-32">
+        <section id="projects" className="mx-auto max-w-[1600px] px-6 py-16 sm:py-24 lg:px-10 lg:py-32">
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div>
               <Reveal as="span" className="eyebrow block">
@@ -651,7 +650,7 @@ function Index() {
             </Reveal>
           </div>
           
-          <div className="mt-12">
+          <div className="mt-8 sm:mt-12">
             {propertyFilter === 'buy' ? (
               <div className="grid gap-10 md:grid-cols-2">
                 {PROJECTS.filter(p => p.category === 'buy').map((p, i) => (
@@ -735,7 +734,7 @@ function Index() {
         </section>
 
         {/* Reviews */}
-        <section id="reviews" className="relative border-y border-border bg-secondary py-24 lg:py-32">
+        <section id="reviews" className="relative border-y border-border bg-secondary py-16 sm:py-24 lg:py-32">
           <CursorGlow />
           <div className="relative mx-auto max-w-[1600px] px-6 lg:px-10">
             <Reveal as="span" className="eyebrow block">
@@ -757,7 +756,7 @@ function Index() {
               </Reveal>
             </div>
 
-            <div className="mt-14 grid gap-6 lg:grid-cols-3">
+            <div className="mt-10 grid gap-6 sm:mt-14 lg:grid-cols-3">
               {REVIEWS.map((t, i) => (
                 <Reveal key={t.quote} variant="scale" delay={i * 140}>
                   <TiltCard className="flex h-full flex-col justify-between rounded-sm bg-card p-8 lg:p-10">
@@ -783,7 +782,7 @@ function Index() {
         </section>
 
         {/* Why choose */}
-        <section className="relative bg-surface-dark py-24 text-surface-dark-foreground lg:py-32">
+        <section className="relative bg-surface-dark py-16 text-surface-dark-foreground sm:py-24 lg:py-32">
           <CursorGlow />
           <div className="relative mx-auto max-w-[1600px] px-6 lg:px-10">
             <Reveal as="span" className="eyebrow-light block">
@@ -794,7 +793,7 @@ function Index() {
                 Straight answers, verified paperwork, no pressure
               </h2>
             </Reveal>
-            <div className="mt-14 grid gap-px bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-10 grid gap-px bg-white/10 sm:mt-14 sm:grid-cols-2 lg:grid-cols-4">
               {CHOOSE.map((c, i) => (
                 <Reveal
                   key={c.t}
@@ -812,7 +811,7 @@ function Index() {
         </section>
 
         {/* Team */}
-        <section id="team" className="py-24 lg:py-32">
+        <section id="team" className="py-16 sm:py-24 lg:py-32">
           <div className="mx-auto max-w-[1600px] px-6 lg:px-10">
             <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
               <Reveal variant="left">
@@ -826,13 +825,13 @@ function Index() {
               </Reveal>
             </div>
           </div>
-          <Reveal delay={160} className="mt-14 block">
+          <Reveal delay={160} className="mt-10 sm:mt-14 block">
             <TeamMarquee team={TEAM as TeamMember[]} />
           </Reveal>
         </section>
 
         {/* Insights */}
-        <section id="blog" className="border-t border-border py-24 lg:py-32">
+        <section id="blog" className="border-t border-border py-16 sm:py-24 lg:py-32">
           <div className="mx-auto max-w-[1600px] px-6 lg:px-10">
             <div className="flex flex-wrap items-end justify-between gap-6">
               <div>
@@ -899,7 +898,7 @@ function Index() {
           </div>
         </section>
         {/* Final CTA */}
-        <section id="contact" className="relative overflow-hidden py-24 lg:py-32">
+        <section id="contact" className="relative overflow-hidden py-16 sm:py-24 lg:py-32">
           <img
             src={ctaHome}
             alt="Modern luxury villa with pool and blue sky"
@@ -929,7 +928,7 @@ function Index() {
               </p>
             </Reveal>
 
-            <Reveal delay={120} className="mx-auto mt-12 block max-w-4xl">
+            <Reveal delay={120} className="mx-auto mt-8 block max-w-4xl sm:mt-12">
               <form
                 onSubmit={handleSubmit}
                 className="rounded-[2rem] bg-background p-6 text-left shadow-2xl sm:p-10 lg:p-12"
