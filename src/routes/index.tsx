@@ -729,7 +729,7 @@ function Index() {
                           </span>
                         </div>
                       </div>
-                    </Link>
+                    </a>
                   </Reveal>
                 ))}
               </div>
