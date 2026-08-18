@@ -469,7 +469,7 @@ function Index() {
               </p>
             </Reveal>
             <Reveal delay={140} className="mt-14 block">
-              <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-4">
+              <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-4">
                 {[
                   { label: "Google rating", value: <span className="text-accent">4.3</span> },
                   { label: "Reviews", value: <CountUp to={12} /> },
@@ -479,10 +479,10 @@ function Index() {
                   <div
                     key={s.label}
                     style={{ animationDelay: `${i * 110}ms` }}
-                    className="rise-in group bg-background px-6 py-8 text-center transition-all duration-500 hover:-translate-y-1 hover:bg-secondary"
+                    className="rise-in group bg-background px-4 py-8 text-center transition-all duration-500 hover:-translate-y-1 hover:bg-secondary sm:px-6"
                   >
-                    <p className="eyebrow">{s.label}</p>
-                    <p className="mt-3 font-display text-4xl lg:text-5xl">{s.value}</p>
+                    <p className="eyebrow text-[10px] sm:text-xs">{s.label}</p>
+                    <p className="mt-2 font-display text-2xl sm:mt-3 sm:text-4xl lg:text-5xl">{s.value}</p>
                   </div>
                 ))}
               </div>
