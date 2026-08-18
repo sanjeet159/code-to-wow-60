@@ -13,6 +13,7 @@ import { ScrollProgress, BackToTop } from "@/components/landor/ScrollFx";
 import { SignatureCursor, GrainOverlay, Magnetic, SplitWords, Ticker } from "@/components/landor/Fx";
 import { TeamMarquee, type TeamMember } from "@/components/landor/TeamMarquee";
 import { ReviewSlider } from "@/components/landor/ReviewSlider";
+import { BlogSlider } from "@/components/landor/BlogSlider";
 import { POSTS } from "@/data/posts";
 import { PROPERTIES } from "@/data/properties";
 import heroVilla from "@/assets/hero-villa.jpg";
@@ -840,7 +841,13 @@ function Index() {
                 </Magnetic>
               </Reveal>
             </div>
-            <div className="mt-14 grid gap-8 lg:grid-cols-3">
+            {/* Mobile: Swipe Slider */}
+            <div className="mt-10 block sm:hidden">
+              <BlogSlider posts={POSTS.slice(0, 5)} />
+            </div>
+
+            {/* Desktop: Grid */}
+            <div className="mt-14 hidden grid-cols-3 gap-8 sm:grid">
               {POSTS.slice(0, 3).map((p, i) => (
                 <Reveal key={p.title} delay={i * 140} className="group">
                   <Link to="/blog/$slug" params={{ slug: p.slug }} className="block">
