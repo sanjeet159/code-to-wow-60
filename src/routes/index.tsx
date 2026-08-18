@@ -661,8 +661,8 @@ function Index() {
                 {PROJECTS.filter(p => p.category === 'buy').map((p, i) => (
                   <Reveal key={p.id} delay={(i % 2) * 140} variant="blur">
                     <Link
-                      to="/"
-                      hash="contact"
+                      to="/property/$id"
+                      params={{ id: p.id }}
                       data-cursor="View"
                       className="group block"
                     >
