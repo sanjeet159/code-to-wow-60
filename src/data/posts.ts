@@ -400,7 +400,7 @@ export const POSTS: Post[] = [
     excerpt:
       "Three neighbouring localities, three different rental cases. A straight comparison of rent levels, commute times, amenities and who each one is right for.",
     author: "Home Craft desk",
-    avatar: team2,
+    avatar: "/favicon.png",
     sections: [
       {
         heading: "The one-line verdict",
