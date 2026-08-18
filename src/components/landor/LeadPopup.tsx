@@ -125,7 +125,7 @@ Phone: ${form.phone}`;
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="mt-4 w-full rounded-2xl bg-accent px-6 py-4 text-sm font-medium text-accent-foreground transition-all hover:opacity-90 active:scale-[0.98] disabled:opacity-50"
+                  className="mt-4 w-full rounded-2xl bg-accent px-6 py-4 text-sm font-medium text-accent-foreground transition-all hover:opacity-90 active:scale-[0.98] disabled:opacity-50 cursor-auto"
                 >
                   {isSubmitting ? "Connecting..." : "Connect with Advisor"}
                 </button>
