@@ -7,6 +7,7 @@ export type TeamMember = {
   name: string;
   role: string;
   img: string;
+  phone?: string;
 };
 
 function TeamCard({ member, index }: { member: TeamMember; index: number }) {
