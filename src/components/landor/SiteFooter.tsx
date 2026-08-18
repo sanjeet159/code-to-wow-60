@@ -34,15 +34,15 @@ export function SiteFooter() {
           <div>
             <p className="eyebrow-light">Office</p>
             <p className="mt-4 text-white/60">
-              C1C 504, Brooklyn, Pride World City, near Manhattan, Charholi Budruk, Pune,
-              Maharashtra 412105
+              Shop No. A2, Dream Elements Building, opp. Orchid Hospital, Porwal Road, Lohegaon,
+              Pune 411047
             </p>
           </div>
           <div>
             <p className="eyebrow-light">Branch</p>
             <p className="mt-4 text-white/60">
-              Shop No. A2, Dream Elements Building, opp. Orchid Hospital, Porwal Road, Lohegaon,
-              Pune 411047
+              C1C 504, Brooklyn, Pride World City, near Manhattan, Charholi Budruk, Pune,
+              Maharashtra 412105
             </p>
           </div>
           <div>
