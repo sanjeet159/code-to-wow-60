@@ -61,7 +61,7 @@ Phone: ${form.phone}`;
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="relative w-full max-w-[440px] overflow-hidden rounded-[2rem] border border-white/10 bg-background shadow-2xl"
+            className="relative w-full max-w-[440px] overflow-hidden rounded-[2rem] border border-white/10 bg-background shadow-2xl cursor-auto"
           >
             <button
               onClick={closePopup}
