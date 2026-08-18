@@ -12,6 +12,7 @@ import { ContactButtons } from "@/components/landor/ContactButtons";
 import { ScrollProgress, BackToTop } from "@/components/landor/ScrollFx";
 import { SignatureCursor, GrainOverlay, Magnetic, SplitWords, Ticker } from "@/components/landor/Fx";
 import { TeamMarquee, type TeamMember } from "@/components/landor/TeamMarquee";
+import { ReviewSlider } from "@/components/landor/ReviewSlider";
 import { POSTS } from "@/data/posts";
 import { PROPERTIES } from "@/data/properties";
 import heroVilla from "@/assets/hero-villa.jpg";
@@ -758,27 +759,10 @@ function Index() {
               </Reveal>
             </div>
 
-            <div className="mt-10 grid gap-6 sm:mt-14 lg:grid-cols-3">
-              {REVIEWS.map((t, i) => (
-                <Reveal key={t.quote} variant="scale" delay={i * 140}>
-                  <TiltCard className="flex h-full flex-col justify-between rounded-sm bg-card p-8 lg:p-10">
-                    <div>
-                      <Stars value={5} />
-                      <blockquote className="mt-5 text-lg leading-relaxed">"{t.quote}"</blockquote>
-                    </div>
-                    <figcaption className="mt-8 flex items-center gap-4 border-t border-border pt-6">
-                      <span className="flex h-12 w-12 items-center justify-center rounded-full bg-accent font-display text-lg text-accent-foreground">
-                        {t.initial}
-                      </span>
-                      <div>
-                        <p className="text-sm font-medium">{t.name}</p>
-                        <p className="text-sm text-muted-foreground">{t.role}</p>
-                      </div>
-                    </figcaption>
-
-                  </TiltCard>
-                </Reveal>
-              ))}
+            <div className="mt-10 sm:mt-14">
+              <Reveal variant="blur" delay={200}>
+                <ReviewSlider reviews={REVIEWS} />
+              </Reveal>
             </div>
           </div>
         </section>
