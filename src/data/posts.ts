@@ -336,7 +336,7 @@ export const POSTS: Post[] = [
     excerpt:
       "Airport on one side, the Nagar Road IT spine on the other. Why Viman Nagar keeps its premium — and when the smarter move is to live just outside it.",
     author: "Home Craft desk",
-    avatar: team3,
+    avatar: "/favicon.png",
     sections: [
       {
         heading: "Why professionals pay the premium",
