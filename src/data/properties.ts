@@ -4,6 +4,7 @@ import project3 from "@/assets/notting.jpg";
 import project4 from "@/assets/shubh.jpg";
 import metropolisRent from "@/assets/metropolis-rent.jpg.asset.json";
 import nyatiEra from "@/assets/nyati-era.jpg.asset.json";
+import manhattanPride from "@/assets/manhattan-pride.jpg.asset.json";
 
 export type Property = {
   id: string;
@@ -95,6 +96,19 @@ export const PROPERTIES: Property[] = [
     description: "Beautiful 2BHK apartment in Metropolis, located on Porwal Road, Lohegaon. This property offers a perfect blend of comfort and convenience with a spacious carpet area of 780 Sqft.",
     amenities: ["24/7 Security", "Reserved Parking", "Elevator", "Power Backup", "Water Supply"],
     area: "780 sq ft (Carpet)",
+    status: "Available",
+    category: 'rent'
+  },
+  {
+    id: "rent-manhattan-pride-world-city",
+    title: "Manhattan Pride World City (2BHK)",
+    location: "Charoli, Pune",
+    type: "2BHK Rental",
+    price: "₹27,000 / month",
+    image: manhattanPride.url,
+    description: "Premium 2BHK rental in Manhattan, Pride World City. This modern apartment features a 725 sqft carpet area and offers access to the full suite of Pride World City amenities.",
+    amenities: ["Gated Community", "Clubhouse", "Swimming Pool", "Gym", "24/7 Security", "Jogging Track"],
+    area: "725 sq ft (Carpet)",
     status: "Available",
     category: 'rent'
   }
