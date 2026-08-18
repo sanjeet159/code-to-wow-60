@@ -80,7 +80,7 @@ export function ReviewSlider({ reviews }: ReviewSliderProps) {
 
   return (
     <div className="relative mx-auto w-full max-w-4xl px-4 sm:px-6">
-      <div className="relative h-[480px] w-full sm:h-[320px]">
+      <div className="relative min-h-[480px] w-full sm:min-h-[320px]">
         <AnimatePresence initial={false} custom={direction} mode="wait">
           <motion.div
             key={index}
@@ -107,7 +107,7 @@ export function ReviewSlider({ reviews }: ReviewSliderProps) {
             }}
             className="absolute inset-0 flex items-center justify-center cursor-grab active:cursor-grabbing"
           >
-            <div className="relative w-full h-full sm:h-auto rounded-2xl border border-border bg-card p-8 shadow-sm sm:p-10 md:p-12">
+            <div className="relative w-full h-fit rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-10 md:p-12">
               <Quote className="absolute right-8 top-8 h-12 w-12 text-accent/10 sm:h-16 sm:w-16" />
               
               <div className="relative z-10 flex flex-col h-full">
@@ -122,9 +122,9 @@ export function ReviewSlider({ reviews }: ReviewSliderProps) {
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent font-display text-base text-accent-foreground shadow-inner sm:h-14 sm:w-14 sm:text-lg">
                     {currentReview.initial}
                   </div>
-                  <div className="flex flex-col text-left min-w-0">
-                    <span className="font-semibold text-foreground text-sm sm:text-lg truncate leading-tight">{currentReview.name}</span>
-                    <span className="text-[10px] text-muted-foreground sm:text-sm truncate">{currentReview.role}</span>
+                  <div className="flex flex-col text-left min-w-0 flex-1">
+                    <span className="font-semibold text-foreground text-sm sm:text-lg leading-tight block">{currentReview.name}</span>
+                    <span className="text-[10px] text-muted-foreground sm:text-sm block">{currentReview.role}</span>
                   </div>
                 </div>
               </div>
