@@ -32,12 +32,7 @@ export function SiteFooter() {
 
         <div className="grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.5fr_1.5fr_1fr_1fr]">
           <div>
-            <div className="flex items-center justify-between">
-              <p className="eyebrow-light">Office</p>
-              <p className="text-[10px] font-medium uppercase tracking-widest text-white/20">
-                RERA NO. A52100022492
-              </p>
-            </div>
+            <p className="eyebrow-light">Office</p>
             <p className="mt-4 text-white/60">
               C1C 504, Brooklyn, Pride World City, near Manhattan, Charholi Budruk, Pune,
               Maharashtra 412105
@@ -89,9 +84,15 @@ export function SiteFooter() {
               made by sanjeet kumar
             </a>
           </div>
-          <p className="font-display text-4xl tracking-[-0.05em] text-white/10 transition-colors hover:text-white/20 lg:text-8xl">
-            home craft
-          </p>
+          <div className="flex flex-col items-center gap-2 md:items-end">
+            <div className="h-0.5 w-12 bg-accent" />
+            <p className="text-[10px] font-medium uppercase tracking-widest text-white/20">
+              RERA NO. A52100022492
+            </p>
+            <p className="font-display text-4xl tracking-[-0.05em] text-white/10 transition-colors hover:text-white/20 lg:text-8xl">
+              home craft
+            </p>
+          </div>
         </div>
       </div>
     </footer>
