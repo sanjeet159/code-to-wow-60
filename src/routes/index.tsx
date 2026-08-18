@@ -87,7 +87,6 @@ const PROJECTS = PROPERTIES.map((property) => ({
   year: property.type,
   img: property.image,
   category: property.category,
-  link: "#contact", // Redirect directly to form
 }));
 
 const REVIEWS = [
