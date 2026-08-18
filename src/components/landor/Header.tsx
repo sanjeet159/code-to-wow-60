@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link } from "@tanstack/react-router";
 import wordmark from "@/assets/homecraft-logo.png";
 import { ContactButtons } from "@/components/landor/ContactButtons";
@@ -34,6 +35,11 @@ export function ArrowIcon({ className = "" }: { className?: string }) {
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
+
 
   useEffect(() => {
     if (open) {
@@ -107,43 +113,58 @@ export function Header() {
           </button>
         </div>
       </div>
-      <div 
-        className={`fixed inset-0 z-[100] overflow-y-auto bg-[#FDFCFB] transition-opacity duration-300 ease-out xl:hidden ${
-          open ? "opacity-100" : "opacity-0 pointer-events-none invisible"
-        }`}
-      >
-        <div className="flex min-h-full flex-col px-8 pt-28 pb-10">
-
-          <nav className="flex flex-col gap-6">
-            {NAV.map((item, i) => (
-              <a
-                key={item}
-                href={`/#${item.toLowerCase()}`}
+      {mounted &&
+        createPortal(
+          <div
+            className={`fixed inset-0 z-[200] overflow-y-auto bg-[#FDFCFB] transition-opacity duration-300 ease-out xl:hidden ${
+              open ? "opacity-100" : "pointer-events-none invisible opacity-0"
+            }`}
+          >
+            <div className="flex min-h-full flex-col px-8 pt-28 pb-10">
+              <button
+                type="button"
+                aria-label="Close menu"
                 onClick={() => setOpen(false)}
-                className={`text-4xl font-light tracking-tight text-black transition-all duration-500 delay-[${i * 50}ms] ${
-                  open ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-                }`}
+                className="absolute right-6 top-7 flex h-11 w-11 items-center justify-center bg-black/5 text-black transition-colors hover:bg-black/10"
               >
-                {item}
-              </a>
-            ))}
-            <Link 
-              to="/blog" 
-              onClick={() => setOpen(false)} 
-              className={`text-4xl font-light tracking-tight text-black transition-all duration-500 delay-[${NAV.length * 50}ms] ${
-                open ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-              }`}
-            >
-              Blog
-            </Link>
-          </nav>
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                  <path d="M1 1L17 17M17 1L1 17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                </svg>
+              </button>
 
-          <div className={`mt-auto transition-all duration-700 delay-300 ${open ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}>
-            <p className="mb-6 text-sm font-medium tracking-widest text-black/40 uppercase">Get in touch</p>
-            <ContactButtons tone="accent" size="lg" className="flex-row flex-wrap" onNavigate={() => setOpen(false)} />
-          </div>
-        </div>
-      </div>
+              <nav className="flex flex-col gap-6">
+                {NAV.map((item) => (
+                  <a
+                    key={item}
+                    href={`/#${item.toLowerCase()}`}
+                    onClick={() => setOpen(false)}
+                    className={`text-4xl font-light tracking-tight text-black transition-all duration-500 ${
+                      open ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+                    }`}
+                  >
+                    {item}
+                  </a>
+                ))}
+                <Link
+                  to="/blog"
+                  onClick={() => setOpen(false)}
+                  className={`text-4xl font-light tracking-tight text-black transition-all duration-500 ${
+                    open ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+                  }`}
+                >
+                  Blog
+                </Link>
+              </nav>
+
+              <div className={`mt-auto pt-16 transition-all duration-700 delay-200 ${open ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}>
+                <p className="mb-6 text-sm font-medium tracking-widest text-black/40 uppercase">Get in touch</p>
+                <ContactButtons tone="accent" size="lg" className="flex-row flex-wrap" onNavigate={() => setOpen(false)} />
+              </div>
+            </div>
+          </div>,
+          document.body,
+        )}
     </header>
   );
 }
+
