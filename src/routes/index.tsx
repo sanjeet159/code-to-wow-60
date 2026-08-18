@@ -600,42 +600,86 @@ function Index() {
             </Reveal>
           </div>
           
-          <div className="mt-12 grid gap-10 md:grid-cols-2">
-            {PROJECTS.filter(p => p.category === propertyFilter).map((p, i) => {
-              return (
-                <Reveal key={p.id} delay={(i % 2) * 140} variant="blur">
-                  <Link
-                    to="/property/$id"
-                    params={{ id: p.id }}
-                    data-cursor="View"
-                    className="group block"
-                  >
-                    <div className="relative overflow-hidden rounded-sm">
-                      <img
-                        src={p.img}
-                        alt={p.title}
-                        loading="lazy"
-                        decoding="async"
-                        className="h-72 w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110 lg:h-[420px]"
-                      />
-                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/50 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                      <div className="pointer-events-none absolute bottom-5 left-5 translate-y-3 rounded-full bg-accent px-4 py-2 text-xs uppercase tracking-widest text-accent-foreground opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                        {p.year}
+          <div className="mt-12">
+            {propertyFilter === 'buy' ? (
+              <div className="grid gap-10 md:grid-cols-2">
+                {PROJECTS.filter(p => p.category === 'buy').map((p, i) => (
+                  <Reveal key={p.id} delay={(i % 2) * 140} variant="blur">
+                    <Link
+                      to="/property/$id"
+                      params={{ id: p.id }}
+                      data-cursor="View"
+                      className="group block"
+                    >
+                      <div className="relative overflow-hidden rounded-sm">
+                        <img
+                          src={p.img}
+                          alt={p.title}
+                          loading="lazy"
+                          decoding="async"
+                          className="h-72 w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110 lg:h-[420px]"
+                        />
+                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/50 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                        <div className="pointer-events-none absolute bottom-5 left-5 translate-y-3 rounded-full bg-accent px-4 py-2 text-xs uppercase tracking-widest text-accent-foreground opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                          {p.year}
+                        </div>
                       </div>
-                    </div>
-                    <div className="mt-5 flex items-start justify-between gap-6">
-                      <div>
-                        <h3 className="text-2xl transition-colors duration-300 group-hover:text-accent">
+                      <div className="mt-5 flex items-start justify-between gap-6">
+                        <div>
+                          <h3 className="text-2xl transition-colors duration-300 group-hover:text-accent">
+                            {p.title}
+                          </h3>
+                          <p className="mt-1 text-sm text-muted-foreground">{p.place}</p>
+                        </div>
+                        <span className="text-sm text-muted-foreground">{p.year}</span>
+                      </div>
+                    </Link>
+                  </Reveal>
+                ))}
+              </div>
+            ) : (
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                {PROJECTS.filter(p => p.category === 'rent').map((p, i) => (
+                  <Reveal key={p.id} delay={i * 100} variant="scale">
+                    <Link
+                      to="/property/$id"
+                      params={{ id: p.id }}
+                      className="group block rounded-xl border border-border bg-card p-4 transition-all duration-500 hover:-translate-y-2 hover:border-accent hover:shadow-xl"
+                    >
+                      <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+                        <img
+                          src={p.img}
+                          alt={p.title}
+                          loading="lazy"
+                          decoding="async"
+                          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                        <div className="absolute right-3 top-3 rounded-full bg-background/90 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-accent backdrop-blur-sm">
+                          Rental
+                        </div>
+                      </div>
+                      <div className="mt-4">
+                        <h3 className="line-clamp-1 text-lg font-medium transition-colors group-hover:text-accent">
                           {p.title}
                         </h3>
-                        <p className="mt-1 text-sm text-muted-foreground">{p.place}</p>
+                        <div className="mt-1 flex items-center justify-between">
+                          <p className="text-xs text-muted-foreground">{p.place}</p>
+                          <p className="text-sm font-semibold text-accent">{PROPERTIES.find(orig => orig.id === p.id)?.price.split(' ')[0]}</p>
+                        </div>
+                        <div className="mt-4 flex items-center justify-between border-t border-border pt-3">
+                          <span className="text-[10px] uppercase tracking-tighter text-muted-foreground">
+                            {PROPERTIES.find(orig => orig.id === p.id)?.area}
+                          </span>
+                          <span className="inline-flex items-center gap-1 text-[10px] font-medium text-accent">
+                            Details <ArrowIcon className="h-2 w-2" />
+                          </span>
+                        </div>
                       </div>
-                      <span className="text-sm text-muted-foreground">{p.year}</span>
-                    </div>
-                  </Link>
-                </Reveal>
-              );
-            })}
+                    </Link>
+                  </Reveal>
+                ))}
+              </div>
+            )}
           </div>
         </section>
 
