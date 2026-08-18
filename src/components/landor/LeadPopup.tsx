@@ -8,12 +8,9 @@ export function LeadPopup() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
-    // Show popup after 3 seconds, only once per session
+    // Show popup after 3 seconds on every page load (including refresh)
     const timer = setTimeout(() => {
-      const hasSeen = sessionStorage.getItem("hc-popup-seen");
-      if (!hasSeen) {
-        setIsOpen(true);
-      }
+      setIsOpen(true);
     }, 3000);
 
     return () => clearTimeout(timer);
@@ -21,7 +18,6 @@ export function LeadPopup() {
 
   const closePopup = () => {
     setIsOpen(false);
-    sessionStorage.setItem("hc-popup-seen", "true");
   };
 
   const handleSubmit = (e: React.FormEvent) => {
