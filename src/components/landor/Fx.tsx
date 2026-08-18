@@ -66,7 +66,7 @@ export function SignatureCursor() {
   }, []);
 
   return (
-    <div aria-hidden className="pointer-events-none fixed inset-0 z-[100] hidden md:block">
+    <div aria-hidden className="pointer-events-none fixed inset-0 z-[9999] hidden md:block">
       <div ref={dot} className="sig-dot" />
       <div ref={ring} className="sig-ring" data-active="false" />
     </div>
