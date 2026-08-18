@@ -871,13 +871,13 @@ Message: ${form.message}`;
                     </h3>
                     <div className="mt-6 flex items-center justify-between border-t border-border pt-5">
                       <div className="flex items-center gap-3">
-                        <img
-                          src={p.avatar}
-                          alt=""
-                          loading="lazy"
-                          decoding="async"
-                          className="h-9 w-9 rounded-full object-cover"
-                        />
+                        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-accent/5 p-1.5 shadow-inner">
+                          <img
+                            src="/favicon.png"
+                            alt="Home Craft"
+                            className="h-full w-full object-contain grayscale opacity-70"
+                          />
+                        </div>
                         <p className="text-sm">{p.author}</p>
                       </div>
                       <span className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-all duration-300 group-hover:gap-4 group-hover:text-accent">
