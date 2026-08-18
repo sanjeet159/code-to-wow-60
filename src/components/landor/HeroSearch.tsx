@@ -47,7 +47,8 @@ export function HeroSearch() {
           const message = `Hi Home Craft, I'd like to ${tab.toLowerCase()} a property.\nName: ${name}\nPhone: ${phone}\nProperty Type: ${type}`;
           window.open(`https://wa.me/918484947570?text=${encodeURIComponent(message)}`, "_blank");
         }}
-        className="relative z-10 grid gap-6 rounded-b-xl rounded-tr-xl bg-background p-6 shadow-2xl sm:p-8 lg:grid-cols-[1fr_1fr_1fr_auto] lg:items-end"
+        className="relative z-10 grid gap-5 rounded-b-xl rounded-tr-xl bg-background p-5 shadow-2xl sm:p-8 lg:grid-cols-[1fr_1fr_1fr_auto] lg:items-end"
+
       >
         <label className="block">
           <span className="sr-only">Your name</span>

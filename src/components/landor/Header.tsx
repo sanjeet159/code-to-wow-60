@@ -63,14 +63,15 @@ export function Header() {
         scrolled ? "bg-background/90 backdrop-blur-md border-b border-border" : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex h-20 max-w-[1600px] items-center justify-between px-6 lg:px-10">
-        <a href="/" className="group flex items-center">
+      <div className="mx-auto flex h-20 max-w-[1600px] items-center justify-between px-5 lg:px-10">
+        <a href="/" className="group flex items-center py-2">
           <img
             src={wordmark}
             alt="Home Craft Real Estate"
-            className="h-10 w-auto transition-opacity duration-300 group-hover:opacity-80 lg:h-12"
+            className="h-9 w-auto transition-opacity duration-300 group-hover:opacity-80 lg:h-12"
           />
         </a>
+
         <nav className="hidden items-center gap-9 xl:flex">
           {NAV.map((item) => (
             <a
@@ -99,7 +100,7 @@ export function Header() {
             type="button"
             aria-label="Toggle menu"
             onClick={() => setOpen((v) => !v)}
-            className={`relative z-[110] flex h-11 w-11 flex-col items-center justify-center gap-1.5 transition-all duration-300 xl:hidden ${
+            className={`relative z-[110] flex h-12 w-12 flex-col items-center justify-center gap-1.5 transition-all duration-300 xl:hidden ${
               open 
                 ? "border-black/10 bg-black/5" 
                 : scrolled 
@@ -107,10 +108,11 @@ export function Header() {
                   : "border-white/30"
             }`}
           >
-            <span className={`h-px w-5 transition-all duration-300 ${open ? "bg-black translate-y-[7px] rotate-45" : scrolled ? "bg-black" : "bg-white"}`} />
-            <span className={`h-px w-5 transition-all duration-300 ${open ? "opacity-0" : scrolled ? "bg-black" : "bg-white"}`} />
-            <span className={`h-px w-5 transition-all duration-300 ${open ? "bg-black -translate-y-[7px] -rotate-45" : scrolled ? "bg-black" : "bg-white"}`} />
+            <span className={`h-[1.5px] w-5 transition-all duration-300 ${open ? "bg-black translate-y-[7.5px] rotate-45" : scrolled ? "bg-black" : "bg-white"}`} />
+            <span className={`h-[1.5px] w-5 transition-all duration-300 ${open ? "opacity-0" : scrolled ? "bg-black" : "bg-white"}`} />
+            <span className={`h-[1.5px] w-5 transition-all duration-300 ${open ? "bg-black -translate-y-[7.5px] -rotate-45" : scrolled ? "bg-black" : "bg-white"}`} />
           </button>
+
         </div>
       </div>
       {mounted &&

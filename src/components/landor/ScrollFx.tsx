@@ -50,13 +50,14 @@ export function BackToTop() {
       type="button"
       aria-label="Back to top"
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className={`fixed bottom-6 right-6 z-50 inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-foreground shadow-xl transition-all duration-500 hover:-translate-y-1 hover:opacity-90 ${
+      className={`fixed bottom-6 right-6 z-50 inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-foreground shadow-xl transition-all duration-500 active:scale-90 hover:-translate-y-1 hover:opacity-90 ${
         show ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-6 opacity-0"
       }`}
     >
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
         <path d="M12 19V5M5 12l7-7 7 7" />
       </svg>
     </button>
+
   );
 }

@@ -61,7 +61,7 @@ export function ContactButtons({
     "inline-flex items-center gap-2 rounded-full transition-all duration-300 hover:gap-3";
 
   return (
-    <div className={cn("flex flex-col gap-3", className)}>
+    <div className={cn("flex flex-col gap-3 touch-manipulation", className)}>
       <div className="flex flex-wrap items-center gap-3">
         <a href={`tel:${PHONE}`} onClick={onNavigate} className={cn(base, pad, toneClasses[tone].call)}>
           <Phone className="h-4 w-4" />
