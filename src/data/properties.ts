@@ -2,10 +2,10 @@ import project1 from "@/assets/project-1-atlantis.jpg";
 import project2 from "@/assets/BRROKLYN.png";
 import project3 from "@/assets/notting.jpg";
 import project4 from "@/assets/shubh.jpg";
-import metropolisRent from "@/assets/metropolis-rent.jpg.asset.json";
+import metropolisRent from "@/assets/WhatsApp Image 2026-08-18 at 4.22.52 PM.jpeg";
 import nyatiEra from "@/assets/nyati-era.jpg.asset.json";
 import manhattanPride from "@/assets/manhattan-pride.jpg.asset.json";
-import goodwillBreeza from "@/assets/goodwill-breeza.jpg.asset.json";
+import goodwillBreeza from "@/assets/WhatsApp Image 2026-08-18 at 4.20.00 PM.jpeg";
 
 
 export type Property = {
@@ -94,7 +94,7 @@ export const PROPERTIES: Property[] = [
     location: "Porwal Road, Lohegaon, Pune",
     type: "2BHK Rental",
     price: "₹26,000 / month",
-    image: metropolisRent.url,
+    image: metropolisRent,
     description: "Beautiful 2BHK apartment in Metropolis, located on Porwal Road, Lohegaon. This property offers a perfect blend of comfort and convenience with a spacious carpet area of 780 Sqft.",
     amenities: ["24/7 Security", "Reserved Parking", "Elevator", "Power Backup", "Water Supply"],
     area: "780 sq ft (Carpet)",
@@ -107,7 +107,7 @@ export const PROPERTIES: Property[] = [
     location: "Charoli, Pune",
     type: "2BHK Rental",
     price: "₹27,000 / month",
-    image: manhattanPride.url,
+    image: manhattanPride.,
     description: "Premium 2BHK rental in Manhattan, Pride World City. This modern apartment features a 725 sqft carpet area and offers access to the full suite of Pride World City amenities.",
     amenities: ["Gated Community", "Clubhouse", "Swimming Pool", "Gym", "24/7 Security", "Jogging Track"],
     area: "725 sq ft (Carpet)",
@@ -120,7 +120,7 @@ export const PROPERTIES: Property[] = [
     location: "Dhanori, Pune",
     type: "2BHK Rental",
     price: "₹27,000 / month",
-    image: goodwillBreeza.url,
+    image: goodwillBreeza,
     description: "Modern 2BHK rental in Goodwill Breeza, Dhanori. This well-maintained apartment features a 750 sqft carpet area and excellent community amenities.",
     amenities: ["Security", "Clubhouse", "Gym", "Power Backup", "Water Supply", "Parking"],
     area: "750 sq ft (Carpet)",
