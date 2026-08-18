@@ -123,7 +123,7 @@ export const POSTS: Post[] = [
     excerpt:
       "Two neighbouring pockets, two very different buying cases. A side-by-side look at pricing, connectivity and who each suburb actually suits.",
     author: "Home Craft desk",
-    avatar: team2,
+    avatar: "/favicon.png",
     sections: [
       {
         heading: "The short answer",
