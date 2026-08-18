@@ -4,7 +4,7 @@ import project3 from "@/assets/notting.jpg";
 import project4 from "@/assets/shubh.jpg";
 import metropolisRent from "@/assets/WhatsApp Image 2026-08-18 at 4.22.52 PM.jpeg";
 import nyatiEra from "@/assets/nyati-era.jpg.asset.json";
-import manhattanPride from "@/assets/manhattan-pride.jpg.asset.json";
+import Manhattan from "@/assets/Manhattan.jpg";
 import goodwillBreeza from "@/assets/WhatsApp Image 2026-08-18 at 4.20.00 PM.jpeg";
 
 
