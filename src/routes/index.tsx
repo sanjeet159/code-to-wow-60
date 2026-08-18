@@ -84,6 +84,7 @@ const PROJECTS = PROPERTIES.map((property) => ({
   place: property.location,
   year: property.type,
   img: property.image,
+  category: property.category,
 }));
 
 const REVIEWS = [
@@ -357,6 +358,7 @@ function AboutShowcase() {
 }
 
 function Index() {
+  const [propertyFilter, setPropertyFilter] = useState<'buy' | 'rent'>('buy');
   const [form, setForm] = useState({ firstName: "", lastName: "", phone: "", message: "" });
   const [sent, setSent] = useState(false);
 
@@ -567,20 +569,41 @@ function Index() {
 
         {/* Portfolio */}
         <section id="projects" className="mx-auto max-w-[1600px] px-6 py-24 lg:px-10 lg:py-32">
-          <Reveal as="span" className="eyebrow block">
-            Selected work
-          </Reveal>
-          <Reveal delay={80}>
-            <SplitWords
-              as="h2"
-              text="Recent deals and fit-outs around Pune"
-              className="display-lg mt-5 max-w-2xl block"
-            />
-          </Reveal>
+          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <Reveal as="span" className="eyebrow block">
+                Selected work
+              </Reveal>
+              <Reveal delay={80}>
+                <SplitWords
+                  as="h2"
+                  text="Recent deals and fit-outs around Pune"
+                  className="display-lg mt-5 max-w-2xl block"
+                />
+              </Reveal>
+            </div>
+            
+            <Reveal delay={160} className="flex overflow-hidden rounded-full border border-border bg-background p-1">
+              {(['buy', 'rent'] as const).map((t) => (
+                <button
+                  key={t}
+                  onClick={() => setPropertyFilter(t)}
+                  className={`px-8 py-2.5 text-xs font-medium uppercase tracking-widest transition-all duration-300 ${
+                    propertyFilter === t 
+                      ? "rounded-full bg-accent text-accent-foreground" 
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {t}
+                </button>
+              ))}
+            </Reveal>
+          </div>
+          
           <div className="mt-12 grid gap-10 md:grid-cols-2">
-            {PROJECTS.map((p, i) => {
+            {PROJECTS.filter(p => p.category === propertyFilter).map((p, i) => {
               return (
-                <Reveal key={p.title} delay={(i % 2) * 140} variant="blur">
+                <Reveal key={p.id} delay={(i % 2) * 140} variant="blur">
                   <Link
                     to="/property/$id"
                     params={{ id: p.id }}

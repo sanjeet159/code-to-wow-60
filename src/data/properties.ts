@@ -14,6 +14,7 @@ export type Property = {
   amenities: string[];
   area?: string;
   status?: string;
+  category: 'buy' | 'rent';
 };
 
 export const PROPERTIES: Property[] = [
@@ -27,7 +28,8 @@ export const PROPERTIES: Property[] = [
     description: "Pride World City Atlantic is a newly constructed, luxury high-rise phase in Charoli featuring smart automation and premium rooftop amenities like a sky lounge and infinity pool.",
     amenities: ["Sky Lounge", "infinity edge swimming pool", "open-air gym", "smart home automation", "Power Backup", "Landscaped Gardens"],
     area: "1970 sq ft",
-    status: "Newly Constructed"
+    status: "Newly Constructed",
+    category: 'buy'
   },
   {
     id: "retail-showroom-deal",
@@ -39,7 +41,8 @@ export const PROPERTIES: Property[] = [
     description: "Pride World City Brooklyn, also in Charoli, is a ready-to-move-in, family-centric phase offering functional apartment layouts and massive open green spaces for active community living.",
     amenities: ["state-of-the-art gymnasium", "swimming pool", "clubhouse", "CCTV Surveillance"],
     area: "1100 sq ft",
-    status: "Newly Constructed"
+    status: "Newly Constructed",
+    category: 'buy'
   },
   {
     id: "investor-apartment-portfolio",
@@ -51,7 +54,8 @@ export const PROPERTIES: Property[] = [
     description: "Pride World City Notting Hill stands out as Charoli’s elite, low-density enclave of ready-to-move-in European-style row houses and private villas built for maximum privacy. ",
     amenities: ["Swimming pool", "Covered Parking", "aerobics/yoga room", "jogging/strolling tracks"],
     area: "2365 sq ft",
-    status: "Resale"
+    status: "Resale",
+    category: 'rent'
   },
   {
     id: "office-space-2400-sq-ft",
@@ -63,7 +67,8 @@ export const PROPERTIES: Property[] = [
     description: "Shubh Gateways shifts away from the township model, offering an under-construction, highly secure standalone development in Viman Nagar tailored for frequent travelers due to its premium proximity to Pune Airport and major commercial hubs.",
     amenities: ["Multipurpose Court", "Swimming Pool", "Amphitheatre", "Party Lawn", "3-Tier Security"],
     area: "1345 sq ft",
-    status: "New Launch"
+    status: "New Launch",
+    category: 'rent'
   }
 ];
 
