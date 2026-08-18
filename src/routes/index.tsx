@@ -696,9 +696,8 @@ function Index() {
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                 {PROJECTS.filter(p => p.category === 'rent').map((p, i) => (
                   <Reveal key={p.id} delay={i * 100} variant="scale">
-                    <Link
-                      to="/"
-                      hash="contact"
+                    <a
+                      href="#contact"
                       className="group block rounded-xl border border-border bg-card p-4 transition-all duration-500 hover:-translate-y-2 hover:border-accent hover:shadow-xl"
                     >
                       <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
@@ -730,7 +729,7 @@ function Index() {
                           </span>
                         </div>
                       </div>
-                    </Link>
+                    </a>
                   </Reveal>
                 ))}
               </div>
