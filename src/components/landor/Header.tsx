@@ -93,7 +93,7 @@ export function Header() {
             type="button"
             aria-label="Toggle menu"
             onClick={() => setOpen((v) => !v)}
-            className={`relative z-[60] flex h-11 w-11 flex-col items-center justify-center gap-1.5 transition-all duration-300 xl:hidden ${
+            className={`relative z-[110] flex h-11 w-11 flex-col items-center justify-center gap-1.5 transition-all duration-300 xl:hidden ${
               open 
                 ? "border-black/10 bg-black/5" 
                 : scrolled 
@@ -108,11 +108,12 @@ export function Header() {
         </div>
       </div>
       <div 
-        className={`fixed inset-0 z-50 bg-[#FDFCFB] transition-all duration-500 ease-in-out xl:hidden ${
-          open ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none invisible"
+        className={`fixed inset-0 z-[100] overflow-y-auto bg-[#FDFCFB] transition-opacity duration-300 ease-out xl:hidden ${
+          open ? "opacity-100" : "opacity-0 pointer-events-none invisible"
         }`}
       >
-        <div className="flex h-full flex-col px-8 pt-28 pb-10">
+        <div className="flex min-h-full flex-col px-8 pt-28 pb-10">
+
           <nav className="flex flex-col gap-6">
             {NAV.map((item, i) => (
               <a
