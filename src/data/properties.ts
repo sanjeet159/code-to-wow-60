@@ -98,6 +98,19 @@ export const PROPERTIES: Property[] = [
     area: "780 sq ft (Carpet)",
     status: "Available",
     category: 'rent'
+  },
+  {
+    id: "rent-manhattan-pride-world-city",
+    title: "Manhattan Pride World City (2BHK)",
+    location: "Charoli, Pune",
+    type: "2BHK Rental",
+    price: "₹27,000 / month",
+    image: manhattanPride.url,
+    description: "Premium 2BHK rental in Manhattan, Pride World City. This modern apartment features a 725 sqft carpet area and offers access to the full suite of Pride World City amenities.",
+    amenities: ["Gated Community", "Clubhouse", "Swimming Pool", "Gym", "24/7 Security", "Jogging Track"],
+    area: "725 sq ft (Carpet)",
+    status: "Available",
+    category: 'rent'
   }
 ];
 
