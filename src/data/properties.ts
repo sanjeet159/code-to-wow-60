@@ -85,19 +85,6 @@ export const PROPERTIES: Property[] = [
     category: 'rent'
   },
   {
-    id: "rent-viman-nagar-studio",
-    title: "Studio Apartment",
-    location: "Viman Nagar, Pune",
-    type: "Rental",
-    price: "₹28,000 / month",
-    image: "/src/assets/luxury-apartment.jpg",
-    description: "Modern studio apartment perfect for professionals, located walking distance from Phoenix Mall and major IT hubs.",
-    amenities: ["Fully Furnished", "AC", "WiFi Ready", "Housekeeping", "24/7 Security"],
-    area: "550 sq ft",
-    status: "Ready to Move",
-    category: 'rent'
-  },
-  {
     id: "rent-charoli-township",
     title: "Spacious 2BHK Township",
     location: "Charoli, Pune",
