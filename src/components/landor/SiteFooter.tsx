@@ -76,12 +76,12 @@ export function SiteFooter() {
         <div className="flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 text-sm text-white/40 md:flex-row">
           <div className="flex flex-col items-center gap-2 md:items-start">
             <a
-              href="https://google.com"
+              href="https://sanjeetfolio.framer.website/"
               target="_blank"
               rel="noreferrer"
               className="link-sweep transition-colors hover:text-white"
             >
-              made by sanjeet kumar
+              Designed & Developed by Sanjeet Kumar
             </a>
           </div>
           <div className="flex flex-col items-center gap-2 md:items-end">
