@@ -33,14 +33,14 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
             <p className="text-xs uppercase tracking-widest text-white/70">Connect</p>
             <div className="mt-3 flex flex-wrap gap-2">
               <a
-                href="tel:+918484947570"
+                href={`tel:${member.phone || "+918484947570"}`}
                 className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-xs font-medium text-foreground transition-transform hover:scale-105"
               >
                 <Phone className="h-3 w-3" />
                 Call
               </a>
               <a
-                href={WHATSAPP_URL}
+                href={member.phone ? `https://wa.me/${member.phone.replace(/[^0-9]/g, '')}` : WHATSAPP_URL}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-1.5 rounded-full border border-white/40 bg-white/10 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm transition-transform hover:scale-105"
