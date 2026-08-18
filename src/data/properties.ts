@@ -87,7 +87,7 @@ export const PROPERTIES: Property[] = [
   },
   {
     id: "rent-metropolis-lohegaon",
-    title: "Metropolis",
+    title: "Metropolis (2BHK)",
     location: "Porwal Road, Lohegaon, Pune",
     type: "2BHK Rental",
     price: "₹26,000 / month",
