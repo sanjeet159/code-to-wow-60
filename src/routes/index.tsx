@@ -825,13 +825,13 @@ function Index() {
               </Reveal>
             </div>
           </div>
-          <Reveal delay={160} className="mt-14 block">
+          <Reveal delay={160} className="mt-10 sm:mt-14 block">
             <TeamMarquee team={TEAM as TeamMember[]} />
           </Reveal>
         </section>
 
         {/* Insights */}
-        <section id="blog" className="border-t border-border py-24 lg:py-32">
+        <section id="blog" className="border-t border-border py-16 sm:py-24 lg:py-32">
           <div className="mx-auto max-w-[1600px] px-6 lg:px-10">
             <div className="flex flex-wrap items-end justify-between gap-6">
               <div>
