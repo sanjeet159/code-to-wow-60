@@ -920,10 +920,10 @@ function Index() {
             <Reveal delay={120} className="mx-auto mt-8 block max-w-4xl sm:mt-12">
               <form
                 onSubmit={handleSubmit}
-                className="rounded-3xl bg-background p-6 text-left shadow-2xl sm:rounded-[2rem] sm:p-10 lg:p-12"
+                className="rounded-3xl border border-border bg-[#F9F8F6] p-6 text-left shadow-2xl sm:rounded-[2.5rem] sm:p-14 lg:p-16"
               >
-                <div className="grid gap-6 sm:grid-cols-2">
-                  <div className="group">
+                <div className="grid gap-x-12 gap-y-10 sm:grid-cols-2">
+                  <div className="group relative">
                     <label htmlFor="firstName" className="sr-only">
                       First Name
                     </label>
@@ -935,10 +935,10 @@ function Index() {
                       value={form.firstName}
                       onChange={handleChange}
                       placeholder="First Name"
-                      className="w-full border-b border-border bg-transparent px-0 py-3 text-foreground placeholder:text-muted-foreground/60 focus:border-accent focus:outline-none"
+                      className="w-full border-b border-foreground/10 bg-transparent px-0 py-3 text-foreground placeholder:text-muted-foreground/60 transition-colors focus:border-accent focus:outline-none"
                     />
                   </div>
-                  <div className="group">
+                  <div className="group relative">
                     <label htmlFor="lastName" className="sr-only">
                       Last Name
                     </label>
@@ -950,10 +950,10 @@ function Index() {
                       value={form.lastName}
                       onChange={handleChange}
                       placeholder="Last Name"
-                      className="w-full border-b border-border bg-transparent px-0 py-3 text-foreground placeholder:text-muted-foreground/60 focus:border-accent focus:outline-none"
+                      className="w-full border-b border-foreground/10 bg-transparent px-0 py-3 text-foreground placeholder:text-muted-foreground/60 transition-colors focus:border-accent focus:outline-none"
                     />
                   </div>
-                  <div className="group">
+                  <div className="group relative sm:col-span-2">
                     <label htmlFor="phone" className="sr-only">
                       Phone
                     </label>
@@ -965,40 +965,42 @@ function Index() {
                       value={form.phone}
                       onChange={handleChange}
                       placeholder="Phone"
-                      className="w-full border-b border-border bg-transparent px-0 py-3 text-foreground placeholder:text-muted-foreground/60 focus:border-accent focus:outline-none"
+                      className="w-full border-b border-foreground/10 bg-transparent px-0 py-3 text-foreground placeholder:text-muted-foreground/60 transition-colors focus:border-accent focus:outline-none"
                     />
                   </div>
-                  <div className="group sm:col-span-2">
+                  <div className="group relative sm:col-span-2">
                     <label htmlFor="message" className="sr-only">
                       What can we help you with?
                     </label>
                     <textarea
                       id="message"
                       name="message"
-                      rows={3}
+                      rows={1}
                       value={form.message}
                       onChange={handleChange}
                       placeholder="What Can We Help You ?"
-                      className="w-full resize-none border-b border-border bg-transparent px-0 py-3 text-foreground placeholder:text-muted-foreground/60 focus:border-accent focus:outline-none"
+                      className="w-full resize-none border-b border-foreground/10 bg-transparent px-0 py-3 text-foreground placeholder:text-muted-foreground/60 transition-colors focus:border-accent focus:outline-none"
                     />
                   </div>
                 </div>
 
-                <div className="mt-10">
-                  <Magnetic strength={0.18} className="w-full">
-                    <button
-                      type="submit"
-                      className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-foreground px-8 py-4 text-sm font-medium text-background transition-all duration-300 hover:gap-4 hover:bg-foreground/90"
-                    >
+                <div className="mt-14">
+                  <button
+                    type="submit"
+                    className="group relative inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-[#1a1a1a] px-8 py-5 text-sm font-medium text-white transition-all duration-300 hover:bg-black"
+                  >
+                    <span className="relative z-10 flex items-center gap-2 transition-transform duration-300 group-hover:scale-105">
                       {sent ? "Request received — we'll call you back" : "Book a Call"}
-                      <ArrowIcon />
-                    </button>
-                  </Magnetic>
+                      <ArrowIcon className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                    </span>
+                  </button>
                 </div>
 
-                <div className="mt-6 flex flex-col items-center gap-3">
-                  <p className="text-xs text-muted-foreground">Prefer talking to someone?</p>
-                  <ContactButtons size="sm" />
+                <div className="mt-10 flex flex-col items-center gap-5 text-center">
+                  <p className="text-xs tracking-wide text-muted-foreground/80">Prefer talking to someone?</p>
+                  <div className="flex flex-wrap justify-center gap-3">
+                    <ContactButtons size="sm" tone="minimal" />
+                  </div>
                 </div>
               </form>
             </Reveal>
