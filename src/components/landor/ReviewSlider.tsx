@@ -80,7 +80,7 @@ export function ReviewSlider({ reviews }: ReviewSliderProps) {
 
   return (
     <div className="relative mx-auto w-full max-w-4xl px-4 sm:px-6">
-      <div className="relative h-[420px] w-full sm:h-[320px]">
+      <div className="relative h-[480px] w-full sm:h-[320px]">
         <AnimatePresence initial={false} custom={direction} mode="wait">
           <motion.div
             key={index}
@@ -118,13 +118,13 @@ export function ReviewSlider({ reviews }: ReviewSliderProps) {
                   </blockquote>
                 </div>
 
-                <div className="mt-auto pt-8 flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent font-display text-lg text-accent-foreground shadow-inner sm:h-14 sm:w-14">
+                <div className="mt-auto pt-6 flex items-center gap-3 sm:gap-4 overflow-hidden">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent font-display text-base text-accent-foreground shadow-inner sm:h-14 sm:w-14 sm:text-lg">
                     {currentReview.initial}
                   </div>
-                  <div className="flex flex-col text-left">
-                    <span className="font-semibold text-foreground sm:text-lg">{currentReview.name}</span>
-                    <span className="text-xs text-muted-foreground sm:text-sm">{currentReview.role}</span>
+                  <div className="flex flex-col text-left min-w-0">
+                    <span className="font-semibold text-foreground text-sm sm:text-lg truncate leading-tight">{currentReview.name}</span>
+                    <span className="text-[10px] text-muted-foreground sm:text-sm truncate">{currentReview.role}</span>
                   </div>
                 </div>
               </div>
