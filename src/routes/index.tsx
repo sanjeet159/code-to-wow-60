@@ -292,7 +292,7 @@ function AboutShowcase() {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <div className="relative mt-20 rounded-[2rem] border border-border bg-secondary/40 p-6 sm:p-10 lg:p-14">
+    <div className="relative mt-12 rounded-3xl border border-border bg-secondary/40 p-5 sm:mt-20 sm:rounded-[2rem] sm:p-10 lg:p-14">
       <div className="pointer-events-none absolute -top-px left-10 right-10 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
 
       <div className="grid gap-14 lg:grid-cols-[1.05fr_1fr] lg:items-center">
@@ -368,7 +368,7 @@ function AboutShowcase() {
             Making your move simple with{" "}
             <span className="text-accent">our advisors</span>
           </h3>
-          <p className="mt-5 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
+          <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-muted-foreground sm:mt-5 sm:max-w-lg sm:text-base md:line-clamp-none">
             Every client gets one advisor from first shortlist to handover — honest pricing advice,
             verified documents and site visits planned around your schedule.
           </p>
@@ -394,7 +394,7 @@ function AboutShowcase() {
             </div>
           </div>
 
-          <div className="mt-10 flex flex-wrap items-center justify-between gap-6 rounded-2xl border border-border bg-background px-6 py-5">
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-6 rounded-2xl border border-border bg-background px-6 py-5 sm:mt-10">
             <div>
               <p className="mb-4 text-[10px] uppercase tracking-[0.2em] text-muted-foreground sm:text-xs">
                 Open 10:00 am – 8:00 pm

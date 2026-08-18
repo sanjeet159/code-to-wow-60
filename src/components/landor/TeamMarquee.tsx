@@ -14,7 +14,7 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
   return (
     <div
       className={cn(
-        "group relative flex w-[260px] flex-shrink-0 snap-start flex-col sm:w-[300px] md:w-[340px]",
+        "group relative flex w-[220px] flex-shrink-0 snap-start flex-col sm:w-[300px] md:w-[340px]",
         "transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
       )}
     >
@@ -53,7 +53,7 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
 
       </div>
 
-      <div className="mt-5">
+      <div className="mt-3 sm:mt-5">
         <h3 className="text-lg font-medium transition-colors duration-300 group-hover:text-accent sm:text-xl">
           {member.name}
         </h3>

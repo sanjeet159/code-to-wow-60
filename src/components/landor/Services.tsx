@@ -109,7 +109,7 @@ export function Services() {
   return (
     <section
       id="services"
-      className="relative overflow-hidden bg-surface-dark py-24 text-surface-dark-foreground lg:py-32"
+      className="relative overflow-hidden bg-surface-dark py-16 text-surface-dark-foreground sm:py-24 lg:py-32"
     >
       {/* soft accent wash */}
       <div
@@ -183,7 +183,7 @@ export function Services() {
                   onMouseEnter={() => setHover(i)}
                   onFocus={() => setHover(i)}
                   aria-expanded={isActive}
-                  className="group relative z-10 flex w-full items-center justify-between gap-6 px-2 py-7 text-left outline-none focus-visible:ring-2 focus-visible:ring-accent sm:px-4 sm:py-8"
+                  className="group relative z-10 flex w-full items-center justify-between gap-6 px-2 py-5 text-left outline-none focus-visible:ring-2 focus-visible:ring-accent sm:px-4 sm:py-8"
                 >
                   <div className="flex min-w-0 items-center gap-6 sm:gap-12">
                     <span className="text-xs tabular-nums text-white/35">{s.no}</span>
