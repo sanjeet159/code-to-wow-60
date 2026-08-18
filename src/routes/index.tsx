@@ -132,11 +132,36 @@ const CHOOSE = [
 ];
 
 const TEAM = [
-  { name: "Prabhat", role: "Buying & rental guidance", img: Prabhat },
-  { name: "Pratik", role: "Shops, offices, showrooms", img: Pratik },
-  { name: "Ashutosh", role: "Owners & tenant matching", img: Ashutosh },
-  { name: "Sheetal", role: "Portfolios & high yield", img: sheetal },
-  { name: "Shree", role: "Portfolios & high yield", img: shree },
+  { 
+    name: "Prabhat", 
+    role: "Founder", 
+    img: Prabhat,
+    phone: "+918484947570" 
+  },
+  { 
+    name: "Pratik", 
+    role: "Business Development Manager", 
+    img: Pratik,
+    phone: "+918446387570"
+  },
+  { 
+    name: "Ashutosh", 
+    role: "Direct Sales Manager", 
+    img: Ashutosh,
+    phone: "+918793637570"
+  },
+  { 
+    name: "Shree", 
+    role: "Sales Head", 
+    img: shree,
+    phone: "+918530687586"
+  },
+  { 
+    name: "Sheetal", 
+    role: "Lead Generation Manager", 
+    img: sheetal,
+    phone: "+918446887075"
+  },
 ];
 
 const AUDIENCES = [
