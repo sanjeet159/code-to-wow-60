@@ -807,9 +807,6 @@ function Index() {
                   One small team across advisory, commercial and rentals
                 </h2>
               </Reveal>
-              <Reveal variant="right" delay={120} className="w-fit">
-                <ContactButtons size="md" tone="minimal" />
-              </Reveal>
             </div>
           </div>
           <Reveal delay={160} className="mt-10 sm:mt-14 block">
