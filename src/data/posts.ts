@@ -44,7 +44,7 @@ export const POSTS: Post[] = [
     excerpt:
       "Dhanori Road has gone from a link road to one of north-east Pune's busiest residential corridors. Here is how connectivity, schools, hospitals and price trends actually stack up before you buy.",
     author: "Home Craft desk",
-    avatar: team1,
+    avatar: "/favicon.png",
     sections: [
       {
         heading: "Where Dhanori Road sits, and why that matters",
@@ -123,7 +123,7 @@ export const POSTS: Post[] = [
     excerpt:
       "Two neighbouring pockets, two very different buying cases. A side-by-side look at pricing, connectivity and who each suburb actually suits.",
     author: "Home Craft desk",
-    avatar: team2,
+    avatar: "/favicon.png",
     sections: [
       {
         heading: "The short answer",
@@ -192,7 +192,7 @@ export const POSTS: Post[] = [
     excerpt:
       "Dhanori has quietly become the default answer for families priced out of Viman Nagar. Here is what makes it work — connectivity, schooling, price bands and the catches.",
     author: "Home Craft desk",
-    avatar: team3,
+    avatar: "/favicon.png",
     sections: [
       {
         heading: "Why families keep landing on Dhanori",
@@ -267,7 +267,7 @@ export const POSTS: Post[] = [
     excerpt:
       "Wedged between Dhanori, Vishrantwadi and Viman Nagar, Tingre Nagar gives you most of the location without most of the price. Here is the case for and against it.",
     author: "Home Craft desk",
-    avatar: team1,
+    avatar: "/favicon.png",
     sections: [
       {
         heading: "The affordability argument",
@@ -336,7 +336,7 @@ export const POSTS: Post[] = [
     excerpt:
       "Airport on one side, the Nagar Road IT spine on the other. Why Viman Nagar keeps its premium — and when the smarter move is to live just outside it.",
     author: "Home Craft desk",
-    avatar: team3,
+    avatar: "/favicon.png",
     sections: [
       {
         heading: "Why professionals pay the premium",
@@ -400,7 +400,7 @@ export const POSTS: Post[] = [
     excerpt:
       "Three neighbouring localities, three different rental cases. A straight comparison of rent levels, commute times, amenities and who each one is right for.",
     author: "Home Craft desk",
-    avatar: team2,
+    avatar: "/favicon.png",
     sections: [
       {
         heading: "The one-line verdict",

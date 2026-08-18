@@ -119,8 +119,8 @@ export function ReviewSlider({ reviews }: ReviewSliderProps) {
                 </div>
 
                 <div className="mt-auto pt-6 flex items-center gap-3 sm:gap-4 overflow-hidden">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent font-display text-base text-accent-foreground shadow-inner sm:h-14 sm:w-14 sm:text-lg">
-                    {currentReview.initial}
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/5 p-2 font-display text-base text-accent-foreground shadow-inner sm:h-14 sm:w-14 sm:text-lg">
+                    <img src="/favicon.png" alt="Home Craft" className="h-full w-full object-contain grayscale opacity-80" />
                   </div>
                   <div className="flex flex-col text-left min-w-0 flex-1">
                     <span className="font-semibold text-foreground text-sm sm:text-lg leading-tight block">{currentReview.name}</span>

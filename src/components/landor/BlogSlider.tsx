@@ -131,11 +131,13 @@ export function BlogSlider({ posts }: BlogSliderProps) {
                   
                   <div className="mt-4 flex items-center justify-between border-t border-border pt-4">
                     <div className="flex items-center gap-2">
-                      <img
-                        src={currentPost.avatar}
-                        alt=""
-                        className="h-7 w-7 rounded-full object-cover"
-                      />
+                      <div className="flex h-7 w-7 items-center justify-center rounded-full bg-accent/5 p-1 shadow-inner">
+                        <img
+                          src="/favicon.png"
+                          alt="Home Craft"
+                          className="h-full w-full object-contain grayscale opacity-70"
+                        />
+                      </div>
                       <span className="text-xs font-medium">{currentPost.author}</span>
                     </div>
                     <span className="inline-flex items-center gap-2 text-xs font-medium text-accent">
