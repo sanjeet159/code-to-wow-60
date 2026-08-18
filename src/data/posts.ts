@@ -267,7 +267,7 @@ export const POSTS: Post[] = [
     excerpt:
       "Wedged between Dhanori, Vishrantwadi and Viman Nagar, Tingre Nagar gives you most of the location without most of the price. Here is the case for and against it.",
     author: "Home Craft desk",
-    avatar: team1,
+    avatar: "/favicon.png",
     sections: [
       {
         heading: "The affordability argument",
