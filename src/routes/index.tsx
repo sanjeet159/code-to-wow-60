@@ -414,7 +414,7 @@ function AboutShowcase() {
 
 function Index() {
   const [propertyFilter, setPropertyFilter] = useState<'buy' | 'rent'>('buy');
-  const [form, setForm] = useState({ firstName: "", lastName: "", phone: "", message: "" });
+  const [form, setForm] = useState({ firstName: "", lastName: "", phone: "", service: "buy", location: "", message: "" });
   const [sent, setSent] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -423,7 +423,11 @@ function Index() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const message = `Hi Home Craft, I'm reaching out from the website.\nName: ${form.firstName} ${form.lastName}\nPhone: ${form.phone}\nRequirement: ${form.message}`;
+    const message = `Hi Home Craft, I'm interested in ${form.service}ing property.
+Name: ${form.firstName} ${form.lastName}
+Phone: ${form.phone}
+Location: ${form.location}
+Message: ${form.message}`;
     window.open(`https://wa.me/918484947570?text=${encodeURIComponent(message)}`, "_blank");
     setSent(true);
     setTimeout(() => setSent(false), 4000);
@@ -968,17 +972,49 @@ function Index() {
                       className="w-full border-b border-border bg-transparent px-0 py-3 text-foreground placeholder:text-muted-foreground/60 focus:border-accent focus:outline-none"
                     />
                   </div>
+                  <div className="group">
+                    <label htmlFor="service" className="sr-only">
+                      Select Service
+                    </label>
+                    <select
+                      id="service"
+                      name="service"
+                      required
+                      value={form.service}
+                      onChange={(e) => setForm(f => ({ ...f, service: e.target.value }))}
+                      className="w-full border-b border-border bg-transparent px-0 py-3 text-foreground focus:border-accent focus:outline-none appearance-none"
+                    >
+                      <option value="buy" className="bg-background text-foreground">Buy</option>
+                      <option value="sell" className="bg-background text-foreground">Sell</option>
+                      <option value="rent" className="bg-background text-foreground">Rent</option>
+                    </select>
+                  </div>
+                  <div className="group">
+                    <label htmlFor="location" className="sr-only">
+                      Location
+                    </label>
+                    <input
+                      id="location"
+                      name="location"
+                      type="text"
+                      required
+                      value={form.location}
+                      onChange={handleChange}
+                      placeholder="Preferred Location"
+                      className="w-full border-b border-border bg-transparent px-0 py-3 text-foreground placeholder:text-muted-foreground/60 focus:border-accent focus:outline-none"
+                    />
+                  </div>
                   <div className="group sm:col-span-2">
                     <label htmlFor="message" className="sr-only">
-                      What can we help you with?
+                      Message (Optional)
                     </label>
                     <textarea
                       id="message"
                       name="message"
-                      rows={3}
+                      rows={1}
                       value={form.message}
                       onChange={handleChange}
-                      placeholder="What Can We Help You ?"
+                      placeholder="Any additional details?"
                       className="w-full resize-none border-b border-border bg-transparent px-0 py-3 text-foreground placeholder:text-muted-foreground/60 focus:border-accent focus:outline-none"
                     />
                   </div>
