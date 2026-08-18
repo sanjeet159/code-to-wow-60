@@ -2,6 +2,7 @@ import project1 from "@/assets/project-1-atlantis.jpg";
 import project2 from "@/assets/BRROKLYN.png";
 import project3 from "@/assets/notting.jpg";
 import project4 from "@/assets/shubh.jpg";
+import metropolisRent from "@/assets/metropolis-rent.jpg.asset.json";
 
 export type Property = {
   id: string;
@@ -120,6 +121,19 @@ export const PROPERTIES: Property[] = [
     amenities: ["Reserved Parking", "Lift", "CCTV", "Intercom", "Borewell Water"],
     area: "980 sq ft",
     status: "Immediate",
+    category: 'rent'
+  },
+  {
+    id: "rent-metropolis-lohegaon",
+    title: "Metropolis",
+    location: "Porwal Road, Lohegaon, Pune",
+    type: "2BHK Rental",
+    price: "₹26,000 / month",
+    image: metropolisRent.url,
+    description: "Beautiful 2BHK apartment in Metropolis, located on Porwal Road, Lohegaon. This property offers a perfect blend of comfort and convenience with a spacious carpet area of 780 Sqft.",
+    amenities: ["24/7 Security", "Reserved Parking", "Elevator", "Power Backup", "Water Supply"],
+    area: "780 sq ft (Carpet)",
+    status: "Available",
     category: 'rent'
   }
 ];
