@@ -116,49 +116,74 @@ export function Header() {
       {mounted &&
         createPortal(
           <div
-            className={`fixed inset-0 z-[200] overflow-y-auto bg-[#FDFCFB] transition-opacity duration-300 ease-out xl:hidden ${
-              open ? "opacity-100" : "pointer-events-none invisible opacity-0"
+            className={`fixed inset-0 z-[200] xl:hidden ${
+              open ? "pointer-events-auto" : "pointer-events-none"
             }`}
+            aria-hidden={!open}
           >
-            <div className="flex min-h-full flex-col px-8 pt-28 pb-10">
-              <button
-                type="button"
-                aria-label="Close menu"
-                onClick={() => setOpen(false)}
-                className="absolute right-6 top-7 flex h-11 w-11 items-center justify-center bg-black/5 text-black transition-colors hover:bg-black/10"
-              >
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-                  <path d="M1 1L17 17M17 1L1 17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                </svg>
-              </button>
+            <div
+              onClick={() => setOpen(false)}
+              className={`absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300 ${
+                open ? "opacity-100" : "opacity-0"
+              }`}
+            />
+            <div
+              className={`absolute bottom-0 left-0 right-0 max-h-[82vh] min-h-[420px] overflow-y-auto rounded-t-[2rem] bg-[#FDFCFB] px-7 pb-8 pt-4 shadow-2xl transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                open ? "translate-y-0" : "translate-y-full"
+              }`}
+            >
+              <div className="mx-auto mb-6 h-1 w-10 rounded-full bg-black/10" />
 
-              <nav className="flex flex-col gap-6">
-                {NAV.map((item) => (
+              <div className="mb-6 flex items-center justify-between">
+                <p className="text-xs font-semibold tracking-[0.2em] text-black/40 uppercase">Menu</p>
+                <button
+                  type="button"
+                  aria-label="Close menu"
+                  onClick={() => setOpen(false)}
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-black/5 text-black transition-colors hover:bg-black/10"
+                >
+                  <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                    <path d="M1 1L17 17M17 1L1 17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                  </svg>
+                </button>
+              </div>
+
+              <nav className="flex flex-col gap-1">
+                {NAV.map((item, i) => (
                   <a
                     key={item}
                     href={`/#${item.toLowerCase()}`}
                     onClick={() => setOpen(false)}
-                    className={`text-4xl font-light tracking-tight text-black transition-all duration-500 ${
+                    className={`group flex items-center justify-between rounded-xl px-3 py-3.5 text-2xl font-medium tracking-tight text-black transition-all duration-300 hover:bg-accent/5 ${
                       open ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
                     }`}
+                    style={{ transitionDelay: open ? `${60 + i * 30}ms` : "0ms" }}
                   >
                     {item}
+                    <ArrowIcon className="h-4 w-4 -rotate-45 text-black/20 transition-all duration-300 group-hover:h-5 group-hover:w-5 group-hover:text-accent" />
                   </a>
                 ))}
                 <Link
                   to="/blog"
                   onClick={() => setOpen(false)}
-                  className={`text-4xl font-light tracking-tight text-black transition-all duration-500 ${
+                  className={`group flex items-center justify-between rounded-xl px-3 py-3.5 text-2xl font-medium tracking-tight text-black transition-all duration-300 hover:bg-accent/5 ${
                     open ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
                   }`}
+                  style={{ transitionDelay: open ? `${60 + NAV.length * 30}ms` : "0ms" }}
                 >
                   Blog
+                  <ArrowIcon className="h-4 w-4 -rotate-45 text-black/20 transition-all duration-300 group-hover:h-5 group-hover:w-5 group-hover:text-accent" />
                 </Link>
               </nav>
 
-              <div className={`mt-auto pt-16 transition-all duration-700 delay-200 ${open ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}>
-                <p className="mb-6 text-sm font-medium tracking-widest text-black/40 uppercase">Get in touch</p>
-                <ContactButtons tone="accent" size="lg" className="flex-row flex-wrap" onNavigate={() => setOpen(false)} />
+              <div
+                className={`mt-8 border-t border-black/5 pt-6 transition-all duration-700 ${
+                  open ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+                }`}
+                style={{ transitionDelay: open ? "260ms" : "0ms" }}
+              >
+                <p className="mb-4 text-xs font-semibold tracking-[0.2em] text-black/40 uppercase">Get in touch</p>
+                <ContactButtons tone="accent" size="md" className="flex-row flex-wrap" onNavigate={() => setOpen(false)} />
               </div>
             </div>
           </div>,
