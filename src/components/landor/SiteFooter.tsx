@@ -32,12 +32,7 @@ export function SiteFooter() {
 
         <div className="grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.5fr_1.5fr_1fr_1fr]">
           <div>
-            <div className="flex items-center justify-between">
-              <p className="eyebrow-light">Office</p>
-              <p className="text-[10px] font-medium uppercase tracking-widest text-white/20">
-                RERA NO. A52100022492
-              </p>
-            </div>
+            <p className="eyebrow-light">Office</p>
             <p className="mt-4 text-white/60">
               C1C 504, Brooklyn, Pride World City, near Manhattan, Charholi Budruk, Pune,
               Maharashtra 412105
