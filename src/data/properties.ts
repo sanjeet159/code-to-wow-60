@@ -5,6 +5,8 @@ import project4 from "@/assets/shubh.jpg";
 import metropolisRent from "@/assets/metropolis-rent.jpg.asset.json";
 import nyatiEra from "@/assets/nyati-era.jpg.asset.json";
 import manhattanPride from "@/assets/manhattan-pride.jpg.asset.json";
+import goodwillBreeza from "@/assets/goodwill-breeza.jpg.asset.json";
+
 
 export type Property = {
   id: string;
@@ -109,6 +111,19 @@ export const PROPERTIES: Property[] = [
     description: "Premium 2BHK rental in Manhattan, Pride World City. This modern apartment features a 725 sqft carpet area and offers access to the full suite of Pride World City amenities.",
     amenities: ["Gated Community", "Clubhouse", "Swimming Pool", "Gym", "24/7 Security", "Jogging Track"],
     area: "725 sq ft (Carpet)",
+    status: "Available",
+    category: 'rent'
+  },
+  {
+    id: "rent-goodwill-breeza-dhanori",
+    title: "Goodwill Breeza (2BHK)",
+    location: "Dhanori, Pune",
+    type: "2BHK Rental",
+    price: "₹27,000 / month",
+    image: goodwillBreeza.url,
+    description: "Modern 2BHK rental in Goodwill Breeza, Dhanori. This well-maintained apartment features a 750 sqft carpet area and excellent community amenities.",
+    amenities: ["Security", "Clubhouse", "Gym", "Power Backup", "Water Supply", "Parking"],
+    area: "750 sq ft (Carpet)",
     status: "Available",
     category: 'rent'
   }
