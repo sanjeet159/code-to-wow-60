@@ -192,7 +192,7 @@ export const POSTS: Post[] = [
     excerpt:
       "Dhanori has quietly become the default answer for families priced out of Viman Nagar. Here is what makes it work — connectivity, schooling, price bands and the catches.",
     author: "Home Craft desk",
-    avatar: team3,
+    avatar: "/favicon.png",
     sections: [
       {
         heading: "Why families keep landing on Dhanori",
