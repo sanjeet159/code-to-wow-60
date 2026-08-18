@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, PanInfo } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { Stars } from "./Motion";
 
@@ -43,6 +43,7 @@ export function ReviewSlider({ reviews }: ReviewSliderProps) {
   };
 
   const paginate = useCallback((newDirection: number) => {
+    if (reviews.length === 0) return;
     setDirection(newDirection);
     setIndex((prevIndex) => {
       let nextIndex = prevIndex + newDirection;
@@ -54,6 +55,7 @@ export function ReviewSlider({ reviews }: ReviewSliderProps) {
 
   // Auto-slide functionality
   useEffect(() => {
+    if (reviews.length <= 1) return;
     timerRef.current = setInterval(() => {
       paginate(1);
     }, 6000);
@@ -61,7 +63,7 @@ export function ReviewSlider({ reviews }: ReviewSliderProps) {
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [paginate]);
+  }, [paginate, reviews.length]);
 
   const resetTimer = () => {
     if (timerRef.current) {
@@ -74,9 +76,11 @@ export function ReviewSlider({ reviews }: ReviewSliderProps) {
 
   const currentReview = reviews[index];
 
+  if (!currentReview) return null;
+
   return (
     <div className="relative mx-auto w-full max-w-4xl px-4 sm:px-6">
-      <div className="relative h-[380px] w-full sm:h-[320px]">
+      <div className="relative h-[420px] w-full sm:h-[320px]">
         <AnimatePresence initial={false} custom={direction} mode="wait">
           <motion.div
             key={index}
@@ -94,7 +98,7 @@ export function ReviewSlider({ reviews }: ReviewSliderProps) {
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
             dragElastic={1}
-            onDragEnd={(e, { offset, velocity }) => {
+            onDragEnd={(_e: any, { offset }: PanInfo) => {
               const swipe = Math.abs(offset.x) > 50;
               if (swipe) {
                 paginate(offset.x > 0 ? -1 : 1);
@@ -103,7 +107,7 @@ export function ReviewSlider({ reviews }: ReviewSliderProps) {
             }}
             className="absolute inset-0 flex items-center justify-center cursor-grab active:cursor-grabbing"
           >
-            <div className="relative w-full rounded-2xl border border-border bg-card p-8 shadow-sm sm:p-10 md:p-12">
+            <div className="relative w-full h-full sm:h-auto rounded-2xl border border-border bg-card p-8 shadow-sm sm:p-10 md:p-12">
               <Quote className="absolute right-8 top-8 h-12 w-12 text-accent/10 sm:h-16 sm:w-16" />
               
               <div className="relative z-10 flex flex-col h-full">
@@ -118,7 +122,7 @@ export function ReviewSlider({ reviews }: ReviewSliderProps) {
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent font-display text-lg text-accent-foreground shadow-inner sm:h-14 sm:w-14">
                     {currentReview.initial}
                   </div>
-                  <div className="flex flex-col">
+                  <div className="flex flex-col text-left">
                     <span className="font-semibold text-foreground sm:text-lg">{currentReview.name}</span>
                     <span className="text-xs text-muted-foreground sm:text-sm">{currentReview.role}</span>
                   </div>
