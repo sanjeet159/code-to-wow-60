@@ -619,7 +619,7 @@ function Index() {
         </section>
 
         {/* Portfolio */}
-        <section id="projects" className="mx-auto max-w-[1600px] px-6 py-24 lg:px-10 lg:py-32">
+        <section id="projects" className="mx-auto max-w-[1600px] px-6 py-16 sm:py-24 lg:px-10 lg:py-32">
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div>
               <Reveal as="span" className="eyebrow block">
@@ -651,7 +651,7 @@ function Index() {
             </Reveal>
           </div>
           
-          <div className="mt-12">
+          <div className="mt-8 sm:mt-12">
             {propertyFilter === 'buy' ? (
               <div className="grid gap-10 md:grid-cols-2">
                 {PROJECTS.filter(p => p.category === 'buy').map((p, i) => (
@@ -735,7 +735,7 @@ function Index() {
         </section>
 
         {/* Reviews */}
-        <section id="reviews" className="relative border-y border-border bg-secondary py-24 lg:py-32">
+        <section id="reviews" className="relative border-y border-border bg-secondary py-16 sm:py-24 lg:py-32">
           <CursorGlow />
           <div className="relative mx-auto max-w-[1600px] px-6 lg:px-10">
             <Reveal as="span" className="eyebrow block">
@@ -757,7 +757,7 @@ function Index() {
               </Reveal>
             </div>
 
-            <div className="mt-14 grid gap-6 lg:grid-cols-3">
+            <div className="mt-10 grid gap-6 sm:mt-14 lg:grid-cols-3">
               {REVIEWS.map((t, i) => (
                 <Reveal key={t.quote} variant="scale" delay={i * 140}>
                   <TiltCard className="flex h-full flex-col justify-between rounded-sm bg-card p-8 lg:p-10">
@@ -783,7 +783,7 @@ function Index() {
         </section>
 
         {/* Why choose */}
-        <section className="relative bg-surface-dark py-24 text-surface-dark-foreground lg:py-32">
+        <section className="relative bg-surface-dark py-16 text-surface-dark-foreground sm:py-24 lg:py-32">
           <CursorGlow />
           <div className="relative mx-auto max-w-[1600px] px-6 lg:px-10">
             <Reveal as="span" className="eyebrow-light block">
@@ -794,7 +794,7 @@ function Index() {
                 Straight answers, verified paperwork, no pressure
               </h2>
             </Reveal>
-            <div className="mt-14 grid gap-px bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-10 grid gap-px bg-white/10 sm:mt-14 sm:grid-cols-2 lg:grid-cols-4">
               {CHOOSE.map((c, i) => (
                 <Reveal
                   key={c.t}
@@ -812,7 +812,7 @@ function Index() {
         </section>
 
         {/* Team */}
-        <section id="team" className="py-24 lg:py-32">
+        <section id="team" className="py-16 sm:py-24 lg:py-32">
           <div className="mx-auto max-w-[1600px] px-6 lg:px-10">
             <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
               <Reveal variant="left">
