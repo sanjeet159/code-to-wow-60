@@ -289,33 +289,59 @@ const MISSION_SHOTS = [
 ];
 
 function AboutShowcase() {
+  const [activeTab, setActiveTab] = useState(0);
+
   return (
     <div className="relative mt-20 rounded-[2rem] border border-border bg-secondary/40 p-6 sm:p-10 lg:p-14">
       <div className="pointer-events-none absolute -top-px left-10 right-10 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
 
       <div className="grid gap-14 lg:grid-cols-[1.05fr_1fr] lg:items-center">
-        {/* Two vertically stacked rounded images */}
+        {/* Mobile: Interactive Image/Stat Switcher | Desktop: Vertical Stack */}
         <div className="relative flex flex-col gap-5">
-          {MISSION_SHOTS.map((shot, i) => (
-            <div
-              key={shot.caption}
-              className="group relative overflow-hidden rounded-2xl bg-background shadow-sm"
-            >
-              <div className={`relative w-full overflow-hidden ${i === 0 ? "aspect-[4/3]" : "aspect-[16/10]"}`}>
-                <img
-                  src={shot.img}
-                  alt={shot.alt}
-                  loading="lazy"
-                  decoding="async"
-                  className="h-full w-full object-cover transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
-                />
-                <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/60 via-foreground/10 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-60" />
-                <span className="pointer-events-none absolute inset-x-5 bottom-5 text-left text-[0.7rem] uppercase tracking-[0.18em] text-background">
-                  {shot.caption}
-                </span>
+          <div className="block sm:hidden">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-background shadow-sm">
+              <img
+                src={MISSION_SHOTS[activeTab].img}
+                alt={MISSION_SHOTS[activeTab].alt}
+                className="h-full w-full object-cover transition-all duration-700"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-foreground/60 p-4">
+                <p className="text-[10px] uppercase tracking-widest text-white">{MISSION_SHOTS[activeTab].caption}</p>
               </div>
             </div>
-          ))}
+            <div className="mt-4 flex justify-center gap-2">
+              {MISSION_SHOTS.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActiveTab(i)}
+                  className={`h-1.5 rounded-full transition-all ${activeTab === i ? "w-6 bg-accent" : "w-2 bg-border"}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="hidden sm:flex sm:flex-col sm:gap-5">
+            {MISSION_SHOTS.map((shot, i) => (
+              <div
+                key={shot.caption}
+                className="group relative overflow-hidden rounded-2xl bg-background shadow-sm"
+              >
+                <div className={`relative w-full overflow-hidden ${i === 0 ? "aspect-[4/3]" : "aspect-[16/10]"}`}>
+                  <img
+                    src={shot.img}
+                    alt={shot.alt}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
+                  />
+                  <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/60 via-foreground/10 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-60" />
+                  <span className="pointer-events-none absolute inset-x-5 bottom-5 text-left text-[0.7rem] uppercase tracking-[0.18em] text-background">
+                    {shot.caption}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
 
           {/* Floating stat card */}
           <div className="absolute -bottom-4 left-4 flex items-center gap-4 rounded-2xl border border-border bg-background/95 px-5 py-4 shadow-xl backdrop-blur sm:left-8">
@@ -326,34 +352,34 @@ function AboutShowcase() {
               </div>
             </div>
             <span className="h-9 w-px bg-border" />
-            <p className="text-xs leading-relaxed text-muted-foreground">
+            <p className="text-[10px] leading-relaxed text-muted-foreground sm:text-xs">
               12 Google reviews
-              <br />
-              from Pune families
+              <br className="hidden sm:block" />
+              {" "}from Pune families
             </p>
           </div>
         </div>
 
         <Reveal variant="right" delay={120} className="flex flex-col lg:pl-4">
-          <span className="text-xs uppercase tracking-[0.28em] text-muted-foreground">
+          <span className="text-[10px] uppercase tracking-[0.28em] text-muted-foreground sm:text-xs">
             Why families choose us
           </span>
-          <h3 className="display-lg mt-4">
+          <h3 className="mt-4 font-display text-3xl leading-tight sm:text-4xl lg:text-5xl">
             Making your move simple with{" "}
             <span className="text-accent">our advisors</span>
           </h3>
-          <p className="mt-5 max-w-lg text-muted-foreground">
+          <p className="mt-5 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
             Every client gets one advisor from first shortlist to handover — honest pricing advice,
             verified documents and site visits planned around your schedule.
           </p>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <div className="mt-8 grid gap-4 xs:grid-cols-2">
             <div className="group rounded-2xl border border-border bg-background p-5 transition-all duration-500 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg">
               <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent transition-all duration-500 group-hover:bg-accent group-hover:text-accent-foreground">
                 <UserRoundCheck className="h-6 w-6" strokeWidth={1.6} />
               </span>
               <h4 className="mt-4 text-base font-medium">Experienced agents</h4>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-2 text-xs leading-relaxed text-muted-foreground sm:text-sm">
                 Discover the best properties to match your budget.
               </p>
             </div>
@@ -362,7 +388,7 @@ function AboutShowcase() {
                 <ShieldCheck className="h-6 w-6" strokeWidth={1.6} />
               </span>
               <h4 className="mt-4 text-base font-medium">Clear legality</h4>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-2 text-xs leading-relaxed text-muted-foreground sm:text-sm">
                 Verified paperwork and transparent terms on every deal.
               </p>
             </div>
@@ -370,7 +396,7 @@ function AboutShowcase() {
 
           <div className="mt-10 flex flex-wrap items-center justify-between gap-6 rounded-2xl border border-border bg-background px-6 py-5">
             <div>
-              <p className="mb-4 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+              <p className="mb-4 text-[10px] uppercase tracking-[0.2em] text-muted-foreground sm:text-xs">
                 Open 10:00 am – 8:00 pm
               </p>
               <ContactButtons size="sm" showOffice={true} />
