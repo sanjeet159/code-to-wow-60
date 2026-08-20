@@ -7,7 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode, Suspense, lazy } from "react";
+import React, { useEffect, type ReactNode, Suspense, lazy } from "react";
 const LeadPopup = lazy(() => import("@/components/landor/LeadPopup").then(m => ({ default: m.LeadPopup })));
 
 import appCss from "../styles.css?url";
@@ -115,17 +115,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
+    <React.Fragment>
+      {children}
+    </React.Fragment>
   );
 }
+
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
