@@ -9,8 +9,7 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     TanStackRouterVite(),
     TanStackStartViteServerFn({
-      env: "server",
-      directiveWrapper: ""
+      env: mode === "production" ? "client" : "server",
     }),
     react(),
     tsconfigPaths(),
