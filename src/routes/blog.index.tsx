@@ -8,7 +8,7 @@ import { POSTS } from "@/data/posts";
 const TITLE = "Pune Area Guides & Property Insights | Home Craft";
 const DESCRIPTION =
   "Local area guides for Lohegaon, Porwal Road, Charholi Budruk, Dhanori, Tingre Nagar and Viman Nagar — prices, connectivity, schools and rental demand in East Pune.";
-const URL = "https://code-to-wow-60.lovable.app/blog";
+const URL = "/blog";
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({
@@ -35,7 +35,7 @@ export const Route = createFileRoute("/blog/")({
             "@type": "ListItem",
             position: i + 1,
             name: p.title,
-            url: `https://code-to-wow-60.lovable.app/blog/${p.slug}`,
+            url: `/blog/${p.slug}`,
           })),
         }),
       },

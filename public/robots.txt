@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://code-to-wow-60.lovable.app/sitemap.xml
+Sitemap: /sitemap.xml

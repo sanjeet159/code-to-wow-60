@@ -19,7 +19,7 @@ export const Route = createFileRoute("/blog/$slug")({
     const { post } = loaderData;
     const title = post.metaTitle;
     const description = post.metaDescription;
-    const url = `https://code-to-wow-60.lovable.app/blog/${params.slug}`;
+    const url = `/blog/${params.slug}`;
     return {
       meta: [
         { title },
@@ -53,8 +53,8 @@ export const Route = createFileRoute("/blog/$slug")({
               {
                 "@type": "BreadcrumbList",
                 itemListElement: [
-                  { "@type": "ListItem", position: 1, name: "Home", item: "https://code-to-wow-60.lovable.app/" },
-                  { "@type": "ListItem", position: 2, name: "Insights", item: "https://code-to-wow-60.lovable.app/blog" },
+                  { "@type": "ListItem", position: 1, name: "Home", item: "/" },
+                  { "@type": "ListItem", position: 2, name: "Insights", item: "/blog" },
                   { "@type": "ListItem", position: 3, name: post.title, item: url },
                 ],
               },
