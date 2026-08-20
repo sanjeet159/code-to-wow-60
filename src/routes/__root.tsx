@@ -11,7 +11,7 @@ import { useEffect, type ReactNode, Suspense, lazy } from "react";
 const LeadPopup = lazy(() => import("@/components/landor/LeadPopup").then(m => ({ default: m.LeadPopup })));
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
+
 
 function NotFoundComponent() {
   return (
@@ -39,7 +39,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+    // Error tracking could be added here
   }, [error]);
 
   return (
@@ -91,8 +91,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:title", content: "HomeCraft — Real Estate Development & Property Solutions" },
       { property: "og:description", content: "Landor creates landmark real estate projects: development, investment, construction management and architecture with enduring value." },
       { name: "twitter:description", content: "Landor creates landmark real estate projects: development, investment, construction management and architecture with enduring value." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b5dc336a20bfc8b0fa2ea968b355f3a1/id-preview-c2a3e44c--2b7412f0-b305-4b64-83b1-9e710252bb7b.lovable.app-1786123801739.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b5dc336a20bfc8b0fa2ea968b355f3a1/id-preview-c2a3e44c--2b7412f0-b305-4b64-83b1-9e710252bb7b.lovable.app-1786123801739.png" },
+      { property: "og:image", content: "https://homecraft.com/og-image.png" },
+      { name: "twitter:image", content: "https://homecraft.com/og-image.png" },
     ],
     links: [
       {
