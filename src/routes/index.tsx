@@ -423,11 +423,7 @@ function Index() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const message = `Hi Home Craft, I'm interested in ${form.service}ing property.
-Name: ${form.firstName} ${form.lastName}
-Phone: ${form.phone}
-Location: ${form.location}
-Message: ${form.message}`;
+    const message = `Hi Home Craft, I'm interested in ${form.service}ing property.\nName: ${form.firstName} ${form.lastName}\nPhone: ${form.phone}\nLocation: ${form.location}\nMessage: ${form.message}`;
     window.open(`https://wa.me/918484947570?text=${encodeURIComponent(message)}`, "_blank");
     setSent(true);
     setTimeout(() => setSent(false), 4000);

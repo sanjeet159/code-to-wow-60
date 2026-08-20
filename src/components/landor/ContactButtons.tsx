@@ -1,11 +1,9 @@
 import { Phone, Instagram } from "lucide-react";
-
 import { cn } from "@/lib/utils";
 
 export const PHONE = "+918484947570";
 export const PHONE_DISPLAY = "084849 47570";
-export const WHATSAPP_URL =
-  "https://wa.me/918484947570?text=Hi%20Home%20Craft%2C%20I%27d%20like%20help%20with%20a%20property%20in%20Pune.";
+export const WHATSAPP_URL = "https://wa.me/918484947570?text=Hi%20Home%20Craft%2C%20I%27d%20like%20help%20with%20a%20property%20in%20Pune.";
 
 export function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -47,6 +45,7 @@ export function ContactButtons({
   onNavigate,
   showOffice = false,
   showInstagram = false,
+  propertyName,
 }: {
   tone?: Tone;
   size?: "sm" | "md" | "lg";
@@ -54,11 +53,20 @@ export function ContactButtons({
   onNavigate?: () => void;
   showOffice?: boolean;
   showInstagram?: boolean;
+  propertyName?: string;
 }) {
   const pad =
     size === "sm" ? "px-5 py-2.5 text-sm" : size === "lg" ? "px-7 py-4 text-sm" : "px-6 py-3 text-sm";
   const base =
     "inline-flex items-center gap-2 rounded-full transition-all duration-300 hover:gap-3";
+
+  const whatsappMessage = propertyName 
+    ? `Hi Home Craft, I'm interested in the property: ${propertyName}. Please share more details.`
+    : "Hi Home Craft, I'm interested in buying property.";
+    
+  const finalWhatsappUrl = propertyName 
+    ? `https://wa.me/918484947570?text=${encodeURIComponent(whatsappMessage)}`
+    : WHATSAPP_URL;
 
   return (
     <div className={cn("flex flex-col gap-3 touch-manipulation", className)}>
@@ -68,7 +76,7 @@ export function ContactButtons({
           Call now
         </a>
         <a
-          href={WHATSAPP_URL}
+          href={finalWhatsappUrl}
           target="_blank"
           rel="noreferrer"
           onClick={onNavigate}

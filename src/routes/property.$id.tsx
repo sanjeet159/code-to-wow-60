@@ -132,7 +132,7 @@ function PropertyPage() {
                 </p>
                 
                 <div className="mt-10 space-y-4">
-                  <ContactButtons size="lg" className="w-full" />
+                  <ContactButtons size="lg" className="w-full" propertyName={property.title} />
                 </div>
 
                 <div className="mt-10 space-y-4 border-t border-border pt-8">
