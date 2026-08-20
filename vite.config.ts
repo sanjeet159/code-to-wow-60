@@ -1,16 +1,18 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { tanstackRouter } from "@tanstack/router-plugin";
-import { tanstackStartVitePlugin } from "@tanstack/react-start/vite";
+import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
+import { TanStackStartViteServerFn } from "@tanstack/start-vite-plugin";
 import tsconfigPaths from "vite-tsconfig-paths";
 import tailwindcss from "@tailwindcss/vite";
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [
-    tanstackRouter(),
-    tanstackStartVitePlugin(),
+    TanStackRouterVite(),
+    TanStackStartViteServerFn({
+      env: mode === "production" ? "client" : "server",
+    }),
     react(),
     tsconfigPaths(),
     tailwindcss(),
   ],
-});
+}));
