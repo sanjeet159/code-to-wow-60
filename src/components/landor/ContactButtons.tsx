@@ -64,7 +64,9 @@ export function ContactButtons({
     ? `Hi Home Craft, I'm interested in the property: ${propertyName}. Please share more details.`
     : "Hi Home Craft, I'm interested in buying property.";
     
-  const whatsappUrl = `https://wa.me/918484947570?text=${encodeURIComponent(whatsappMessage)}`;
+  const finalWhatsappUrl = propertyName 
+    ? `https://wa.me/918484947570?text=${encodeURIComponent(whatsappMessage)}`
+    : WHATSAPP_URL;
 
   return (
     <div className={cn("flex flex-col gap-3 touch-manipulation", className)}>
@@ -74,7 +76,7 @@ export function ContactButtons({
           Call now
         </a>
         <a
-          href={whatsappUrl}
+          href={finalWhatsappUrl}
           target="_blank"
           rel="noreferrer"
           onClick={onNavigate}
