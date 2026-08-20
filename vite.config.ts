@@ -10,7 +10,6 @@ export default defineConfig(({ mode }) => ({
     TanStackRouterVite(),
     TanStackStartViteServerFn({
       env: mode === "production" ? "client" : "server",
-      exclude: [/node_modules/],
     }),
     react(),
     tsconfigPaths(),
