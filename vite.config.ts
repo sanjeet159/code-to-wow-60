@@ -8,9 +8,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig(({ mode }) => ({
   plugins: [
     TanStackRouterVite(),
-    TanStackStartViteServerFn({
-      env: mode === "production" ? "client" : "server",
-    }),
+    TanStackStartViteServerFn(),
     react(),
     tsconfigPaths(),
     tailwindcss(),
