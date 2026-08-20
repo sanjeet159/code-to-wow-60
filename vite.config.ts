@@ -1,11 +1,18 @@
-// Vite configuration for TanStack Start project.
-// Nitro/Vite builds for Cloudflare target by default.
-import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
+import { TanStackStartViteServerFn } from "@tanstack/start-vite-plugin";
+import tsconfigPaths from "vite-tsconfig-paths";
+import tailwindcss from "@tailwindcss/vite";
 
-export default defineConfig({
-  tanstackStart: {
-    // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-    // nitro/vite builds from this
-    server: { entry: "server" },
-  },
-});
+export default defineConfig(({ mode }) => ({
+  plugins: [
+    TanStackRouterVite(),
+    TanStackStartViteServerFn({
+      env: mode === "production" ? "client" : "server",
+    }),
+    react(),
+    tsconfigPaths(),
+    tailwindcss(),
+  ],
+}));
