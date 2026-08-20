@@ -78,21 +78,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "HomeCraft — Real Estate Development & Property Solutions" },
+      { title: "Home Craft — Real Estate Consultant in Pune" },
       {
         name: "description",
         content:
-          "Landor creates landmark real estate projects: development, investment, construction management and architecture with enduring value.",
+          "Home Craft is a leading real estate consultant in Pune. Expert services for buying, selling, renting flats, plots, and commercial properties. Call 084849 47570.",
       },
-      { name: "author", content: "Landor" },
+      { name: "author", content: "Home Craft" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:title", content: "HomeCraft — Real Estate Development & Property Solutions" },
-      { name: "twitter:title", content: "HomeCraft — Real Estate Development & Property Solutions" },
-      { property: "og:description", content: "Landor creates landmark real estate projects: development, investment, construction management and architecture with enduring value." },
-      { name: "twitter:description", content: "Landor creates landmark real estate projects: development, investment, construction management and architecture with enduring value." },
-      { property: "og:image", content: "https://homecraft.com/og-image.png" },
-      { name: "twitter:image", content: "https://homecraft.com/og-image.png" },
+      { property: "og:title", content: "Home Craft — Real Estate Consultant in Pune" },
+      { name: "twitter:title", content: "Home Craft — Real Estate Consultant in Pune" },
+      { property: "og:description", content: "Home Craft is a leading real estate consultant in Pune. Expert services for buying, selling, renting flats, plots, and commercial properties. Call 084849 47570." },
+      { name: "twitter:description", content: "Home Craft is a leading real estate consultant in Pune. Expert services for buying, selling, renting flats, plots, and commercial properties. Call 084849 47570." },
     ],
     links: [
       {
