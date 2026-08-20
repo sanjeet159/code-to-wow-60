@@ -45,7 +45,8 @@ export function HeroSearch() {
           const phone = formData.get("phone");
           const type = formData.get("propertyType");
           const message = `Hi Home Craft, I'd like to ${tab.toLowerCase()} a property.\nName: ${name}\nPhone: ${phone}\nProperty Type: ${type}`;
-          window.location.hash = "contact";
+          const url = `https://wa.me/918484947570?text=${encodeURIComponent(message)}`;
+          window.open(url, "_blank");
         }}
         className="relative z-10 grid gap-5 rounded-b-xl rounded-tr-xl bg-background p-5 shadow-2xl sm:p-8 lg:grid-cols-[1fr_1fr_1fr_auto] lg:items-end"
 
