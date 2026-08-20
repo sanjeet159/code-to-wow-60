@@ -37,7 +37,7 @@ import Ashutosh from "@/assets/Ashutosh.jpeg";
 
 const TITLE = "Home Craft — Real Estate Consultant in Pune";
 const DESCRIPTION =
-  "Home Craft is a Pune real estate consultant rated 4.3★ for buying agent services, commercial property sales & consulting, rentals and plots. Call 084849 47570.";
+  "Home Craft is a leading real estate consultant in Pune. Expert services for buying, selling, renting flats, plots, and commercial properties. Call 084849 47570.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
