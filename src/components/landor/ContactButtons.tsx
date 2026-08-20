@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 
 export const PHONE = "+918484947570";
 export const PHONE_DISPLAY = "084849 47570";
+export const WHATSAPP_URL = "https://wa.me/918484947570?text=Hi%20Home%20Craft%2C%20I%27d%20like%20help%20with%20a%20property%20in%20Pune.";
 
 export function WhatsAppIcon({ className }: { className?: string }) {
   return (
