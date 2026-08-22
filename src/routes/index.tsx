@@ -358,7 +358,7 @@ function AboutShowcase() {
               '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
                                         
                                             
-                                            why blog page is showing 404 error on this https://www.homecraft.co.in/blog link
+                                            Fix the /blog route so it loads the blog listing page instead of returning a 404 error.
             </p>
           </div>
         </div>
