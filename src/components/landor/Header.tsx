@@ -78,7 +78,7 @@ export function Header() {
               key={item}
               href={`/#${item.toLowerCase()}`}
               className={`link-sweep text-sm transition-colors ${
-                scrolled ? "text-black hover:text-black/70" : "text-white hover:text-white/80"
+                scrolled ? "text-black hover:text-black/70" : "text-black xl:text-white hover:text-white/80"
               }`}
             >
               {item}
@@ -87,7 +87,7 @@ export function Header() {
           <Link
             to="/blog"
             className={`link-sweep text-sm transition-colors ${
-              scrolled ? "text-black hover:text-black/70" : "text-white hover:text-white/80"
+              scrolled ? "text-black hover:text-black/70" : "text-black xl:text-white hover:text-white/80"
             }`}
             activeProps={{ className: "text-accent" }}
           >
