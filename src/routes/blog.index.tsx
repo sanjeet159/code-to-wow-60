@@ -52,8 +52,8 @@ function BlogIndex() {
     <div className="min-h-screen bg-[#FDFCFB] text-foreground">
       <Header />
 
-      <main className="pt-32">
-        <section className="mx-auto max-w-[1600px] px-6 pb-16 lg:px-10">
+      <main className="pt-20">
+        <section className="mx-auto max-w-[1600px] px-6 py-16 lg:px-10">
           <Reveal as="span" className="eyebrow block text-accent">
             Home Craft insights
           </Reveal>
