@@ -1,0 +1,36 @@
+/* Standard SPA redirect for Netlify/Cloudflare Pages */
+/* See https://docs.netlify.com/routing/redirects/rewrites-proxies/ */
+
+/* Rewrite all paths to index.html so the client-side router can handle them */
+/* The 200 status code indicates a rewrite, not a redirect */
+/* This prevents 404 errors on page refreshes or direct link visits */
+
+/* Static assets and API calls (if any) are typically handled before this rule by the platform */
+
+/* If you need specific redirects, add them above the catch-all rule */
+
+/* The catch-all rule: */
+/* Match all paths -> /index.html -> 200 rewrite */
+
+/* For Netlify/Cloudflare Pages */
+/* /index.html 200 is implicit for most SPA templates, but being explicit helps */
+
+/* We use the _redirects file format */
+
+/* 
+/blog/* /index.html 200
+/property/* /index.html 200
+/* /index.html 200
+*/
+
+/* Netlify/CF Pages format: */
+/* /  /index.html  200 */
+
+/* But standard catch-all for SPAs: */
+/* /*  /index.html  200 */
+
+/* Let's write the file */
+/* Note: Most Lovable deployments are on platforms that support _redirects */
+
+/* Content of _redirects: */
+/* /*  /index.html  200 */
