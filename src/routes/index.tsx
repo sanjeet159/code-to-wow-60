@@ -355,10 +355,10 @@ function AboutShowcase() {
             </div>
             <span className="h-9 w-px bg-border" />
             <p className="text-[10px] leading-relaxed text-muted-foreground sm:text-xs">
-              '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
+                                            '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
                                         
                                             
-                                            Fix the /blog route so it loads the blog listing page instead of returning a 404 error.
+                                            its loading but on refresh its showing 404 page
             </p>
           </div>
         </div>
