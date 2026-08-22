@@ -355,10 +355,10 @@ function AboutShowcase() {
             </div>
             <span className="h-9 w-px bg-border" />
             <p className="text-[10px] leading-relaxed text-muted-foreground sm:text-xs">
-                                            '''They are very professional, looks after every minute details of the sale process . Also Prabhat Mishra is very keen on keeping all the things transparent . I would recommend anyone to go with Home Craft Property while dealing in sale, Rent or buying any property. '''
+                                            ''They are very professional, looks after every minute details of the sale process . Also Prabhat Mishra is very keen on keeping all the things transparent . I would recommend anyone to go with Home Craft Property while dealing in sale, Rent or buying any property. 
                                         
                                             
-                                            Best Property Consultant in Dhanori
+                                            Best Property Consultant in Dhanori''
             </p>
           </div>
         </div>
