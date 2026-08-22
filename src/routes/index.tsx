@@ -358,7 +358,7 @@ function AboutShowcase() {
               '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
                                         
                                             
-                                            fix this issue why blogs is not loading
+                                            why blog page is showing 404 error on this https://www.homecraft.co.in/blog link
             </p>
           </div>
         </div>
