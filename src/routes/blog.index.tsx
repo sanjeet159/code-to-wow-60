@@ -49,7 +49,7 @@ function BlogIndex() {
   const [lead, ...rest] = POSTS;
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-[#FDFCFB] text-foreground">
       <Header />
 
       <main className="pt-32">

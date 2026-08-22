@@ -78,7 +78,7 @@ export function Header() {
               key={item}
               href={`/#${item.toLowerCase()}`}
               className={`link-sweep text-sm transition-colors ${
-                scrolled ? "text-black hover:text-black/70" : "text-white hover:text-white/80"
+                scrolled ? "text-black hover:text-black/70" : "text-black xl:text-white hover:text-white/80"
               }`}
             >
               {item}
@@ -87,7 +87,7 @@ export function Header() {
           <Link
             to="/blog"
             className={`link-sweep text-sm transition-colors ${
-              scrolled ? "text-black hover:text-black/70" : "text-white hover:text-white/80"
+              scrolled ? "text-black hover:text-black/70" : "text-black xl:text-white hover:text-white/80"
             }`}
             activeProps={{ className: "text-accent" }}
           >
@@ -108,9 +108,9 @@ export function Header() {
                   : "border-white/30"
             }`}
           >
-            <span className={`h-[1.5px] w-5 transition-all duration-300 ${open ? "bg-black translate-y-[7.5px] rotate-45" : scrolled ? "bg-black" : "bg-white"}`} />
-            <span className={`h-[1.5px] w-5 transition-all duration-300 ${open ? "opacity-0" : scrolled ? "bg-black" : "bg-white"}`} />
-            <span className={`h-[1.5px] w-5 transition-all duration-300 ${open ? "bg-black -translate-y-[7.5px] -rotate-45" : scrolled ? "bg-black" : "bg-white"}`} />
+            <span className={`h-[1.5px] w-5 transition-all duration-300 ${open ? "bg-black translate-y-[7.5px] rotate-45" : scrolled ? "bg-black" : "bg-black xl:bg-white"}`} />
+            <span className={`h-[1.5px] w-5 transition-all duration-300 ${open ? "opacity-0" : scrolled ? "bg-black" : "bg-black xl:bg-white"}`} />
+            <span className={`h-[1.5px] w-5 transition-all duration-300 ${open ? "bg-black -translate-y-[7.5px] -rotate-45" : scrolled ? "bg-black" : "bg-black xl:bg-white"}`} />
           </button>
 
         </div>
