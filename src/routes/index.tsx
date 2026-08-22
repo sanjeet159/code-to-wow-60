@@ -358,9 +358,7 @@ function AboutShowcase() {
               '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
                                         
                                             
-                                            Add Google Analytics to the project with proper measurement IDs and consent handling.
-
-Verify that Google Search Console tags are present and correctly wired in the site header and sitemap.
+                                            also update title and description for every page make best seo
             </p>
           </div>
         </div>
