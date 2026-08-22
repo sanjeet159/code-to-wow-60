@@ -355,7 +355,7 @@ function AboutShowcase() {
             </div>
             <span className="h-9 w-px bg-border" />
             <p className="text-[10px] leading-relaxed text-muted-foreground sm:text-xs">
-                                            '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
+                                            '''They are very professional, looks after every minute details of the sale process . Also Prabhat Mishra is very keen on keeping all the things transparent . I would recommend anyone to go with Home Craft Property while dealing in sale, Rent or buying any property. Best Property Consultant in Dhanori'''
                                         
                                             
                                             make header like this on blog page too
