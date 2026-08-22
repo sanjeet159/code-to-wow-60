@@ -358,7 +358,9 @@ function AboutShowcase() {
               '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
                                         
                                             
-                                            have you updatesd the google search console and analytics in files
+                                            Add Google Analytics to the project with proper measurement IDs and consent handling.
+
+Verify that Google Search Console tags are present and correctly wired in the site header and sitemap.
             </p>
           </div>
         </div>
