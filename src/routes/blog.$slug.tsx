@@ -19,7 +19,7 @@ export const Route = createFileRoute("/blog/$slug")({
     const { post } = loaderData;
     const title = post.metaTitle;
     const description = post.metaDescription;
-    const url = `/blog/${params.slug}`;
+    const url = `https://www.homecraft.co.in/blog/${params.slug}`;
     return {
       meta: [
         { title },

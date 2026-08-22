@@ -5,10 +5,10 @@ import { Reveal } from "@/components/landor/Reveal";
 import { SiteFooter } from "@/components/landor/SiteFooter";
 import { POSTS } from "@/data/posts";
 
-const TITLE = "Real Estate Insights & Pune Area Guides | Home Craft";
+const TITLE = "Pune Real Estate Insights & Area Guides 2026 | Home Craft";
 const DESCRIPTION =
-  "Expert real estate insights for Pune: Comprehensive guides for Lohegaon, Porwal Road, Dhanori, and Viman Nagar. Stay updated with market trends and area connectivity.";
-const URL = "/blog";
+  "Expert Pune real estate guides and property market insights for 2026. Detailed connectivity, pricing, and infrastructure reviews for Lohegaon, Porwal Road, Dhanori, Tingre Nagar, and Viman Nagar.";
+const URL = "https://www.homecraft.co.in/blog";
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({
