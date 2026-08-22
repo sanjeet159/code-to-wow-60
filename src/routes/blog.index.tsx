@@ -5,9 +5,9 @@ import { Reveal } from "@/components/landor/Reveal";
 import { SiteFooter } from "@/components/landor/SiteFooter";
 import { POSTS } from "@/data/posts";
 
-const TITLE = "Pune Area Guides & Property Insights | Home Craft";
+const TITLE = "Real Estate Insights & Pune Area Guides | Home Craft";
 const DESCRIPTION =
-  "Local area guides for Lohegaon, Porwal Road, Charholi Budruk, Dhanori, Tingre Nagar and Viman Nagar — prices, connectivity, schools and rental demand in East Pune.";
+  "Expert real estate insights for Pune: Comprehensive guides for Lohegaon, Porwal Road, Dhanori, and Viman Nagar. Stay updated with market trends and area connectivity.";
 const URL = "/blog";
 
 export const Route = createFileRoute("/blog/")({
