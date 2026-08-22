@@ -358,7 +358,7 @@ function AboutShowcase() {
                                             '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
                                         
                                             
-                                            update title and description here too also fix flaticon here too
+                                            make this blog visible on google in seo and aeo both
             </p>
           </div>
         </div>

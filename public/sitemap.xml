@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>/</loc><priority>1.0</priority></url>
-  <url><loc>/blog</loc><priority>0.8</priority></url>
-  <url><loc>/blog/porwal-road-lohegaon-property-guide</loc><priority>0.7</priority></url>
-  <url><loc>/blog/charholi-budruk-vs-lohegaon</loc><priority>0.7</priority></url>
-  <url><loc>/blog/dhanori-real-estate-guide-2026</loc><priority>0.7</priority></url>
-  <url><loc>/blog/tingre-nagar-flats-guide</loc><priority>0.7</priority></url>
-  <url><loc>/blog/viman-nagar-property-guide-professionals</loc><priority>0.7</priority></url>
-  <url><loc>/blog/dhanori-vs-tingre-nagar-vs-viman-nagar-rental</loc><priority>0.7</priority></url>
+  <url><loc>https://www.homecraft.co.in/</loc><priority>1.0</priority></url>
+  <url><loc>https://www.homecraft.co.in/blog</loc><priority>0.8</priority></url>
+  <url><loc>https://www.homecraft.co.in/blog/Dhanori-road-lohegaon-property-guide</loc><priority>0.7</priority></url>
+  <url><loc>https://www.homecraft.co.in/blog/charholi-budruk-vs-lohegaon</loc><priority>0.7</priority></url>
+  <url><loc>https://www.homecraft.co.in/blog/dhanori-real-estate-guide-2026</loc><priority>0.7</priority></url>
+  <url><loc>https://www.homecraft.co.in/blog/tingre-nagar-flats-guide</loc><priority>0.7</priority></url>
+  <url><loc>https://www.homecraft.co.in/blog/viman-nagar-property-guide-professionals</loc><priority>0.7</priority></url>
+  <url><loc>https://www.homecraft.co.in/blog/dhanori-vs-tingre-nagar-vs-viman-nagar-rental</loc><priority>0.7</priority></url>
 </urlset>

@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://homecraft.com/sitemap.xml
+Sitemap: https://www.homecraft.co.in/sitemap.xml
