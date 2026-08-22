@@ -60,15 +60,28 @@ export function SiteFooter() {
             </a>
           </div>
           <div>
-            <p className="eyebrow-light">Services</p>
+            <p className="eyebrow-light">Links</p>
             <ul className="mt-4 space-y-2 text-white/60">
-              {SERVICE_LINKS.map((l) => (
-                <li key={l}>
-                  <a href="/#services" className="link-sweep transition-colors hover:text-white">
-                    {l}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a href="/#services" className="link-sweep transition-colors hover:text-white">
+                  Services
+                </a>
+              </li>
+              <li>
+                <a href="/blog" className="link-sweep transition-colors hover:text-white">
+                  Blog & Area Guides
+                </a>
+              </li>
+              <li>
+                <a href="/#reviews" className="link-sweep transition-colors hover:text-white">
+                  Reviews
+                </a>
+              </li>
+              <li>
+                <a href="/#team" className="link-sweep transition-colors hover:text-white">
+                  Our Team
+                </a>
+              </li>
             </ul>
           </div>
         </div>
