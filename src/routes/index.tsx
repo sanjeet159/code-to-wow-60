@@ -358,7 +358,7 @@ function AboutShowcase() {
                                             '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
                                         
                                             
-                                            also in blog page the above head is not visible and readable fix that
+                                            make this in balck before scroll also
             </p>
           </div>
         </div>
