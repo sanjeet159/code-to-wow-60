@@ -358,7 +358,7 @@ function AboutShowcase() {
                                             '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
                                         
                                             
-                                            its loading but on refresh its shoiwng 404 page
+                                            its loading but on refresh its showing 404 page
             </p>
           </div>
         </div>
