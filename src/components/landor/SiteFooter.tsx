@@ -63,13 +63,18 @@ export function SiteFooter() {
             <p className="eyebrow-light">Links</p>
             <ul className="mt-4 space-y-2 text-white/60">
               <li>
-                <a href="/#services" className="link-sweep transition-colors hover:text-white">
-                  Services
+                <a href="/" className="link-sweep transition-colors hover:text-white">
+                  Home
                 </a>
               </li>
               <li>
                 <a href="/blog" className="link-sweep transition-colors hover:text-white">
                   Blog & Area Guides
+                </a>
+              </li>
+              <li>
+                <a href="/#services" className="link-sweep transition-colors hover:text-white">
+                  Services
                 </a>
               </li>
               <li>
