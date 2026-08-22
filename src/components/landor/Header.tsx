@@ -108,9 +108,9 @@ export function Header() {
                   : "border-white/30"
             }`}
           >
-            <span className={`h-[1.5px] w-5 transition-all duration-300 ${open ? "bg-black translate-y-[7.5px] rotate-45" : scrolled ? "bg-black" : "bg-white"}`} />
-            <span className={`h-[1.5px] w-5 transition-all duration-300 ${open ? "opacity-0" : scrolled ? "bg-black" : "bg-white"}`} />
-            <span className={`h-[1.5px] w-5 transition-all duration-300 ${open ? "bg-black -translate-y-[7.5px] -rotate-45" : scrolled ? "bg-black" : "bg-white"}`} />
+            <span className={`h-[1.5px] w-5 transition-all duration-300 ${open ? "bg-black translate-y-[7.5px] rotate-45" : scrolled ? "bg-black" : "bg-black xl:bg-white"}`} />
+            <span className={`h-[1.5px] w-5 transition-all duration-300 ${open ? "opacity-0" : scrolled ? "bg-black" : "bg-black xl:bg-white"}`} />
+            <span className={`h-[1.5px] w-5 transition-all duration-300 ${open ? "bg-black -translate-y-[7.5px] -rotate-45" : scrolled ? "bg-black" : "bg-black xl:bg-white"}`} />
           </button>
 
         </div>
