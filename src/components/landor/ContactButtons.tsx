@@ -87,7 +87,7 @@ export function ContactButtons({
         </a>
         {showInstagram && (
           <a
-            href="https://www.instagram.com/homecraft7075?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==&igsi=ZDNlZDc0MzIxNw=="
+            href="https://www.instagram.com/homecraft.pune/"
             target="_blank"
             rel="noreferrer"
             onClick={onNavigate}
