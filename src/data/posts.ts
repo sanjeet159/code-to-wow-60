@@ -1,4 +1,5 @@
 import dhanori from "@/assets/dhanori.png";
+import flatSocietyView from "@/assets/flat-society-view.jpg";
 import blog2 from "@/assets/blog-2.jpg";
 import blog3 from "@/assets/blog-3.jpg";
 import project1 from "@/assets/project-1.jpg";
