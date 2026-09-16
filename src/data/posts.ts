@@ -1,4 +1,5 @@
 import dhanori from "@/assets/dhanori.png";
+import flatSocietyView from "@/assets/flat-society-view.jpg";
 import blog2 from "@/assets/blog-2.jpg";
 import blog3 from "@/assets/blog-3.jpg";
 import project1 from "@/assets/project-1.jpg";
@@ -30,6 +31,88 @@ export type Post = {
 };
 
 export const POSTS: Post[] = [
+  {
+    slug: "flats-in-pune-price-guide",
+    img: flatSocietyView,
+    cat: "Price guide",
+    date: "East Pune",
+    readTime: "10 min read",
+    title: "Flats in Pune: what ₹40L to ₹1.5Cr actually buys you in 2026",
+    keyword: "flats in pune, pune flat price, buy flat in pune, flat rates in pune, flats for sale in pune, 2BHK flat Pune price",
+    metaTitle: "Flats in Pune 2026 — Real Prices by Area & Budget",
+    metaDescription:
+      "Honest flat prices across Pune's east corridor — Charholi Budruk, Lohegaon, Dhanori, Tingre Nagar and Viman Nagar. Real rates, real sizes, no inflated listings.",
+    excerpt:
+      "Real price bands for flats in Pune's eastern corridor, what each budget actually gets you in carpet area, and the five checks to run before you pay a token.",
+    author: "Home Craft desk",
+    avatar: "/favicon.png",
+    sections: [
+      {
+        heading: "What flats in Pune actually cost right now",
+        body: [
+          "If you have been scrolling listing portals looking for flats in Pune, you have seen the problem already. The same flat appears at three different prices, photos look nothing like the site, and the moment you enquire four brokers call you about properties you never asked about. This guide is the opposite of that.",
+          "Pune is not one market. A 2BHK in Viman Nagar and a 2BHK in Charholi Budruk can differ by ₹40 lakh for roughly the same carpet area. Location does most of the pricing work here, followed by possession status and builder reputation.",
+          "The bands below are working ranges from deals we handle across the east Pune corridor, not asking prices from listing sites. Ready-to-move units sit at the higher end; under-construction and resale stock sit lower.",
+        ],
+        list: [
+          "Charholi Budruk — 1BHK ₹28L-₹40L · 2BHK ₹42L-₹65L · 3BHK ₹70L-₹1.1Cr",
+          "Lohegaon — 1BHK ₹32L-₹45L · 2BHK ₹48L-₹72L · 3BHK ₹80L-₹1.2Cr",
+          "Dhanori — 1BHK ₹35L-₹48L · 2BHK ₹52L-₹78L · 3BHK ₹85L-₹1.3Cr",
+          "Tingre Nagar — 1BHK ₹38L-₹52L · 2BHK ₹58L-₹85L · 3BHK ₹95L-₹1.4Cr",
+          "Viman Nagar — 1BHK ₹50L-₹70L · 2BHK ₹80L-₹1.3Cr · 3BHK ₹1.4Cr-₹2.5Cr",
+        ],
+      },
+      {
+        heading: "What each budget realistically gets you",
+        body: [
+          "Under ₹50 lakh: 1BHK units almost anywhere in the corridor, or a compact 2BHK in Charholi Budruk and parts of Lohegaon, with 400 to 650 sq ft carpet. Good for first-time buyers, young couples and rental-yield investors; the trade-off is distance from the airport and IT hubs.",
+          "₹50 lakh to ₹80 lakh: where most Pune families land. A comfortable 2BHK of 650 to 900 sq ft carpet in a gated society with security, parking and a basic clubhouse. Charholi Budruk and Lohegaon give the most space for the money; Dhanori and Tingre Nagar give better connectivity for slightly less space.",
+          "₹80 lakh to ₹1.3 crore: 3BHK territory, or a premium 2BHK in a better-located project, 900 to 1,400 sq ft carpet with proper clubhouses, landscaped gardens and better build quality. This is also where Viman Nagar becomes viable for 2BHK buyers who prioritise location over size.",
+          "Above ₹1.3 crore: premium and luxury inventory — larger 3BHKs, 4BHKs, sky lounges and smart-home projects, mostly in Viman Nagar and select premium townships across the corridor.",
+        ],
+      },
+      {
+        heading: "Which area suits which buyer",
+        body: [
+          "All five localities below are places we transact in every week, so the notes are based on what buyers actually report back after moving in, not on brochure copy.",
+        ],
+        list: [
+          "Charholi Budruk — best value per square foot; strong for investors and first-time buyers. Large townships dominate; connectivity is improving but still developing.",
+          "Lohegaon — the practical middle ground. Close to the airport, reasonable pricing, decent social infrastructure, heavy new development along Porwal Road.",
+          "Dhanori — family favourite, with better schools and hospitals nearby than Charholi. Prices have climbed steadily for several years.",
+          "Tingre Nagar — quieter and more established, slightly premium; suits buyers who want a built-out area rather than a developing one.",
+          "Viman Nagar — the premium play. Airport proximity, retail, restaurants and strong rental demand from working professionals, at a clear price premium.",
+        ],
+      },
+      {
+        heading: "Five things to check before you pay a token",
+        body: [
+          "Most of the disputes we are asked to untangle trace back to one of these five checks being skipped. None of them take long.",
+        ],
+        list: [
+          "Carpet area, not super built-up — ask for the RERA carpet area, that is the number that matters.",
+          "RERA registration — verify the number on the Maharashtra RERA site, not just the brochure.",
+          "Title and encumbrance — check the sale deed chain, the 7/12 extract where applicable, and any existing loan on the property.",
+          "Society NOC and dues — outstanding maintenance dues often transfer to you, so get a no-dues certificate before registration.",
+          "Possession timeline — ask for the RERA-committed date and check the builder's delivery record on past projects.",
+        ],
+      },
+      {
+        heading: "Buying a flat in Pune: the realistic timeline",
+        body: [
+          "Most purchases take six to ten weeks from first site visit to registration, assuming financing is in order: one to two weeks shortlisting and visiting, a week negotiating and paying token, two to three weeks on loan sanction and disbursal, and two to three weeks for agreement, stamp duty and registration.",
+          "Stamp duty in Pune currently runs around 6 to 7 percent of agreement value including metro cess, plus 1 percent registration charges. Budget for this separately — it is not included in the quoted flat price.",
+        ],
+      },
+      {
+        heading: "How we work",
+        body: [
+          "We do not send fifty listings and wait. We start with your budget, your commute and what the home needs to do for your family, then shortlist only what genuinely fits.",
+          "Every listing we show has been verified — title checked, builder record checked, site visited. If something has a problem we tell you before you visit, not after you have paid a token. We work across Charholi Budruk, Lohegaon, Dhanori, Tingre Nagar and Viman Nagar, and handle the process through to registration.",
+        ],
+      },
+    ],
+  },
   {
     slug: "Dhanori-road-lohegaon-property-guide",
     img: dhanori,
