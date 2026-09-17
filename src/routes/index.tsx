@@ -70,8 +70,8 @@ export const Route = createFileRoute("/")({
           },
           aggregateRating: {
             "@type": "AggregateRating",
-            ratingValue: "4.3",
-            reviewCount: "12",
+            ratingValue: "4.9",
+            reviewCount: "24",
           },
         }),
       },
@@ -92,34 +92,34 @@ const PROJECTS = PROPERTIES.map((property) => ({
 const REVIEWS = [
   {
     quote:
-      "A complete solution of your property related concern. Very prompt and professional people with great understanding of clients need and property related knowledge.",
-    name: "Anand Singh",
-    role: "Local Guide · 13 reviews · 6 months ago",
-    initial: "A",
-  },
-  {
-    quote:
-      "They are very professional, looks after every minute details of the sale process. Also Prabhat Mishra is very keen on keeping all the things transparent. I would recommend anyone to go with Home Craft Property while dealing in sale, rent or buying any property. Best Property Consultant in Dhanori.",
-    name: "Sandeep Bodke",
-    role: "Local Guide · 3 reviews · a year ago",
-    initial: "S",
-  },
-  {
-    quote:
-      "I am pleased to write this review for Home Craft team. I met with this agent named Prabhat, who assisted me in finding the perfect property. From the very beginning, he demonstrated exceptional professionalism.",
-    name: "Priyanka Dubey",
-    role: "Google review · 2 years ago",
+      "Ashutosh was very helpful and understood our requirements well. Good service and professional approach.",
+    name: "Priya Mishra",
+    role: "Google review · 3 days ago",
     initial: "P",
+  },
+  {
+    quote:
+      "They are good professionals with clear expectations settings and swift in response.",
+    name: "Binesh S",
+    role: "Local Guide · 15 reviews · 3 days ago",
+    initial: "B",
+  },
+  {
+    quote:
+      "Services in all the area of Home Craft Real Estate are excellent. It fulfils the full customer satisfaction. Customers are delighted with their services. I hope they flourish by leaps and bounds in years ahead. All the best Home Craft Real Estate management.",
+    name: "Sanjay Srivastava",
+    role: "Google review · 3 days ago",
+    initial: "S",
   },
 ];
 
 
 const RATING_SPLIT = [
-  { stars: 5, pct: 75 },
+  { stars: 5, pct: 92 },
   { stars: 4, pct: 8 },
-  { stars: 3, pct: 4 },
-  { stars: 2, pct: 4 },
-  { stars: 1, pct: 17 },
+  { stars: 3, pct: 0 },
+  { stars: 2, pct: 0 },
+  { stars: 1, pct: 0 },
 ];
 
 const CHOOSE = [
@@ -348,9 +348,9 @@ function AboutShowcase() {
           {/* Floating stat card */}
           <div className="absolute -bottom-4 left-4 flex items-center gap-4 rounded-2xl border border-border bg-background/95 px-5 py-4 shadow-xl backdrop-blur sm:left-8">
             <div>
-              <p className="font-display text-2xl leading-none">4.3</p>
+              <p className="font-display text-2xl leading-none">4.9</p>
               <div className="mt-1">
-                <Stars value={4.3} />
+                <Stars value={4.9} />
               </div>
             </div>
             <span className="h-9 w-px bg-border" />
@@ -474,7 +474,7 @@ function Index() {
                   style={{ animationDelay: "260ms" }}
                 >
                   Buy, sell, rent or invest across Pune with a team that actually
-                  listens — 4.3★ from 12 Google reviews.
+                  listens — 4.9★ from 24 Google reviews.
                 </p>
               </div>
             </div>
@@ -502,8 +502,8 @@ function Index() {
             <Reveal delay={140} className="mt-14 block">
               <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-4">
                 {[
-                  { label: "Google rating", value: <span className="text-accent">4.3</span> },
-                  { label: "Reviews", value: <CountUp to={12} /> },
+                  { label: "Google rating", value: <span className="text-accent">4.9</span> },
+                  { label: "Reviews", value: <CountUp to={24} /> },
                   { label: "Services", value: <CountUp to={5} suffix="+" /> },
                   { label: "Corridors", value: <CountUp to={5} suffix="+" /> },
                 ].map((s, i) => (
@@ -748,13 +748,13 @@ function Index() {
             <div className="mt-5 grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:items-end">
               <Reveal>
                 <h2 className="display-lg max-w-xl">
-                  Rated <span className="text-accent">4.3</span> by the people we've worked with
+                  Rated <span className="text-accent">4.9</span> by the people we've worked with
                 </h2>
               </Reveal>
               <Reveal delay={120} className="flex items-center gap-8">
                 <div className="text-center">
-                  <p className="font-display text-6xl">4.3</p>
-                  <Stars value={4.3} className="mt-1" />
+                  <p className="font-display text-6xl">4.9</p>
+                  <Stars value={4.9} className="mt-1" />
                   <p className="mt-1 text-xs text-muted-foreground">(12)</p>
                 </div>
                 <RatingBars data={RATING_SPLIT} className="w-full max-w-sm" />
