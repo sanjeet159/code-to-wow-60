@@ -92,34 +92,34 @@ const PROJECTS = PROPERTIES.map((property) => ({
 const REVIEWS = [
   {
     quote:
-      "A complete solution of your property related concern. Very prompt and professional people with great understanding of clients need and property related knowledge.",
-    name: "Anand Singh",
-    role: "Local Guide · 13 reviews · 6 months ago",
-    initial: "A",
-  },
-  {
-    quote:
-      "They are very professional, looks after every minute details of the sale process. Also Prabhat Mishra is very keen on keeping all the things transparent. I would recommend anyone to go with Home Craft Property while dealing in sale, rent or buying any property. Best Property Consultant in Dhanori.",
-    name: "Sandeep Bodke",
-    role: "Local Guide · 3 reviews · a year ago",
-    initial: "S",
-  },
-  {
-    quote:
-      "I am pleased to write this review for Home Craft team. I met with this agent named Prabhat, who assisted me in finding the perfect property. From the very beginning, he demonstrated exceptional professionalism.",
-    name: "Priyanka Dubey",
-    role: "Google review · 2 years ago",
+      "Ashutosh was very helpful and understood our requirements well. Good service and professional approach.",
+    name: "Priya Mishra",
+    role: "Google review · 3 days ago",
     initial: "P",
+  },
+  {
+    quote:
+      "They are good professionals with clear expectations settings and swift in response.",
+    name: "Binesh S",
+    role: "Local Guide · 15 reviews · 3 days ago",
+    initial: "B",
+  },
+  {
+    quote:
+      "Services in all the area of Home Craft Real Estate are excellent. It fulfils the full customer satisfaction. Customers are delighted with their services. I hope they flourish by leaps and bounds in years ahead. All the best Home Craft Real Estate management.",
+    name: "Sanjay Srivastava",
+    role: "Google review · 3 days ago",
+    initial: "S",
   },
 ];
 
 
 const RATING_SPLIT = [
-  { stars: 5, pct: 75 },
+  { stars: 5, pct: 92 },
   { stars: 4, pct: 8 },
-  { stars: 3, pct: 4 },
-  { stars: 2, pct: 4 },
-  { stars: 1, pct: 17 },
+  { stars: 3, pct: 0 },
+  { stars: 2, pct: 0 },
+  { stars: 1, pct: 0 },
 ];
 
 const CHOOSE = [
