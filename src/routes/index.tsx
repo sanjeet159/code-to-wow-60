@@ -755,7 +755,7 @@ function Index() {
                 <div className="text-center">
                   <p className="font-display text-6xl">4.9</p>
                   <Stars value={4.9} className="mt-1" />
-                  <p className="mt-1 text-xs text-muted-foreground">(12)</p>
+                  <p className="mt-1 text-xs text-muted-foreground">(24)</p>
                 </div>
                 <RatingBars data={RATING_SPLIT} className="w-full max-w-sm" />
               </Reveal>
