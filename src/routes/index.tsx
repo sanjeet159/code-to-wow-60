@@ -70,8 +70,8 @@ export const Route = createFileRoute("/")({
           },
           aggregateRating: {
             "@type": "AggregateRating",
-            ratingValue: "4.3",
-            reviewCount: "12",
+            ratingValue: "4.9",
+            reviewCount: "24",
           },
         }),
       },
@@ -348,9 +348,9 @@ function AboutShowcase() {
           {/* Floating stat card */}
           <div className="absolute -bottom-4 left-4 flex items-center gap-4 rounded-2xl border border-border bg-background/95 px-5 py-4 shadow-xl backdrop-blur sm:left-8">
             <div>
-              <p className="font-display text-2xl leading-none">4.3</p>
+              <p className="font-display text-2xl leading-none">4.9</p>
               <div className="mt-1">
-                <Stars value={4.3} />
+                <Stars value={4.9} />
               </div>
             </div>
             <span className="h-9 w-px bg-border" />
@@ -474,7 +474,7 @@ function Index() {
                   style={{ animationDelay: "260ms" }}
                 >
                   Buy, sell, rent or invest across Pune with a team that actually
-                  listens — 4.3★ from 12 Google reviews.
+                  listens — 4.9★ from 24 Google reviews.
                 </p>
               </div>
             </div>
@@ -502,8 +502,8 @@ function Index() {
             <Reveal delay={140} className="mt-14 block">
               <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-4">
                 {[
-                  { label: "Google rating", value: <span className="text-accent">4.3</span> },
-                  { label: "Reviews", value: <CountUp to={12} /> },
+                  { label: "Google rating", value: <span className="text-accent">4.9</span> },
+                  { label: "Reviews", value: <CountUp to={24} /> },
                   { label: "Services", value: <CountUp to={5} suffix="+" /> },
                   { label: "Corridors", value: <CountUp to={5} suffix="+" /> },
                 ].map((s, i) => (
@@ -748,13 +748,13 @@ function Index() {
             <div className="mt-5 grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:items-end">
               <Reveal>
                 <h2 className="display-lg max-w-xl">
-                  Rated <span className="text-accent">4.3</span> by the people we've worked with
+                  Rated <span className="text-accent">4.9</span> by the people we've worked with
                 </h2>
               </Reveal>
               <Reveal delay={120} className="flex items-center gap-8">
                 <div className="text-center">
-                  <p className="font-display text-6xl">4.3</p>
-                  <Stars value={4.3} className="mt-1" />
+                  <p className="font-display text-6xl">4.9</p>
+                  <Stars value={4.9} className="mt-1" />
                   <p className="mt-1 text-xs text-muted-foreground">(12)</p>
                 </div>
                 <RatingBars data={RATING_SPLIT} className="w-full max-w-sm" />
