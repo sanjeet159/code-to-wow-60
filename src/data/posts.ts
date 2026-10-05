@@ -8,6 +8,11 @@ import project4 from "@/assets/project-4.jpg";
 import team1 from "@/assets/team-1.jpg";
 import team2 from "@/assets/team-2.jpg";
 import team3 from "@/assets/team-3.jpg";
+import nyati from "@/assets/nyati.jpeg";
+import blog1 from "@/assets/blog-1.jpg";
+import pride from "@/assets/pride.jpeg";
+import servicesPlots from "@/assets/services-plots.jpg";
+import project1Atlantis from "@/assets/project-1-atlantis.jpg";
 
 export type PostSection = { heading: string; body: string[]; list?: string[] };
 
@@ -546,7 +551,7 @@ export const POSTS: Post[] = [
   },
   {
     slug: "2bhk-rent-dhanori-guide",
-    img: project2,
+    img: nyati,
     cat: "Rental guide",
     date: "Dhanori",
     readTime: "7 min read",
@@ -614,7 +619,7 @@ export const POSTS: Post[] = [
   },
   {
     slug: "flats-near-pune-airport",
-    img: project1,
+    img: blog1,
     cat: "Locality guide",
     date: "Lohegaon",
     readTime: "8 min read",
@@ -675,7 +680,7 @@ export const POSTS: Post[] = [
   },
   {
     slug: "charholi-budruk-investment-guide",
-    img: blog2,
+    img: pride,
     cat: "Investment",
     date: "Charholi Budruk",
     readTime: "8 min read",
@@ -737,7 +742,7 @@ export const POSTS: Post[] = [
   },
   {
     slug: "plot-vs-flat-pune",
-    img: blog3,
+    img: servicesPlots,
     cat: "Buying guide",
     date: "Pune",
     readTime: "7 min read",
@@ -800,7 +805,7 @@ export const POSTS: Post[] = [
   },
   {
     slug: "home-loan-rera-checklist-pune",
-    img: team1,
+    img: project1Atlantis,
     cat: "Buying guide",
     date: "Pune",
     readTime: "9 min read",
