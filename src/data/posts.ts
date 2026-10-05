@@ -544,6 +544,330 @@ export const POSTS: Post[] = [
       },
     ],
   },
+  {
+    slug: "2bhk-rent-dhanori-guide",
+    img: project2,
+    cat: "Rental guide",
+    date: "Dhanori",
+    readTime: "7 min read",
+    title: "2BHK for rent in Dhanori: real rents, best societies and what to check",
+    keyword: "2bhk rent dhanori, flats for rent in dhanori pune, dhanori rent, 2bhk for rent in dhanori, rent flat dhanori pune",
+    metaTitle: "2BHK for Rent in Dhanori, Pune — Rents & Societies 2026",
+    metaDescription:
+      "Real 2BHK rents in Dhanori, Pune — society-wise ranges, deposit norms, commute times to Viman Nagar and the airport, and what to check before signing.",
+    excerpt:
+      "What a 2BHK in Dhanori actually rents for, which societies tenants ask for by name, and the checks that save you from a bad agreement.",
+    author: "Home Craft desk",
+    avatar: "/favicon.png",
+    sections: [
+      {
+        heading: "What a 2BHK in Dhanori rents for right now",
+        body: [
+          "Dhanori is one of east Pune's most active rental markets because it sits between the airport, Viman Nagar and the Nagar Road IT corridor. Most demand is for 2BHKs from working couples and small families.",
+          "Asking rents on portals run 10-15% above closing rents. The ranges below are what agreements actually close at in the societies we work in.",
+        ],
+        list: [
+          "Unfurnished 2BHK — ₹16,000 to ₹22,000 per month",
+          "Semi-furnished 2BHK — ₹20,000 to ₹26,000 per month",
+          "Fully furnished 2BHK — ₹25,000 to ₹32,000 per month",
+          "Typical deposit — 3 to 5 months' rent; negotiate toward 3",
+        ],
+      },
+      {
+        heading: "Societies tenants ask for by name",
+        body: [
+          "Larger gated societies with clubhouses and security dominate demand. Families prioritise societies with play areas and internal shops; professionals prioritise ones with faster access to Porwal Road and the airport road.",
+        ],
+        list: [
+          "Pride World City and its phases — biggest inventory, widest rent range",
+          "Goodwill Breeza — popular with airport and Viman Nagar commuters",
+          "Nyati Era — family-heavy, stable tenant profile",
+          "Smaller standalone buildings — cheaper, but check water supply and parking carefully",
+        ],
+      },
+      {
+        heading: "Commute reality check",
+        body: [
+          "Dhanori to Viman Nagar is 15-25 minutes off-peak, 30-40 in rush hour. The airport is 15-20 minutes. Kalyani Nagar and Yerwada are reachable in 25-35 minutes via Nagar Road.",
+          "If your office is in Hinjewadi or Baner, Dhanori is the wrong side of the city — look at west Pune instead, no matter how good the rent looks.",
+        ],
+      },
+      {
+        heading: "Before you sign the agreement",
+        body: [
+          "Most rental disputes we see come from the same four gaps. Close them before you pay the deposit.",
+        ],
+        list: [
+          "Insist on a registered eleven-month leave-and-license agreement, not a notarised one",
+          "Photograph the flat and inventory on move-in day and attach it to the agreement",
+          "Confirm in writing who pays society maintenance and what the monthly amount is",
+          "Check water timing, parking allotment and mobile network inside the actual flat, not the lobby",
+        ],
+      },
+      {
+        heading: "How we help tenants",
+        body: [
+          "We keep a live list of verified Dhanori rentals — owner-direct where possible — and handle the agreement, police verification and handover. Tell us your budget and commute anchor and we will send you options the same day.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "flats-near-pune-airport",
+    img: project1,
+    cat: "Locality guide",
+    date: "Lohegaon",
+    readTime: "8 min read",
+    title: "Flats near Pune airport: which localities actually work and what they cost",
+    keyword: "flats near pune airport, property near pune airport, 2bhk near pune airport, flats in lohegaon, apartments near pune airport",
+    metaTitle: "Flats Near Pune Airport — Best Localities & Prices 2026",
+    metaDescription:
+      "Buying near Pune airport? Compare Lohegaon, Dhanori, Tingre Nagar and Viman Nagar — real prices, drive times, noise zones and which areas to avoid.",
+    excerpt:
+      "Every locality within 20 minutes of Pune airport ranked by price, commute and liveability — including the noise-and-traffic trade-offs brochures skip.",
+    author: "Home Craft desk",
+    avatar: "/favicon.png",
+    sections: [
+      {
+        heading: "Why buyers look near the airport",
+        body: [
+          "Airline and hospitality staff, frequent flyers, and IT professionals working along Nagar Road all anchor their search to the airport. The east Pune corridor around it has also seen the steadiest infrastructure spend in the city over the last five years.",
+          "But 'near the airport' covers very different markets. Fifteen minutes of drive time can mean a ₹40 lakh difference in price for the same carpet area.",
+        ],
+      },
+      {
+        heading: "The four localities that actually work",
+        body: [
+          "These are the areas our airport-anchored buyers shortlist most, ordered from closest and cheapest to most premium.",
+        ],
+        list: [
+          "Lohegaon — 10-15 min to the terminal; 2BHK ₹48L-₹72L; best value, still developing retail",
+          "Dhanori — 15-20 min; 2BHK ₹52L-₹78L; large gated societies, family-friendly",
+          "Tingre Nagar — 15-20 min; 2BHK ₹58L-₹85L; compact, well connected to Nagar Road",
+          "Viman Nagar — 10-15 min; 2BHK ₹80L-₹1.3Cr; premium, full social infrastructure",
+        ],
+      },
+      {
+        heading: "The trade-offs brochures skip",
+        body: [
+          "Aircraft noise is real in Lohegaon and parts of Dhanori directly under flight paths. Visit the exact building at different times of day before deciding — noise tolerance is personal and varies block by block.",
+          "Airport Road and Nagar Road both choke in peak hours. A flat that is 12 minutes away at noon can be 35 minutes away at 9 AM. Do the drive at your actual commute time, not on a Sunday afternoon.",
+        ],
+      },
+      {
+        heading: "Rental demand near the airport",
+        body: [
+          "If you are buying to rent out, airport-adjacent localities have some of the shortest vacancy periods in Pune. Airline crew, consultants on rotation and IT transfers keep demand constant.",
+        ],
+        list: [
+          "Viman Nagar — highest rents, shortest vacancies, highest entry cost",
+          "Dhanori and Tingre Nagar — best rent-to-price ratios in the corridor",
+          "Lohegaon — lowest entry cost, growing demand as social infrastructure fills in",
+        ],
+      },
+      {
+        heading: "Our advice in one line",
+        body: [
+          "Buy in the best society you can afford within 20 minutes of the terminal, and let drive time at rush hour — not the map distance — make the final call. Share your budget and we will shortlist verified options across all four localities.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "charholi-budruk-investment-guide",
+    img: blog2,
+    cat: "Investment",
+    date: "Charholi Budruk",
+    readTime: "8 min read",
+    title: "Is Charholi Budruk a good investment in 2026? An honest assessment",
+    keyword: "charholi budruk property, charholi budruk investment, flats in charholi budruk, charholi real estate, property investment pune",
+    metaTitle: "Charholi Budruk Property Investment — Honest 2026 Review",
+    metaDescription:
+      "Is Charholi Budruk worth investing in? Real price trends, rental yields, infrastructure pipeline and the risks — from a desk that transacts there weekly.",
+    excerpt:
+      "The case for and against Charholi Budruk as an investment — price trends, rental yields, what's actually getting built, and who should buy versus wait.",
+    author: "Home Craft desk",
+    avatar: "/favicon.png",
+    sections: [
+      {
+        heading: "Why Charholi Budruk is on investor radar",
+        body: [
+          "Charholi Budruk offers the lowest entry price in the east Pune corridor — a 2BHK at ₹42L-₹65L against ₹80L+ in Viman Nagar for similar carpet area. Large township development, improving road connectivity to the airport and Nagar Road, and steady end-user demand have made it the corridor's default value pick.",
+        ],
+      },
+      {
+        heading: "What the numbers look like",
+        body: [
+          "Working ranges from deals we handle, not portal asking prices.",
+        ],
+        list: [
+          "Entry price — 1BHK from ₹28L, 2BHK from ₹42L, 3BHK from ₹70L",
+          "Rental yield — 3% to 3.8% gross, among the better ratios in east Pune",
+          "2BHK rents — ₹12,000 to ₹18,000 depending on furnishing and township phase",
+          "Appreciation — steady mid-single-digit annual growth, driven by end users rather than speculation",
+        ],
+      },
+      {
+        heading: "What is actually getting built",
+        body: [
+          "The investment case rests on infrastructure, so separate confirmed work from brochure promises. Road widening toward the airport corridor and new internal township roads are underway. Social infrastructure — schools, clinics, daily retail — is filling in inside the large townships first.",
+          "Anything promised as 'proposed' — metro extensions, new flyovers — should be treated as a bonus, not a reason to buy. Buy on what exists today.",
+        ],
+      },
+      {
+        heading: "The honest risks",
+        body: [
+          "No locality is a sure thing, and Charholi's risks are specific.",
+        ],
+        list: [
+          "Supply is heavy — many phases launching means resale competition when you exit",
+          "Connectivity is improving but still the weakest in the corridor; peak-hour drives are long",
+          "Liquidity is slower than Viman Nagar or Tingre Nagar — expect months, not weeks, to resell",
+          "Choose the township and phase carefully; quality varies more here than anywhere else in the corridor",
+        ],
+      },
+      {
+        heading: "Who should buy, and who should wait",
+        body: [
+          "Buy if you are a first-time buyer wanting maximum space per rupee, or an investor with a 5-plus-year horizon who prioritises rental yield over quick resale. Wait — or look at Dhanori and Tingre Nagar instead — if you need strong daily connectivity today or a fast exit.",
+          "We transact in Charholi every week and will tell you plainly which phases we would put our own money into. Ask us before you commit to a token.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "plot-vs-flat-pune",
+    img: blog3,
+    cat: "Buying guide",
+    date: "Pune",
+    readTime: "7 min read",
+    title: "Plot vs flat in Pune: which makes sense for you in 2026",
+    keyword: "plots in pune, plot vs flat pune, buy plot in pune, na plots pune, land investment pune",
+    metaTitle: "Plot vs Flat in Pune 2026 — Costs, Returns & Risks",
+    metaDescription:
+      "Plot or flat in Pune? Compare real costs, appreciation, legal checks (NA status, RERA, title) and maintenance to decide which fits your goal and budget.",
+    excerpt:
+      "The real cost, return and risk comparison between buying a plot and buying a flat around Pune — including the legal checks most buyers skip.",
+    author: "Home Craft desk",
+    avatar: "/favicon.png",
+    sections: [
+      {
+        heading: "The core difference",
+        body: [
+          "A flat gives you a usable home or rent from day one. A plot gives you land appreciation and the freedom to build later, but no income and no utility until you construct. Which is 'better' depends entirely on whether you need the asset to work for you now or later.",
+        ],
+      },
+      {
+        heading: "Cost comparison around Pune",
+        body: [
+          "Using the east Pune corridor we work in as the reference.",
+        ],
+        list: [
+          "2BHK flat — ₹42L-₹85L in Charholi Budruk to Tingre Nagar; ₹80L+ in Viman Nagar",
+          "NA plot in developing corridors — ₹1,200 to ₹2,800 per sq ft depending on location and layout approval",
+          "Hidden flat costs — stamp duty ~6-7%, registration 1%, maintenance deposits, floor-rise and parking premiums",
+          "Hidden plot costs — fencing, land tax, society/layout charges, and the full cost of construction when you build",
+        ],
+      },
+      {
+        heading: "Returns: what actually happens",
+        body: [
+          "Well-located land has historically appreciated faster than apartments in Pune because land is finite and buildings depreciate. But that average hides wide variation: plots in layouts that never develop can sit flat for a decade, while a good flat pays rent the whole time.",
+          "A flat's return is rent plus moderate appreciation. A plot's return is pure appreciation — higher potential, higher variance, zero cash flow.",
+        ],
+      },
+      {
+        heading: "The legal checks that matter more for plots",
+        body: [
+          "Plot fraud is far more common than flat fraud in Maharashtra. Run every one of these before paying anything.",
+        ],
+        list: [
+          "NA (non-agricultural) order — without it, you cannot legally build a residence",
+          "Clear 7/12 extract and title chain for at least 30 years",
+          "Layout approval from the competent authority (PMRDA/PCMC/PMC as applicable)",
+          "RERA registration for plotted developments above the threshold",
+          "Physical demarcation — visit the site, match survey numbers, check for encroachments and access roads",
+        ],
+      },
+      {
+        heading: "So which should you buy",
+        body: [
+          "Buy a flat if you need a home within two years, want rental income, or are taking a home loan you want working for you immediately. Buy a plot if you have a 7-10 year horizon, want to build a custom home eventually, and can verify every document on the list above.",
+          "We handle both flats and verified plots across east Pune. Tell us your goal and timeline and we will show you honest options in both categories — including the ones we would avoid.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "home-loan-rera-checklist-pune",
+    img: team1,
+    cat: "Buying guide",
+    date: "Pune",
+    readTime: "9 min read",
+    title: "Home loan and RERA checklist for Pune buyers: the complete 2026 version",
+    keyword: "rera registered projects pune, home loan pune, rera check pune, home loan eligibility pune, maharera project search",
+    metaTitle: "Home Loan & RERA Checklist for Pune Buyers 2026",
+    metaDescription:
+      "Complete checklist for Pune homebuyers — MahaRERA project verification, home loan eligibility, down payment math, stamp duty and the documents to demand.",
+    excerpt:
+      "Every check to run before you book a flat in Pune — MahaRERA verification, loan eligibility, real down-payment math and the documents to demand from the builder.",
+    author: "Home Craft desk",
+    avatar: "/favicon.png",
+    sections: [
+      {
+        heading: "Step one: verify the project on MahaRERA",
+        body: [
+          "Every new project in Maharashtra must be registered on maharera.maharashtra.gov.in before the builder can legally advertise or sell. Search the project name and check the registration number, approved plans, promised possession date and any complaints filed.",
+          "The possession date on the RERA certificate is the legally binding one — not the date the salesperson tells you. If a project is not registered, walk away, whatever the discount.",
+        ],
+      },
+      {
+        heading: "Step two: know your real loan eligibility",
+        body: [
+          "Banks typically lend up to 75-90% of the agreement value, and cap EMIs at roughly 40-50% of your net monthly income across all loans. A ₹60 lakh flat usually means ₹8-12 lakh from your own funds plus registration costs.",
+        ],
+        list: [
+          "Salaried buyers — salary slips, 3 years of ITR, 6 months of bank statements",
+          "Self-employed buyers — 3 years of ITR with P&L, GST returns, 12 months of bank statements",
+          "Check your CIBIL score first — 750+ gets you the best rates; below 700, fix it before applying",
+          "Get a pre-approved loan before shortlisting — it fixes your budget and speeds up closing",
+        ],
+      },
+      {
+        heading: "Step three: the full cost of buying",
+        body: [
+          "The agreement value is not the cost of the flat. Budget for all of this.",
+        ],
+        list: [
+          "Stamp duty — about 6-7% in Maharashtra (1% concession for women buyers on residential)",
+          "Registration — 1% of agreement value",
+          "GST — 5% on under-construction flats (1% affordable housing); none on ready-to-move with OC",
+          "Maintenance deposit, club charges, parking and floor-rise premiums — often ₹2-5 lakh combined",
+          "Home loan processing fee, legal and valuation charges — typically 0.5-1%",
+        ],
+      },
+      {
+        heading: "Step four: documents to demand before the token",
+        body: [
+          "Do not pay a booking amount until you have seen these.",
+        ],
+        list: [
+          "RERA certificate and approved floor plan for your exact unit",
+          "Title clearance certificate and commencement certificate",
+          "Draft agreement for sale — read the possession clause, penalty clause and carpet area definition",
+          "For resale: society NOC, share certificate, no-dues certificate and the chain of prior agreements",
+          "Occupancy certificate for ready-to-move buildings",
+        ],
+      },
+      {
+        heading: "Where buyers go wrong",
+        body: [
+          "The pattern we see most: buyers fix a budget from the agreement value, then discover stamp duty, GST and premiums push the real cost 10-12% higher — and either stretch dangerously or lose the token. Do the full math first, then shortlist.",
+          "We run this checklist with every client before any money moves. If you are shortlisting flats in east Pune, bring us the project name and we will verify the RERA status and paperwork with you — no charge, no obligation.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function getPost(slug: string) {
