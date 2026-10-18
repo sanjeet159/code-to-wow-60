@@ -20,18 +20,33 @@ export const Route = createFileRoute("/blog/$slug")({
     const title = post.metaTitle;
     const description = post.metaDescription;
     const url = `https://www.homecraft.co.in/blog/${params.slug}`;
+    const image = `https://www.homecraft.co.in${post.img}`;
+    const wordCount = post.sections.reduce(
+      (n, s) => n + s.body.join(" ").split(/\s+/).length + (s.list?.join(" ").split(/\s+/).length ?? 0),
+      0,
+    );
+    const published = "2026-08-01";
+    const modified = "2026-10-18";
     return {
       meta: [
         { title },
         { name: "description", content: description },
         { name: "keywords", content: post.keyword },
+        { name: "robots", content: "index, follow, max-image-preview:large" },
         { property: "og:title", content: title },
         { property: "og:description", content: description },
         { property: "og:type", content: "article" },
         { property: "og:url", content: url },
+        { property: "og:image", content: image },
+        { property: "og:site_name", content: "Home Craft Real Estate" },
+        { property: "og:locale", content: "en_IN" },
+        { property: "article:published_time", content: published },
+        { property: "article:modified_time", content: modified },
+        { property: "article:section", content: post.cat },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: title },
         { name: "twitter:description", content: description },
+        { name: "twitter:image", content: image },
       ],
       links: [{ rel: "canonical", href: url }],
       scripts: [
@@ -44,17 +59,27 @@ export const Route = createFileRoute("/blog/$slug")({
                 "@type": "Article",
                 headline: post.title,
                 description: post.metaDescription,
+                image,
                 articleSection: post.cat,
-                author: { "@type": "Organization", name: "Home Craft Real Estate" },
-                publisher: { "@type": "Organization", name: "Home Craft Real Estate" },
+                inLanguage: "en-IN",
+                wordCount,
+                datePublished: published,
+                dateModified: modified,
+                author: { "@type": "Organization", name: "Home Craft Real Estate", url: "https://www.homecraft.co.in" },
+                publisher: {
+                  "@type": "Organization",
+                  name: "Home Craft Real Estate",
+                  url: "https://www.homecraft.co.in",
+                  logo: { "@type": "ImageObject", url: "https://www.homecraft.co.in/favicon.png" },
+                },
                 mainEntityOfPage: url,
                 about: post.keyword,
               },
               {
                 "@type": "BreadcrumbList",
                 itemListElement: [
-                  { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-                  { "@type": "ListItem", position: 2, name: "Insights", item: "/blog" },
+                  { "@type": "ListItem", position: 1, name: "Home", item: "https://www.homecraft.co.in/" },
+                  { "@type": "ListItem", position: 2, name: "Insights", item: "https://www.homecraft.co.in/blog" },
                   { "@type": "ListItem", position: 3, name: post.title, item: url },
                 ],
               },
@@ -158,6 +183,28 @@ function PostPage() {
                 )}
               </Reveal>
             ))}
+
+            <nav aria-label="Featured properties" className="mt-4 rounded-2xl border border-border bg-card p-6 lg:p-8">
+              <p className="text-xs uppercase tracking-widest text-accent">Featured properties in Pune</p>
+              <ul className="mt-4 grid gap-3 sm:grid-cols-3">
+                {[
+                  { id: "pride-world-city-atlantis", label: "Pride World City Atlantic, Charholi" },
+                  { id: "shubh-gateways-viman", label: "Shubh Gateways, Viman Nagar" },
+                  { id: "rent-nyati-era-dhanori", label: "Nyati Era rentals, Dhanori" },
+                ].map((l) => (
+                  <li key={l.id}>
+                    <Link
+                      to="/property/$id"
+                      params={{ id: l.id }}
+                      className="group flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-accent"
+                    >
+                      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                      <span className="underline-offset-4 group-hover:underline">{l.label}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
 
             <div className="mt-4 rounded-3xl bg-surface-dark p-8 text-surface-dark-foreground lg:p-12">
               <p className="eyebrow-light">Talk to Home Craft</p>
