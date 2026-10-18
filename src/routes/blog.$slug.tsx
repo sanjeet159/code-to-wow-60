@@ -184,6 +184,28 @@ function PostPage() {
               </Reveal>
             ))}
 
+            <nav aria-label="Featured properties" className="mt-4 rounded-2xl border border-border bg-card p-6 lg:p-8">
+              <p className="text-xs uppercase tracking-widest text-accent">Featured properties in Pune</p>
+              <ul className="mt-4 grid gap-3 sm:grid-cols-3">
+                {[
+                  { id: "pride-world-city-atlantis", label: "Pride World City Atlantic, Charholi" },
+                  { id: "shubh-gateways-viman", label: "Shubh Gateways, Viman Nagar" },
+                  { id: "rent-nyati-era-dhanori", label: "Nyati Era rentals, Dhanori" },
+                ].map((l) => (
+                  <li key={l.id}>
+                    <Link
+                      to="/property/$id"
+                      params={{ id: l.id }}
+                      className="group flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-accent"
+                    >
+                      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                      <span className="underline-offset-4 group-hover:underline">{l.label}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
             <div className="mt-4 rounded-3xl bg-surface-dark p-8 text-surface-dark-foreground lg:p-12">
               <p className="eyebrow-light">Talk to Home Craft</p>
               <h3 className="mt-4 font-display text-2xl leading-snug lg:text-3xl">
