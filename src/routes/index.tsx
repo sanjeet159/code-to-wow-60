@@ -464,7 +464,7 @@ function Index() {
                 </span>
                 <SplitWords
                   as="h1"
-                  text="Dream Home"
+                  text="Find your dream home in Pune"
                   delay={220}
                   stagger={140}
                   className="mt-6 font-display text-[clamp(2.5rem,10vw,8rem)] font-light leading-[0.9] tracking-tight text-background sm:text-[clamp(3.5rem,13vw,12rem)]"
